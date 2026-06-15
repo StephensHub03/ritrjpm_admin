@@ -1,0 +1,203 @@
+.loadingScreen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #FAF5EC 0%, #f7ecd6 60%, #eeddbb 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8vh 24px 6vh;
+  z-index: 9999;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Vignette overlay */
+.vignette {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 100px rgba(6, 24, 70, 0.05);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Faint monochrome campus outline at the bottom */
+.campusBackdrop {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 38vh;
+  object-fit: cover;
+  object-position: center bottom;
+  opacity: 0.045;
+  filter: grayscale(100%) brightness(1.1) contrast(1.15);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Floating particles */
+.particle {
+  position: absolute;
+  background-color: rgba(201, 162, 39, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Content Container (Center Aligned) */
+.centerContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 4;
+}
+
+/* Logo container & glow */
+.logoWrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.logoGlow {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.22) 0%, rgba(201, 162, 39, 0.06) 45%, rgba(201, 162, 39, 0) 70%);
+  filter: blur(16px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.logo {
+  position: relative;
+  z-index: 2;
+  width: clamp(140px, 18vw, 200px);
+  height: auto;
+  filter: drop-shadow(0 12px 24px rgba(6, 24, 70, 0.12));
+}
+
+/* Typography & Titles */
+.title {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 2.8vw, 2.3rem);
+  font-weight: 700;
+  color: #061846;
+  letter-spacing: 0.16em;
+  margin: 12px 0 6px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: clamp(0.72rem, 1.2vw, 0.88rem);
+  font-weight: 500;
+  color: #c9a227;
+  letter-spacing: 0.32em;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+/* Divider with Diamond */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.dividerLine {
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(201, 162, 39, 0) 0%, rgba(201, 162, 39, 0.5) 100%);
+}
+
+.dividerLine:last-child {
+  background: linear-gradient(90deg, rgba(201, 162, 39, 0.5) 0%, rgba(201, 162, 39, 0) 100%);
+}
+
+.dividerDiamond {
+  width: 7px;
+  height: 7px;
+  background-color: #c9a227;
+  transform: rotate(45deg);
+  box-shadow: 0 0 6px rgba(201, 162, 39, 0.4);
+}
+
+/* Loading Elements */
+.loadingText {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #061846;
+  letter-spacing: 0.25em;
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+
+.progressBarWrapper {
+  width: clamp(240px, 80vw, 420px);
+  margin-bottom: 8px;
+}
+
+.progressBarTrack {
+  width: 100%;
+  height: 12px;
+  background-color: rgba(226, 232, 240, 0.75);
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(6, 24, 70, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  position: relative;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #c9a227 0%, #f6e093 50%, #c9a227 100%);
+  box-shadow: 0 1px 4px rgba(201, 162, 39, 0.3);
+  border-radius: 999px;
+  transition: width 0.1s linear;
+}
+
+.percentage {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #061846;
+  opacity: 0.9;
+  letter-spacing: 0.05em;
+}
+
+/* Footer Motto */
+.footerMotto {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: clamp(0.72rem, 1.2vw, 0.85rem);
+  font-weight: 600;
+  color: #061846;
+  letter-spacing: 0.2em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 4;
+  opacity: 0.85;
+}
+
+.mottoDot {
+  width: 4px;
+  height: 4px;
+  background-color: #c9a227;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(201, 162, 39, 0.3);
+}
