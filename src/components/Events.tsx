@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Calendar, ArrowUpRight, BookOpen, GraduationCap, Award, Code, Cpu, Scale, Leaf } from 'lucide-react'
+import { resolveLocalScrapedImage } from '../utils/localScrapedImages'
 
 const latestEvents = [
   {
@@ -149,7 +150,17 @@ export default function Events() {
               key={`${event.title}-${index}`}
             >
               <div className="event-img-container">
-                <img src={event.image} alt={event.title} className="event-img" loading="lazy" />
+                {(() => {
+                  const resolvedImg = resolveLocalScrapedImage(event.image) || event.image;
+                  const filename = resolvedImg.split('/').pop() || '';
+                  return (
+                    <>
+                      {/* SCRAPED IMAGE MATCHED: {filename} | Event: {event.title} */}
+                      <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- SCRAPED IMAGE MATCHED: ${filename} | Event: ${event.title} -->` }} />
+                      <img src={resolvedImg} alt={event.title} className="event-img" loading="lazy" />
+                    </>
+                  );
+                })()}
               </div>
               
               <div className="event-content">

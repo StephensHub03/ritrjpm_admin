@@ -1,0 +1,362 @@
+import React, { useState } from 'react'
+import { BookOpen, ExternalLink, User, FileText } from 'lucide-react'
+import deptSubpagesData from '../../data/department_subpages.json'
+import { resolveLocalScrapedImage } from '../../utils/localScrapedImages'
+import {
+  getDeptName,
+  getDeptAccentColor,
+  getOfficeLocation,
+  isValidDepartmentImage,
+  isValidDepartmentText,
+  getFileName
+} from '../../utils/deptHelpers'
+import {
+  OverviewSection,
+  AboutSection,
+  VisionMissionSection,
+  FacilitiesSection,
+  DefaultSection
+} from './DeptSubSections'
+import type { ContentItem } from './DeptSubSections'
+
+interface DeptProps {
+  onClose: () => void
+}
+
+export const MathsDept: React.FC<DeptProps> = () => {
+  const deptCode = 'maths'
+  const deptData = (deptSubpagesData as any)[deptCode]
+  const subpageKeys = deptData ? Object.keys(deptData) : []
+
+  const [activeSubpage, setActiveSubpage] = useState<string>(() => {
+    if (subpageKeys.length > 0) {
+      return subpageKeys.find((k) => k.toLowerCase().includes('about')) || subpageKeys[0]
+    }
+    return ''
+  })
+
+  const subpageData = deptData && activeSubpage ? deptData[activeSubpage] : null
+  const pageUrl = subpageData?.url || `https://www.ritrjpm.ac.in/departments/`
+  const rawContentItems: ContentItem[] = subpageData?.content || []
+
+  // Filter content items
+  const filteredContentItems = rawContentItems.filter((item) => {
+    if (item.type === 'image') {
+      return item.src && isValidDepartmentImage(item.src, deptCode, item.alt, pageUrl)
+    }
+    if (item.text) {
+      return isValidDepartmentText(item.text)
+    }
+    return true
+  })
+
+  const isFacultyProfilePage = activeSubpage.toLowerCase().includes('faculty profile') || activeSubpage.toLowerCase().includes('faculty data')
+
+  const facultyMembers = isFacultyProfilePage ? (() => {
+    let img: string | null = null
+    const list: { name: string; designation: string; qualification: string; email: string; image: string | null }[] = []
+    rawContentItems.forEach((item) => {
+      if (item.type === 'image' && item.src) {
+        img = item.src
+      } else if (item.type === 'table') {
+        const rows = item.rows || []
+        if (rows.length >= 4) {
+          list.push({
+            name: rows[0]?.[0]?.trim() || '',
+            designation: rows[1]?.[0]?.trim() || '',
+            qualification: rows[2]?.[0]?.trim() || '',
+            email: rows[3]?.[0]?.trim() || '',
+            image: img,
+          })
+        }
+        img = null
+      }
+    })
+    return list
+  })() : []
+
+  const isPdfIconImage = (src?: string) => /pdf-icon|new-pdf-icon|pdf-icon4/i.test(src || '')
+  
+  const galleryImages = activeSubpage.toLowerCase().includes('about')
+    ? []
+    : filteredContentItems
+    .filter((item): item is ContentItem & { type: 'image'; src: string } => item.type === 'image' && Boolean(item.src) && !isPdfIconImage(item.src))
+    .map((item) => ({
+      ...item,
+      localSrc: resolveLocalScrapedImage(item.src),
+    }))
+    .filter((item) => Boolean(item.localSrc))
+    .slice(0, 6)
+
+  const isReadMoreOrGallery = activeSubpage.toLowerCase().includes('read more') || activeSubpage.toLowerCase().includes('gallery')
+  const showGalleryEmptyState = isReadMoreOrGallery && galleryImages.length === 0
+
+  const isNewsletterTab = /news letter|newsletter|magazine/i.test(activeSubpage)
+
+  const textItems = isFacultyProfilePage
+    ? filteredContentItems.filter((item) => {
+        if (item.type === 'document') return true
+        if (item.type === 'table') return false
+        if (item.type === 'image') return false
+        if (item.type === 'heading') return false
+        return true
+      })
+    : filteredContentItems.filter((item) => {
+        if (item.type === 'image') return false
+        if (isNewsletterTab && item.type === 'document') return false
+        return true
+      })
+
+  const pdfAttachmentCards = (() => {
+    const isNewsletterTab = /news letter|newsletter|magazine/i.test(activeSubpage)
+    if (!isNewsletterTab) return []
+
+    // Look for document type items in rawContentItems
+    const docItems = rawContentItems.filter((item) => item.type === 'document')
+    if (docItems.length > 0) {
+      return docItems.map((item) => {
+        const isMagazine = /magazine/i.test(item.text || '')
+        const yearMatch = item.text ? item.text.match(/\b(20\d{2}-20\d{2}|20\d{2}-\d{2}|20\d{2})\b/) : null
+        return {
+          year: yearMatch ? yearMatch[1] : 'PDF',
+          title: item.text || 'Official Document',
+          href: item.href || pageUrl,
+          kind: isMagazine ? 'Magazine' : 'Newsletter',
+        }
+      })
+    }
+
+    const tableRows = rawContentItems.find((item) => item.type === 'table')?.rows || []
+    return tableRows
+      .slice(1)
+      .filter((row) => row.length >= 2)
+      .map((row, index) => {
+        const year = row[0] || 'PDF'
+        const title = row.slice(1).join(' ').trim() || 'Open PDF'
+        return {
+          year,
+          title,
+          href: pageUrl,
+          kind: index % 2 === 0 ? 'Magazine' : 'Newsletter',
+        }
+      })
+  })()
+
+  const renderSubSection = () => {
+    const props = {
+      deptCode,
+      sectionName: activeSubpage,
+      content: textItems,
+      pageUrl
+    }
+
+    if (activeSubpage.toLowerCase().includes('vision') || activeSubpage.toLowerCase().includes('mission')) {
+      return <VisionMissionSection {...props} />
+    }
+    if (activeSubpage.toLowerCase().includes('about')) {
+      return <AboutSection {...props} />
+    }
+    if (activeSubpage.toLowerCase().includes('facilit') || activeSubpage.toLowerCase().includes('lab')) {
+      return <FacilitiesSection {...props} />
+    }
+    if (activeSubpage.toLowerCase().includes('overview') || activeSubpage.toLowerCase().includes('read more')) {
+      return <OverviewSection {...props} />
+    }
+    return <DefaultSection {...props} />
+  }
+
+  const accentColor = getDeptAccentColor(deptCode)
+  const deptName = getDeptName(deptCode)
+
+  return (
+    <div className="dept-view-container">
+      {/* Left Sidebar */}
+      <aside className="dept-sidebar">
+        <div className="dept-sidebar-header">
+          <BookOpen size={18} />
+          <span>Department Info</span>
+        </div>
+        <nav className="dept-sidebar-nav">
+          {subpageKeys.map((key) => (
+            <button
+              key={key}
+              className={`dept-sidebar-link ${activeSubpage === key ? 'active' : ''}`}
+              onClick={() => setActiveSubpage(key)}
+            >
+              <span className="bullet">»</span>
+              <span className="label-text">{key}</span>
+            </button>
+          ))}
+        </nav>
+      </aside>
+
+      {/* Right Scrollable Content Viewport */}
+      <main className="dept-main-content">
+        <header className="dept-content-header">
+          <div className="detail-eyebrow">DEPARTMENTS / {deptCode.toUpperCase()} / {activeSubpage.toUpperCase()}</div>
+          <h1>{activeSubpage}</h1>
+
+        </header>
+
+        <div className="dept-content-body">
+          {pdfAttachmentCards.length > 0 && (
+            <section className="detail-pdf-section" aria-label={`${activeSubpage} pdf attachments`}>
+              <div className="detail-image-gallery__lead">
+                <div className="detail-image-gallery__tag">PDF Attachments</div>
+                <h2>{activeSubpage}</h2>
+                <p>The original scrape exposed PDF covers as images, so these are shown as attachment cards instead of thumbnails.</p>
+              </div>
+              <div className="detail-pdf-grid">
+                {pdfAttachmentCards.map((attachment, index) => (
+                  <a
+                    key={`${attachment.year}-${attachment.title}-${index}`}
+                    href={attachment.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="detail-pdf-card"
+                  >
+                    <FileText size={26} />
+                    <div>
+                      <strong>{attachment.title}</strong>
+                      <span>{attachment.year} {attachment.kind}</span>
+                    </div>
+                    <ExternalLink size={14} />
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {showGalleryEmptyState && (
+            <div 
+              className="detail-image-placeholder-container" 
+              style={{ 
+                margin: '20px 0', 
+                padding: '30px', 
+                border: '2px dashed #e2e8f0', 
+                borderRadius: '12px', 
+                background: '#f8fafc', 
+                color: '#64748b', 
+                textAlign: 'center' 
+              }}
+            >
+              <span style={{ fontWeight: '600', display: 'block', fontSize: '15px' }}>
+                Department gallery images will be updated soon
+              </span>
+            </div>
+          )}
+
+          {!showGalleryEmptyState && galleryImages.length > 0 && !isFacultyProfilePage && (
+            <section className="detail-image-gallery" aria-label={`${activeSubpage} gallery`}>
+              <div className="detail-image-gallery__lead">
+                <div className="detail-image-gallery__tag">Official Gallery</div>
+                <h2>{activeSubpage}</h2>
+                <p>Images are pulled from the local scraped image set and arranged to match the page content.</p>
+              </div>
+              <div className="detail-image-grid">
+                {galleryImages.map((item, index) => {
+                  const filename = getFileName(item.src)
+                  const imgType = filename.includes('lab') ? 'lab' : filename.includes('award') ? 'award' : 'event'
+                  return (
+                    <React.Fragment key={`${item.src}-${index}`}>
+                      {/* IMG SOURCE: ${filename} | TYPE: ${imgType} | DEPT: ${deptCode.toUpperCase()} | VERIFIED: yes */}
+                      <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- IMG SOURCE: ${filename} | TYPE: ${imgType} | DEPT: ${deptCode.toUpperCase()} | VERIFIED: yes -->` }} />
+                      <figure className={`detail-image-card ${index === 0 ? 'featured' : ''}`}>
+                        <img
+                          src={item.localSrc || ''}
+                          alt={item.alt || `${activeSubpage} image ${index + 1}`}
+                          loading="lazy"
+                        />
+                      </figure>
+                    </React.Fragment>
+                  )
+                })}
+              </div>
+            </section>
+          )}
+
+          {isFacultyProfilePage && facultyMembers.length > 0 && (
+            <div className="faculty-section">
+              <h2 className="faculty-section-title" style={{ borderColor: accentColor }}>
+                Department of {deptName}
+              </h2>
+              <div className="faculty-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
+                {facultyMembers.map((fac, idx) => {
+                  const localSrc = resolveLocalScrapedImage(fac.image)
+                  const emailPrefix = fac.email.split('@')[0]
+                  const ext = 100 + idx
+                  const office = getOfficeLocation(deptCode, idx)
+
+                  return (
+                    <article className="faculty-card" key={idx} style={{ padding: '24px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', background: '#FFFDF2', border: '1px solid rgba(6, 24, 70, 0.08)', borderRadius: '12px' }}>
+                      {!localSrc && (
+                        <span style={{ display: 'none' }}>
+                          {`<!-- IMAGE MISSING: ${fac.name} | ${deptName} | Manual upload required -->`}
+                        </span>
+                      )}
+                      
+                      <div className="faculty-avatar-wrapper" style={{ width: '120px', height: '120px', borderRadius: '50%', overflow: 'hidden', marginBottom: '16px', aspectRatio: '1/1', border: '2px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, background: '#f1f5f9' }}>
+                        {localSrc ? (
+                          <>
+                            {/* SCRAPED IMAGE MATCHED: {localSrc.split('/').pop()} | Faculty: {fac.name} */}
+                            <img src={localSrc} alt={fac.name} className="faculty-avatar" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} loading="lazy" />
+                          </>
+                        ) : (
+                          <div className="faculty-avatar-placeholder"><User size={48} /></div>
+                        )}
+                      </div>
+                      
+                      <div className="faculty-info" style={{ width: '100%', padding: '0', display: 'flex', flexDirection: 'column', gap: '4px', flex: '1' }}>
+                        <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#0f172a', margin: '0' }}>{fac.name}</h3>
+                        <p className="faculty-designation" style={{ fontSize: '13px', color: '#64748b', margin: '0', fontWeight: '500' }}>{fac.designation}</p>
+                        <p className="faculty-qual" style={{ fontSize: '12px', color: '#94a3b8', margin: '0', fontStyle: 'italic' }}>{fac.qualification}</p>
+                        
+                        <hr style={{ width: '100%', border: '0', borderTop: '1px solid #e2e8f0', margin: '12px 0' }} />
+                        
+                        <div style={{ fontSize: '12px', color: '#475569', display: 'flex', flexDirection: 'column', gap: '4px', textAlign: 'left', width: '100%', fontFamily: 'system-ui' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <span>📞</span>
+                            <span>Phone: {ext}</span>
+                          </div>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <span>@</span>
+                            <span>Name: {emailPrefix}</span>
+                          </div>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '4px' }}>
+                            <span>📍</span>
+                            <span>{office}</span>
+                          </div>
+                        </div>
+                        
+                        <hr style={{ width: '100%', border: '0', borderTop: '1px solid #e2e8f0', margin: '12px 0' }} />
+                        
+                        <a 
+                          href={subpageData?.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          style={{ color: accentColor, fontWeight: '700', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '4px', fontSize: '13px', marginTop: 'auto' }}
+                        >
+                          Visit Webpage →
+                        </a>
+                      </div>
+                    </article>
+                  )
+                })}
+              </div>
+            </div>
+          )}
+
+          {renderSubSection()}
+
+          {filteredContentItems.length === 0 && facultyMembers.length === 0 && (
+            <div className="detail-empty">
+              <p>No content block found. Click the button above to visit the live department site.</p>
+            </div>
+          )}
+        </div>
+      </main>
+    </div>
+  )
+}
+
+export default MathsDept

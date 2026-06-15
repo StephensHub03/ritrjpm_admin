@@ -1,5 +1,4 @@
 import { Users, Trophy, Award, Smartphone, CheckCircle } from 'lucide-react'
-import gptImg from '../assets/gpt.png'
 
 export default function About() {
   return (
@@ -39,7 +38,8 @@ export default function About() {
           <div className="layered-frame-wrapper">
             <div className="frame-bg-accent" />
             <div className="image-card">
-              <img src={gptImg} alt="Ramco Institute of Technology Campus" className="about-campus-image" />
+              {/* SCRAPED IMAGE MATCHED: rit.JPG | Campus main building photo */}
+              <img src="/rit.JPG" alt="Ramco Institute of Technology Campus" className="about-campus-image" />
               <div className="floating-stats-card">
                 <Trophy className="stats-icon" size={20} />
                 <div>

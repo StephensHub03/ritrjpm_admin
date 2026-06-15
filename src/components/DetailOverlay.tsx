@@ -1,9 +1,22 @@
-import { useState } from 'react'
-import { X, ExternalLink, FileText, Globe, User, Mail, BookOpen } from 'lucide-react'
+import { X, ExternalLink, FileText } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import scrapedData from '../data/scraped_content.json'
-import deptSubpagesData from '../data/department_subpages.json'
 import { resolveLocalScrapedImage } from '../utils/localScrapedImages'
+
+// Import isolated department components
+import CseDept from './departments/CseDept'
+import EceDept from './departments/EceDept'
+import EeeDept from './departments/EeeDept'
+import MechDept from './departments/MechDept'
+import CivilDept from './departments/CivilDept'
+import AimlDept from './departments/AimlDept'
+import AidsDept from './departments/AidsDept'
+import CsbsDept from './departments/CsbsDept'
+import ItDept from './departments/ItDept'
+import PhysicsDept from './departments/PhysicsDept'
+import ChemistryDept from './departments/ChemistryDept'
+import MathsDept from './departments/MathsDept'
+import EnglishDept from './departments/EnglishDept'
 
 interface ContentItem {
   type: string
@@ -14,22 +27,6 @@ interface ContentItem {
   src?: string
   alt?: string
   href?: string
-}
-
-interface FacultyMember {
-  name: string
-  designation: string
-  image: string
-  qualification: string
-  experience: string
-  email: string
-}
-
-interface SubPageData {
-  label: string
-  url: string
-  content: ContentItem[]
-  faculty: FacultyMember[]
 }
 
 interface PageData {
@@ -47,29 +44,17 @@ interface DetailOverlayProps {
 export default function DetailOverlay({ pageKey, onClose }: DetailOverlayProps) {
   const isDept = pageKey?.startsWith('departments-')
   const deptCode = pageKey?.replace('departments-', '') || ''
-  
-  // Get department subpages if this is a department page
-  const deptSubpages = isDept ? (deptSubpagesData as Record<string, Record<string, SubPageData>>)[deptCode] : null
-  const subpageKeys = deptSubpages ? Object.keys(deptSubpages) : []
-  
-  // Local state for active department subpage
-  const [activeSubpage, setActiveSubpage] = useState<string>(() => {
-    if (subpageKeys.length > 0) {
-      return subpageKeys.find((k) => k.toLowerCase().includes('about')) || subpageKeys[0]
-    }
-    return ''
-  })
 
-  // Get active subpage data or flat page data
-  const subpageData = deptSubpages && activeSubpage ? deptSubpages[activeSubpage] : null
+  // Get flat page data if this is not a department
   const flatPage = pageKey && !isDept ? (scrapedData as Record<string, PageData>)[pageKey] : null
 
-  const pageTitle = isDept ? `${deptCode.toUpperCase()} Department` : flatPage?.title || ''
-  const pageUrl = isDept ? (subpageData?.url || `https://www.ritrjpm.ac.in/departments/`) : (flatPage?.url || '')
-  const contentItems = isDept ? (subpageData?.content || []) : (flatPage?.content || [])
-  const facultyMembers = isDept ? (subpageData?.faculty || []) : []
-  const textItems = contentItems.filter((item) => item.type !== 'image')
+  const pageTitle = flatPage?.title || ''
+
+  const contentItems = flatPage?.content || []
+
   const isPdfIconImage = (src?: string) => /pdf-icon|new-pdf-icon|pdf-icon4/i.test(src || '')
+  
+  const textItems = contentItems.filter((item) => item.type !== 'image')
   const galleryImages = contentItems
     .filter((item): item is ContentItem & { type: 'image'; src: string } => item.type === 'image' && Boolean(item.src) && !isPdfIconImage(item.src))
     .map((item) => ({
@@ -78,27 +63,11 @@ export default function DetailOverlay({ pageKey, onClose }: DetailOverlayProps) 
     }))
     .filter((item) => Boolean(item.localSrc))
     .slice(0, 6)
-  const pdfAttachmentCards = (() => {
-    const isCivilNewsletter = isDept && deptCode === 'civil' && /news letter|newsletter|magazine/i.test(activeSubpage)
-    if (!isCivilNewsletter) return []
 
-    const tableRows = contentItems.find((item) => item.type === 'table')?.rows || []
-    return tableRows
-      .slice(1)
-      .filter((row) => row.length >= 2)
-      .map((row, index) => {
-        const year = row[0] || 'PDF'
-        const title = row.slice(1).join(' ').trim() || 'Open PDF'
-        return {
-          year,
-          title,
-          href: pageUrl,
-          kind: index % 2 === 0 ? 'Magazine' : 'Newsletter',
-        }
-      })
-  })()
+  const originalImageCount = contentItems.filter((item) => item.type === 'image' && !isPdfIconImage(item.src)).length
+  const showNoImagePlaceholder = originalImageCount > 0 && galleryImages.length === 0
 
-  // Renders the structured content blocks (lists, paragraphs, headings, tables, etc.)
+  // Renders flat page content blocks (lists, paragraphs, headings, tables, etc.)
   const renderContentBlocks = (items: ContentItem[]) => {
     if (!items || items.length === 0) return null
 
@@ -208,41 +177,14 @@ export default function DetailOverlay({ pageKey, onClose }: DetailOverlayProps) 
                     {pageKey?.split('-')[0].toUpperCase()} / {pageKey?.split('-').slice(1).join(' ').toUpperCase()}
                   </div>
                   <h1>{pageTitle}</h1>
-                  <div className="detail-source-links">
-                    <a href={pageUrl} target="_blank" rel="noopener noreferrer" className="detail-source-link">
-                      <Globe size={14} />
-                      <span>View official live page</span>
-                      <ExternalLink size={12} />
-                    </a>
-                  </div>
+
                 </header>
                 <div className="detail-body detail-body--flat">
-                  {pdfAttachmentCards.length > 0 && (
-                    <section className="detail-pdf-section" aria-label={`${pageTitle} pdf attachments`}>
-                      <div className="detail-image-gallery__lead">
-                        <div className="detail-image-gallery__tag">PDF Attachments</div>
-                        <h2>{pageTitle}</h2>
-                        <p>The original scrape exposed PDF covers as images, so these are shown as attachment cards instead of thumbnails.</p>
-                      </div>
-                      <div className="detail-pdf-grid">
-                        {pdfAttachmentCards.map((attachment, index) => (
-                          <a
-                            key={`${attachment.year}-${attachment.title}-${index}`}
-                            href={attachment.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="detail-pdf-card"
-                          >
-                            <FileText size={26} />
-                            <div>
-                              <strong>{attachment.title}</strong>
-                              <span>{attachment.year} {attachment.kind}</span>
-                            </div>
-                            <ExternalLink size={14} />
-                          </a>
-                        ))}
-                      </div>
-                    </section>
+                  {showNoImagePlaceholder && (
+                    <div className="detail-image-placeholder-container" style={{ margin: '20px 0', padding: '30px', border: '2px dashed #f43f5e', borderRadius: '12px', background: '#fff1f2', color: '#be123c', textAlign: 'center' }}>
+                      <span style={{ fontWeight: '750', display: 'block', fontSize: '15px' }}>⚠️ No Scraped Image Found: {pageTitle}</span>
+                      <small style={{ display: 'block', marginTop: '4px', opacity: 0.85 }}>Flagged for manual review</small>
+                    </div>
                   )}
                   {galleryImages.length > 0 && (
                     <section className="detail-image-gallery" aria-label={`${pageTitle} gallery`}>
@@ -275,135 +217,46 @@ export default function DetailOverlay({ pageKey, onClose }: DetailOverlayProps) 
               </>
             )}
 
-            {/* Layout for Department Sidebar-based pages */}
-            {isDept && deptSubpages && (
-              <div className="dept-view-container">
-                {/* Left Sidebar */}
-                <aside className="dept-sidebar">
-                  <div className="dept-sidebar-header">
-                    <BookOpen size={18} />
-                    <span>Department Info</span>
-                  </div>
-                  <nav className="dept-sidebar-nav">
-                    {subpageKeys.map((key) => (
-                      <button
-                        key={key}
-                        className={`dept-sidebar-link ${activeSubpage === key ? 'active' : ''}`}
-                        onClick={() => setActiveSubpage(key)}
-                      >
-                        <span className="bullet">»</span>
-                        <span className="label-text">{key}</span>
-                      </button>
-                    ))}
-                  </nav>
-                </aside>
-
-                {/* Right Scrollable Content Viewport */}
-                <main className="dept-main-content">
-                  <header className="dept-content-header">
-                    <div className="detail-eyebrow">DEPARTMENTS / {deptCode.toUpperCase()} / {activeSubpage.toUpperCase()}</div>
-                    <h1>{activeSubpage}</h1>
-                    <div className="detail-source-links">
-                      <a href={pageUrl} target="_blank" rel="noopener noreferrer" className="detail-source-link">
-                        <Globe size={14} />
-                        <span>View live official page</span>
-                        <ExternalLink size={12} />
-                      </a>
-                    </div>
-                  </header>
-
-                  <div className="dept-content-body">
-                    {pdfAttachmentCards.length > 0 && (
-                      <section className="detail-pdf-section" aria-label={`${activeSubpage} pdf attachments`}>
-                        <div className="detail-image-gallery__lead">
-                          <div className="detail-image-gallery__tag">PDF Attachments</div>
-                          <h2>{activeSubpage}</h2>
-                          <p>The original scrape exposed PDF covers as images, so these are shown as attachment cards instead of thumbnails.</p>
-                        </div>
-                        <div className="detail-pdf-grid">
-                          {pdfAttachmentCards.map((attachment, index) => (
-                            <a
-                              key={`${attachment.year}-${attachment.title}-${index}`}
-                              href={attachment.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="detail-pdf-card"
-                            >
-                              <FileText size={26} />
-                              <div>
-                                <strong>{attachment.title}</strong>
-                                <span>{attachment.year} {attachment.kind}</span>
-                              </div>
-                              <ExternalLink size={14} />
-                            </a>
-                          ))}
-                        </div>
-                      </section>
-                    )}
-                    {galleryImages.length > 0 && (
-                      <section className="detail-image-gallery" aria-label={`${activeSubpage} gallery`}>
-                        <div className="detail-image-gallery__lead">
-                          <div className="detail-image-gallery__tag">Official Gallery</div>
-                          <h2>{activeSubpage}</h2>
-                          <p>Images are pulled from the local scraped image set and arranged to match the page content.</p>
-                        </div>
-                        <div className="detail-image-grid">
-                          {galleryImages.map((item, index) => (
-                            <figure key={`${item.src}-${index}`} className={`detail-image-card ${index === 0 ? 'featured' : ''}`}>
-                              <img
-                                src={item.localSrc || ''}
-                                alt={item.alt || `${activeSubpage} image ${index + 1}`}
-                                loading="lazy"
-                              />
-                            </figure>
-                          ))}
-                        </div>
-                      </section>
-                    )}
-                    {/* Faculty Profile Grid (if faculty profiles list is active) */}
-                    {facultyMembers.length > 0 && (
-                      <div className="faculty-section">
-                        <h2 className="faculty-section-title">Faculty Members</h2>
-                        <div className="faculty-grid">
-                          {facultyMembers.map((fac, idx) => (
-                            <article className="faculty-card" key={idx}>
-                              <div className="faculty-avatar-wrapper">
-                                {fac.image ? (
-                                  <img src={fac.image} alt={fac.name} className="faculty-avatar" loading="lazy" />
-                                ) : (
-                                  <div className="faculty-avatar-placeholder"><User size={36} /></div>
-                                )}
-                              </div>
-                              <div className="faculty-info">
-                                <h3>{fac.name}</h3>
-                                <p className="faculty-designation">{fac.designation}</p>
-                                <p className="faculty-qual">{fac.qualification}</p>
-                                {fac.email && (
-                                  <a href={`mailto:${fac.email}`} className="faculty-email-btn">
-                                    <Mail size={12} />
-                                    <span>{fac.email}</span>
-                                  </a>
-                                )}
-                              </div>
-                            </article>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Standard Content items for the active subpage */}
-                    {textItems.length > 0 ? (
-                      renderContentBlocks(textItems)
-                    ) : (
-                      facultyMembers.length === 0 && (
+            {/* Layout for Department Sidebar-based pages: Delegated to isolated sub-components */}
+            {isDept && (
+              <>
+                {(() => {
+                  switch (deptCode.toLowerCase()) {
+                    case 'cse':
+                      return <CseDept onClose={onClose} />
+                    case 'ece':
+                      return <EceDept onClose={onClose} />
+                    case 'eee':
+                      return <EeeDept onClose={onClose} />
+                    case 'mech':
+                      return <MechDept onClose={onClose} />
+                    case 'civil':
+                      return <CivilDept onClose={onClose} />
+                    case 'aiml':
+                      return <AimlDept onClose={onClose} />
+                    case 'aids':
+                      return <AidsDept onClose={onClose} />
+                    case 'csbs':
+                      return <CsbsDept onClose={onClose} />
+                    case 'it':
+                      return <ItDept onClose={onClose} />
+                    case 'physics':
+                      return <PhysicsDept onClose={onClose} />
+                    case 'chemistry':
+                      return <ChemistryDept onClose={onClose} />
+                    case 'maths':
+                      return <MathsDept onClose={onClose} />
+                    case 'english':
+                      return <EnglishDept onClose={onClose} />
+                    default:
+                      return (
                         <div className="detail-empty">
-                          <p>No content block found. Click the button above to visit the live department site.</p>
+                          <p>Unknown department.</p>
                         </div>
                       )
-                    )}
-                  </div>
-                </main>
-              </div>
+                  }
+                })()}
+              </>
             )}
           </motion.div>
         </motion.div>

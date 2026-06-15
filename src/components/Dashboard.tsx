@@ -10,8 +10,8 @@ const galleryVideos = [
   },
   {
     id: 'SDK2rzj8fzA',
-    title: 'Annual Day & Academic Milestone Celebrations',
-    description: 'Highlights of annual events, graduation, guest speakers, and student awards.',
+    title: 'Departments & Excellence',
+    description: 'Highlight of Departments and Academics',
   },
   {
     id: '-RdFNnPuybI',
@@ -88,8 +88,8 @@ export default function Dashboard() {
           {galleryVideos.map((video) => {
             const isPlaying = playingIds[video.id]
             return (
-              <article 
-                className="gallery-card" 
+              <article
+                className="gallery-card"
                 key={video.id}
                 data-video-id={video.id}
                 ref={(el) => cardRefCallback(el)}
@@ -105,13 +105,13 @@ export default function Dashboard() {
                       className="video-iframe"
                     ></iframe>
                   ) : (
-                    <div 
+                    <div
                       className="video-thumbnail-wrapper"
                       onClick={() => setPlayingIds(prev => ({ ...prev, [video.id]: true }))}
                     >
-                      <img 
-                        src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`} 
-                        alt={`${video.title} Thumbnail`} 
+                      <img
+                        src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                        alt={`${video.title} Thumbnail`}
                         className="video-thumbnail"
                         loading="lazy"
                       />
