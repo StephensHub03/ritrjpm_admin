@@ -1,6 +1,7 @@
 import React from 'react'
 import { FileText, ExternalLink } from 'lucide-react'
 import { resolveLocalScrapedImage } from '../../utils/localScrapedImages'
+import TiltedCard from '../TiltedCard'
 import {
   isValidDepartmentText,
   isValidDepartmentImage,
@@ -142,17 +143,24 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
 
         if (isValid && localSrc) {
           const type = getImageType(filename, item.alt || '')
+          const caption = item.alt && item.alt !== 'Image' ? item.alt : undefined
           return (
             <React.Fragment key={index}>
               {/* IMG SOURCE: ${filename} | TYPE: ${type} | DEPT: ${deptCode.toUpperCase()} | VERIFIED: yes */}
               <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- IMG SOURCE: ${filename} | TYPE: ${type} | DEPT: ${deptCode.toUpperCase()} | VERIFIED: yes -->` }} />
-              <figure className="detail-content-image">
-                <img
-                  src={localSrc}
-                  alt={item.alt || `${getDeptName(deptCode)} image`}
-                  loading="lazy"
+              <figure className="detail-content-image" style={{ overflow: 'visible', background: 'transparent' }}>
+                <TiltedCard
+                  imageSrc={localSrc}
+                  altText={item.alt || `${getDeptName(deptCode)} image`}
+                  captionText={caption}
+                  containerHeight="auto"
+                  containerWidth="100%"
+                  imageHeight="100%"
+                  imageWidth="100%"
+                  rotateAmplitude={12}
+                  scaleOnHover={1.03}
+                  showTooltip={Boolean(caption)}
                 />
-                {item.alt && item.alt !== 'Image' && <figcaption>{item.alt}</figcaption>}
               </figure>
             </React.Fragment>
           )

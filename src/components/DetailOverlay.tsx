@@ -1,7 +1,10 @@
-import { X, ExternalLink, FileText } from 'lucide-react'
+import { X, ExternalLink, FileText, Edit } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import scrapedData from '../data/scraped_content.json'
 import { resolveLocalScrapedImage } from '../utils/localScrapedImages'
+import TiltedCard from './TiltedCard'
+import { useCMS } from './CMSContext'
+import { useState } from 'react'
+import { EditFlatPageModal } from './CMSModals'
 
 // Import isolated department components
 import CseDept from './departments/CseDept'
@@ -42,11 +45,13 @@ interface DetailOverlayProps {
 }
 
 export default function DetailOverlay({ pageKey, onClose }: DetailOverlayProps) {
+  const { flatPages, isAuthenticated } = useCMS()
+  const [showEditModal, setShowEditModal] = useState(false)
   const isDept = pageKey?.startsWith('departments-')
   const deptCode = pageKey?.replace('departments-', '') || ''
 
   // Get flat page data if this is not a department
-  const flatPage = pageKey && !isDept ? (scrapedData as Record<string, PageData>)[pageKey] : null
+  const flatPage = pageKey && !isDept ? (flatPages as Record<string, PageData>)[pageKey] : null
 
   const pageTitle = flatPage?.title || ''
 
@@ -126,20 +131,28 @@ export default function DetailOverlay({ pageKey, onClose }: DetailOverlayProps) 
               </a>
             </div>
           )
-        case 'image':
+        case 'image': {
           if (isPdfIconImage(item.src)) return null
+          const localSrc = resolveLocalScrapedImage(item.src)
+          if (!localSrc) return null
+          const caption = item.alt && item.alt !== 'Image' ? item.alt : undefined
           return (
-            <figure key={index} className="detail-content-image">
-              {resolveLocalScrapedImage(item.src) && (
-                <img
-                  src={resolveLocalScrapedImage(item.src) || ''}
-                  alt={item.alt || 'RIT official image'}
-                  loading="lazy"
-                />
-              )}
-              {item.alt && item.alt !== 'Image' && <figcaption>{item.alt}</figcaption>}
+            <figure key={index} className="detail-content-image" style={{ overflow: 'visible', background: 'transparent' }}>
+              <TiltedCard
+                imageSrc={localSrc}
+                altText={item.alt || 'RIT official image'}
+                captionText={caption}
+                containerHeight="auto"
+                containerWidth="100%"
+                imageHeight="100%"
+                imageWidth="100%"
+                rotateAmplitude={12}
+                scaleOnHover={1.03}
+                showTooltip={Boolean(caption)}
+              />
             </figure>
           )
+        }
         default:
           return null
       }
@@ -176,7 +189,29 @@ export default function DetailOverlay({ pageKey, onClose }: DetailOverlayProps) 
                   <div className="detail-eyebrow">
                     {pageKey?.split('-')[0].toUpperCase()} / {pageKey?.split('-').slice(1).join(' ').toUpperCase()}
                   </div>
-                  <h1>{pageTitle}</h1>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', width: '100%' }}>
+                    <h1 style={{ margin: 0 }}>{pageTitle}</h1>
+                    {isAuthenticated && (
+                      <button
+                        onClick={() => setShowEditModal(true)}
+                        style={{
+                          background: 'rgba(236, 10, 120, 0.1)',
+                          border: '1px solid rgba(236, 10, 120, 0.25)',
+                          borderRadius: '20px',
+                          padding: '6px 14px',
+                          color: '#ec0a78',
+                          fontWeight: 700,
+                          fontSize: '12px',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '6px'
+                        }}
+                      >
+                        <Edit size={14} /> Edit Page Content
+                      </button>
+                    )}
+                  </div>
 
                 </header>
                 <div className="detail-body detail-body--flat">
@@ -195,11 +230,17 @@ export default function DetailOverlay({ pageKey, onClose }: DetailOverlayProps) 
                       </div>
                       <div className="detail-image-grid">
                         {galleryImages.map((item, index) => (
-                          <figure key={`${item.src}-${index}`} className={`detail-image-card ${index === 0 ? 'featured' : ''}`}>
-                            <img
-                              src={item.localSrc || ''}
-                              alt={item.alt || `${pageTitle} image ${index + 1}`}
-                              loading="lazy"
+                          <figure key={`${item.src}-${index}`} className={`detail-image-card ${index === 0 ? 'featured' : ''}`} style={{ overflow: 'visible', background: 'transparent' }}>
+                            <TiltedCard
+                              imageSrc={item.localSrc || ''}
+                              altText={item.alt || `${pageTitle} image ${index + 1}`}
+                              containerHeight="100%"
+                              containerWidth="100%"
+                              imageHeight="100%"
+                              imageWidth="100%"
+                              rotateAmplitude={12}
+                              scaleOnHover={1.04}
+                              showTooltip={false}
                             />
                           </figure>
                         ))}
@@ -260,6 +301,9 @@ export default function DetailOverlay({ pageKey, onClose }: DetailOverlayProps) 
             )}
           </motion.div>
         </motion.div>
+      )}
+      {showEditModal && pageKey && (
+        <EditFlatPageModal pageKey={pageKey} onClose={() => setShowEditModal(false)} />
       )}
     </AnimatePresence>
   )

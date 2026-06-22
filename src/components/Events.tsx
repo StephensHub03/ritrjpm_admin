@@ -155,9 +155,9 @@ export default function Events() {
                   const filename = resolvedImg.split('/').pop() || '';
                   return (
                     <>
-                      {/* SCRAPED IMAGE MATCHED: {filename} | Event: {event.title} */}
-                      <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- SCRAPED IMAGE MATCHED: ${filename} | Event: ${event.title} -->` }} />
-                      <img src={resolvedImg} alt={event.title} className="event-img" loading="lazy" />
+                       {/* SCRAPED IMAGE MATCHED: {filename} | Event: {event.title} */}
+                       <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- SCRAPED IMAGE MATCHED: ${filename} | Event: ${event.title} -->` }} />
+                       <img src={resolvedImg} alt={event.title} className="event-img" loading="lazy" />
                     </>
                   );
                 })()}

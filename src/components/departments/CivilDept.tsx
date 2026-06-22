@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import { BookOpen, ExternalLink, User, FileText } from 'lucide-react'
-import deptSubpagesData from '../../data/department_subpages.json'
+import TiltedCard from '../TiltedCard'
+import { BookOpen, ExternalLink, User, FileText, Edit } from 'lucide-react'
+import { useCMS } from '../CMSContext'
+import { EditDeptSubpageModal } from '../CMSModals'
 import { resolveLocalScrapedImage } from '../../utils/localScrapedImages'
 import {
   getDeptName,
@@ -25,7 +27,10 @@ interface DeptProps {
 
 export const CivilDept: React.FC<DeptProps> = () => {
   const deptCode = 'civil'
-  const deptData = (deptSubpagesData as any)[deptCode]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { deptSubpages, isAuthenticated } = useCMS()
+  const deptData = deptSubpages[deptCode]
+  const [showEditModal, setShowEditModal] = useState(false)
   const subpageKeys = deptData ? Object.keys(deptData) : []
 
   const [activeSubpage, setActiveSubpage] = useState<string>(() => {
@@ -194,7 +199,29 @@ export const CivilDept: React.FC<DeptProps> = () => {
       <main className="dept-main-content">
         <header className="dept-content-header">
           <div className="detail-eyebrow">DEPARTMENTS / {deptCode.toUpperCase()} / {activeSubpage.toUpperCase()}</div>
-          <h1>{activeSubpage}</h1>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+            <h1>{activeSubpage}</h1>
+            {isAuthenticated && (
+              <button
+                onClick={() => setShowEditModal(true)}
+                style={{
+                  background: 'rgba(236, 10, 120, 0.1)',
+                  border: '1px solid rgba(236, 10, 120, 0.25)',
+                  borderRadius: '20px',
+                  padding: '6px 14px',
+                  color: '#ec0a78',
+                  fontWeight: 700,
+                  fontSize: '12px',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
+              >
+                <Edit size={14} /> Edit Subpage Content
+              </button>
+            )}
+          </div>
 
         </header>
 
@@ -261,11 +288,17 @@ export const CivilDept: React.FC<DeptProps> = () => {
                     <React.Fragment key={`${item.src}-${index}`}>
                       {/* IMG SOURCE: ${filename} | TYPE: ${imgType} | DEPT: ${deptCode.toUpperCase()} | VERIFIED: yes */}
                       <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- IMG SOURCE: ${filename} | TYPE: ${imgType} | DEPT: ${deptCode.toUpperCase()} | VERIFIED: yes -->` }} />
-                      <figure className={`detail-image-card ${index === 0 ? 'featured' : ''}`}>
-                        <img
-                          src={item.localSrc || ''}
-                          alt={item.alt || `${activeSubpage} image ${index + 1}`}
-                          loading="lazy"
+                      <figure className={`detail-image-card ${index === 0 ? 'featured' : ''}`} style={{ overflow: 'visible', background: 'transparent' }}>
+                        <TiltedCard
+                          imageSrc={item.localSrc || ''}
+                          altText={item.alt || `${activeSubpage} image ${index + 1}`}
+                          containerHeight="100%"
+                          containerWidth="100%"
+                          imageHeight="100%"
+                          imageWidth="100%"
+                          rotateAmplitude={12}
+                          scaleOnHover={1.04}
+                          showTooltip={false}
                         />
                       </figure>
                     </React.Fragment>
@@ -355,7 +388,14 @@ export const CivilDept: React.FC<DeptProps> = () => {
           )}
         </div>
       </main>
-    </div>
+    {showEditModal && (
+        <EditDeptSubpageModal
+          deptCode={deptCode}
+          subpageKey={activeSubpage}
+          onClose={() => setShowEditModal(false)}
+        />
+      )}
+      </div>
   )
 }
 

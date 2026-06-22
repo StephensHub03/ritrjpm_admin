@@ -1062,8 +1062,7 @@ h3 {
 }
 
 .placements,
-.gallery,
-.admin {
+.gallery {
   padding: 96px max(22px, calc((100vw - 1120px) / 2));
 }
 
@@ -1074,8 +1073,7 @@ h3 {
 .immersive,
 .events-section,
 .placements,
-.gallery,
-.admin {
+.gallery {
   color: #0f172a;
 }
 
@@ -1554,7 +1552,7 @@ h3 {
 }
 
 .events-section {
-  background: #FAF5EC; /* Premium Soft Cream background */
+  background: #FAF0E2; /* Premium Soft Cream background */
   overflow: hidden;
   padding: 36px max(22px, calc((100vw - 1120px) / 2)) 28px;
 }
@@ -1822,123 +1820,110 @@ h3 {
 }
 
 .chart-panel {
-  min-height: 280px;
-  padding: 26px;
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.placement-bars {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 280px;
-  gap: 12px;
-  padding-bottom: 36px;
   position: relative;
-  margin-top: 10px;
-}
-
-.placement-bars span {
+  min-height: 340px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  flex: 1;
-  height: 100%;
-  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.placement-bars span i {
-  width: 100%;
-  max-width: 40px;
-  background: linear-gradient(180deg, #ec0a78 0%, #7b3ed6 100%);
-  border-radius: 6px 6px 0 0;
-  height: calc(var(--value) * 1%);
-  position: relative;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
-  transform-origin: bottom;
+.chart-panel:hover {
+  border-color: rgba(236, 10, 120, 0.3);
+  box-shadow: 0 24px 50px rgba(236, 10, 120, 0.08), 0 0 20px rgba(255, 255, 255, 0.02);
+  transform: translateY(-2px);
 }
 
-.placement-bars span:hover i {
-  transform: scaleY(1.05);
-  background: linear-gradient(180deg, #f15a24 0%, #ec0a78 100%);
-  box-shadow: 0 10px 22px rgba(236, 10, 120, 0.35);
+.chart-header {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.placement-bars span::before {
-  content: attr(data-value);
-  position: absolute;
-  top: -30px;
-  background: #020617;
-  color: #ffffff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 11px;
+.chart-header h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
   font-weight: 700;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  pointer-events: none;
-  white-space: nowrap;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 10;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.12em;
+  margin: 0;
+  text-transform: uppercase;
 }
 
-.placement-bars span:hover::before {
-  opacity: 1;
-  transform: translateY(0);
+.chart-header span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
 }
 
-.placement-bars span small {
-  position: absolute;
-  bottom: -28px;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.doughnut {
+.chart-canvas-wrapper {
   position: relative;
+  width: 100%;
+  flex-grow: 1;
+  min-height: 220px;
+}
+
+.doughnut-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.doughnut-chart-wrapper {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doughnut-chart-wrapper .chart-canvas-wrapper {
+  max-width: 200px;
+  max-height: 200px;
+  min-height: auto;
+}
+
+.doughnut-center-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: conic-gradient(#ec0a78 0% 92%, rgba(255, 255, 255, 0.1) 92% 100%);
-  border-radius: 50%;
-  width: 190px;
-  height: 190px;
-  margin: auto;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 5;
 }
 
-.doughnut::after {
-  content: '';
-  position: absolute;
-  inset: 18px;
-  background: #07111d;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.doughnut strong {
-  position: relative;
-  z-index: 2;
+.doughnut-center-label strong {
+  font-family: 'Outfit', sans-serif;
   font-size: 2.25rem;
   font-weight: 850;
   color: #ffffff;
   line-height: 1;
+  background: linear-gradient(135deg, #ffffff 0%, #ec0a78 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.doughnut span {
-  position: relative;
-  z-index: 2;
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.6);
+.doughnut-center-label span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
   font-weight: 700;
-  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
 }
 
 .recruiter-strip {
@@ -1957,7 +1942,7 @@ h3 {
 }
 
 .gallery {
-  background: #edf2f7;
+  background: #FAF0E2;
 }
 
 .mosaic {
@@ -2005,22 +1990,6 @@ h3 {
   grid-row: span 2;
 }
 
-.admin {
-  background: #f8fafc;
-}
-
-.admin-grid {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin-top: 28px;
-}
-
-.admin-grid span {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px;
-  color: #334155;
-}
 
 /* Modern Footer Styles */
 .modern-footer {
@@ -2449,8 +2418,7 @@ h3 {
   }
 
   .story-grid,
-  .department-grid,
-  .admin-grid {
+  .department-grid {
     grid-column: auto;
     grid-template-columns: 1fr;
   }
@@ -2531,8 +2499,7 @@ h3 {
   .immersive,
   .events-section,
   .placements,
-  .gallery,
-  .admin {
+  .gallery {
     padding-top: 60px;
     padding-bottom: 60px;
     padding-inline: 16px;
@@ -4024,4 +3991,25 @@ h3 {
 .philosophy-card:hover .bullet-point {
   transform: scale(1.2);
   background-color: #246bfe;
+}
+
+.footer-admin-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: all 0.2s ease;
+  vertical-align: middle;
+}
+
+.footer-admin-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ec0a78;
+  border-color: #ec0a78;
 }

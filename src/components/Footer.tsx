@@ -1,6 +1,10 @@
 import { Phone, Mail, Globe } from 'lucide-react'
 
-export default function Footer() {
+interface FooterProps {
+  onOpenAdmin: () => void
+}
+
+export default function Footer({ onOpenAdmin }: FooterProps) {
   return (
     <footer className="modern-footer" id="contact">
       <div className="footer-top-container">
@@ -151,7 +155,8 @@ export default function Footer() {
         <div className="bottom-bar-content">
           <p>© 2026 Ramco Institute of Technology. All Rights Reserved.</p>
           <div className="bottom-bar-credits">
-            <p>Designed By <a href="https://www.ritrjpm.ac.in/" target="_blank" rel="noreferrer">Dept., of CSE, Ramco Institute of Technology</a></p>
+            <p>Designed By <a href="https://www.ritrjpm.ac.in/" target="_blank" rel="noreferrer">Dept., of AI&DS, Ramco Institute of Technology</a></p>
+            <button onClick={onOpenAdmin} className="footer-admin-btn">CMS Portal</button>
           </div>
         </div>
       </div>

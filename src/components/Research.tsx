@@ -1,8 +1,41 @@
-import { Eye, Target } from 'lucide-react'
+import { useState } from 'react'
+import { Eye, Target, Edit } from 'lucide-react'
+import { useCMS } from './CMSContext'
+import { EditVisionMissionModal } from './CMSModals'
 
 export default function Research() {
+  const { homepageConfig, isAuthenticated } = useCMS()
+  const [isEditOpen, setIsEditOpen] = useState(false)
+
   return (
-    <section className="immersive reveal-section" id="research">
+    <section className="immersive reveal-section" id="research" style={{ position: 'relative' }}>
+      {isAuthenticated && (
+        <button 
+          className="section-edit-btn philosophy-edit-btn" 
+          onClick={() => setIsEditOpen(true)}
+          style={{
+            position: 'absolute',
+            top: '20px',
+            right: '20px',
+            zIndex: 10,
+            background: 'rgba(255, 255, 255, 0.15)',
+            border: '1px solid rgba(255, 255, 255, 0.25)',
+            backdropFilter: 'blur(8px)',
+            borderRadius: '20px',
+            padding: '8px 16px',
+            color: '#fff',
+            fontWeight: 700,
+            fontSize: '13px',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+          }}
+        >
+          <Edit size={14} /> Edit Vision & Mission
+        </button>
+      )}
       <div className="about-details">
         <div className="section-label">02 / Core Philosophy</div>
         <h2>Vision & Mission</h2>
@@ -15,12 +48,7 @@ export default function Research() {
               </div>
               <h3>Vision</h3>
             </div>
-            <p>
-              To evolve as an Institute of international repute in offering high-quality technical education, 
-              Research and extension programmes in order to create knowledgeable, professionally competent 
-              and skilled Engineers and Technologists capable of working in multi-disciplinary environment 
-              to cater to the societal needs.
-            </p>
+            <p>{homepageConfig.vision_text}</p>
           </div>
           
           <div className="philosophy-card mission-card">
@@ -30,20 +58,14 @@ export default function Research() {
               </div>
               <h3>Mission</h3>
             </div>
-            <p className="mission-intro">To accomplish its unique vision, the Institute has a far-reaching mission that aims:</p>
+            <p className="mission-intro">{homepageConfig.mission_intro}</p>
             <ul className="mission-list">
-              <li>
-                <span className="bullet-point"></span>
-                <span>To offer higher education in Engineering and Technology with highest level of quality, Professionalism and ethical standards</span>
-              </li>
-              <li>
-                <span className="bullet-point"></span>
-                <span>To equip the students with up-to-date knowledge in cutting-edge technologies, wisdom, creativity and passion for innovation, and life-long learning skills</span>
-              </li>
-              <li>
-                <span className="bullet-point"></span>
-                <span>To constantly motivate and involve the students and faculty members in the education process for continuously improving their performance to achieve excellence.</span>
-              </li>
+              {homepageConfig.mission_points.map((point, index) => (
+                <li key={index}>
+                  <span className="bullet-point"></span>
+                  <span>{point}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -56,6 +78,7 @@ export default function Research() {
           <strong>RIT</strong>
         </div>
       </div>
+      {isEditOpen && <EditVisionMissionModal onClose={() => setIsEditOpen(false)} />}
     </section>
   )
 }

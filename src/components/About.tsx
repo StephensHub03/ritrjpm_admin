@@ -1,25 +1,65 @@
-import { Users, Trophy, Award, Smartphone, CheckCircle } from 'lucide-react'
+import { useState } from 'react'
+import { Users, Trophy, Award, Smartphone, CheckCircle, Edit } from 'lucide-react'
+import TiltedCard from './TiltedCard'
+import { useCMS } from './CMSContext'
+import { EditAboutModal } from './CMSModals'
 
 export default function About() {
+  const { homepageConfig, isAuthenticated } = useCMS()
+  const [isEditOpen, setIsEditOpen] = useState(false)
+
+  const rawTitle = homepageConfig.about_title
+  const highlightTerm = "Ramco Institute of Technology"
+  const hasHighlight = rawTitle.includes(highlightTerm)
+  
+  let titleNode = <span>{rawTitle}</span>
+  if (hasHighlight) {
+    const parts = rawTitle.split(highlightTerm)
+    titleNode = (
+      <>
+        {parts[0]}
+        <span className="green-text">{highlightTerm}</span>
+        {parts[1]}
+      </>
+    )
+  }
+
   return (
-    <section className="about-section" id="about">
+    <section className="about-section" id="about" style={{ position: 'relative' }}>
+      {isAuthenticated && (
+        <button 
+          className="section-edit-btn about-edit-btn" 
+          onClick={() => setIsEditOpen(true)}
+          style={{
+            position: 'absolute',
+            top: '20px',
+            right: '20px',
+            zIndex: 10,
+            background: 'rgba(6, 24, 70, 0.08)',
+            border: '1px solid rgba(6, 24, 70, 0.15)',
+            backdropFilter: 'blur(8px)',
+            borderRadius: '20px',
+            padding: '8px 16px',
+            color: '#061846',
+            fontWeight: 700,
+            fontSize: '13px',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.05)'
+          }}
+        >
+          <Edit size={14} /> Edit About Section
+        </button>
+      )}
       <div className="about-grid-container">
         {/* Left Content: Text & Highlights */}
         <div className="about-left-content">
-          <div className="about-badge">RIT Profile</div>
-          <h2>
-            About <span className="green-text">Ramco Institute of Technology</span>
-          </h2>
-          <p className="about-lead">
-            Ramco Institute of Technology was founded with a vision to impart high-quality
-            engineering education at an affordable cost. Under the guidance of our
-            Chairman Shri P.R. Venketrama Raja, we revolutionize the learning environment.
-          </p>
-          <p className="about-description">
-            Being part of the Ramco Group, widely recognized for its qualitative and innovative
-            brands globally, we set high standards. We empower students with accessible,
-            yet world-class engineering education and prepare them for lifelong learning.
-          </p>
+          <div className="about-badge">{homepageConfig.about_badge}</div>
+          <h2>{titleNode}</h2>
+          <p className="about-lead">{homepageConfig.about_lead}</p>
+          <p className="about-description">{homepageConfig.about_description}</p>
 
           <div className="about-highlights">
             <div className="highlight-item">
@@ -37,17 +77,27 @@ export default function About() {
         <div className="about-right-content">
           <div className="layered-frame-wrapper">
             <div className="frame-bg-accent" />
-            <div className="image-card">
-              {/* SCRAPED IMAGE MATCHED: rit.JPG | Campus main building photo */}
-              <img src="/rit.JPG" alt="Ramco Institute of Technology Campus" className="about-campus-image" />
-              <div className="floating-stats-card">
-                <Trophy className="stats-icon" size={20} />
-                <div>
-                  <div className="stats-num">ESTD</div>
-                  <div className="stats-label">2013</div>
+            <TiltedCard
+              imageSrc={homepageConfig.about_image_url}
+              altText="Ramco Institute of Technology Campus"
+              containerHeight="100%"
+              containerWidth="100%"
+              imageHeight="100%"
+              imageWidth="100%"
+              rotateAmplitude={10}
+              scaleOnHover={1.04}
+              showTooltip={false}
+              displayOverlayContent
+              overlayContent={
+                <div className="floating-stats-card" style={{ bottom: '16px', left: '16px', zIndex: 10, position: 'absolute' }}>
+                  <Trophy className="stats-icon" size={20} />
+                  <div>
+                    <div className="stats-num">ESTD</div>
+                    <div className="stats-label">{homepageConfig.about_estd}</div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              }
+            />
           </div>
         </div>
       </div>
@@ -83,6 +133,7 @@ export default function About() {
           <p>Innovation & Incubation</p>
         </div>
       </div>
+      {isEditOpen && <EditAboutModal onClose={() => setIsEditOpen(false)} />}
     </section>
   )
 }

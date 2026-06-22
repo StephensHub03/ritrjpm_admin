@@ -1,32 +1,16 @@
 import { useState, useRef, useEffect } from 'react'
-import { ArrowRight, Play } from 'lucide-react'
-import { announcements, events, heroStats } from '../data/constants'
-
-const galleryVideos = [
-  {
-    id: 'bunmrk8BY4Y',
-    title: 'RIT Campus Tour & Infrastructure',
-    description: 'Explore our modern academic infrastructure, labs, and green campus spaces.',
-  },
-  {
-    id: 'SDK2rzj8fzA',
-    title: 'Departments & Excellence',
-    description: 'Highlight of Departments and Academics',
-  },
-  {
-    id: '-RdFNnPuybI',
-    title: 'State-of-the-Art Research Facilities',
-    description: 'A walkthrough of advanced laboratories and platforms supporting innovation.',
-  },
-  {
-    id: 'JvAIKcQeUT8',
-    title: 'Ramco Institute of Technology Sports',
-    description: 'Explore our sports infrastructure, athletic training, and student achievements in tournaments.',
-  },
-]
+import { ArrowRight, Play, Edit, Plus, Trash } from 'lucide-react'
+import * as LucideIcons from 'lucide-react'
+import { events } from '../data/constants'
+import TiltedCard from './TiltedCard'
+import { useCMS } from './CMSContext'
+import { EditStatsModal, EditCampusGalleryModal, AddEditNewsModal } from './CMSModals'
 
 export default function Dashboard() {
+  const { homepageConfig, newsList, galleryVideos, isAuthenticated, deleteNewsItem } = useCMS()
   const [playingIds, setPlayingIds] = useState<Record<string, boolean>>({})
+  const [activeModal, setActiveModal] = useState<'stats' | 'gallery' | 'news_add' | 'news_edit' | null>(null)
+  const [editingNewsItem, setEditingNewsItem] = useState<any | null>(null)
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   const cardRefCallback = (el: HTMLElement | null) => {
@@ -61,13 +45,39 @@ export default function Dashboard() {
   }, [])
 
   return (
-    <section className="home-dashboard" aria-label="RIT overview">
+    <section className="home-dashboard" aria-label="RIT overview" style={{ position: 'relative' }}>
+      {isAuthenticated && (
+        <button
+          onClick={() => setActiveModal('stats')}
+          style={{
+            position: 'absolute',
+            top: '-20px',
+            right: '20px',
+            zIndex: 10,
+            background: 'rgba(6, 24, 70, 0.08)',
+            border: '1px solid rgba(6, 24, 70, 0.15)',
+            backdropFilter: 'blur(8px)',
+            borderRadius: '20px',
+            padding: '8px 16px',
+            color: '#061846',
+            fontWeight: 700,
+            fontSize: '13px',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.05)'
+          }}
+        >
+          <Edit size={14} /> Edit Stats
+        </button>
+      )}
       <div className="stats-ribbon">
-        {heroStats.map((stat) => {
-          const Icon = stat.icon
+        {homepageConfig.stats.map((stat) => {
+          const IconComponent = (LucideIcons as any)[stat.icon] || LucideIcons.BookOpen
           return (
             <article className="stat-item" data-tone={stat.tone} key={stat.label}>
-              <span><Icon /></span>
+              <span><IconComponent /></span>
               <div>
                 <strong>{stat.value}</strong>
                 <small>{stat.label}</small>
@@ -77,7 +87,33 @@ export default function Dashboard() {
         })}
       </div>
 
-      <div className="campus-gallery-section">
+      <div className="campus-gallery-section" style={{ position: 'relative' }}>
+        {isAuthenticated && (
+          <button
+            onClick={() => setActiveModal('gallery')}
+            style={{
+              position: 'absolute',
+              top: '20px',
+              right: '20px',
+              zIndex: 10,
+              background: 'rgba(6, 24, 70, 0.08)',
+              border: '1px solid rgba(6, 24, 70, 0.15)',
+              backdropFilter: 'blur(8px)',
+              borderRadius: '20px',
+              padding: '8px 16px',
+              color: '#061846',
+              fontWeight: 700,
+              fontSize: '13px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.05)'
+            }}
+          >
+            <Edit size={14} /> Edit Gallery
+          </button>
+        )}
         <div className="gallery-heading">
           <p className="gallery-eyebrow">Campus Gallery</p>
           <h2>Experience RIT in Motion</h2>
@@ -108,18 +144,27 @@ export default function Dashboard() {
                     <div
                       className="video-thumbnail-wrapper"
                       onClick={() => setPlayingIds(prev => ({ ...prev, [video.id]: true }))}
+                      style={{ overflow: 'visible', background: 'transparent', height: '100%', width: '100%' }}
                     >
-                      <img
-                        src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
-                        alt={`${video.title} Thumbnail`}
-                        className="video-thumbnail"
-                        loading="lazy"
+                      <TiltedCard
+                        imageSrc={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                        altText={`${video.title} Thumbnail`}
+                        containerHeight="100%"
+                        containerWidth="100%"
+                        imageHeight="100%"
+                        imageWidth="100%"
+                        rotateAmplitude={10}
+                        scaleOnHover={1.05}
+                        showTooltip={false}
+                        displayOverlayContent
+                        overlayContent={
+                          <div className="play-button-overlay" style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(6, 24, 70, 0.25)', borderRadius: '12px' }}>
+                            <span className="play-icon-glow" style={{ transform: 'translateZ(25px)' }}>
+                              <Play className="play-icon" size={20} fill="currentColor" />
+                            </span>
+                          </div>
+                        }
                       />
-                      <div className="play-button-overlay">
-                        <span className="play-icon-glow">
-                          <Play className="play-icon" size={20} fill="currentColor" />
-                        </span>
-                      </div>
                     </div>
                   )}
                 </div>
@@ -158,25 +203,112 @@ export default function Dashboard() {
 
         <section className="announcements-panel">
           <div className="panel-title">
-            <h3>Announcements</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <h3>Announcements</h3>
+              {isAuthenticated && (
+                <button
+                  onClick={() => setActiveModal('news_add')}
+                  style={{
+                    background: 'rgba(236, 10, 120, 0.1)',
+                    border: '1px solid rgba(236, 10, 120, 0.25)',
+                    borderRadius: '12px',
+                    padding: '4px 10px',
+                    color: '#ec0a78',
+                    fontWeight: 700,
+                    fontSize: '11px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                  }}
+                >
+                  <Plus size={12} /> Add
+                </button>
+              )}
+            </div>
             <a href="#home">View All <ArrowRight /></a>
           </div>
           <div className="announcement-list">
-            {announcements.map(([day, month, title, text]) => (
-              <article className="announcement-card" key={title}>
-                <time>
-                  <strong>{day}</strong>
-                  <span>{month}</span>
-                </time>
-                <div>
-                  <h4>{title}</h4>
-                  <p>{text}</p>
-                </div>
-              </article>
-            ))}
+            {newsList.map((item) => {
+              const dateObj = new Date(item.published_at)
+              const day = String(dateObj.getDate()).padStart(2, '0')
+              const month = dateObj.toLocaleString('default', { month: 'short' }).toUpperCase()
+              return (
+                <article className="announcement-card" key={item.id}>
+                  <time>
+                    <strong>{day}</strong>
+                    <span>{month}</span>
+                  </time>
+                  <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flex: 1 }}>
+                    {item.thumbnail_url && (
+                      <img
+                        src={item.thumbnail_url}
+                        alt="News thumbnail"
+                        style={{ width: '48px', height: '48px', objectFit: 'cover', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.08)' }}
+                      />
+                    )}
+                    <div style={{ flex: 1 }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '8px' }}>
+                        <h4 style={{ margin: 0 }}>{item.title}</h4>
+                        {isAuthenticated && (
+                          <div style={{ display: 'flex', gap: '6px', marginLeft: 'auto' }}>
+                            <button
+                              onClick={() => {
+                                setEditingNewsItem(item)
+                                setActiveModal('news_edit')
+                              }}
+                              style={{
+                                background: 'transparent',
+                                border: 'none',
+                                color: 'rgba(255,255,255,0.6)',
+                                cursor: 'pointer',
+                                padding: '2px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                              }}
+                              title="Edit Announcement"
+                            >
+                              <Edit size={14} />
+                            </button>
+                            <button
+                              onClick={() => {
+                                if (confirm('Are you sure you want to delete this announcement?')) {
+                                  deleteNewsItem(item.id)
+                                }
+                              }}
+                              style={{
+                                background: 'transparent',
+                                border: 'none',
+                                color: 'rgba(244,63,94,0.6)',
+                                cursor: 'pointer',
+                                padding: '2px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                              }}
+                              title="Delete Announcement"
+                            >
+                              <Trash size={14} />
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                      <p>{item.summary}</p>
+                    </div>
+                  </div>
+                </article>
+              )
+            })}
           </div>
         </section>
       </div>
+
+      {activeModal === 'stats' && <EditStatsModal onClose={() => setActiveModal(null)} />}
+      {activeModal === 'gallery' && <EditCampusGalleryModal onClose={() => setActiveModal(null)} />}
+      {activeModal === 'news_add' && <AddEditNewsModal newsItem={null} onClose={() => setActiveModal(null)} />}
+      {activeModal === 'news_edit' && <AddEditNewsModal newsItem={editingNewsItem} onClose={() => { setActiveModal(null); setEditingNewsItem(null); }} />}
     </section>
   )
 }
+

@@ -11,7 +11,14 @@ from .models import (
     Placement,
     Recruiter,
     Testimonial,
+    HomepageConfig,
 )
+
+
+class HomepageConfigSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HomepageConfig
+        fields = '__all__'
 
 
 class DepartmentSerializer(serializers.ModelSerializer):
@@ -30,6 +37,16 @@ class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
         fields = '__all__'
+
+    def to_representation(self, instance):
+        rep = super().to_representation(instance)
+        if instance.thumbnail:
+            request = self.context.get('request')
+            if request is not None:
+                rep['thumbnail_url'] = request.build_absolute_uri(instance.thumbnail.url)
+            else:
+                rep['thumbnail_url'] = instance.thumbnail.url
+        return rep
 
 
 class EventSerializer(serializers.ModelSerializer):
