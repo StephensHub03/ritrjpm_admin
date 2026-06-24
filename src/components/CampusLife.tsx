@@ -11,8 +11,8 @@ const DEFAULT_MOSAIC_IMAGES = [
   { key: 'Ladies Amenity ', url: '/clg77.png' },
   { key: 'Sports Ground ', url: '/g1.png' },
   { key: 'Wash Area', url: '/wa.png' },
-  { key: 'Convocation Center', url: '/shop1.png' },
-  { key: 'Design Studio', url: '/gym1.png' },
+  { key: 'Stationary Shop', url: '/shop1.png' },
+  { key: 'Gym', url: '/gym1.png' },
   { key: 'Hostel', url: '/h1.png' },
 ]
 
