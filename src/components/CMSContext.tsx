@@ -155,7 +155,33 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   })
   const [deptSubpages, setDeptSubpages] = useState<Record<string, any>>(() => {
     const local = localStorage.getItem('rit_local_dept_subpages')
-    return local ? JSON.parse(local) : deptSubpagesData
+    if (local) {
+      try {
+        const parsed = JSON.parse(local)
+        let changed = false
+        if (parsed?.aids?.['Read More..']) {
+          delete parsed.aids['Read More..']
+          changed = true
+        }
+        const aidsAboutContent = parsed?.aids?.['About the Department']?.content
+        if (aidsAboutContent && aidsAboutContent[0] && aidsAboutContent[0].type === 'document' && aidsAboutContent[0].href && aidsAboutContent[0].href.includes('Faculty_Recruitment')) {
+          aidsAboutContent.shift()
+          changed = true
+        }
+        if (changed) {
+          localStorage.setItem('rit_local_dept_subpages', JSON.stringify(parsed))
+        }
+        const aidsAbout = parsed?.aids?.['About the Department']?.content
+        if (aidsAbout && (aidsAbout.length > 11 || (aidsAbout[9] && aidsAbout[9].src && aidsAbout[9].src.includes('KaliappanRecentPhoto')))) {
+          localStorage.removeItem('rit_local_dept_subpages')
+          return deptSubpagesData
+        }
+        return parsed
+      } catch {
+        return deptSubpagesData
+      }
+    }
+    return deptSubpagesData
   })
   const [galleryVideos, setGalleryVideos] = useState<any[]>(() => {
     const local = localStorage.getItem('rit_local_gallery_videos')

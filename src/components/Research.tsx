@@ -37,7 +37,6 @@ export default function Research() {
         </button>
       )}
       <div className="about-details">
-        <div className="section-label">02 / Core Philosophy</div>
         <h2>Vision & Mission</h2>
         
         <div className="vision-mission-container">

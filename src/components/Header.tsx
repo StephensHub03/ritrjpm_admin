@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Menu, X, ArrowRight, BookOpen, GraduationCap, Briefcase, Trophy, Cpu, Phone, Mail, MapPin, type LucideIcon } from 'lucide-react'
+import { ChevronDown, Menu, X, ArrowRight, BookOpen, GraduationCap, Briefcase, Trophy, Cpu, Phone, Mail, MapPin, Award, type LucideIcon } from 'lucide-react'
 import { Button } from './ui/button'
 import { navItems } from '../data/constants'
 
@@ -149,9 +149,13 @@ export default function Header({ onSelectPage }: HeaderProps) {
         <div className="header-top-bar">
           <div className="top-bar-container">
             <div className="nav-contact-group">
-              <a href="tel:+914563233400"><Phone size={13} /> 04563 233400</a>
+              <a href="tel:+914563233400"><Phone size={13} /> 04563 233400 / 04563 233401</a>
               <a href="mailto:rit@ritrjpm.ac.in"><Mail size={13} /> rit@ritrjpm.ac.in</a>
               <span className="nav-location"><MapPin size={13} /> Rajapalayam, Tamil Nadu</span>
+            </div>
+            <div className="nav-counselling-code" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#fbbf24', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.03em' }}>
+              <Award size={13} style={{ color: '#fbbf24' }} />
+              <span>Counselling Code : 4678</span>
             </div>
             <div className="nav-quick-links">
               {['Students', 'Parents', 'Faculty', 'Alumni', 'ERP Portal'].map((item) => (
@@ -163,18 +167,16 @@ export default function Header({ onSelectPage }: HeaderProps) {
 
         {/* Main Navbar */}
         <nav className="navbar unified-nav" aria-label="Primary navigation">
-
-
           {/* Center: Navigation Links */}
           <div className="nav-links">
             {navItems.map((item) => {
               const menuKey = item.label === 'IIIC' ? 'IIIC' : item.label
               const items = subMenus[menuKey]
-              
+
               return (
                 <div className="nav-item-container" key={item.label}>
-                  <a 
-                    href={item.href} 
+                  <a
+                    href={item.href}
                     className={`${item.label === 'Home' ? 'active' : ''} ${activeSubmenu === item.label ? 'hover-active' : ''}`}
                     onClick={(e) => {
                       if (items) {
@@ -185,14 +187,14 @@ export default function Header({ onSelectPage }: HeaderProps) {
                   >
                     {item.label}
                     {items && (
-                      <ChevronDown 
-                        size={12} 
-                        className="chevron" 
-                        style={{ 
+                      <ChevronDown
+                        size={12}
+                        className="chevron"
+                        style={{
                           transform: activeSubmenu === item.label ? 'rotate(180deg)' : 'none',
                           transition: 'transform 0.2s ease',
                           marginLeft: '4px'
-                        }} 
+                        }}
                       />
                     )}
                   </a>
@@ -220,16 +222,16 @@ export default function Header({ onSelectPage }: HeaderProps) {
         {activeSubmenu && subMenus[activeSubmenu === 'IIIC' ? 'IIIC' : activeSubmenu] && (
           <>
             {/* Backdrop overlay */}
-            <motion.div 
+            <motion.div
               className="drawer-backdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setActiveSubmenu(null)}
             />
-            
+
             {/* Drawer panel */}
-            <motion.div 
+            <motion.div
               className="nav-drawer-panel"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
@@ -245,9 +247,9 @@ export default function Header({ onSelectPage }: HeaderProps) {
                   <span className="drawer-category-meta">EXPLORE SECTION</span>
                   <h2>{activeSubmenu}</h2>
                 </div>
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
+                <Button
+                  variant="ghost"
+                  size="icon"
                   onClick={() => setActiveSubmenu(null)}
                   className="drawer-close-btn"
                   aria-label="Close drawer"
@@ -285,8 +287,8 @@ export default function Header({ onSelectPage }: HeaderProps) {
                     {subMenus[activeSubmenu === 'IIIC' ? 'IIIC' : activeSubmenu].map((subItem, index) => {
                       const itemNumber = String(index + 1).padStart(2, '0')
                       return (
-                        <button 
-                          key={subItem.key} 
+                        <button
+                          key={subItem.key}
                           onClick={() => {
                             onSelectPage(subItem.key)
                             setActiveSubmenu(null)
@@ -310,10 +312,10 @@ export default function Header({ onSelectPage }: HeaderProps) {
       {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {menuOpen && (
-          <motion.aside 
-            className="overlay-menu" 
-            initial={{ y: '-100%' }} 
-            animate={{ y: 0 }} 
+          <motion.aside
+            className="overlay-menu"
+            initial={{ y: '-100%' }}
+            animate={{ y: 0 }}
             exit={{ y: '-100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
           >
@@ -323,7 +325,7 @@ export default function Header({ onSelectPage }: HeaderProps) {
                 <X />
               </Button>
             </div>
-            
+
             <div className="overlay-links-container">
               {navItems.map((item) => {
                 const menuKey = item.label === 'IIIC' ? 'IIIC' : item.label
@@ -334,8 +336,8 @@ export default function Header({ onSelectPage }: HeaderProps) {
                   <div key={item.label} className="mobile-nav-group">
                     {items ? (
                       <>
-                        <button 
-                          className="mobile-group-title" 
+                        <button
+                          className="mobile-group-title"
                           onClick={() => toggleMobileExpand(item.label)}
                         >
                           <span>{item.label}</span>
@@ -344,8 +346,8 @@ export default function Header({ onSelectPage }: HeaderProps) {
                         {isExpanded && (
                           <div className="mobile-sub-links">
                             {items.map((subItem) => (
-                              <button 
-                                key={subItem.key} 
+                              <button
+                                key={subItem.key}
                                 onClick={() => {
                                   onSelectPage(subItem.key)
                                   setMenuOpen(false)

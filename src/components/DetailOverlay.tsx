@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { resolveLocalScrapedImage } from '../utils/localScrapedImages'
 import TiltedCard from './TiltedCard'
 import { useCMS } from './CMSContext'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { EditFlatPageModal } from './CMSModals'
 
 // Import isolated department components
@@ -47,6 +47,18 @@ interface DetailOverlayProps {
 export default function DetailOverlay({ pageKey, onClose }: DetailOverlayProps) {
   const { flatPages, isAuthenticated } = useCMS()
   const [showEditModal, setShowEditModal] = useState(false)
+
+  useEffect(() => {
+    if (pageKey) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [pageKey])
+
   const isDept = pageKey?.startsWith('departments-')
   const deptCode = pageKey?.replace('departments-', '') || ''
 

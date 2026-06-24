@@ -133,7 +133,6 @@ export default function Events() {
     <section className="events-section reveal-section" id="events">
       <div className="events-header">
         <div>
-          <div className="section-label">03 / Latest Events</div>
           <h2>Milestones, Hackathons & Campus Highlights</h2>
         </div>
       </div>

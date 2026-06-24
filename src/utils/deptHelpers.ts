@@ -26,16 +26,16 @@ export function getDeptName(deptCode: string): string {
 
 export function getDeptAccentColor(deptCode: string): string {
   const code = deptCode.toLowerCase()
-  if (code === 'cse') return '#2dd4bf'
+  if (code === 'cse') return '#0ea5e9'
   if (code === 'ece') return '#f59e0b'
-  if (code === 'eee') return '#10b981'
+  if (code === 'eee') return '#0284c7'
   if (code === 'mech') return '#60a5fa'
   if (code === 'civil') return '#f472b6'
   if (code === 'aiml') return '#8b5cf6'
   if (code === 'aids') return '#6366f1'
   if (code === 'csbs') return '#3b82f6'
   if (code === 'it') return '#ec4899'
-  return '#2dd4bf'
+  return '#0ea5e9'
 }
 
 export function getOfficeLocation(deptCode: string, index: number): string {

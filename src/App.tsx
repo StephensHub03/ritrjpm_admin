@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard'
 import Marquee from './components/Marquee'
 import About from './components/About'
 import Research from './components/Research'
+import DepartmentsInterest from './components/DepartmentsInterest'
 import Events from './components/Events'
 import Placements from './components/Placements'
 import CampusLife from './components/CampusLife'
@@ -117,6 +118,7 @@ function AppContent() {
             <Marquee />
             <About />
             <Research />
+            <DepartmentsInterest onSelectPage={setActivePageKey} />
             <Events />
             <Placements />
             <CampusLife />

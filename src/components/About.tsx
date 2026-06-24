@@ -18,7 +18,7 @@ export default function About() {
     titleNode = (
       <>
         {parts[0]}
-        <span className="green-text">{highlightTerm}</span>
+        <span className="accent-gradient-text">{highlightTerm}</span>
         {parts[1]}
       </>
     )
@@ -111,7 +111,7 @@ export default function About() {
           <h3>MoUs</h3>
           <p>Industry Partnerships</p>
         </div>
-        <div className="about-feature-card card-green">
+        <div className="about-feature-card card-pink">
           <div className="card-icon-wrapper">
             <Trophy size={26} strokeWidth={1.5} />
           </div>
@@ -125,7 +125,7 @@ export default function About() {
           <h3>Certification</h3>
           <p>ISO & Quality Standards</p>
         </div>
-        <div className="about-feature-card card-green">
+        <div className="about-feature-card card-pink">
           <div className="card-icon-wrapper">
             <Smartphone size={26} strokeWidth={1.5} />
           </div>

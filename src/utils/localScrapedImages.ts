@@ -48,6 +48,7 @@ function getFileName(src: string) {
 
 export function resolveLocalScrapedImage(src?: string | null): string | null {
   if (!src) return null
+  if (src.startsWith('/')) return src
 
   const fileName = getFileName(src)
   if (!fileName) return null

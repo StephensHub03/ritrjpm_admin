@@ -106,12 +106,17 @@ export default function TiltedCard({
             width: imageWidth,
             height: imageHeight,
             objectFit: 'cover',
-            borderRadius: '12px',
+            objectPosition: 'center top',
+            borderRadius: '16px',
             display: 'block',
+            filter: hovered
+              ? 'contrast(1.08) saturate(1.15) brightness(1.04) drop-shadow(0 0 0 transparent)'
+              : 'contrast(1.06) saturate(1.12) brightness(1.02)',
             boxShadow: hovered
-              ? '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
-              : '0 10px 20px -10px rgba(0, 0, 0, 0.3)',
-            transition: 'box-shadow 0.3s ease',
+              ? '0 32px 64px -12px rgba(0,0,0,0.55), 0 0 0 3px rgba(36,107,254,0.25)'
+              : '0 16px 40px -8px rgba(0,0,0,0.38), 0 0 0 2px rgba(36,107,254,0.12)',
+            transition: 'box-shadow 0.35s ease, filter 0.35s ease',
+            imageRendering: 'high-quality' as React.CSSProperties['imageRendering'],
           }}
         />
 

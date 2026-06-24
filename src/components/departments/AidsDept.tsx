@@ -107,7 +107,7 @@ export const AidsDept: React.FC<DeptProps> = () => {
         return true
       })
     : filteredContentItems.filter((item) => {
-        if (item.type === 'image') return false
+        if (item.type === 'image' && !activeSubpage.toLowerCase().includes('about')) return false
         if (isNewsletterTab && item.type === 'document') return false
         return true
       })
@@ -197,10 +197,12 @@ export const AidsDept: React.FC<DeptProps> = () => {
 
       {/* Right Scrollable Content Viewport */}
       <main className="dept-main-content">
-        <header className="dept-content-header">
-          <div className="detail-eyebrow">DEPARTMENTS / {deptCode.toUpperCase()} / {activeSubpage.toUpperCase()}</div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
-            <h1>{activeSubpage}</h1>
+        <header className="dept-content-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+          <div className="detail-eyebrow" style={{ marginBottom: '8px' }}>
+            DEPARTMENT OF {deptName.toUpperCase().replace('&', 'AND')}
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', width: '100%' }}>
+            <h1 style={{ margin: 0 }}>{activeSubpage}</h1>
             {isAuthenticated && (
               <button
                 onClick={() => setShowEditModal(true)}

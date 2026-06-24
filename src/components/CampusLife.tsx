@@ -5,11 +5,15 @@ import { useCMS } from './CMSContext'
 import { Edit, Save, X } from 'lucide-react'
 
 const DEFAULT_MOSAIC_IMAGES = [
-  { key: 'Innovation lab', url: 'https://www.ritrjpm.ac.in/images/EEE_IOT_Lab.jpg' },
-  { key: 'Convocation', url: 'https://www.ritrjpm.ac.in/images/seminar-hall.jpg' },
-  { key: 'Robotics arena', url: 'https://www.ritrjpm.ac.in/images/resz_iot_robo1.png' },
-  { key: 'Design studio', url: 'https://www.ritrjpm.ac.in/images/cad_pic_1.jpg' },
-  { key: 'Central library', url: 'https://www.ritrjpm.ac.in/images/library/air-conditioned.jpg' },
+  { key: 'Campus Life', url: '/clg3.png' },
+  { key: 'Academic Blocks', url: '/clg4.png' },
+  { key: 'Yoga Center', url: '/clg8.png' },
+  { key: 'Ladies Amenity ', url: '/clg77.png' },
+  { key: 'Sports Ground ', url: '/g1.png' },
+  { key: 'Wash Area', url: '/wa.png' },
+  { key: 'Convocation Center', url: '/shop1.png' },
+  { key: 'Design Studio', url: '/gym1.png' },
+  { key: 'Hostel', url: '/h1.png' },
 ]
 
 export default function CampusLife() {
@@ -24,7 +28,6 @@ export default function CampusLife() {
 
   return (
     <section className="gallery reveal-section" id="gallery" style={{ position: 'relative' }}>
-      <div className="section-label">05 / Campus Life</div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2>Gallery, clubs, facilities, events, alumni, and student stories share one premium media system.</h2>
         {isAuthenticated && (

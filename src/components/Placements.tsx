@@ -205,7 +205,6 @@ export default function Placements() {
 
   return (
     <section className="placements reveal-section" id="placements">
-      <div className="section-label">04 / Placements</div>
       <div className="placement-copy" style={{ position: 'relative' }}>
         <h2>Outcomes presented with motion, evidence, and recruiter momentum.</h2>
         <p>Interactive analytical tools, company partnerships, student achievements, and placement metrics powered by live statistics.</p>

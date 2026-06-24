@@ -9,6 +9,7 @@ import {
   getDeptName
 } from '../../utils/deptHelpers'
 
+
 export interface ContentItem {
   type: string
   text?: string
@@ -54,11 +55,32 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
       case 'heading': {
         const validHeadingLevels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
         const HeadingTag = (validHeadingLevels.includes(item.level || '') ? item.level : 'h3') as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+        
+        // Skip redundant headers to avoid duplicate layout headers
+        const cleanText = (item.text || '').toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]/g, '').trim()
+        const cleanDeptName = getDeptName(deptCode).toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]/g, '').trim()
+        const cleanSection = sectionName.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]/g, '').trim()
+        
+        const isRedundant =
+          cleanText === cleanDeptName ||
+          cleanText === `departmentof${cleanDeptName}` ||
+          cleanText === `btech${cleanDeptName}` ||
+          cleanText === cleanSection ||
+          cleanText === 'aboutthedepartment'
+          
+        if (isRedundant && HeadingTag !== 'h6') {
+          return null
+        }
+
+        const isCentered = HeadingTag === 'h6' || (item.text || '').includes('Head') || (item.text || '').includes('HOD') || (item.text || '').includes('Professor')
         return (
           <React.Fragment key={index}>
             {/* SOURCE: scraped | DEPT: ${deptCode.toUpperCase()} | SECTION: ${sectionName} */}
             <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- SOURCE: scraped | DEPT: ${deptCode.toUpperCase()} | SECTION: ${sectionName} -->` }} />
-            <HeadingTag className="detail-content-heading">
+            <HeadingTag 
+              className="detail-content-heading"
+              style={isCentered ? { textAlign: 'center', marginTop: '12px', color: '#061846', fontSize: '15px', fontWeight: 700 } : undefined}
+            >
               {item.text}
             </HeadingTag>
           </React.Fragment>
@@ -66,13 +88,9 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
       }
       case 'paragraph':
         return (
-          <React.Fragment key={index}>
-            {/* SOURCE: scraped | DEPT: ${deptCode.toUpperCase()} | SECTION: ${sectionName} */}
-            <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- SOURCE: scraped | DEPT: ${deptCode.toUpperCase()} | SECTION: ${sectionName} -->` }} />
-            <p className="detail-content-paragraph">
-              {item.text}
-            </p>
-          </React.Fragment>
+          <p key={index} className={`detail-content-paragraph${index === 0 ? ' detail-content-paragraph--lead' : ''}`}>
+            {item.text}
+          </p>
         )
       case 'list': {
         const validListItems = item.items?.filter(isValidDepartmentText) || []
@@ -144,20 +162,50 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
         if (isValid && localSrc) {
           const type = getImageType(filename, item.alt || '')
           const caption = item.alt && item.alt !== 'Image' ? item.alt : undefined
+          
+          const isProfileImage = filename.includes('photo') || filename.includes('head') || filename.includes('kaliappan') || (item.alt || '').toLowerCase().includes('hod') || (item.alt || '').toLowerCase().includes('head') || (item.alt || '').toLowerCase().includes('principal')
+
+          if (isProfileImage) {
+            return (
+              <React.Fragment key={index}>
+                <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- IMG SOURCE: ${filename} | TYPE: profile | DEPT: ${deptCode.toUpperCase()} | VERIFIED: yes -->` }} />
+                <div className="dept-profile-image-wrapper">
+                  <figure className="detail-content-image dept-profile-figure" style={{ overflow: 'visible', background: 'transparent', border: 0, margin: 0, padding: 0 }}>
+                    <TiltedCard
+                      imageSrc={localSrc}
+                      altText={item.alt || `${getDeptName(deptCode)} HOD`}
+                      containerHeight="420px"
+                      containerWidth="440px"
+                      imageHeight="420px"
+                      imageWidth="440px"
+                      rotateAmplitude={5}
+                      scaleOnHover={1.03}
+                      showTooltip={false}
+                    />
+                  </figure>
+                  <div className="dept-profile-caption">
+                    <span className="dept-profile-badge">Department Head</span>
+                    <p className="dept-profile-label">{getDeptName(deptCode)}</p>
+                  </div>
+                </div>
+              </React.Fragment>
+            )
+          }
+
           return (
-            <React.Fragment key={index}>
+              <React.Fragment key={index}>
               {/* IMG SOURCE: ${filename} | TYPE: ${type} | DEPT: ${deptCode.toUpperCase()} | VERIFIED: yes */}
               <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- IMG SOURCE: ${filename} | TYPE: ${type} | DEPT: ${deptCode.toUpperCase()} | VERIFIED: yes -->` }} />
-              <figure className="detail-content-image" style={{ overflow: 'visible', background: 'transparent' }}>
+              <figure className="detail-content-image detail-content-image--large" style={{ overflow: 'visible', background: 'transparent' }}>
                 <TiltedCard
                   imageSrc={localSrc}
                   altText={item.alt || `${getDeptName(deptCode)} image`}
                   captionText={caption}
-                  containerHeight="auto"
+                  containerHeight="520px"
                   containerWidth="100%"
-                  imageHeight="100%"
+                  imageHeight="520px"
                   imageWidth="100%"
-                  rotateAmplitude={12}
+                  rotateAmplitude={8}
                   scaleOnHover={1.03}
                   showTooltip={Boolean(caption)}
                 />
