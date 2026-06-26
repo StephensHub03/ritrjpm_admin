@@ -15,7 +15,7 @@ export interface ContentItem {
   text?: string
   level?: string
   items?: string[]
-  rows?: string[][]
+  rows?: (string | { text: string; href: string })[][]
   src?: string
   alt?: string
   href?: string
@@ -53,6 +53,45 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
 
     switch (item.type) {
       case 'heading': {
+        // Lookahead to ensure there is valid content before the next heading or end of array
+        let hasContent = false
+        for (let i = index + 1; i < items.length; i++) {
+          const nextItem = items[i]
+          if (nextItem.type === 'heading') break // Found next heading, stop checking
+          
+          let isValid = true
+          if (nextItem.text && !isValidDepartmentText(nextItem.text)) isValid = false
+          
+          if (isValid) {
+            if (nextItem.type === 'image') {
+              if (isPdfIconImage(nextItem.src)) isValid = false
+              else if (!nextItem.src) isValid = false
+              else if (!isValidDepartmentImage(nextItem.src, deptCode, nextItem.alt, pageUrl)) isValid = false
+            } else if (nextItem.type === 'list') {
+              const validListItems = nextItem.items?.filter(isValidDepartmentText) || []
+              if (validListItems.length === 0) isValid = false
+            } else if (nextItem.type === 'table') {
+              const validRows = nextItem.rows?.filter(row => row.every(cell => isValidDepartmentText(cell))) || []
+              if (validRows.length === 0) isValid = false
+            } else if (nextItem.type === 'document') {
+               isValid = false
+            } else if (nextItem.type === 'paragraph') {
+               // Paragraph is valid if text is valid (which is already checked above)
+            } else {
+               isValid = false // Unknown type
+            }
+          }
+          
+          if (isValid) {
+            hasContent = true
+            break
+          }
+        }
+
+        if (!hasContent) {
+          return null // Skip heading without content
+        }
+
         const validHeadingLevels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
         const HeadingTag = (validHeadingLevels.includes(item.level || '') ? item.level : 'h3') as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
         
@@ -108,9 +147,7 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
         )
       }
       case 'table': {
-        const validRows = item.rows?.filter(row => {
-          return row.every(cell => isValidDepartmentText(cell))
-        }) || []
+        const validRows = item.rows || []
         if (validRows.length === 0) return null
 
         return (
@@ -122,9 +159,12 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
                 <tbody>
                   {validRows.map((row, rIdx) => (
                     <tr key={rIdx} className={rIdx === 0 ? 'table-header' : undefined}>
-                      {row.map((cell, cIdx) => (
-                        rIdx === 0 ? <th key={cIdx}>{cell}</th> : <td key={cIdx}>{cell}</td>
-                      ))}
+                      {row.map((cell, cIdx) => {
+                        if (typeof cell === 'object' && cell !== null && 'href' in cell) {
+                          return rIdx === 0 ? <th key={cIdx}><a href={cell.href} target="_blank" rel="noopener noreferrer">{cell.text}</a></th> : <td key={cIdx}><a href={cell.href} target="_blank" rel="noopener noreferrer">{cell.text}</a></td>
+                        }
+                        return rIdx === 0 ? <th key={cIdx}>{cell as React.ReactNode}</th> : <td key={cIdx}>{cell as React.ReactNode}</td>
+                      })}
                     </tr>
                   ))}
                 </tbody>
@@ -134,23 +174,7 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
         )
       }
       case 'document':
-        return (
-          <React.Fragment key={index}>
-            {/* SOURCE: scraped | DEPT: ${deptCode.toUpperCase()} | SECTION: ${sectionName} */}
-            <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- SOURCE: scraped | DEPT: ${deptCode.toUpperCase()} | SECTION: ${sectionName} -->` }} />
-            <div className="detail-document-card">
-              <FileText size={28} />
-              <div>
-                <h4>Official Attachment</h4>
-                <p>{item.text || 'Document File'}</p>
-              </div>
-              <a href={item.href} target="_blank" rel="noopener noreferrer" className="detail-document-btn">
-                <span>View Document</span>
-                <ExternalLink size={14} />
-              </a>
-            </div>
-          </React.Fragment>
-        )
+        return null
       case 'image': {
         if (isPdfIconImage(item.src)) return null
         if (!item.src) return null
@@ -192,33 +216,9 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
             )
           }
 
-          return (
-              <React.Fragment key={index}>
-              {/* IMG SOURCE: ${filename} | TYPE: ${type} | DEPT: ${deptCode.toUpperCase()} | VERIFIED: yes */}
-              <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- IMG SOURCE: ${filename} | TYPE: ${type} | DEPT: ${deptCode.toUpperCase()} | VERIFIED: yes -->` }} />
-              <figure className="detail-content-image detail-content-image--large" style={{ overflow: 'visible', background: 'transparent' }}>
-                <TiltedCard
-                  imageSrc={localSrc}
-                  altText={item.alt || `${getDeptName(deptCode)} image`}
-                  captionText={caption}
-                  containerHeight="520px"
-                  containerWidth="100%"
-                  imageHeight="520px"
-                  imageWidth="100%"
-                  rotateAmplitude={8}
-                  scaleOnHover={1.03}
-                  showTooltip={Boolean(caption)}
-                />
-              </figure>
-            </React.Fragment>
-          )
+          return null
         } else {
-          return (
-            <React.Fragment key={index}>
-              {/* UNCLASSIFIED IMAGE: ${filename} - manual review */}
-              <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- UNCLASSIFIED IMAGE: ${filename} - manual review -->` }} />
-            </React.Fragment>
-          )
+          return null
         }
       }
       default:

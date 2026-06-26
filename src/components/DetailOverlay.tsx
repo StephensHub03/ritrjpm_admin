@@ -26,7 +26,7 @@ interface ContentItem {
   text?: string
   level?: string
   items?: string[]
-  rows?: string[][]
+  rows?: (string | { text: string; href: string })[][]
   src?: string
   alt?: string
   href?: string
@@ -120,9 +120,12 @@ export default function DetailOverlay({ pageKey, onClose }: DetailOverlayProps) 
                 <tbody>
                   {item.rows?.map((row, rIdx) => (
                     <tr key={rIdx} className={rIdx === 0 ? 'table-header' : undefined}>
-                      {row.map((cell, cIdx) => (
-                        rIdx === 0 ? <th key={cIdx}>{cell}</th> : <td key={cIdx}>{cell}</td>
-                      ))}
+                      {row.map((cell, cIdx) => {
+                        if (typeof cell === 'object' && cell !== null && 'href' in cell) {
+                          return rIdx === 0 ? <th key={cIdx}><a href={cell.href} target="_blank" rel="noopener noreferrer">{cell.text}</a></th> : <td key={cIdx}><a href={cell.href} target="_blank" rel="noopener noreferrer">{cell.text}</a></td>
+                        }
+                        return rIdx === 0 ? <th key={cIdx}>{cell as React.ReactNode}</th> : <td key={cIdx}>{cell as React.ReactNode}</td>
+                      })}
                     </tr>
                   ))}
                 </tbody>
@@ -130,41 +133,9 @@ export default function DetailOverlay({ pageKey, onClose }: DetailOverlayProps) 
             </div>
           )
         case 'document':
-          return (
-            <div key={index} className="detail-document-card">
-              <FileText size={28} />
-              <div>
-                <h4>Official Attachment</h4>
-                <p>{item.text || 'Document File'}</p>
-              </div>
-              <a href={item.href} target="_blank" rel="noopener noreferrer" className="detail-document-btn">
-                <span>View Document</span>
-                <ExternalLink size={14} />
-              </a>
-            </div>
-          )
-        case 'image': {
-          if (isPdfIconImage(item.src)) return null
-          const localSrc = resolveLocalScrapedImage(item.src)
-          if (!localSrc) return null
-          const caption = item.alt && item.alt !== 'Image' ? item.alt : undefined
-          return (
-            <figure key={index} className="detail-content-image" style={{ overflow: 'visible', background: 'transparent' }}>
-              <TiltedCard
-                imageSrc={localSrc}
-                altText={item.alt || 'RIT official image'}
-                captionText={caption}
-                containerHeight="auto"
-                containerWidth="100%"
-                imageHeight="100%"
-                imageWidth="100%"
-                rotateAmplitude={12}
-                scaleOnHover={1.03}
-                showTooltip={Boolean(caption)}
-              />
-            </figure>
-          )
-        }
+          return null
+        case 'image':
+          return null
         default:
           return null
       }

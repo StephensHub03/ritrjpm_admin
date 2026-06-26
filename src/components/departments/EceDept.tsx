@@ -275,7 +275,7 @@ export const EceDept: React.FC<DeptProps> = () => {
             </div>
           )}
 
-          {!showGalleryEmptyState && galleryImages.length > 0 && !isFacultyProfilePage && (
+          {false && !showGalleryEmptyState && galleryImages.length > 0 && !isFacultyProfilePage && (
             <section className="detail-image-gallery" aria-label={`${activeSubpage} gallery`}>
               <div className="detail-image-gallery__lead">
                 <div className="detail-image-gallery__tag">Official Gallery</div>
