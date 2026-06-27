@@ -1,0 +1,906 @@
+Updated as on 21.09.2024  
+BIO DATA 
+ 
+Name : Mrs. R. Angel Hepzibah, M.E., 
+Designation : Assistant Professor – Grade II 
+Department : Artificial Intelligence and Data Science 
+Communication : 881 / 84A, Vijayadurgapuri Nagar, 
+   Near GEM Garden, KTC Nagar,  
+   Tirunelveli - 627011 
+ Email : angel@ritrjpm.ac.in 
+rangelhepzibah@gmail.com 
+Mobile : 9025464900 
+1. Educational Qualification 
+ 
+ 
+Degree 
+ 
+Branch / Specialization  
+Institute/University 
+Year of 
+Passing 
+B. E Computer Science and  Engineering CSI Institute of Technology, Thovalai 2005 
+M.E Computer Science and Engineering 
+ 
+Anna University, Trichy 2010 
+Ph. D. 
+Information and Communication 
+Engineering Anna University, Chennai Pursuing 
+ 
+2. Professional/ Industry Experience: (in chronological order) 
+ 
+S.No Designation Institution/Organization 
+Period 
+From To 
+1. Assistant Professor 
+– Grade II 
+Ramco Institute of Technology, 
+Rajapalayam. 09.08.2024 Till Date 
+2. Assistant  Professor Jayaraj Annapackiam CSI College of 
+Engineering, Nazareth 03.08.2009 08.08.2024 
+3. Lecturer Infant Jesus College of Engineering, 
+Keelavallanadu 09.01.2007 22.07.2009 
+4. Lecturer Dr. G. U. Pope College of Engineering, 
+Sawyerpuram 30.01.2006 08.01.2007 
+ 
+3. Research Area:  
+  Internet of Things, Wireless Sensor Networks, Networking. 
+ 
+ 
+ 
+Updated as on 21.09.2024  
+4. Publications 
+4.1 JOURNAL PUBLICATIONS: 
+ 
+S. No Details of Publication 
+1. 
+Dr. E. Mariappan, Mr. D. Asir, Mrs. R. Angel Hepzibah , Dr. S. Ramasamy, Prof. A. George 
+Klington, “A Review Paper on Web of Things & its Smart Applications”, Journal of Information 
+and Computational Science, Volume 12 – Issue 4 2022 (ISSN:1548 – 7741) 
+2. 
+Mrs. R. Angel Hepzibah, Dr. Roselin, Dr. E. Mariappan, Mr. D. Asir and Dr. S. Ramasamy, “A 
+Survey of Privacy in Internet of Things”, Journal of Information and Computational Science, 
+Volume 12 – Issue 4 2022 (ISSN:1548 – 7741) 
+3. 
+Dr. E. Mariappan, Mr. D. Asir, Mrs. R. Angel Hepzibah, Prof. A. George Klington and Mrs. R. 
+Kavitha, “A survey on IoT: Security Threats and Solution Architectures”, Journal of Information 
+and Computational Science, Volume 12 – Issue 4 2022 (ISSN:1548 – 7741) 
+4. 
+Mrs. R. Angel Hepzibah , Dr. S. Ramasamy, Dr. E. Mariappan, Mr. D. Asir and Prof. George 
+Klington, “Overview on Internet of Things”, Journal of Information and Computational Science, 
+Volume 12 – Issue 4 2022 (ISSN:1548 – 7741) 
+5. 
+Dr. E. Mariappan, Mr. D. Asir, Mrs. R. Angel Hepzibah , Dr. S. Ramasamy and Prof. George 
+Klington, “Data Integration on Sematic Web Technologies”, Journal of Information  and 
+Computational Science, Volume 12 – Issue 4 2022 (ISSN:1548 – 7741) 
+6. 
+Dr. E. Mariappan, Mr. D. Asir, Mrs. R. Angel Hepzibah, Prof. A. George Klington and Mrs. C. 
+Thangam, “Enhancing the Lifetime of Wireless Sensor Network using Efficient Clustering 
+Methods”, Journal of Information and Computational Science, Volume 12 – Issue 4 2022 
+(ISSN:1548 – 7741) 
+7. 
+Dr. E. Mariappan, Mr. D. Asir, Mrs. R. Angel Hepzibah, Mrs. C. Thangam and Dr. A. Lourdes 
+Mary, “Model-Driven Security Policy Enforcement Framework and its Apps Deployed in Edge 
+Servers”, Journal of Information and Computational Science, Volume 12 – Issue 4 2022 
+(ISSN:1548 – 7741) 
+8. 
+Dr. E. Mariappan, Mr. D. Asir, Mrs. R. Angel Hepzibah , Dr. S. Ramasamy and Mrs. A. 
+Kavitha, “Semantic Data Integration  on the Internet of Things”, Journal of Information and 
+Computational Science, Volume 12 – Issue 4 2022 (ISSN:1548 – 7741) 
+9. 
+Mrs. R. Angel Hepzibah and Dr. E. Mariappan, “Internet of Things (IoT) – A Survey”, Journal 
+of Emerging Technologies and Innovative Research, Volume 8 – Issue 10 October 2021 (ISSN -
+2349-5162) 
+10. 
+Dr. E. Mariappan, Mr. D. Asir, Dr. T. Jasperline, Dr. P. Elamparithi, Dr. A. Jegadeesh, Dr. M. Kaliappan, 
+Mr. M. Ramnath, Mrs. R. Angel Hepzibah , Enhanced Solar Plant Positionain Using Mot h-Flame 
+Optimization Technique, African Journal of Biomedical Research, pp: 4405 – 4412, 
+https://doi.org/10.53555/AJBR.v27i3S.2845, October 2024. Updated as on 21.09.2024  
+11. 
+Dr. Mariappan E, Dr. Anna Lakshmi A , Amala Princeton X, Vetrivel P, Dr. Ramasamy S, Angel 
+Hepzibah R, Dr. Kaliappan, Ramnath M, An Examining Cluster Behaviour Analytically Using K means, 
+EM and K* means Algorithm, Journal of Tianjin University Science and Technology, pp: 124 – 135, 
+https://doi.org/10.5281/zenodo.14038149, Vol: 57, Issue: 10:2024. 
+12. 
+Angel Hepzibah R, Anna Lakshmi A, Mariappan E, Kaliappan M, Sugel Anandh O, Amala Princeton X, 
+Ramnath M, Karpagavalli C, Dragonfly Algorithm Based Approach for Solar Power Plant Optimization 
+in IEEE 69 -Bus Network, International Journal of Science, Mathematics and Technology Learning, 
+https://doi.org/10.5281/zenodo. 14058771, Volume 32, No.2, 2024. 
+13. 
+Dr. E. Mariappan, R. Angel Hepzibah, Analyzing Public Opinion Through Twitter Sentiment Analysis 
+Technique, Gradiva Review Journal, PAGE NO: 190-193, 
+https://doi.org/10.37897.GRJ.2023.V10I10.24.5140750. 
+14. 
+Anna Lakshmi A, Ramasamy S, Mariappan E, Kaliappan M, Ramnath M, Angel Hepzibah R , 
+Maximizing Solar Energy Efficiency Through Grassh opper Algorithm-Based Site Selection(Accepted),  
+J. Electrical Systems Vol-Issue (2024): 1-12. 
+ 
+4.2 CONFERENCE PUBLICATIONS: 
+ 
+S. No National / 
+International 
+Title of the 
+paper 
+Name of the 
+Conference Month & Year 
+1. National 
+Conference 
+ 
+“Android Application 
+for preventing crime 
+against women” 
+National Conference 
+on Innovative 
+Computing Techniques 
+and Applications 
+(NCICTA – 18) 
+March 2018 
+2. National 
+Conference 
+ 
+“Low priority 
+Congestion control for 
+High-Speed 
+Networks” 
+National Conference 
+on Advanced VLSI, 
+Image Processing and 
+Communication 
+Systems 
+(NAVIES – 11) 
+April 2011 
+3. National 
+Conference 
+“Optimizing the cost 
+and increasing 
+networks using 
+EBRP” 
+CSIR Sponsored 
+National Conference 
+on Data Mining and 
+Image Processing. 
+(NCDMIP’10) 
+February 2010 
+ 
+4.3 BOOK/BOOK CHAPTER PUBLICATIONS: Nil  
+5.  FUNDED PROJECTS: Nil 
+ Updated as on 21.09.2024  
+6. SHORT TERM COURSES / SEMINARS /FDP/WORKSHOP ATTENDED: 
+6.1. LIST OF SEMINARS / WEBINAR / WORKSHOP / STTP ATTENDED: 
+ 
+S. No Title of the Seminars / 
+Workshop 
+Name of the 
+Program Name of the College Date & 
+Year 
+ 
+1. “Research issues on 
+wearable computing” 
+CSIR Sponsored 
+National Seminar 
+National Engineering 
+College, Kovilpatti 
+28.01.2011 
+-  
+29.01.2011 
+ 
+2. 
+“Research Challenges 
+and Trends in Intelligent 
+Web for Information 
+Retrieval” 
+DRDO Sponsored 
+National Seminar 
+National Engineering 
+College, Kovilpatti 
+18.03.2011 
+-  
+19.03.2011 
+ 
+3. 
+ 
+“LATEX Software” 
+ 
+One day Workshop 
+Jayaraj Annapackiam 
+CSI College of Engg. 
+Nazareth 
+ 
+23.11.2011 
+ 
+4. 
+ 
+“NS2 and MATLAB” 
+Two days National 
+Level Seminar on NS2 
+and MATLAB 
+Einstein College of 
+Engineering 
+12.10.2012 
+–  
+13.10.2012 
+ 
+ 
+5. 
+“Recent issues in 
+Generation of Virtual 
+Brain using DNA Based 
+Computing in Cellular 
+Neural Networks” 
+ 
+Two Days National 
+Seminar 
+Einstein College 
+of Engineering 
+ 
+15.02.2013 
+-  
+16.02.2013 
+ 
+6. 
+“Advanced Trends in 
+Web Mining and Web 
+Security” 
+National Level 
+Seminar 
+Jayaraj Annapackiam 
+CSI College of Engg. 
+Nazareth 
+ 
+03.10.2013 
+ 
+7. 
+ 
+“Data science research” 
+DST sponsored 3 
+days national 
+workshop 
+Einstein College 
+of Engineering 
+01.12.2016 
+– 
+03.12.2016 
+ 
+8. “Hands on with Grid and 
+Cloud Computing” 
+3 days national 
+workshop 
+ 
+Dr. SACOE 
+28.06.2018 
+–  
+30.06.2018 
+ 
+9. “Deep Learning” National Level 
+Webinar 
+Jayaraj Annapackiam 
+CSI College of 
+Engineering, Nazareth. 
+ 
+06.06.2020 
+ 
+10. 
+“Outcome Based 
+Education – CO 
+Attainment.” 
+ 
+Webinar 
+Jayaraj Annapackiam 
+CSI College of 
+Engineering 
+ 
+04.07.2020 
+ 
+11. 
+“Internet of Things – 
+Overview and Case 
+Studies” 
+ 
+National Level 
+Webinar 
+Jayaraj Annapackiam 
+CSI College of 
+Engineering 
+ 
+15.07.2020 
+ 
+12. 
+“Live training in Cloud 
+Computing and Data 
+Analytics” 
+ 
+Five Days National 
+Level Webinar 
+Jayaraj Annapackiam 
+CSI College of 
+Engineering 
+21.07.2020 
+–  
+25.07.2020 
+ 
+13. 
+“Block Chain 
+Technology and its 
+Usecases” 
+ 
+National Level Webinar Jayaraj Annapackiam 
+CSI College of 
+Engineering 
+ 
+27.07.2020 Updated as on 21.09.2024  
+ 
+14. 
+“CO Vs PO mapping 
+and Assessment in NBA 
+Accreditation process” 
+ 
+One Day online 
+Seminar. 
+Francis Xavier 
+Engineering College 
+(Autonomous) 
+ 
+09.04.2021 
+ 
+15. 
+“Digital Learning tools 
+for Innovative 
+Teaching” 
+VCET - ISTE – FC - 
+Workshop 
+Velammal College of 
+Engineering and 
+Technology, Madurai 
+ 
+17.04.2021 
+ 
+16. 
+“Cisco Networking” Cisco Networking 
+Programme – One day 
+Webinar 
+Mohamed Sathak 
+Engineering College 
+ 
+11.05.2021 
+ 
+17. 
+“Recent Topics in 
+Research & 
+Development” 
+Virtual International 
+Intensive Short Term 
+Training Programme 
+ 
+St. Mother Theresa 
+Engineering College 
+11.05.2021 
+–  
+13.05.2021 
+ 
+18. 
+“Best Practices for 
+Online Anna University 
+Examinations” 
+ 
+Webinar 
+Jayaraj Annapackiam 
+CSI College of 
+Engineering 
+ 
+15.06.2021 
+ 
+19. 
+“Block Chain 
+Technology and its 
+Applications” 
+ 
+Webinar 
+Jayaraj Annapackiam 
+CSI College of 
+Engineering 
+ 
+27.01.2022 
+20. “Innovation and 
+Entrepreneurship” Webinar St. Mother Therasa 
+Engineering College 
+24.02.2024 
+21. “Startup Legal and 
+Ethical Steps” Webinar St. Mother Therasa 
+Engineering College 
+23.03.2024 
+22. “Java File – API 
+Session” Webinar Mercy Technologies, 
+Bangalore 
+01.06.2024 
+23. 
+“Cross Platform Mobile 
+App Development (with 
+Thunkable and Flutter)” 
+5 Days Short Term 
+Training Program Amity University 
+03.07.2024  
+– 
+ 07.07.2024 
+24. “Machine to Machine 
+Communication” Webinar Study World College 
+of Engineering  
+14.10.2024 
+25. 
+“Future Trends & 
+Innovations in 
+Blockchain 
+Technology” 
+Webinar Study World College 
+of Engineering 
+16.10.2024 
+ 
+ 
+ Updated as on 21.09.2024  
+6.2.LIST OF FDP / FTP ATTENDED: 
+ 
+S. No Title of the FDP / FTP Name of the 
+Program Name of the College Date & 
+Year 
+ 
+1. 
+ 
+“Certificate in Java 
+Programming” 
+ICT Academy of 
+Tamil Nadu certified 
+faculty training 
+programme 
+ 
+PET Engineering 
+College 
+04.12.2010 
+- 
+11.12.2010 
+ 
+2. 
+ 
+“Flash Software” 
+Faculty Training 
+Programme 
+JayarajAnnapackiam 
+CSI College of Engg., 
+Nazareth 
+ 
+09.02.2012 
+ 
+3. 
+ 
+“Advanced Java 
+Programming” 
+Anna University 
+sponsored 7 days 
+Faculty Development 
+Training Programme 
+ 
+Einstein College of 
+Engineering 
+08.12.2014 
+–  
+14.12.2014 
+ 
+4. 
+ 
+“Compiler Design” Anna University 
+sponsored 7 days 
+FDTP 
+SCADCET 
+07.12.2015 
+– 
+13.12.2015 
+ 
+5. 
+ 
+“Data Warehousing & Data 
+Mining” 
+Anna University 
+sponsored 7 days 
+FDTP 
+Anna University, 
+Tirunelveli 
+25.05.2016 
+– 
+31.05.2016 
+ 
+6. 
+“Cloud Computing using 
+Open Stack” 
+3 days hands-on 
+training 
+Jayaraj Annapackiam 
+CSI College of Engg., 
+Nazareth 
+09.08.2017 
+– 
+11.08.2017 
+7. “Computer Graphics” 
+Anna University 
+sponsored 7 days 
+FDTP 
+Dr. SACOE 
+28.05.2018 
+– 
+03.06.2018 
+ 
+ 
+8. 
+“Overview of OBE & NBA 
+process under Margdarshan 
+Scheme for Share and 
+Mentor Institutions” 
+AICTE – 
+Margdarshan Scheme 
+for share & Mentor 
+Institutions FDP 
+Francis Xavier 
+Engineering College 
+(Autonomous) 
+18.11.2019 
+– 
+23.11.2019 
+9. 
+“Overview of OBE & NBA 
+process for Mentee 
+Institutions” 
+AICTE – 
+Margdarshan 
+Scheme for share 
+& Mentor 
+Institutions FDP 
+Francis Xavier 
+Engineering College 
+(Autonomous) 
+11.06.2020 
+– 
+13.06.2020 
+10. 
+“Machine Learning and 
+Deep Learning -Research 
+and Application 
+Perspectives” 
+Five Days 
+Faculty 
+Development 
+Program 
+SRM Institute of 
+Science and 
+Technology 
+ 
+26.04.2021 
+– 
+30.04.2021 
+ 
+11. 
+“Research Innovation in 
+Computer Vision” 
+Five Days 
+Faculty 
+Development 
+Program 
+Kings Engineering 
+College, Chennai 
+10.05.2021 
+– 
+14.05.2021 
+ 
+12. 
+“Outcome Based Education 
+Framework and its process” 
+Six Days 
+Faculty 
+Development 
+Francis Xavier 
+Engineering College 
+(Autonomous) 
+12.07.2021 
+– 
+17.07.2021 Updated as on 21.09.2024  
+Programme 
+ 
+13. “Cyber Forensics” 
+Six Days Online 
+Faculty Development 
+Programme 
+Anna University 
+Regional Campus, 
+Tirunelveli 
+17.01.2022 
+– 
+23.01.2022 
+ 
+14. 
+“Inculcating Universal 
+Human Values in 
+Technical Education” 
+Five days Online 
+FDP AICTE 
+11.07.2022 
+– 
+15.07.2022 
+ 
+15. 
+“Cloud App 
+Development” 
+5 days Naan 
+Mudhalvan FDP Naan Mudhalvan FDP 
+13.02.2023 
+– 
+17.02.2023 
+ 
+16. 
+“Art of Research 
+Publications and 
+Promotions” 
+3 days online FDP 
+Jayaraj Annapackiam 
+CSI College of Engg., 
+Nazareth 
+03.03.2023 
+– 
+05.03.2023 
+ 
+17. “Embedded Systems 
+& IoT” 
+ 
+5 days Online FDP 
+Jayaraj Annapackiam 
+CSI College of Engg., 
+Nazareth 
+10.07.2023 
+– 
+14.07.2023 
+ 
+18. “Full Stack Web 
+Development” 
+ 
+5 days Online FDP 
+Jayaraj Annapackiam 
+CSI College of Engg., 
+Nazareth 
+24.07.2023 
+– 
+27.07.2023, 
+29.07.2023 
+ 
+19. “Cloud Infrastructure 
+AWS” 
+One Week National 
+Level FDP 
+Brainovision Solutions 
+& AICTE, FXEC 
+21.08.2023 
+– 
+25.08.2023 
+ 
+20. 
+“Emerging 
+Desalination 
+Technologies: 
+Challenges and 
+Future Trends” 
+ 
+ATAL Academy FDP 
+ 
+St. Mother Theresa 
+Engineering College 
+06.11.2023 
+– 
+11.11.2023 
+21. 
+“Emerging Research 
+Trends in 
+Engineering and 
+Technology” 
+National Level Six 
+Days FDP 
+Kings Engineering 
+College, Chennai 
+04.01.2024 
+– 
+11.01.2024 
+22. 
+“Latest Trends and 
+Techniques in 
+Software 
+Engineering: An 
+Industry 
+Perspective” 
+7 Days Online 
+International FDP 
+Christ University, 
+Bangalore 
+20.01.2024 
+– 
+27.01.2024 
+23. “Cyber Security with 
+Kali Linux” 
+Naan Mudhalvan 3 
+days FDP 
+KLN College of 
+Engineering 
+01.02.2024 
+– 
+03.02.2024 
+24. 
+“Deep Learning and 
+IOT Technologies 
+in Precision 
+Healthcare” 
+2 Days FDP Kongu Engineering 
+College 
+16.08.2024  
+& 
+ 17.08.2024 Updated as on 21.09.2024  
+25. “Artificial Intelligence 
+& Data Analytics” 
+Five Days Online 
+Faculty Development 
+Programme 
+Madanapalle Institute of 
+Technology & Science  
+16.09.2024  
+– 20.09.2024 
+26. 
+“Data Science and 
+Machine Learning 
+Applications for 
+Engineering and 
+Sciences” 
+One Week Online 
+Faculty Development 
+Programme 
+Shri Vishnu Engineering 
+College for Women 
+21.10.2024  
+- 
+27.10.2024 
+7. LIST OF EVENTS ORGANISED 
+ 
+Sl. 
+No. Name of the Program Date Resource Person(s) Organized by 
+1. 
+Workshop on “AI Case Study and 
+Implementation” 
+ 
+Acted as: Coordinator 
+18.10.2024 
+Mr. R. Saravana Kumar,  
+Managing Director & CEO, 
+Iconix Software Solution, 
+Tirunelveli 
+Ramco Institute 
+of Technology 
+2. 
+Five Days National Level Webinar 
+on “Live training in Cloud 
+Computing and Data 
+Analytics” 
+Acted as: Webinar Coordinator 
+21.07.2020 
+– 
+25.07.2020 
+Mr. B. L. Radhakrishnan, 
+AP / CSE 
+Dr. Belin, AP / CSE 
+(Karunya Ins.) 
+Jayaraj 
+Annapackiam 
+CSI College of 
+Engineering, 
+Nazareth. 
+ 
+3. Webinar on “Block Chain 
+Technology and its Application” 
+Acted as: Webinar Coordinator 
+27.01.2022 Dr. E. Golden Julie, 
+AP / CSE (AURC, Tvl) 
+Jayaraj 
+Annapackiam 
+CSI College of 
+Engineering, 
+Nazareth. 
+4. 
+5 days Online workshop on 
+“IT3501 – Full Stack Web 
+Development & IT3511 – Full 
+Stack Web Development Lab” 
+ 
+Acted as: Coordinator 
+ 
+ 
+24.07.2023 
+– 
+27.07.2023, 
+29.07.2023 
+Dr. Kesavaraja, ASP / CSE, 
+Dr. SACOE. 
+Dr. D. Jeyabharathi, AP / 
+CSE, Sri Krishna CET 
+Mrs. Sravanthi Vudutha, AP 
+/ CSE, Malla Reddy Univ 
+Dr. J. Jesu Vedha Nayahi, 
+Sr. AP / CSE, AURC 
+Jayaraj 
+Annapackiam 
+CSI College of 
+Engineering, 
+Nazareth. 
+8. EXPERT LECTURERS DELIVERED: 
+ 
+Sl. 
+No. Name of the Program Date Organization 
+ 
+1. One Day workshop on “Hands on Training in 
+VB” 
+ 
+02.02.2013 
+Jayaraj Annapackiam CSI 
+College of Engineering, 
+Nazareth 
+9. PATENT FILED: 
+Sl. 
+No. Application No. 
+/ Type  
+Title Inventors Date of filing  
+application 
+Published 
+on 
+1. 202441078478 
+Blockchain 
+Based 
+Secure 
+Communicat
+ion Protocol 
+for IOT 
+Device 
+Dr. N. Nisha Rosebel, 
+Mrs. B. Jafny Benshia, 
+Mrs. R. Angel Hepzibah, 
+Mrs. G. Princely Linda Mary, 
+Mr. I. Solomon, 
+Mrs. K. M. Annammal, 
+Mrs. A. Jenifus Selvarani & 
+Mr. J. Viniston Suthahar 
+16.10.2024 25.10.2024 Updated as on 21.09.2024  
+ 
+ 
+10. Online Courses: 
+ 
+Sl. 
+No. Title Offered By Duration Date 
+1. Cyber Security 
+Infosys 
+Springboard 10 days 30.08.2024 
+2. Introduction to Cyber 
+Security 
+Infosys 
+Springboard 1 day 29.08.2024 
+3. Introduction to Cyber 
+Security 
+Mind 
+Luster 3 days 
+27.08.2024 
+ – 
+29.08.2024 
+4. Introduction to Internet of 
+Things 
+NPTEL 12 Week Course July – October 2023 
+5. Cloud Computing NPTEL 8 Week Course Feb – April 2021 
+ 
+ 
+11. Certification Courses: 
+ 
+Sl. 
+No. Title Offered By Duration Date 
+1. “Java Full Stack” 
+Wipro 
+TalentNext 
+09.09.2024  
+– 
+27.09.2024 
+16.10.2024 
+ 

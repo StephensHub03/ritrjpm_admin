@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import TiltedCard from '../TiltedCard'
-import { BookOpen, ExternalLink, User, FileText, Edit } from 'lucide-react'
+import {
+  BookOpen,
+  ExternalLink,
+  User,
+  FileText,
+  Edit } from 'lucide-react'
 import { useCMS } from '../CMSContext'
 import { EditDeptSubpageModal } from '../CMSModals'
 import { resolveLocalScrapedImage } from '../../utils/localScrapedImages'
@@ -17,7 +22,8 @@ import {
   AboutSection,
   VisionMissionSection,
   FacilitiesSection,
-  DefaultSection
+  DefaultSection,
+  FacultySection
 } from './DeptSubSections'
 import type { ContentItem } from './DeptSubSections'
 
@@ -311,76 +317,14 @@ export const CivilDept: React.FC<DeptProps> = () => {
           )}
 
           {isFacultyProfilePage && facultyMembers.length > 0 && (
-            <div className="faculty-section">
-              <h2 className="faculty-section-title" style={{ borderColor: accentColor }}>
-                Department of {deptName}
-              </h2>
-              <div className="faculty-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
-                {facultyMembers.map((fac, idx) => {
-                  const localSrc = resolveLocalScrapedImage(fac.image)
-                  const emailPrefix = fac.email.split('@')[0]
-                  const ext = 100 + idx
-                  const office = getOfficeLocation(deptCode, idx)
-
-                  return (
-                    <article className="faculty-card" key={idx} style={{ padding: '24px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', background: '#FFFDF2', border: '1px solid rgba(6, 24, 70, 0.08)', borderRadius: '12px' }}>
-                      {!localSrc && (
-                        <span style={{ display: 'none' }}>
-                          {`<!-- IMAGE MISSING: ${fac.name} | ${deptName} | Manual upload required -->`}
-                        </span>
-                      )}
-                      
-                      <div className="faculty-avatar-wrapper" style={{ width: '120px', height: '120px', borderRadius: '50%', overflow: 'hidden', marginBottom: '16px', aspectRatio: '1/1', border: '2px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, background: '#f1f5f9' }}>
-                        {localSrc ? (
-                          <>
-                            {/* SCRAPED IMAGE MATCHED: {localSrc.split('/').pop()} | Faculty: {fac.name} */}
-                            <img src={localSrc} alt={fac.name} className="faculty-avatar" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} loading="lazy" />
-                          </>
-                        ) : (
-                          <div className="faculty-avatar-placeholder"><User size={48} /></div>
-                        )}
-                      </div>
-                      
-                      <div className="faculty-info" style={{ width: '100%', padding: '0', display: 'flex', flexDirection: 'column', gap: '4px', flex: '1' }}>
-                        <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#0f172a', margin: '0' }}>{fac.name}</h3>
-                        <p className="faculty-designation" style={{ fontSize: '13px', color: '#64748b', margin: '0', fontWeight: '500' }}>{fac.designation}</p>
-                        <p className="faculty-qual" style={{ fontSize: '12px', color: '#94a3b8', margin: '0', fontStyle: 'italic' }}>{fac.qualification}</p>
-                        
-                        <hr style={{ width: '100%', border: '0', borderTop: '1px solid #e2e8f0', margin: '12px 0' }} />
-                        
-                        <div style={{ fontSize: '12px', color: '#475569', display: 'flex', flexDirection: 'column', gap: '4px', textAlign: 'left', width: '100%', fontFamily: 'system-ui' }}>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                            <span>📞</span>
-                            <span>Phone: {ext}</span>
-                          </div>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                            <span>@</span>
-                            <span>Name: {emailPrefix}</span>
-                          </div>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '4px' }}>
-                            <span>📍</span>
-                            <span>{office}</span>
-                          </div>
-                        </div>
-                        
-                        <hr style={{ width: '100%', border: '0', borderTop: '1px solid #e2e8f0', margin: '12px 0' }} />
-                        
-                        <a 
-                          href={subpageData?.url} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          style={{ color: accentColor, fontWeight: '700', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '4px', fontSize: '13px', marginTop: 'auto' }}
-                        >
-                          Visit Webpage →
-                        </a>
-                      </div>
-                    </article>
-                  )
-                })}
-              </div>
-            </div>
+            <FacultySection
+              facultyMembers={facultyMembers}
+              deptName={deptName}
+              deptCode={deptCode}
+              accentColor={accentColor}
+              subpageUrl={subpageData?.url}
+            />
           )}
-
           {renderSubSection()}
 
           {filteredContentItems.length === 0 && facultyMembers.length === 0 && (

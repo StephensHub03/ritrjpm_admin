@@ -1,0 +1,803 @@
+Updated as on 12.12.2022 
+BIO DATA 
+ 
+                           Name    : Mrs.C.Karpagavalli., M.E.,(Ph.D) 
+Designation   : Assistant Professor 
+Department   : Artificial Intelligence and Data Science 
+                          Communication  : F1,Sundari Apartment, First Street,           
+                                                                    Perumalpuram, Palayamkottai. 
+       Tirunelveli. 
+                          Email    : ckvalli08@gmail.com 
+  karpagavalli@ritrjpm.ac.in 
+Mobile    : 9047918934 
+Google Scholar: https://tinyurl.com/3vxmrvf7 
+ 
+Research Gate: https://www.researchgate.net/profile/Karpagavalli-Ck 
+ 
+ORCID ID: 0000-0001-8073-4941 
+ 
+1. Educational Qualification:     
+ 
+Degree Branch / Specialization  
+Institute/University 
+ 
+Year of 
+Passing 
+B.E. 
+Computer Science and 
+Engineering 
+ 
+SCAD College of Engineering and 
+Technology/Anna University, Chennai 
+May 2005 
+ 
+M.E. Computer Science and 
+Engineering 
+PSR Engineering College/Anna 
+University, Chennai 
+June 2013 
+ 
+Ph.D. Information and Communication 
+Engineering 
+Thiagarajar College of Engineering/ 
+Anna University, Chennai 
+ 
+Pursuing 
+ 
+2. Professional/ Industry Experience   : (in chronological order) 
+S.No Designation Institution/Organization 
+Period 
+From To 
+1 Assistant 
+professor 
+Ramco Institute of Technology, 
+Rajapalayam. 08.12.2022 Till Date 
+2 Assistant 
+Professor 
+Amrita College of Engineering and 
+Technology, Nagercoil. 
+ 
+24.02.2021 
+ 
+07.12.2022 
+3 Assistant 
+Professor 
+SCAD College of Engineering and 
+Technology, Cheranmahadevi. 26.06.2013 20.02.2021 
+ 
+Updated as on 12.12.2022 
+3. Research Area: Internet of Things, Artificial Intelligence, Machine Learning. 
+ 
+4   Publications :      
+       
+4.1 JOURNAL PUBLICATIONS : 
+ 
+1.  C.Karpagavalli, R.Suganya, P.J.Beslin Pajila, “ Authentication Using 
+Blockchain Novel  Enhanced Authentication Algorithm “, International 
+Journal of Advanced Science and  Technology, Volume . 29, No. 7, (2020), pp. 
+11930 – 11940. 
+2.  P.J.Beslin Pajila, C.Karpagavalli, G.Vijayarani, Mangaiyarkarasi.T, 
+Madhubalashanmu.R,” Effective way to Analyze and Rupture the 
+Assessment using ESB Algorithm”, International Journal of Recent 
+Technology and Engineering , Volume-8 Issue-6, March 2020, (Scopus). 
+3.  P.J.Beslin Pajila, P.Jenifer ,C.Karpagavalli ,”Software Defined Networking 
+Based Protection against DDOS  in IOT” , International Journal of Innovative 
+Technology and  Exploring Engineering,  Volume-9 Issue-5, March 2020 . 
+(Scopus). 
+4.  C.Karpagavalli , S. Sakthi selvi , V. Latha, M.Kalaiarasi , J.Epsiba, “Enabling 
+Identity- Based Integrity Auditing and Data Sharing with Sensitive 
+Information Hiding for  Secure Cloud Storage”, Journal of Emerging 
+Technologies and Innovative Research,  April 2020, Volume 7, Issue 4, ISSN: 
+2349-5162 , UGC approved ( 5.87 Impact factor). 
+5.  C.Karpagavalli , M. Karthika , J. Mercy , A. Kavinaya, K. Athirsta Devi , “System 
+modelling and performance Cloud Security Based Trust Assessment” , 
+Journal of Emerging Technologies and Innovative Research, April 2020, Volume 
+7, Issue 4, ISSN: 2349 -5162 , UGC approved (Journal  no: 63975 , 5.87 Impact 
+factor). 
+6.  M.Christina Ranjitham, C.Karpagavalli, D.Asir ”Novel Technique to Protect 
+the Stealing of Authorization Code Using Hybrid Approach ”,IJRESM, 
+Volume-2, lssue-12, December-2019.( Impact Factor: 4.308)ISSN: 2581-5792. 
+7.  C.Karpagavalli, J.Esther Rani,J.Santhiya,G.Sajitha “Efficient Bio Signals 
+Monitoring System using  Wireless Sensors” IJESC, Volume 9,Issue No.3, 
+ISSN 2321-3361, 2019. 
+ 
+ 
+ 
+ Updated as on 12.12.2022 
+4.2 CONFERENCE PUBLICATIONS 
+ 
+4.2.1 INTERNATIONAL CONFERENCE: 
+ 
+Sl.N
+o. 
+National / 
+International 
+Title of the 
+Paper 
+Name of the 
+Conference Venue  
+Page no. 
+& 
+Volume 
+Year 
+of 
+Public
+ation 
+01. International 
+Conference 
+DDoS attack 
+detection and 
+mitigation in 
+IoT 
+environment 
+via software 
+defined 
+network – A 
+survey 
+CSIR funded 
+hybrid 
+conference on 
+Sustainable 
+Materials & 
+Advances in 
+Renewable 
+Technologies 
+(SMART’22) 
+St.Mother 
+Theresa 
+Engineering 
+College, 
+Tuticorin 
+- 2022 
+02. International 
+Conference 
+Efficient Bio 
+Signals and 
+Health 
+Monitoring 
+System Using 
+Wireless Sensor 
+International 
+conference 
+“ICCT’19 
+Jayaraj 
+Annapackiam 
+CSI College of 
+Engineering, 
+Nazareth 
+- 2019 
+03. International 
+Conference 
+An Automatic 
+Restoration 
+Framework for 
+Image 
+Enhancement 
+ICCTRD’13 
+SCAD College of 
+Engineering and 
+Technology, 
+Cheranmahadevi 
+- 2013 
+ 
+4.2.2 NATIONAL CONFERENCE: 
+ 
+Sl.No 
+National / 
+Internation
+al 
+Title of the 
+Paper 
+Name of the 
+Conference Venue  Page no. 
+& Volume 
+Year of 
+Publicatio
+n 
+01. National 
+Conference 
+Defect Detection 
+and Removal of 
+Artifacts in 
+Photographs 
+NACIPAN ’13 
+National 
+Engineering 
+College, 
+Kovilpatti 
+- 2013 
+02. National 
+Conference 
+An automatic 
+framework for 
+image restoration 
+and enhancement 
+Emerging 
+Trends in 
+Computing 
+PSR Engineering 
+College, Sivakasi - 2012 
+ 
+ 
+4.3 Book/Book chapter publications 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Updated as on 12.12.2022 
+5. Short term Courses / Seminars /FDP/Workshop/ConferenceAttended: 
+ 5.1. List of Faculty Development programs attended: 
+ 
+Sl.No FDP Title  Organized 
+by Date Year   
+01. 
+NPTEL- Faculty 
+Development 
+Programme 
+Cloud Computing NPTEL – IIT 
+Madras Jul-Oct 2022 2022 
+02. 
+- Faculty 
+Development 
+Programme 
+Designing and Modelling of 
+IoT,AI& ML Systems 
+AICTE and 
+ATAL 
+Academy 
+01-08-2022 to 
+05-08-2022 
+2022 
+03. 
+Faculty 
+Development 
+Programme 
+Artificial Intelligence and its 
+Multi-disciplinary stances 
+Gandhigram 
+Rural 
+Institute 
+(Deemed to 
+be 
+University) 
+5.9.2022 
+to 
+9.9.2022 
+2022 
+04. 
+Faculty 
+Development 
+Programme 
+Deep Learning Techniques on 
+Medical Image Classification  
+M.Kumarasa
+my College of 
+Engineering, 
+Karur 
+11-11-22 2022 
+05. 
+Faculty 
+Development 
+Programme 
+Computational Intelligence 
+University 
+College of 
+Engineering, 
+Konam, 
+Nagercoil. 
+11.02.2022 to 
+17.02.2022. 2022 
+06. 
+Faculty 
+Development 
+Programme 
+Data Science 
+Pravin Patil 
+College of 
+Engineering 
+and 
+Technology 
+07.02.2022 to 
+11.02.2022. 2022 
+07. 
+Faculty 
+Development 
+Programme 
+Artificial Intelligence 
+Microsoft 
+India & SAP 
+India 
+18.01.2022 to 
+20.01.2022 2022 
+08. 
+ATAL Academy 
+- Faculty 
+Development 
+Programme 
+Data Science using Python University of 
+Hyderabad 
+15.11.2021 to 
+19.11.2021 2021 
+09. 
+ICT Academy- 
+Faculty 
+Development 
+Programme 
+Android Development with Kotlin Online 26.07.2021 to 
+30.07.2021. 2021 
+10. Short Term 
+Course Data Science using R NITTTR, 
+Chandigarh 
+11.05.2020 to 
+15.05.2020 2020 Updated as on 12.12.2022 
+11. Short Term 
+Course Data Analytics using Python NITTTR, 
+Chandigarh 
+18.05.2020 to 
+22.05 2020 2020 
+12. Short Term 
+Course 
+Foundations of Blockchain 
+Technology 
+NITTTR, 
+Chandigarh 
+27.07.2020 to 
+31.07.2020 2020 
+13. 
+ATAL Academy 
+Faculty 
+Development 
+Programme 
+Block Chain 
+University 
+Institute of 
+Engineering 
+and 
+Technology, 
+Kurukshetra 
+University, 
+Kurukshetra. 
+15.06.2020 to 
+19.06.2020 2020 
+14. 
+ATAL Academy 
+Faculty 
+Development 
+Programme 
+Internet of Things(IoT) 
+National 
+Institute of 
+Technology, 
+Warangal. 
+22.06.2020 to 
+26.06.2020 2020 
+15. 
+AICTE 
+Sponsored one 
+week Short 
+Term Training 
+Programme 
+Cyber Physical manufacturing 
+Systems for Future Industries 
+IFET College 
+of 
+Engineering, 
+Villupuram. 
+20.07.2020 to 
+25.07.2020. 2020 
+16. 
+AICTE 
+Sponsored One 
+Week Short 
+Term Training 
+Programme 
+Recent Advancements in Internet 
+of Things for Healthcare 
+Applications 
+Mount Zion 
+College of 
+Engineering 
+and 
+Technology. 
+13.07.2020 to 
+18.07.2020. 2020 
+17. 
+AICTE 
+Margdarshan 
+Faculty 
+Development 
+Programme 
+Blockchain Security and Smart 
+Contracts 
+Velagapudi 
+Ramakrishna 
+Siddhartha 
+Engineering 
+College. 
+15.06.2020 to 
+20.06.2020 2020 
+18. 
+Faculty 
+Development 
+Programme 
+Digital Platform 
+Francis 
+Xavier 
+Engineering 
+College, 
+Tirunelveli 
+11.07.2020 to 
+13.07.2020 2020 
+19. 
+Faculty 
+Development 
+Programme 
+Augmented Reality and Virtual 
+Reality 
+SAI RAM 
+Engineering 
+College, 
+Chennai 
+27.05.2020 to 
+29.05.2020. 2020 
+20. 
+AICTE 
+Margdarshan 
+Scheme Faculty 
+Development 
+Programme 
+OBE Framework and Process for 
+Mentee Institutions 
+Francis 
+Xavier 
+Engineering 
+College, 
+Tirunelveli. 
+11.06.2020 to 
+13.06.2020 2020 Updated as on 12.12.2022 
+21. 
+Faculty 
+Development 
+Programme 
+Python Programming 
+Velammal 
+Engineering 
+College, 
+Chennai 
+30.05.2020 to 
+03.06.2020 2020 
+22. 
+Faculty 
+Development 
+Programme 
+Web Application Security 
+Jeppiaar 
+Institute of 
+Technology, 
+Chennai 
+27.05.2020 to 
+28.05.2020 2020 
+23. 
+Faculty 
+Development 
+Programme 
+Theory of Computation 
+Velammal 
+Engineering 
+College, 
+Chennai 
+18.05.2020 to 
+22.05.2020. 2020 
+24. 
+Faculty 
+Development 
+Programme 
+Moodle Test for Teachers 
+Sri Krishna 
+College of 
+Engineering 
+& 
+Technology , 
+Coimbatore 
+05.05.2020. 2020 
+25. 
+Faculty 
+Development 
+Programme 
+Tips for Clearing Patent Agent 
+Exam 
+Velammal 
+Engineering 
+College, 
+Chennai 
+06.05.2020 to 
+07.05.2020. 2020 
+26. 
+Faculty 
+Development 
+Programme 
+Effective Project Proposal Writing 
+Velammal 
+Engineering 
+College, 
+Chennai 
+08.05.2020 to 
+09.05.2020. 2020 
+27. 
+AICTE 
+Margdarshan 
+Scheme Faculty 
+Development 
+Programme 
+Overview of OBE and NBA 
+Process 
+Francis 
+Xavier 
+Engineering 
+College, 
+Tirunelveli 
+18.11.1019 to 
+23.11.2019. 2019 
+28. 
+Faculty 
+Development 
+Programme 
+Outcome Based Education and 
+Examination Reforms 
+Francis 
+Xavier 
+Engineering 
+College, 
+Tirunelveli. 
+17.06.2019. 2019 
+29. 
+ICT Academy- 
+Faculty 
+Development 
+Programme 
+EMC Academic Associate, Data 
+Science and Big Data Analytics 
+Francis 
+Xavier 
+Engineering 
+College, 
+Tirunelveli. 
+06.06.2016 to 
+11.06.2016. 2016 
+30. 
+ICT Academy- 
+Faculty 
+Development 
+Programme 
+EMC Academic Associate, Cloud 
+Infrastructure and Services 
+Francis 
+Xavier 
+Engineering 
+College, 
+Tirunelveli. 
+08.12.2014 to 
+12.12.2014. 2014 
+ 
+ 
+ 
+ Updated as on 12.12.2022 
+5.2. List of State/ National /International Level Workshop attended:  
+ 
+ 
+Sl.No 
+State/National 
+/ 
+International 
+Title Venue Date Year 
+01. 
+AICTE, Arm 
+Education -
+National Level 
+Workshop 
+Designing and 
+Modelling of 
+IoT, AI & ML 
+Systems 
+Online 01.08.2022 to 
+05.08.2022 2022 
+02. National Level 
+Workshop 
+Block chain 
+Technology 
+and its Use 
+cases 
+National 
+Engineering 
+College, 
+Kovilpatti 
+08.02.2020 2020 
+03. National Level 
+Workshop 
+Scientific 
+Writing for 
+Journals 
+SCAD College of 
+Engineering and 
+Technology, 
+Cheranmahadevi. 
+15.05.2020 2020 
+04. State Level 
+Workshop 
+E–Content 
+Development 
+Sri S.Rangasamy 
+Naidu Memorial 
+College, sattur 
+14.07.2019 2019 
+05. State Level 
+Workshop 
+Android App 
+Development 
+SCAD College of 
+Engineering and 
+Technology, 
+Cheranmahadevi. 
+24.07.2018 2018 
+ 
+5.3 . Seminar/Webinar/Workshop Oraganized: 
+ 
+Sl.No. Title of the Event Venue Resource Person Date 
+01. 
+Cyber Security skill 
+development training 
+(Cyber Security systems 
+and networks in 
+association with Traboda 
+Cyberlabs) 
+Amrita College of 
+Engineering and 
+Technology, 
+Nagercoil. 
+Dr.Vipin Pavithran, 
+Professor, 
+Department of Cyber 
+Security, 
+Amrita Vishwa 
+Vidyapeetham 
+University, Kollam. 
+ 
+17.11.2022     
+          to 
+21.11.2022 
+02. Current trends in Data 
+Science 
+Amrita College of 
+Engineering and 
+Technology, 
+Nagercoil. 
+Dr.J.Jesu Vedha 
+Nayahi, Assistant 
+Professor(Sr.Gr), 
+Anna University 
+Regional Campus, 
+Tirunelveli. 
+ 
+30.05.2022 
+03. Research Issues in 
+Medical Image Processing 
+SCAD College of 
+Engineering and 
+Technology, 
+Cheranmahadevi. 
+Dr.R.Suganya, 
+Associate Professor, 
+Department of 
+Information 
+Technology, 
+Thiagarajar College 
+of Engineering, 
+Madurai. 
+ 
+25.06.2020 Updated as on 12.12.2022 
+04. Deep Learning and Data 
+Visualization 
+SCAD College of 
+Engineering and 
+Technology, 
+Cheranmahadevi. 
+Dr.T.Senthil Kumar, 
+Associate Professor, 
+Department of 
+Computer Science 
+and Engineering , 
+Amrita School of 
+Engineering, Amrita 
+Vishwa 
+Vidyapeetham 
+University, 
+Coimbatore. 
+26.06.2020 
+05. Security Issues in 
+Internet of Things 
+SCAD College of 
+Engineering and 
+Technology, 
+Cheranmahadevi. 
+Dr.S.Sujatha, 
+Professor, 
+Department of 
+Master of Computer 
+Applications, Anna 
+University, BIT 
+Campus, Trichy. 
+06.07.2020 
+ 
+6. Online Courses: 
+ 
+Sl.No Title University 
+offered by Duration Period 
+01. Software Testing NPTEL- IIT 
+Madras 4 Weeks Jan-Feb 2022 
+02. Cloud Computing NPTEL- IIT 
+Madras 12 Weeks Jul-Oct 2022 
+03. HCIA-AI Course HUAWEI 
+TALENT 4 Weeks 19.12.2021 
+04. 
+Git & GitHub Complete 
+Masterclass : Beginner 
+to Git Expert 
+Udemy 12.5.Hours 30.04.2020 
+05. 
+Learning to use the 
+Arduino IoT Cloud to 
+build IoT Project 
+Udemy 4.5 Hours 21.04.2020 
+ 
+7.Patent Filed: 
+ 
+Sl.No Application 
+No/Type Title Inventors 
+Date of 
+Filing 
+application 
+Published 
+on 
+01. 202041012885 
+Indian 
+IoT based 
+water    
+quality 
+monitoring 
+for Textile 
+Industry 
+Dr.V.Priya , 
+Dr.S.Sudhakar, 
+Dr.S.Sharavanan, 
+Dr.A.Vishnu Priya, 
+Mrs.C.Karpagavalli, 
+Dr. M.B.Suresh, Ms. 
+K.Vidhya, Dr. Pankaj 
+Dadheech,                  Mr. 
+Gourav Purohit 
+24/03/2020 08/05/2020 
+ 
+ Updated as on 12.12.2022 
+8. Membership in Professional Societies : 
+ 1. Computer Society of India(CSI) Member. 
+9. Awards and Achievements : 
+1. Secured Anna University 34th Rank in M.E., Computer Science 
+and Engineering for the Academic year 2012-2013. 
+2. “Best Outgoing Student – Certificate of Merit” of the  Department of 
+Computer Science and Engineering for M.E (CSE) at PSR 
+Engineering College, Sivakasi, 2011- 2013 Batch. 
+3. Secured 100% results in the subjects taught – Computer 
+Programming (UG) & Grid and Cloud Computing (UG). 
+4. Secured First Rank in 10th standard at school level. 
+5. Award of credit and honor for the Outstanding Performance in 
+SCAD Development Activities for the year 2015. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

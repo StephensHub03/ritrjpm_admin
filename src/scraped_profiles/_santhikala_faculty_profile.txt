@@ -1,0 +1,359 @@
+Updated as on 05.07.2024 
+BIO DATA 
+ 
+Name    : Mrs. M. Santhikala, M.E., 
+Designation   : Assistant Professor 
+Department   : Artificial Intelligence and Data Science 
+Communication  : 311, South vaithyanathapuram street, 
+              Rajapalayam - 626117 
+Email    : santhisss1983@gmail.com 
+  santhikala@ritrjpm.ac.in 
+Mobile    : 9042223616 
+Vidwan ID: https://vidwan.inflibnet.ac.in/profile/545058 
+ 
+1. Educational Qualification     
+ 
+Degree Branch / Specialization  
+Institute/University 
+ 
+Year of 
+Passing 
+B.E 
+Computer Science and 
+Engineering 
+ 
+Anand Institute of Higher Technology, 
+Chennai / Anna University. 
+ 
+Apr 2009 
+ 
+M.E 
+Computer Science and 
+Engineering 
+ 
+Thiruvalluvar College of Engineering and 
+Technology, Vandavasi/ Anna University. 
+ 
+Nov 2011 
+ 
+ 
+2. Professional/ Industry Experience   : (in chronological order) 
+S.No Designation Institution/Organization 
+Period 
+From To 
+1 Assistant 
+professor 
+Ramco Institute of Technology , 
+Rajapalayam. 
+05.07.2024 Till Date 
+2 Assistant 
+Professor 
+ 
+Theni Kammavar Sangam  College of 
+Technology, Theni 
+28.11.2022 
+ 
+01.07.2024 
+2 Assistant 
+Professor 
+ 
+Anand Institute of Higher Technology, 
+Chennai 
+19.01.2012 29.05.2015 
+ 
+3. Research Area: Machine Learning, Big data Analytics 
+4   Publications      
+       
+4.1JOURNAL PUBLICATIONS : Nil  
+4.2 CONFERENCE PUBLICATIONS 
+ 
+ 
+ 
+ 
+Updated as on 05.07.2024 
+4.2.1 INTERNATIONAL CONFERENCE: 
+ 
+Sl.N
+o 
+National / 
+International 
+Title of the 
+Paper 
+Name of the 
+Conference 
+Venue  Page no. & 
+Volume 
+Year of 
+Publica
+tion 
+01. International 
+Conference 
+A study on a 
+complete Game 
+Testing with its 
+approaches, 
+Scenarios and 
+methods. 
+ICSIE’16 Jawahar 
+Engineering 
+College, Chennai 
+May 2016 
+Issue Volume 
+1 
+2016 
+ 
+ 
+4.2.1 NATIONAL CONFERENCE: 
+ 
+Sl.No National / 
+Internationa
+l 
+Title of the Paper Name of the 
+Conference 
+Venue  Page no. & 
+Volume 
+Year of 
+Publicat
+ion 
+01. National 
+Conference 
+Privacy Preserving 
+using tuple and 
+threshold 
+matching in 
+distributed 
+systems 
+NCCI 2011 SMK Fomra 
+Institute of 
+Technology 
+Nil 2011 
+02 National 
+Conference 
+Providing 
+authentication for 
+Data Integrity in 
+Wireless Sensor 
+Network 
+AGNICON 2013 Agni College of 
+Technology, 
+Chennai 
+Nil 2013 
+ 
+4.3 Book/Book chapter publications: Nil 
+5 Funded Projects: Nil 
+ 
+6 Short term Courses / Seminars /FDP/Workshop/ConferenceAttended: 
+ 6.1. List of Faculty Development programs attended: 
+Sl.No FDP Title  Venue  Date Year   
+01. Faculty 
+Development 
+Program 
+Inculcating Universal Human 
+Values in Technical Education 
+All India Council 
+for Technical 
+Education (AICTE) 
+16 – 20 
+January 
+2023 
+02. Faculty 
+Development 
+Program 
+Current Trends in Engineering, 
+Science and Technology 
+Sree Sakthi 
+Engineering 
+College, Coimbatore 
+03 – 08 July 2023 
+03. Faculty 
+Development 
+Program 
+Python Programming and its 
+Applications 
+SNJB’s Shri Hiralal 
+Hastimal 
+Polytechnic, 
+Chandwad 
+18 – 19 July 2023 
+04. Faculty 
+development  
+Program 
+Cloud Infrastructure(AWS) RP Sarathy Institute 
+of Technology, 
+Hyderabad 
+21 – 25 
+August 
+2023 Updated as on 05.07.2024 
+05. Faculty 
+development  
+Program 
+Innovation, 
+Incubation and Research 
+Challenges in India 
+Sree Sakthi 
+Engineering 
+College, Coimbatore 
+25 – 30 
+December 
+2023 
+06. 
+ 
+Faculty 
+development  
+Program 
+The Future 
+of Generative AI in Academic 
+Research and Publishing 
+Institute of 
+Engineering & 
+Management, 
+Kolkata 
+02 – 06 
+January 
+2024 
+07. 
+ 
+Faculty 
+development  
+Program 
+Deep Learning Techniques for 
+Image Retrieval Applications 
+SRM Madurai 
+College of 
+Engineering and 
+Technology 
+18 – 20 
+January 
+2024 
+08. 
+ 
+Faculty 
+development  
+Program 
+Microsoft, SAP & Tamil Nadu 
+Skill Development Corporation led 
+Faculty Development Program on 
+"Applied AI with Deep Neural 
+Networks" 
+Naan Mudhalvan 01 – 03 
+February 
+2024 
+09. Faculty 
+development  
+Program 
+Two weeks Faculty Development 
+Programme 
+(Online Mode) on "Computer 
+Vision and Gen-AI Tools", 
+organised by the Department 
+of Artificial Intelligence and Data 
+Science 
+Ramco Institute of 
+Technology, 
+Rajapalayam. 
+15 – 27 July 2024 
+10. Faculty 
+Development 
+Program 
+One Week National Level Online 
+Faculty Development Program 
+on Outcome Based Education and 
+Application of Generative AI in 
+Teaching and Research, 
+Vasireddy 
+Venkatadri Institute 
+of Technology and 
+of Siddaganga 
+Institute Of 
+Technology, 
+24-31July 2024 
+ 
+ 
+6.1.1. Online Courses 
+ 
+Sl.No Title  Platform Date Year  
+01. Blockchain and Cryprocurrencies Mind Luster 27th July 2024 
+02. Naan Mudhalvan Robotic Process 
+Automation Foundation Course UiPath 
+23rd 
+August 
+2024 
+03. Hyperledger Fabric Fundamentals 
+(JavaScript) Program 
+Kerala Blockchain 
+Academy 
+27th 
+August 
+2024 
+04. 
+Mathametics for Computer Science Edx -University of London 
+8th 
+September 
+2024 
+05. 
+Cyber Security Tech Mahindra Foundation 
+16th 
+September 
+2024 
+06. 
+Linear Algebra - Foundations to Frontiers 
+EDX-The University of 
+Texas Systems 
+11th 
+November 
+2024 
+ 
+6.2. List of State/ National /International Level Workshop attended  
+ 
+Sl.No State/National / 
+International 
+Title  Venue  Date Year  
+01. State Chat GPT and AI 
+tools Workshop 
+Be10X  4th August 2024 Updated as on 05.07.2024 
+02. State Exploring AI 
+tools and 
+Effective 
+Academins 
+Ramco Institute 
+of Technology, 
+Rajapalayam. 
+29th July 2024 
+03. National Android 
+Technologies and 
+its Applications 
+Chennai 
+Institute of 
+Technology  
+2nd March 2013 
+04. State A Conclave on 
+Cryptography 
+and Cyber 
+security 
+Hindustan 
+Institute of 
+technology and 
+Science 
+12th August 2016 
+ 
+6.3. List of State/ National technical Level Seminars/Webinars attended 
+ 
+Sl.No National / 
+International 
+      Title  Venue  Date Year  
+01. Webinar NATIONAL 
+INTELLECTUAL 
+PROPERTY 
+AWARENESS 
+MISSION 
+ 
+Intellectual 
+Property Office 
+and MoE's 
+Innovation 
+Cell, India 
+3rd February 2013 
+ 
+ 
+ 
+ 

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -14,6 +14,7 @@ import CampusLife from './components/CampusLife'
 import Footer from './components/Footer'
 import DetailOverlay from './components/DetailOverlay'
 import LoadingScreen from './components/LoadingScreen'
+import FacultyProfilePage from './components/FacultyProfilePage'
 import { CMSProvider, useCMS } from './components/CMSContext'
 import { LoginModal, AnalyticsModal } from './components/CMSModals'
 import './App.css'
@@ -26,6 +27,18 @@ function AppContent() {
   const { isAuthenticated, logout } = useCMS()
   const [isLoginOpen, setIsLoginOpen] = useState(false)
   const [isAnalyticsOpen, setIsAnalyticsOpen] = useState(false)
+  const [activeFacultyProfile, setActiveFacultyProfile] = useState<{ name: string; departmentName: string; image?: string | null } | null>(null)
+
+  useEffect(() => {
+    const handleViewProfile = (e: Event) => {
+      const customEvent = e as CustomEvent<{ name: string; departmentName: string; image?: string | null }>
+      setActiveFacultyProfile(customEvent.detail)
+    }
+    window.addEventListener('view-faculty-profile', handleViewProfile)
+    return () => {
+      window.removeEventListener('view-faculty-profile', handleViewProfile)
+    }
+  }, [])
 
   return (
     <>
@@ -132,6 +145,15 @@ function AppContent() {
 
             {/* Render the full-screen Detail Overlay when a page key is active */}
             <DetailOverlay pageKey={activePageKey} onClose={() => setActivePageKey(null)} />
+
+            {activeFacultyProfile && (
+              <FacultyProfilePage 
+                facultyName={activeFacultyProfile.name}
+                departmentName={activeFacultyProfile.departmentName}
+                facultyImage={activeFacultyProfile.image}
+                onClose={() => setActiveFacultyProfile(null)}
+              />
+            )}
 
             {/* Modals */}
             <AnimatePresence>

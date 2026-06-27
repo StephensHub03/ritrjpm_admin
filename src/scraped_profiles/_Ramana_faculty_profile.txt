@@ -1,0 +1,324 @@
+Updated as on 05.07.2024 
+ 
+BIO DATA 
+ 
+           
+Name    : Mrs.R.Ramana, M.Tech.,B.Tech., PhD(pursuing)    
+  
+Designation   : Assistant Professor 
+Department   : Artificial Intelligence and Data Science  
+Communication  : 5, Saliyar North street, 
+   Sundarapandiam 626126.                                                    
+Email                : ramana@ritrjpm.ac.in      
+Mobile                : 7558131141 
+• ORCID ID: https://orcid.org/0000-0003-4970-2938 
+ 
+ 
+1. EDUCATIONAL QUALIFICATION:     
+ 
+Degree Branch / Specialization  
+Institute/University 
+ 
+Year of 
+Passing 
+B.Tech 
+ 
+Computer Science and 
+Engineering 
+ 
+ 
+     Kalasalingam University 
+  
+ 
+April 2016 
+ 
+M.Tech 
+ 
+Computer Science and 
+Engineering 
+ 
+Kalasalingam Academy of Research and 
+Education 
+April 2018 
+ 
+Ph.D 
+(pursuing) 
+  
+Computer Science and 
+Engineering  
+Kalasalingam Academy of Research and 
+Education  Pursuing 
+ 
+2. PROFESSIONAL EXPERIENCE: (in chronological order)     
+S.No Designation Institution/Organization 
+Period 
+From To 
+   
+NIL 
+  
+     
+ 
+Updated as on 05.07.2024 
+3. RESEARCH AREA:  Computer Vision 
+       
+4.JOURNAL PUBLICATIONS : 
+1.    Ramana. R, B.S.Murugan (2021). YOLOv4Tiny: Bearing Angle Based Pose Estimation and 
+Semantic Segmentation For 3D Object Detection From LiDAR Point Cloud & RGB -D Data 
+in Wireless Personal Communications. The Status is Under Review.  
+2. Ramana. R, B.S.Murugan (2023). A novel model for eliminating overlapping issues in 3D 
+object recognition using dove swarm optimization based light GBM. In 2023, International 
+Journal of Information Technology (Singapore). Scopus Indexed. 
+3. Ramana. R, B.S.Murugan (2022).An Efficient Pelican Optimization based CNN BiLSTM to 
+Detect and Classify 3D Objects. In 2022, IEEE International  Conference on Knowledge 
+Engineering and Communication Systems ICKES 2022. Scopus Indexed. 
+4. Ramana. R, B.S.Murugan (2021). Detection of multiple small 3D Objects using point cloud 
+images by ASP Network 3D Object Detection Model. In 2021 International  Conference on 
+Advances in Computer Science and Technologies ICACST’21. Published in Design 
+Engineering (Journal). 
+ 
+5. Selva Birunda S, Nagaraj P, Krishna Narayanan S, Muthamil Sudar K, Muneeswaran V & 
+Ramana R, Fake Image Detection in Twitter using Flood Fill Algorithm and  Deep Neural 
+Networks. In 12th International Conference on Cloud Computing,  Data Science & 
+Engineering (Confluence 2022).Scopus Indexed. 
+ 
+5.CONFERENCE PUBLICATIONS : 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Sl.No National / 
+International 
+Title of the Paper Name of the 
+Conference 
+Venue  Year  
+1. International 
+Conference 
+Detection of multiple 
+small 3D objects 
+using point cloud 
+images by ASP 
+Network 3D Object 
+Detection Model 
+ 
+ 
+ICACST’21 
+ 
+ 
+ 
+Online 
+ 
+ 
+ 
+2021 
+2. International 
+Conference 
+ 
+Virtual reality 
+ P.E.T. 
+Engineering 
+College 
+2017 
+3. International 
+Conference 
+Secure Multicast 
+Group 
+Communication for 
+IOT Applications 
+using WSN 
+International 
+Conference on 
+Emerging Trends 
+in Computing, 
+Communication 
+and Automation   
+Srividhya 
+College of 
+Engineering. 
+ 
+ 
+ 
+2018 Updated as on 05.07.2024 
+6. ONLINE COURSES / SEMINARS /FDP/WORKSHOP ATTENDED: 
+ 
+Sl.No Programme Title  Venue  Date Year   
+1. Faculty 
+development  
+Programme 
+ 
+Data Science and Big 
+Data Analytics 
+ 
+Online 
+ 
+5th and 6th 
+April 
+2021 
+2. Faculty 
+Development 
+Cell in 
+association 
+with Internal 
+Quality 
+Assurance Cell 
+Learn to use Mendeley 
+Software: To Manage 
+your references and 
+Citations 
+ 
+Online 
+ 
+22nd and 
+23rd June 
+2021 
+3. AICTE 
+Training and 
+Learning 
+(ATAL) 
+Academy 
+Online 
+Elementary 
+FDP 
+Data sciences  
+ 
+National Institute 
+of Technology 
+Durgapur.(Online) 
+ 
+ 
+5th August 
+and 6th 
+August 
+2022 
+4. Faculty 
+Development 
+Programme 
+Data Science Punjab 
+Engineering 
+College 
+September 
+8th  
+2022 
+5. AICTE 
+Training And 
+Learning 
+(ATAL) 
+Academy 
+Online 
+Elementary 
+FDP 
+ 
+Deep learning for 
+computer vision 
+ 
+KIET GROUP 
+OF Institutions. 
+ 
+October 21st 
+and 22nd 
+2021 
+6. Two-day 
+Awareness 
+Workshop 
+on Improving 
+Research and 
+Performance 
+Outcomes  
+ 
+Elsevier’s Zoom 
+Webinar 
+December  2021 
+7. Workshop RESEARCH 
+IDENTIFICATION 
+AND TECHNICAL 
+PAPER WRITING 
+1.  K.L.N. College of 
+Engineering. 
+ 
+ 
+January  2022 
+ 
+  7. LIST OF WEBINARS ATTENDED: 
+ 
+Sl.No National / 
+International 
+      Title  Venue  Date Year  
+ 
+1. 
+Webinar Cloud Forensics 
+2. Department of 
+Computer 
+Engineering by 
+SCMS College 
+of 
+May 12th  2021 Updated as on 05.07.2024 
+Polytechnics. 
+ 
+ 
+2. National Level 
+Seminar 
+Role of Machine 
+Learning in IOT 
+3. Srividhya 
+College of 
+Engineering. 
+ 
+May 15th  2022 
+ 
+ 
+8.MEMBERSHIP IN PROFESSIONAL SOCIETIES:  
+ 
+Nil 
+ 
+ 
+9. Contributions 
+ 
+1. Successfully Coordinated Digital Dreamz’ 15 in Kalasalingam University, Virudhunagar. 
+2. Completed Cambridge English Entry Level Certificate in ESOL International (Entry2) 
+(Business) and has achieved Council of Europe Level A2. 
+3. Organized ICMC International level conference in Kalasalingam Academy of Research and 
+Education and received certificates for organizing. 
+ 
+ 
+10.Certification Courses 
+ 
+1. Completed NPTEL Certification Courses in Cloud Computing and Artificial Intelligence with 
+70% result. 
+2. Completed EMC Cloud Computing Certification Course. 
+ 
+ 
+ 
+  
+ 
+  
+  
+  
+  
+  Updated as on 05.07.2024 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -21,6 +21,20 @@ interface DepartmentItem {
 
 const RIT_DEPARTMENTS: DepartmentItem[] = [
   {
+    name: 'B.Tech AI & Data Science',
+    key: 'departments-aids',
+    icon: Database,
+    color: '#ec4899', // Pink
+    bgColor: 'rgba(236, 72, 153, 0.12)'
+  },
+  {
+    name: 'CSE (AI & ML)',
+    key: 'departments-aiml',
+    icon: Brain,
+    color: '#a855f7', // Purple
+    bgColor: 'rgba(168, 85, 247, 0.12)'
+  },
+  {
     name: 'Computer Science & Engg',
     key: 'departments-cse',
     icon: Laptop,
@@ -54,20 +68,6 @@ const RIT_DEPARTMENTS: DepartmentItem[] = [
     icon: Building,
     color: '#10b981', // Green
     bgColor: 'rgba(16, 185, 129, 0.12)'
-  },
-  {
-    name: 'CSE (AI & ML)',
-    key: 'departments-aiml',
-    icon: Brain,
-    color: '#a855f7', // Purple
-    bgColor: 'rgba(168, 85, 247, 0.12)'
-  },
-  {
-    name: 'B.Tech AI & Data Science',
-    key: 'departments-aids',
-    icon: Database,
-    color: '#ec4899', // Pink
-    bgColor: 'rgba(236, 72, 153, 0.12)'
   },
   {
     name: 'B.Tech CS & Business Systems',

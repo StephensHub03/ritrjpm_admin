@@ -3,6 +3,7 @@ import { ArrowRight, Play, Edit, Plus, Trash } from 'lucide-react'
 import * as LucideIcons from 'lucide-react'
 import { events } from '../data/constants'
 import TiltedCard from './TiltedCard'
+import OrbitImages from './OrbitImages'
 import { useCMS } from './CMSContext'
 import { EditStatsModal, EditCampusGalleryModal, AddEditNewsModal } from './CMSModals'
 
@@ -178,6 +179,36 @@ export default function Dashboard() {
         </div>
       </div>
 
+      <div className="campus-orbit-section" style={{ marginTop: '25px', marginBottom: '25px', position: 'relative', textAlign: 'center', background: '#FAF0E2', padding: '24px 16px', borderRadius: '24px' }}>
+        <div className="gallery-heading" style={{ marginBottom: '16px', gap: '4px' }}>
+          <p className="gallery-eyebrow" style={{ fontSize: '0.8rem', marginBottom: 0 }}>Student's Life</p>
+          <h2 style={{ fontSize: '1.8rem', marginBottom: 0 }}>RIT Campus Life</h2>
+          <span className="heading-divider" aria-hidden="true" style={{ marginTop: '2px' }}><i /><i /><i /></span>
+        </div>
+        <OrbitImages
+          images={[
+            "/boy.jpg",
+            "/girls.jpg",
+            "/girls1.jpg",
+            "/libgirl.jpg",
+            "/sir.jpg",
+            "/sportboy.jpg"
+          ]}
+          shape="ellipse"
+          radiusX={580}
+          radiusY={200}
+          rotation={-8}
+          duration={30}
+          itemSize={200}
+          responsive={true}
+          radius={320}
+          direction="normal"
+          fill
+          showPath
+          paused={false}
+        />
+      </div>
+
       <div className="updates-grid">
         <section className="events-panel">
           <div className="panel-title">
@@ -203,7 +234,7 @@ export default function Dashboard() {
 
         <section className="announcements-panel">
           <div className="panel-title">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <h3>Announcements</h3>
               {isAuthenticated && (
                 <button

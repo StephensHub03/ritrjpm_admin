@@ -1,0 +1,964 @@
+Updated as on 21.10.2024 
+BIO DATA 
+ 
+Name    : Mrs. B.Revathi, M.E., 
+Designation   : Assistant Professor 
+Department   : Artificial Intelligence and Data Science 
+Communication  : 60/R, Paravai Colony, Paravai,Madurai-625402 
+Email    : revas85@gmail.com 
+              revathib@ritrjpm.ac.in 
+Mobile    : 9751855561 
+Vidwan ID: https://vidwan.inflibnet.ac.in/profile/290637 
+Google Scholar: https://scholar.google.com/citations?view_op=list_works&hl=en&user=0ybnsisAAAAJ 
+Research Gate: https://www.researchgate.net/profile/B-Revathi-3 
+ORCID ID: https://orcid.org/0000-0001-6444-7395 
+1. Educational Qualification     
+ 
+Degree Branch / Specialization  
+Institute/University 
+ 
+Year of 
+Passing 
+  B.E 
+Computer Science and 
+Engineering 
+ 
+Mepco Schlenk Engineering 
+College ,Sivakasi. 
+      2011 
+ 
+  M.E Computer & Communication 
+ 
+      National Engineering College, Kovilpatti 
+ 
+ 
+     2014 
+ 
+  Ph. D.  Electronics and Communication 
+Engineering Anna University, Chennai  Pursuing 
+ 
+2. Professional/ Industry Experience   : (in chronological order) 
+S.No Designation Institution/Organization 
+Period 
+From To 
+1 Assistant 
+professor 
+Ramco Institute of Technology , 
+Rajapalayam. 
+28.07.2022 Till Date 
+2 Assistant 
+Professor 
+ 
+Mangayarkarasi College of Engineering , 
+Madurai. 
+06.01.2017 
+ 
+30.06.2022 
+3. Research Area: Machine Learning, Deep Learning 
+4   Publications      
+       
+4.1JOURNAL PUBLICATIONS : 
+ 
+1.  B.Revathi, C.UshaRani, “Rainfall Prediction Using Machine Learning  Classification 
+Algorithms”, International Journal of Creative Research Thoughts, Volume: 09, Issue No: 
+01, Jan 2021. (ISSN: 2320-2882 – IF 7.97). 
+  
+Updated as on 21.10.2024 
+2.  B.Revathi, S.Sameera Begum, S.Kalaivani, M.Akshaya  “An Optimization Framework for 
+Mortality Predictions in Imbalanced High -Dimensional ICU Big data”, International 
+Research Journal of Modernization In Emerging Technology and Science ”, Volume: 02, 
+Issue No: 03, March 2020,(ISSN : 2582-5208-IF 5.345). 
+ 
+3.  B.Revathi, S.Elancheelan, R. Sathish,” Detection of disorders in Plant Leaf using Machine 
+Learning”, International Research Journal of Modernization In Emerging Technology 
+and Science”, Volume: 02, Issue No: 03, March 2020,(ISSN : 2582-5208-IF 5.345). 
+4.  P.Anushya , P.Jothilakshimi , S.Pavithra , B.Revathi  “ New Approach from K -Nearest 
+Neighbor Data Classification”, Seventh Sense Research Group, March 2019, (ISSN : 2848-
+8387- IF 1.23). 
+ 
+5.  K.Nagalakshmi , P.Nanthini , A.Saranya , B.Revathi , "Detect fake identities Using Machine 
+Learning”, Seventh Sense Research Group, March 2019, (ISSN : 2848-8387- IF 1.23). 
+6. B.Revathi, S.Chidambaram, “Sequential Covering Strategy Based classification Approach 
+Using Ant Colony Optimization”, International Journal of Innovative Research in Science, 
+Engineering and Technology(Scopus Indexed) , Volume: 03, Issue No: 03,  March 2014, 
+(ISSN : 2319-8753 -IF 1.672). 
+ 
+7. Selva Birunda S, Nagaraj P, Jency A Jebamani B, Revathi B ,”A Structured Analysis on IPL 
+2022 matches by approaching various Data Visualization and Analytics” ,  2023 International 
+Conference on Computer Communication and Informatics (ICCCI) , Coimbatore,India,2023, 
+doi:10.1109/ICCCI56745.2023.10128575, ISBN :979-8-3503-4821-7. 
+8. Revathi B, Kezial Elizabeth. S. K, Nagaraj P, Selva Birunda S , Nithya .D,” Particle Swarm 
+Optimization based Detection of Diabetic Retinopathy using a Novel Deep CNN ” 2023 third 
+IEEE International Conference on Artificial Intelligence and Smart Energy  (ICAIS), 
+Coimbatore,India,2023,pp.998-1003,doi:10.1109/ICAIS56108.2023.10073926,ISBN:978-1-
+6654-6216-7. 
+9. Revathi, B., Usharani, C., Elizabeth, S. K., Nagaraj, P., & Nithya, D. (2024, April). Deep 
+Learning Classification Techniques on Detecting Diabetic Retinopathy Dataset. In  2024 
+International Conference on Inventive Computation  Technologies (ICICT)  (pp. 663 -668). 
+IEEE. 
+10. Usharani C, Revathi, B., Selvapandian, A., & Elizabeth, S. K. (2024). Lung Cancer Detection 
+in CT Images Using Deep Learning Techniques: A Survey Review.  EAI Endorsed 
+Transactions on Pervasive Health and Technology, 10. 
+ 
+  
+4.2 CONFERENCE PUBLICATIONS 
+       4.2.1 INTERNATIONAL CONFERENCE: 
+ 
+Sl.N
+o 
+National / 
+International 
+Title of the 
+Paper 
+Name of the 
+Conference 
+Venue  Page no. & 
+Volume 
+Year of 
+Publica
+tion 
+01. IEEE 
+International 
+Conference 
+Sequential 
+Covering 
+Strategy Based 
+classification 
+Approach Using 
+Ant Colony 
+Optimization. 
+ICIET’14 K.L.N College of 
+Engineering, 
+Madurai 
+Volume:03 
+Issue :03 
+2014 
+02. International Detect Fake ICTER’19 Mangayarkarasi Pg.no:80-84 2019 Updated as on 21.10.2024 
+Conference Identities Using 
+Machine 
+Learning. 
+College of 
+Engineering, 
+Madurai 
+03. International 
+Conference 
+New Approach 
+from K -Nearest 
+Neighbor Data 
+Classification 
+ICTER’19 Mangayarkarasi 
+College of 
+Engineering, 
+Madurai 
+Pg.no:119-
+124 
+2019 
+04. International 
+E-Conference 
+Emergency 
+Vehicle 
+Assistance Using 
+Andriod  
+Application  
+ICRACIA’21 Kumarasamy 
+College of 
+Engineering, 
+Karur 
+Nil 2021 
+05. IEEE 
+International 
+Conference 
+A Structured 
+Analysis on IPL 
+2022 matches 
+by approaching 
+various Data 
+Visualization 
+and Analytics 
+ICCCI Sri Shakthi 
+Institute of 
+Engineering and 
+Technology. 
+pp. 1-9 2023 
+06. IEEE 
+International 
+Conference 
+Particle Swarm 
+Optimization 
+based Detection 
+of Diabetic 
+Retinopathy 
+using a Novel 
+Deep CNN 
+ICAIS JCT College of 
+Engineering. 
+pp.998-1003 2023 
+07. International 
+Conference 
+Analysis of 
+Breast Cancer 
+Using Novel 
+Machine and 
+Deep Learning 
+Approach 
+ICRTICT’24 St. Peter’s 
+College of 
+Engineering and 
+Technology 
+- 2024 
+ 
+ 
+4.2.1 NATIONAL CONFERENCE: 
+ 
+Sl.No National / 
+Internation
+al 
+Title of the 
+Paper 
+Name of the 
+Conference 
+Venue  Page no. & 
+Volume 
+Year of 
+Publicat
+ion 
+01. National 
+Conference 
+Improving 
+Classification 
+Accuracy using 
+feature Selection 
+Techniques 
+VISION’14 Government 
+College of 
+Engineering, 
+Tirunelveli 
+Nil  2014 
+02. National 
+Conference 
+Robotics, 
+Artificial 
+Intelligence and 
+Machine Learning 
+Nil RVS Educational 
+Trust’s Group of 
+Institutions, 
+Dindugul. 
+Nil  2019 
+03. National 
+Conference 
+Detection of 
+disorders in Plant 
+Leaf using 
+Machine Learning 
+SCAC’20 PSNA College of 
+Engineering, 
+Dindugul 
+Nil 2020 
+04. National  An Optimization SCAC’20 PSNA College of Nil  2020 Updated as on 21.10.2024 
+Conference Framework for 
+Mortality 
+Predictions in 
+Imbalanced High -
+Dimensional ICU 
+Big data 
+Engineering, 
+Dindugul 
+05. National 
+Conference 
+IOT Enabled 
+Automated 
+Effective 
+Incubator System 
+with sub Bug 
+System for child 
+caring 
+NCRTCS’24 SRM Madurai 
+College of 
+Engineering and 
+Technology, 
+Madurai 
+Nil 2024 
+ 
+ 
+4.3 Book/Book chapter publications: Nil 
+ 
+5 Funded Projects: Nil 
+ 
+6 Short term Courses / Seminars /FDP/Workshop/ConferenceAttended: 
+ 
+ 6.1. List of Faculty Development programs attended: 
+ 
+Sl.No FDP Title  Venue  Date Year   
+01. Faculty 
+Development 
+Programme 
+Introduction to Mobile App 
+Development. 
+Mangayarkarasi 
+College of 
+Engineering, 
+Madurai 
+12th &13th 
+February. 
+2019 
+02. Faculty 
+Development 
+Programme 
+Free/Open source Software for 
+AI/Cyber Security 
+Thiyagarajar 
+College Of 
+Engineering, 
+Madurai. 
+26th – 31st  
+August. 
+2019 
+03. Faculty 
+Development 
+Programme 
+Need for R&D Activities and 
+Patent Publications. 
+Mangayarkarasi 
+College of 
+Engineering, 
+Madurai. 
+25th January 2020 
+04. Faculty 
+development  
+Programme 
+Big Data National 
+engineering college, 
+Kovilpatti. 
+09th &10th  
+March 
+2022 
+05. Faculty 
+development  
+Programme 
+Data Science CARE College of 
+Engineering, 
+Trichy. 
+01st – 05th 
+August. 
+2022 
+06. 
+ 
+Faculty 
+development  
+Programme 
+AI and Machine Learning in 
+Biometric Recognition 
+NIT, Warangal. 16th – 25th 
+August. 
+2022 
+07. 
+ 
+Faculty 
+development  
+Programme 
+Amazon Web Services Vardhaman College 
+of Engineering 
+22nd – 27th 
+August. 
+2022 Updated as on 21.10.2024 
+08. 
+ 
+Faculty 
+development  
+Programme 
+Big Data-Hadoop Imarticus Learning 26th – 27th 
+August. 
+2022 
+09. 
+ 
+Faculty 
+development  
+Programme 
+Current Trends in Information 
+Technology 
+MEASI Institute of 
+Information 
+Technology 
+26th – 30th 
+September. 
+2022 
+10. 
+ 
+Faculty 
+development  
+Programme 
+AI and Machine Learning in 
+Biometric Recognition 
+NIT, Warangal 16th – 25th 
+August. 
+2022 
+11. 
+ 
+Online Short 
+term Course 
+Artificial Intelligence Machine 
+Learning and Deep Learning. 
+NIT, Warangal 28th Nov –2nd  
+Dec. 
+2022 
+12. 
+ 
+Faculty 
+development  
+Programme 
+Two Weeks FDP on Deep 
+Learning 
+ARMY Institute of 
+Technology, Pune. 
+9th Jan –20th  Jan. 2023 
+13. 
+ 
+Faculty 
+development  
+Programme 
+Artificial Intelligence and 
+Machine Learning. 
+National 
+Engineering 
+College. 
+6th Feb –11th  
+Feb. 
+2023 
+14. 
+ 
+Faculty 
+development  
+Programme 
+Artificial Intelligence and 
+Machine Learning 
+Ramco Institute of 
+Technology 
+13th Feb –17th  
+Feb. 
+2023 
+15. Faculty 
+development  
+Programme 
+Medical Image Analysis NPTEL-AICTE July-Oct 2023 
+16. Faculty 
+Development 
+Programme 
+Data Science using R NITTTR, 
+Chandigarh 
+17th July-21st 
+Julty 
+2023 
+17. Faculty 
+development  
+Programme 
+Artificial Intelligence and 
+Machine Learning for Medical 
+Image Analysis using Python 
+CMR Institute of 
+Technology 
+21st Aug-25th 
+Aug 
+2023 
+18. Faculty 
+development  
+Programme 
+Machine Learning in the age of 
+AI: Algorithms, Models and 
+Beyond 
+KPR Institute of 
+Engineering and 
+Technology 
+21st Aug-1st Sep 2023 Updated as on 21.10.2024 
+19. Faculty 
+development  
+Programme 
+Fundamentals of Cyber Security Vellore Institute of 
+Technology 
+December 2023. 
+20. Faculty 
+development  
+Programme 
+Deep Learning Techniques for 
+Image Retrieval Techniques 
+SRM Madurai 
+College of 
+Engineering and 
+Technology, 
+Madurai 
+18th Jan-20th Jan 2024 
+21. Faculty 
+Development 
+Programme 
+Emerging Technologies in 
+Computer Science 
+Easwari 
+Engineering 
+College 
+22nd Jan – 27th 
+Jan. 
+2024 
+22. Virtual Faculty 
+Development 
+Programme 
+Deep Learning for Biomedical 
+Applications 
+IEEE Bangalore 
+Section. 
+25th Feb. 2024 
+23. Faculty 
+Empowerment 
+Programme 
+CCS355-Neural Networks & 
+Deep Learning 
+Anna University 
+Regional Campus, 
+Madurai 
+24th June-29th 
+June 
+2024 
+24. Faculty 
+Development 
+Programme 
+Computer Vision and Gen AI 
+Tools 
+Ramco Institute of 
+Technology 
+15th July-27th 
+July 
+2024 
+25. International 
+level online 
+Faculty 
+Development 
+Programme 
+Full Stack Data Science 
+Generative AI 
+Madanapalle 
+Institute of 
+Technology 
+19th Aug-23rd 
+Aug 
+2024 
+ 
+6.2.Short term Courses / Seminars /FDP/Workshop/Conference Co-ordinated: 
+ 
+Sl.No Title of the Event Organized by Date Year   
+1. 5 Days FDP on “Artificial 
+Intelligence and Machine 
+Learning” 
+Ramco Institute of Technology 13th Feb –17th  
+Feb. 
+2023 
+2. ICSSR Sponsored Seminar on 
+“Explainable AI (XAI) inspired 
+Learning approaches using Data 
+Analytics for Education system” 
+Ramco Institute of Technology 23rd Aug-25th 
+Aug 
+2023 
+3. Two weeks FDP on “ Computer 
+Vision and Gen AI Tools” 
+Ramco Institute of Technology 15th July-27th 
+July 
+2024 
+ 
+6.3. List of State/ National /International Level Workshop attended  
+ 
+Sl.No State/National / 
+International 
+Title  Venue  Date Year  
+01. Workshop Mobile 
+Computing  
+Sri Sowdambika 
+college of 
+engineering, 
+October 7th 
+ 
+2010 Updated as on 21.10.2024 
+Aruppukottai 
+02. Workshop Research 
+Methods for 
+Academicians, 
+Research 
+Scholars & 
+Practitioners 
+National 
+Engineering 
+College. 
+Kovilpatti. 
+November 
+17th  
+2012 
+03. Workshop Image Processing 
+Using Matlab. 
+National 
+Engineering 
+College. 
+Kovilpatti. 
+October 19th  
+& 20th  
+2012 
+04. International 
+Level 
+Workshop 
+Internet of Things 
+(IOT). 
+PSG Tech, 
+Coimbatore. 
+August 18th  2018 
+05. Workshop Data Analytics 
+Using R-Software 
+AAA College of 
+Engineering. 
+November 
+15th & 16th   
+2018 
+06. Workshop Deep learning in 
+various research 
+Domains 
+Mepco Schlenk 
+Engg College, 
+Sivakasi. 
+February 14th 
+& 15th  
+2020 
+07. International 
+Workshop 
+Case Studies in 
+Artificial 
+Intelligence and 
+Machine 
+Learning 
+PSGR 
+Krishnammal 
+College for 
+Women 
+Nov 17th  2022 
+08. National Level 
+Workshop 
+Role of NAAC in 
+enhancing 
+Quality in Higher 
+Education 
+Institutions. 
+Ramco Institute 
+of Technology 
+Dec 16th –Dec 
+17th  
+2022 
+09. International 
+Workshop 
+Research Article 
+Writing and 
+Research Funding 
+Knowledge 
+Research 
+Academy 
+15th Dec 2023 
+10. International 
+Workshop 
+SPSS in Research Star 
+International 
+Foundation for 
+Research and 
+Education 
+26th Dec-30th 
+Dec 
+2023 
+11. Workshop Visual Machine 
+Learning 
+SRM Madurai 
+college of 
+Engineering and 
+Technology 
+20th July 2024 
+ 
+6.3. List of State/ National technical Level Seminars/Webinars attended 
+ 
+Sl.No National / 
+International 
+      Title  Venue  Date Year  
+01. National 
+Level Seminar 
+Data Mining 
+Tools- WEKA, 
+R, and Rapid 
+Miner. 
+KLN College 
+of Information 
+and technology. 
+Madurai. 
+May 06th & 
+07th  
+2013 
+02. 
+Webinar Red hat Linux 
+Series 
+Mangayarkarasi 
+college of 
+Engineering 
+May 12th  2020 
+03. Webinar Cyber Security Sri Eshwar May 15th  2020 Updated as on 21.10.2024 
+College of 
+Engineering 
+04 
+Webinar 
+Artificial 
+Intelligence-
+Foundation 
+Eswari 
+Engineering 
+College 
+May 16th  2020 
+05. 
+Webinar 
+Demystify the 
+Cloud 
+Sri Eshwar 
+College of 
+Engineering 
+May 17th 2020 
+06 
+Webinar 
+Block chain 
+Basics 
+Sri Eshwar 
+College of 
+Engineering 
+May 18th  2020 
+07 
+Webinar 
+Industry 4.0 Sri Eshwar 
+College of 
+Engineering 
+May 19th  2020 
+08 
+Seminar 
+Internet of 
+Things. 
+Mangayarkarasi 
+College of 
+Engineering, 
+Madurai. 
+May 20th  2020 
+09 
+Webinar 
+Expanding 
+scope of 
+Robotics 
+Sri Eshwar 
+College of 
+Engineering 
+May 21st  2020 
+10 
+Webinar 
+How to Become 
+a Full Stack 
+Developer in 
+Industry 4.0 
+Mangayarkarasi 
+College of 
+Engineering. 
+June 3rd  2020 
+11 
+Webinar 
+Cyber Sceurity 
+and Data 
+Protection 
+Mangayarkarasi 
+College of 
+Engineering. 
+July 13th  2020 
+12 
+Webinar 
+Cyber Security Latha 
+Mathavan 
+Engineering 
+College 
+Oct 23rd 2021 
+13 
+Webinar 
+Roadmap 
+essentials for 
+data science 
+G. Pulla Reddy 
+Engineering 
+College. 
+Sep 10th 2022 
+14. 
+Webinar 
+Artificial 
+Intelligence and 
+its Realtime 
+Applications 
+SRM Madurai 
+College of 
+Engineering 
+and 
+Technology 
+July 20th 2023 
+15. 
+Webinar 
+Zero Code 
+Machine 
+Learning 
+SRM Madurai 
+College of 
+Engineering 
+and 
+Technology 
+Aug 12th 2023 
+16. 
+Webinar 
+AI for Remote 
+Sensing 
+SRM Madurai 
+College of 
+Engineering 
+and 
+Technology 
+Oct 20th 2023 
+17. 
+Webinar 
+Intelligent 
+Agents a 
+Paradigm shift 
+to information 
+SRM Madurai 
+College of 
+Engineering 
+and 
+Oct 28th  2023 Updated as on 21.10.2024 
+Technology Technology 
+18. 
+Seminar 
+Explainable AI 
+(XAI) inspired 
+Learning 
+approaches 
+using Data 
+Analytics for 
+Education 
+system 
+Ramco Institute 
+of Technology 
+23rd Aug-25th 
+Aug 
+2023 
+19. 
+Webinar 
+Generative AI in 
+Health care 
+SRM Madurai 
+College of 
+Engineering 
+and 
+Technology 
+Nov 4th  2023 
+20. 
+Webinar 
+Augmented and 
+Virtual Reality 
+SRM Madurai 
+College of 
+Engineering 
+and 
+Technology 
+Jan 12th  2024 
+ 
+7.Online Courses 
+S.No Course Title University/Platform/Grade Date  
+1.  Java Programming Great Learning Aug 2022 
+2.  Introduction to Deep learning Great Learning Sep 2022 
+3.  Data Science, Analytics & AI Real 
+World Project using Python  
+Udemy Oct 2022 
+4.  PyScript Fundamentals 101-Run Python 
+in your Browser’s HTML 
+Udemy Oct 2022 
+5.  Datascience: Probability Edx/(Harvard) 6th Jan–  23rd Apr 
+2022 
+6.  UT.5.05x: Linear Algebra-Foundations 
+to Frontiers 
+Edx/(Texas University) July 12,2023 
+7.  6.00.1x:Introduction to Computer 
+Science and Programming in Python 
+MITx August 4,2023 
+8.  Medical Image Analysis NPTEL(Elite+silver) Jul-Oct 2023 
+9.  Introduction to Data Science CISCO Networking 
+Academy 
+Dec 26,2023 
+10.  Operating systems basics CISCO Networking 
+Academy 
+Jan 4,2024 
+11.  NLP-Natural Language Processing with 
+Python 
+Udemy Jan 8,2024 
+12.  UT.ALA: Advance Linear Algebra: 
+Foundations to Frontiers 
+Edx/(Texas University) Aug 19,2024 
+13.  Multiple Variate Analysis Great Learning Aug 2024. 
+ 
+ 
+ 
+8.Patents Filed/Awarded 
+Sl.No Title  Application No Filed Date Status Inventors Updated as on 21.10.2024 
+1. System And Model 
+For Clinical Decision 
+Support System For  
+Risk Categorization 
+Using Machine 
+Learning 
+202341084874 12/12/2023 Filed & 
+Published 
+M. Ramnath,  
+S. Selva Birunda, 
+B. Revathi 
+ 
+9. Other Participations 
+ 
+Sl.No Title  Event Name Venue Date Year   
+1. LPB01:Reverse 
+Engineering 
+Faculty 
+Competence 
+Enhancement 
+Progrmme 
+Ramco Institute of 
+Technology 
+8th Sep-9th 
+Sep 
+2023 
+2. Integrated Curriculum 
+Development Methodology 
+for Engineering 
+Framework: A Case Study 
+Extramural 
+Lecture Series 
+Ramco Institute of 
+Technology 
+16th Nov 2023 
+3. Microsoft PowerBI Data 
+Analyst Associate  
+Training 
+Programme 
+Ramco Institute of 
+Technology 
+29th Jan-2nd 
+Feb 
+2024 
+ 
+10.Membership in Professional societies 
+ 
+ IAENG life Member (251514) 
+ ISTE Life Member   (LM 135797) 
+ 
+11. Guest Lecture/Webinar/Workshop Delivered: 
+ 
+Sl.No Topics Date Organization 
+1. Guest Lecture on “Natural 
+Language Processing” 
+Oct 9th 2024 Ultra College of 
+Enginnering,Madurai. 
+ 

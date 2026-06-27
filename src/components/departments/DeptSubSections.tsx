@@ -1,12 +1,13 @@
 import React from 'react'
-import { FileText, ExternalLink } from 'lucide-react'
+import { FileText, ExternalLink, User, School, GraduationCap, Award } from 'lucide-react'
 import { resolveLocalScrapedImage } from '../../utils/localScrapedImages'
 import TiltedCard from '../TiltedCard'
 import {
   isValidDepartmentText,
   isValidDepartmentImage,
   getFileName,
-  getDeptName
+  getDeptName,
+  getOfficeLocation
 } from '../../utils/deptHelpers'
 
 
@@ -53,49 +54,66 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
 
     switch (item.type) {
       case 'heading': {
+        const validHeadingLevels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+        const HeadingTag = (validHeadingLevels.includes(item.level || '') ? item.level : 'h3') as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+        
+        // HOD headings and h6 do not require sub-content
+        const isHODHeading = HeadingTag === 'h6' || (item.text || '').includes('Head') || (item.text || '').includes('HOD') || (item.text || '').includes('Professor')
+        
         // Lookahead to ensure there is valid content before the next heading or end of array
-        let hasContent = false
-        for (let i = index + 1; i < items.length; i++) {
-          const nextItem = items[i]
-          if (nextItem.type === 'heading') break // Found next heading, stop checking
-          
-          let isValid = true
-          if (nextItem.text && !isValidDepartmentText(nextItem.text)) isValid = false
-          
-          if (isValid) {
-            if (nextItem.type === 'image') {
-              if (isPdfIconImage(nextItem.src)) isValid = false
-              else if (!nextItem.src) isValid = false
-              else if (!isValidDepartmentImage(nextItem.src, deptCode, nextItem.alt, pageUrl)) isValid = false
-            } else if (nextItem.type === 'list') {
-              const validListItems = nextItem.items?.filter(isValidDepartmentText) || []
-              if (validListItems.length === 0) isValid = false
-            } else if (nextItem.type === 'table') {
-              const validRows = nextItem.rows?.filter(row => row.every(cell => isValidDepartmentText(cell))) || []
-              if (validRows.length === 0) isValid = false
-            } else if (nextItem.type === 'document') {
-               isValid = false
-            } else if (nextItem.type === 'paragraph') {
-               // Paragraph is valid if text is valid (which is already checked above)
-            } else {
-               isValid = false // Unknown type
+        let hasContent = isHODHeading
+        if (!hasContent) {
+          for (let i = index + 1; i < items.length; i++) {
+            const nextItem = items[i]
+            if (nextItem.type === 'heading') break // Found next heading, stop checking
+            
+            let isValid = true
+            if (nextItem.text && !isValidDepartmentText(nextItem.text)) isValid = false
+            
+            if (isValid) {
+              if (nextItem.type === 'image') {
+                if (isPdfIconImage(nextItem.src)) isValid = false
+                else if (!nextItem.src) isValid = false
+                else if (!isValidDepartmentImage(nextItem.src, deptCode, nextItem.alt, pageUrl)) isValid = false
+              } else if (nextItem.type === 'list') {
+                const validListItems = nextItem.items?.filter(isValidDepartmentText) || []
+                if (validListItems.length === 0) isValid = false
+              } else if (nextItem.type === 'table') {
+                const validRows = nextItem.rows?.filter(row => row.every(cell => isValidDepartmentText(cell))) || []
+                if (validRows.length === 0) isValid = false
+              } else if (nextItem.type === 'document') {
+                 isValid = false
+              } else if (nextItem.type === 'paragraph') {
+                 // Paragraph is valid if text is valid (which is already checked above)
+              } else {
+                 isValid = false // Unknown type
+              }
             }
-          }
-          
-          if (isValid) {
-            hasContent = true
-            break
+            
+            if (isValid) {
+              hasContent = true
+              break
+            }
           }
         }
 
         if (!hasContent) {
           return null // Skip heading without content
         }
-
-        const validHeadingLevels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
-        const HeadingTag = (validHeadingLevels.includes(item.level || '') ? item.level : 'h3') as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
         
-        // Skip redundant headers to avoid duplicate layout headers
+        const prevItem = index > 0 ? items[index - 1] : null
+        const isPrevProfileImage = prevItem && prevItem.type === 'image' && prevItem.src && (() => {
+          const fn = getFileName(prevItem.src)
+          return fn.includes('photo') || fn.includes('head') || fn.includes('kaliappan') || (prevItem.alt || '').toLowerCase().includes('hod') || (prevItem.alt || '').toLowerCase().includes('head') || (prevItem.alt || '').toLowerCase().includes('principal')
+        })()
+
+        const isCentered = HeadingTag === 'h6' || (item.text || '').includes('Head') || (item.text || '').includes('HOD') || (item.text || '').includes('Professor')
+        
+        // Skip if this heading is an HOD label that follows a profile image, as it's already rendered inside the caption wrapper
+        if (isCentered && isPrevProfileImage) {
+          return null
+        }
+
         const cleanText = (item.text || '').toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]/g, '').trim()
         const cleanDeptName = getDeptName(deptCode).toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]/g, '').trim()
         const cleanSection = sectionName.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]/g, '').trim()
@@ -110,8 +128,6 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
         if (isRedundant && HeadingTag !== 'h6') {
           return null
         }
-
-        const isCentered = HeadingTag === 'h6' || (item.text || '').includes('Head') || (item.text || '').includes('HOD') || (item.text || '').includes('Professor')
         return (
           <React.Fragment key={index}>
             {/* SOURCE: scraped | DEPT: ${deptCode.toUpperCase()} | SECTION: ${sectionName} */}
@@ -190,6 +206,10 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
           const isProfileImage = filename.includes('photo') || filename.includes('head') || filename.includes('kaliappan') || (item.alt || '').toLowerCase().includes('hod') || (item.alt || '').toLowerCase().includes('head') || (item.alt || '').toLowerCase().includes('principal')
 
           if (isProfileImage) {
+            const nextItem = items[index + 1]
+            const isNextHODHeading = nextItem && nextItem.type === 'heading' && ((nextItem.text || '').includes('Head') || (nextItem.text || '').includes('HOD') || (nextItem.text || '').includes('Professor'))
+            const hodTitle = isNextHODHeading ? nextItem.text : null
+
             return (
               <React.Fragment key={index}>
                 <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- IMG SOURCE: ${filename} | TYPE: profile | DEPT: ${deptCode.toUpperCase()} | VERIFIED: yes -->` }} />
@@ -209,7 +229,12 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
                   </figure>
                   <div className="dept-profile-caption">
                     <span className="dept-profile-badge">Department Head</span>
-                    <p className="dept-profile-label">{getDeptName(deptCode)}</p>
+                    <p className="dept-profile-label" style={{ fontSize: '15px', color: '#64748b', fontWeight: 500, margin: '2px 0 4px 0' }}>{getDeptName(deptCode)}</p>
+                    {hodTitle && (
+                      <h3 className="hod-name-heading" style={{ margin: '6px 0 0 0', fontSize: '24px', fontWeight: 800, color: '#061846', letterSpacing: '-0.02em', lineHeight: '1.2', textTransform: 'uppercase' }}>
+                        {hodTitle}
+                      </h3>
+                    )}
                   </div>
                 </div>
               </React.Fragment>
@@ -264,5 +289,120 @@ export const DefaultSection: React.FC<SectionProps> = ({ deptCode, sectionName, 
     <section className="dept-section-default" aria-label={sectionName}>
       {renderContentBlocks(content, deptCode, sectionName, pageUrl)}
     </section>
+  )
+}
+
+interface FacultySectionProps {
+  facultyMembers: { name: string; designation: string; qualification: string; email: string; image: string | null }[]
+  deptName: string
+  deptCode: string
+  accentColor: string
+  subpageUrl?: string
+}
+
+export const FacultySection: React.FC<FacultySectionProps> = ({ facultyMembers, deptName, deptCode, accentColor, subpageUrl }) => {
+  return (
+    <div className="faculty-section">
+      <h2 className="faculty-section-title" style={{ borderColor: accentColor }}>
+        Department of {deptName}
+      </h2>
+      <div className="faculty-grid-premium">
+        {facultyMembers.map((fac, idx) => {
+          const localSrc = resolveLocalScrapedImage(fac.image)
+
+          // Extract qualification prefix (e.g. "Ph.D" or "M.E" or "M.Tech" etc.)
+          const qual = fac.qualification || ''
+          const match = qual.match(/^(ph\.d|m\.e\.|m\.s\.|m\.tech|m\.sc|m\.phil|b\.e\.|b\.tech|ms|phd)\s*(?:at|from|in)?\s*(.*)$/i)
+          
+          return (
+            <article className="faculty-card-premium" key={idx}>
+              {/* Left Side: Avatar Column with gradients & badges */}
+              <div className="faculty-avatar-column-premium">
+                <div className="avatar-gradient-bg">
+                  {/* Dot Grid Top Left */}
+                  <div className="avatar-dot-grid-tl"></div>
+                  
+                  {localSrc ? (
+                    <img src={localSrc} alt={fac.name} className="avatar-img-premium" loading="lazy" />
+                  ) : (
+                    <div className="avatar-placeholder-premium"><User size={54} /></div>
+                  )}
+                  
+                  {/* Golden curve border accent */}
+                  <div className="avatar-gold-accent"></div>
+                </div>
+              </div>
+              
+              {/* Right Side: Info Column */}
+              <div className="faculty-info-column-premium">
+                {/* Dot Grid Top Right */}
+                <div className="info-dot-grid-tr"></div>
+                
+                {/* Name */}
+                <h3 className="faculty-name-premium">{fac.name.toUpperCase()}</h3>
+                
+                {/* Designation tag bar */}
+                <div className="info-designation-bar-premium">
+                  <div className="info-user-icon-box">
+                    <User size={16} className="info-user-icon" />
+                  </div>
+                  <span className="faculty-role-premium">{fac.designation}</span>
+                </div>
+                
+                <div className="info-divider-gold"></div>
+                
+                {/* Department row */}
+                <div className="info-detail-row-premium">
+                  <div className="detail-icon-box-premium">
+                    <School size={16} />
+                  </div>
+                  <div className="detail-text-box-premium">
+                    <span className="detail-label-premium">Department</span>
+                    <span className="detail-value-premium">Department of {deptName}</span>
+                  </div>
+                </div>
+                
+                <div className="info-divider-gray"></div>
+                
+                {/* Qualification row */}
+                <div className="info-detail-row-premium">
+                  <div className="detail-icon-box-premium">
+                    <GraduationCap size={16} />
+                  </div>
+                  <div className="detail-text-box-premium">
+                    <span className="detail-label-premium">Qualification</span>
+                    <span className="detail-value-premium">
+                      {match ? (
+                        <>
+                          <strong>{match[1]}</strong> {match[2] ? `at ${match[2]}` : ''}
+                        </>
+                      ) : (
+                        qual
+                      )}
+                    </span>
+                  </div>
+                </div>
+                
+                {/* View Profile Button at bottom right */}
+                <a 
+                  href={subpageUrl || '#'} 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const event = new CustomEvent('view-faculty-profile', {
+                      detail: { name: fac.name, departmentName: deptName, image: localSrc }
+                    });
+                    window.dispatchEvent(event);
+                  }}
+                  className="faculty-view-profile-btn-premium"
+                >
+                  <span className="btn-text">View Profile</span>
+                  <span className="btn-arrow-circle">→</span>
+                </a>
+              </div>
+            </article>
+          )
+        })}
+      </div>
+    </div>
   )
 }

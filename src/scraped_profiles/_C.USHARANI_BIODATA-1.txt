@@ -1,0 +1,475 @@
+Updated as on 30.06.2024 
+ 
+BIO DATA 
+ 
+Name    : Mrs.C.Usharani, M.E., 
+Designation   : Assistant Professor 
+Department   : Artificial Intelligence and Data Science  
+Communication  : 169,Sakthi Nagar 3rd Street, 
+                                              Shenbagathoppu Road, Rajapalayam.                                                    
+Email                  : usharanic@ritrjpm.ac.in              
+Mobile                   : 7845840338,9751653478 
+Vidwan ID: https://vidwan.inflibnet.ac.in/profile/390511 
+Research Gate: https://www.researchgate.net/profile/Usharani-Chandran 
+ORCID ID: https://orcid.org/0009-0009-1075-7019 
+ 
+1. EDUCATIONAL QUALIFICATION:     
+ 
+Degree Branch / Specialization  
+Institute/University 
+ 
+Year of 
+Passing 
+B.Tech 
+ 
+Information Technology 
+ 
+     Velammal College of Engineering ,Madurai, 
+Anna University, Chennai. 
+  
+ 
+April 2012 
+ 
+M.E 
+ 
+Computer Science and 
+Engineering 
+ 
+K.L.N College of Information Technology, 
+Sivagangai, Anna University, Chennai. 
+ 
+April 2015 
+ 
+Ph. D  Information and 
+Communication Engineering Anna University  Pursuing 
+ 
+2. PROFESSIONAL EXPERIENCE: (in chronological order)     
+S.No Designation Institution/Organization 
+Period 
+From To 
+1 Assistant 
+professor 
+Ramco Institute of Technology, 
+Rajapalayam. 
+17.05.2023 Till Date 
+ 2 Assistant 
+Professor 
+ 
+Mangayarkarasi College of Engineering, 
+Madurai. 
+03.07.2019 
+ 
+31.03.2023 
+ 
+3. RESEARCH AREA:  Deep Learning, federated Learning 
+       
+4.JOURNAL PUBLICATIONS :  
+       1. B. Revathi, C. Usharani,  S. K. Kezial Elizabeth, N. P and D. Nithya, "Deep Learning 
+Classification Techniques on Detecting Diabetic Retinopathy Dataset,"  2024 International 
+Conference on Inventive Computation Technologies (ICICT), Lalitpur, Nepal, 2024, pp. 663-668, 
+doi:10.1109/ICICT60155.2024.10544960. Updated as on 30.06.2024 
+       2. C.Usharani, B.Revathi, A.Selvapandian, & S.K.Elizabeth, (2024). Lung Canc er Detection in 
+CT Images Using Deep Learning Techniques: A Survey Review.  EAI Endorsed Transactions on 
+Pervasive Health and Technology, 10. 
+ 
+      3. I. Anantraj, B. Umarani, C. Karpagavalli, C.Usharani and S. J. Lakshmi, "Quantum 
+Computing's Double-Edged Sword Unravelling the Vulnerabilities in Quantum Key Distribution 
+for Enhanced Network Security,"  2023 International Conference on Next Generation 
+Electronics (NEleX), Vellore, India, 2023, pp. 1-5, doi: 10.1109/NEleX59773.2023.10420896. 
+ 
+      4. B.Revathi, C.Usharani, “Rainfall Prediction Using Machine Learning Classification 
+Algorithms”, International Journal of Creative Research Thoughts, Volume: 09, Issue No: 01, Jan 
+2021. (ISSN: 2320-2882 – IF 7.97). 
+ 
+5.CONFERENCE ATTENDED : 
+Sl.No National / 
+International 
+Title of the Paper Name of the 
+Conference 
+Venue  Year  
+1 National 
+Conference 
+IOT Enabled 
+Automated 
+Effective incubator 
+system with sub 
+bag system for 
+child caring 
+NCON’24 SRM Madurai 
+College of 
+Engineering and 
+Technology 
+2024 
+2 International E -
+Conference 
+Automatic 
+Detection of Covid 
+19 Lung infection in 
+CT images  
+ICRACIA’21 Kumarasamy 
+College of 
+Engineering, 
+Karur 
+2021 
+3 National 
+Conference 
+ SCAC’20 PSNA college of 
+Engineering and 
+Technology, 
+Dindigul 
+2020 
+4 International 
+Conference 
+Augmented Reality  
+and deep learning 
+with its application 
+in medical 
+diagnosis 
+ICITR’19 Karpagam College 
+of Engineering, 
+Coimbatore. 
+2019 
+5 International 
+Conference 
+Optimized of 
+energy and 
+Message Overheads 
+in WSN Using Grid 
+Communication 
+ICIESMS’15 Vickram College 
+ofEngineering, 
+Enathi 
+2015 
+6 International 
+Conference 
+Analysis of Data 
+mining Techniques,  
+ICETET,14 Pandian 
+Saraswathi 
+yadhav 
+Engineering 
+College,Sivagangai 
+2014 
+7 International 
+Conference 
+Survey on Tree 
+Clustered 
+structured based 
+Data aggregation 
+Techniques in WSN. 
+ICDASDC’14 K.L.N. College of 
+Information 
+Technology, 
+Sivagangai 
+2014 Updated as on 30.06.2024 
+6. FDP/ONLINE COURSES / WEBINARS/WORKSHOP ATTENDED: 
+6.1 List of FDP attended: 
+ 
+Sl.No Programme Title  Venue  Date Year   
+1. Anna 
+university 
+sponsored FDP 
+Artificial Intelligence 
+and Machine 
+Learning 
+Kamaraj College 
+of Engineering & 
+Technology 
+17th Feb to 
+22nd Feb 
+2024 
+2. Faculty 
+Development 
+Programme 
+Emerging 
+Technologies in 
+Computer Science 
+Easwari 
+Engnnering 
+College ,Chennai 
+22nd Jan to 
+27th Jan 
+2024 
+3 Faculty 
+Development 
+Programme 
+Deep Learning 
+Techniques for 
+Image Retrieval 
+Applications 
+SRM Madurai 
+Collge of 
+Engineering & 
+Technology 
+18th Jan to 
+20th Jan 
+2024 
+4 Faculty 
+Development 
+Programme 
+Fundamentals of 
+cyber Security: Tools 
+and Techniques 
+Vellore institute of 
+Technology 
+11th Dec to 
+15th Dec 
+2023 
+5 Faculty 
+Development 
+Programme 
+IOT with Machine 
+Learning 
+PVKK institute of 
+Technology with 
+Pantech  
+E- Learning 
+27th Nov to 
+2nd Dec 
+2023 
+6 Faculty 
+Development 
+Programme 
+“Machine 
+Learning in the age 
+of AI: Algorithms, 
+Models and Beyond” 
+KPR institute of 
+Engineering & 
+Technology  
+21st Aug to 
+1st Sep 
+2023 
+7 Faculty 
+Development 
+Programme 
+Artificial 
+Intelligence,Machine 
+Learning,Deep 
+Learning 
+NIT,Warangal 26th July to 
+30th July 
+2023 
+8 AICTE 
+Recognized 
+FDP 
+Data Science using R NITTTR, 
+Chandigarh 
+17th July to 
+21st July 
+2023 
+9 Faculty 
+Development 
+Programme 
+Need for R&D 
+Activities and Patent 
+Publications. 
+Mangayarkarasi 
+College of 
+Engineering, 
+Madurai. 
+25th January 2020 
+10 Faculty 
+development  
+Programme 
+Operating System 
+Design Case study 
+K.L.N. College of 
+Information 
+Technology, 
+Sivagangai 
+06th &07th  
+March 
+2014 
+ 
+ 
+ 
+ Updated as on 30.06.2024 
+  6.2 List of Online Course Completed: 
+ 
+Sl.No Title of Course Platform/University Date 
+1 Machine Learning Fundamentals Infosys Springboard Jan 08,2024 
+2 Network Basics CISCO Networking 
+Academy 
+Jan 06,2024 
+3 Introduction to Data Science CISCO Networking 
+Academy 
+Dec 30,2023 
+4 Concurrent and Distributing 
+computing with python 
+Infosys Springboard AUG 9,2023 
+5 Programming Using Python Edx(MITX) Aug 4,2023 
+6 NPTEL(Swayam Online Course 
+Certification) 
+Fundamentals of 
+Computer 
+Aug 31,2019 
+ 
+6.3 List of Webinar/seminar attended: 
+ 
+Sl.No National / 
+International 
+      Title  Venue  Date Year  
+ 
+1 Webinar Introduction to IOT 
+and its applications 
+Vaigai College of 
+Engineering 
+Aug 4th 2023 
+2 
+Webinar 
+IOT automation 
+through open 
+source tools 
+Vaigai College of 
+Engineering 
+July 26th  2023 
+3 
+Webinar Red hat Linux Series 
+Mangayarkarasi 
+college of 
+Engineering 
+May 12th  2020 
+4 
+ Webinar 
+Cyber Security Sri Eshwar 
+College of 
+Engineering 
+May 15th  2020 
+ 
+5 Webinar 
+Artificial 
+Intelligence-
+Foundation 
+Eswari 
+Engineering 
+College 
+May 16th  2020 
+6 
+Webinar 
+Demystify the 
+Cloud 
+Sri Eshwar 
+College of 
+Engineering 
+May 17th 2020 
+7 
+Webinar 
+Block chain Basics Sri Eshwar 
+College of 
+Engineering 
+May 18th  2020 
+8 
+Webinar 
+Industry 4.0 Sri Eshwar 
+College of 
+Engineering 
+May 19th  2020 
+9 
+Seminar 
+Internet of Things. Mangayarkarasi 
+College of 
+Engineering, 
+Madurai. 
+May 20th  2020 
+10 
+Webinar 
+Expanding scope of 
+Robotics 
+Sri Eshwar 
+College of 
+Engineering 
+May 21st  2020 Updated as on 30.06.2024 
+11 
+Webinar 
+How to Become a 
+Full Stack 
+Developer in 
+Industry 4.0 
+Mangayarkarasi 
+College of 
+Engineering. 
+June 3rd  2020 
+12 
+Webinar 
+Cyber Security and 
+Data Protection 
+Mangayarkarasi 
+College of 
+Engineering. 
+July 13th  2020 
+ 
+6.4 List of Workshop attended: 
+ 
+Sl.No Programme Title  Venue  Date Year   
+1 Workshop SPSS in Research Star International 
+Foundation for 
+Research and 
+Education 
+26th Dec to 
+30th Dec 
+2023 
+2 Workshop Deep Learning in 
+Various Research 
+Domains 
+Mepco Schlenk 
+Engg College, 
+Sivakasi. 
+February 
+14th & 15th  
+2020 
+3 Workshop Green Computing for 
+Evergreen World 
+K.L.N. College of 
+Information 
+Technology, 
+Sivagangai 
+30th & 31st 
+January 
+2014 
+ 
+7.MEMBERSHIP IN PROFESSIONAL SOCIETIES:  
+ 
+                                                  1. International Association of Engineers (IAENG)  
+                                                                           member number: 253446 
+ 
+8.AWARDS AND ACHIEVEMENTS:  
+ 
+ 
+1. Secured School first in SSLC and received best student award in 2008. 
+ 
+2. Secured Anna University 41st Rank in M.E., Computer Science and 
+Engineering for the Academic year 2014-2015. 
+                                            
+ 
+ 
+ 
+   
+  Updated as on 30.06.2024 
+  
+  
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
