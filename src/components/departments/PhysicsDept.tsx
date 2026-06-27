@@ -3,7 +3,6 @@ import TiltedCard from '../TiltedCard'
 import {
   BookOpen,
   ExternalLink,
-  User,
   FileText,
   Edit } from 'lucide-react'
 import { useCMS } from '../CMSContext'
@@ -12,7 +11,6 @@ import { resolveLocalScrapedImage } from '../../utils/localScrapedImages'
 import {
   getDeptName,
   getDeptAccentColor,
-  getOfficeLocation,
   isValidDepartmentImage,
   isValidDepartmentText,
   getFileName
@@ -64,6 +62,11 @@ export const PhysicsDept: React.FC<DeptProps> = () => {
   const isFacultyProfilePage = activeSubpage.toLowerCase().includes('faculty profile') || activeSubpage.toLowerCase().includes('faculty data')
 
   const facultyMembers = isFacultyProfilePage ? (() => {
+    const cleanStr = (val: any): string => {
+      if (!val) return '';
+      if (typeof val === 'string') return val.trim();
+      return (val.text || '').trim();
+    };
     let img: string | null = null
     const list: { name: string; designation: string; qualification: string; email: string; image: string | null }[] = []
     rawContentItems.forEach((item) => {
@@ -73,10 +76,10 @@ export const PhysicsDept: React.FC<DeptProps> = () => {
         const rows = item.rows || []
         if (rows.length >= 4) {
           list.push({
-            name: rows[0]?.[0]?.trim() || '',
-            designation: rows[1]?.[0]?.trim() || '',
-            qualification: rows[2]?.[0]?.trim() || '',
-            email: rows[3]?.[0]?.trim() || '',
+            name: cleanStr(rows[0]?.[0]),
+            designation: cleanStr(rows[1]?.[0]),
+            qualification: cleanStr(rows[2]?.[0]),
+            email: cleanStr(rows[3]?.[0]),
             image: img,
           })
         }
@@ -138,12 +141,17 @@ export const PhysicsDept: React.FC<DeptProps> = () => {
     }
 
     const tableRows = rawContentItems.find((item) => item.type === 'table')?.rows || []
+    const getStr = (val: any): string => {
+      if (!val) return '';
+      if (typeof val === 'string') return val;
+      return val.text || '';
+    };
     return tableRows
       .slice(1)
       .filter((row) => row.length >= 2)
       .map((row, index) => {
-        const year = row[0] || 'PDF'
-        const title = row.slice(1).join(' ').trim() || 'Open PDF'
+        const year = getStr(row[0]) || 'PDF'
+        const title = row.slice(1).map(getStr).join(' ').trim() || 'Open PDF'
         return {
           year,
           title,

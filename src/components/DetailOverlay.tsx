@@ -1,4 +1,4 @@
-import { X, ExternalLink, FileText, Edit } from 'lucide-react'
+import { X, Edit } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { resolveLocalScrapedImage } from '../utils/localScrapedImages'
 import TiltedCard from './TiltedCard'

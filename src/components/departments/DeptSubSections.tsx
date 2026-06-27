@@ -1,13 +1,12 @@
 import React from 'react'
-import { FileText, ExternalLink, User, School, GraduationCap, Award } from 'lucide-react'
+import { School, GraduationCap, User } from 'lucide-react'
 import { resolveLocalScrapedImage } from '../../utils/localScrapedImages'
 import TiltedCard from '../TiltedCard'
 import {
   isValidDepartmentText,
   isValidDepartmentImage,
   getFileName,
-  getDeptName,
-  getOfficeLocation
+  getDeptName
 } from '../../utils/deptHelpers'
 
 
@@ -30,18 +29,6 @@ interface SectionProps {
 }
 
 const isPdfIconImage = (src?: string) => /pdf-icon|new-pdf-icon|pdf-icon4/i.test(src || '')
-
-function getImageType(filename: string, alt: string): 'lab' | 'award' | 'event' {
-  const f = filename.toLowerCase()
-  const a = alt.toLowerCase()
-  if (f.includes('lab') || f.includes('facility') || f.includes('equip') || a.includes('lab') || a.includes('facility')) {
-    return 'lab'
-  }
-  if (f.includes('award') || f.includes('achieve') || f.includes('win') || a.includes('award') || a.includes('achieve')) {
-    return 'award'
-  }
-  return 'event'
-}
 
 export function renderContentBlocks(items: ContentItem[], deptCode: string, sectionName: string, pageUrl: string) {
   if (!items || items.length === 0) return null
@@ -79,7 +66,7 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
                 const validListItems = nextItem.items?.filter(isValidDepartmentText) || []
                 if (validListItems.length === 0) isValid = false
               } else if (nextItem.type === 'table') {
-                const validRows = nextItem.rows?.filter(row => row.every(cell => isValidDepartmentText(cell))) || []
+                const validRows = nextItem.rows?.filter(row => row.every(cell => isValidDepartmentText(typeof cell === 'string' ? cell : cell.text))) || []
                 if (validRows.length === 0) isValid = false
               } else if (nextItem.type === 'document') {
                  isValid = false
@@ -200,9 +187,6 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
         const localSrc = isValid ? resolveLocalScrapedImage(item.src) : null
 
         if (isValid && localSrc) {
-          const type = getImageType(filename, item.alt || '')
-          const caption = item.alt && item.alt !== 'Image' ? item.alt : undefined
-          
           const isProfileImage = filename.includes('photo') || filename.includes('head') || filename.includes('kaliappan') || (item.alt || '').toLowerCase().includes('hod') || (item.alt || '').toLowerCase().includes('head') || (item.alt || '').toLowerCase().includes('principal')
 
           if (isProfileImage) {
@@ -300,7 +284,7 @@ interface FacultySectionProps {
   subpageUrl?: string
 }
 
-export const FacultySection: React.FC<FacultySectionProps> = ({ facultyMembers, deptName, deptCode, accentColor, subpageUrl }) => {
+export const FacultySection: React.FC<FacultySectionProps> = ({ facultyMembers, deptName, deptCode: _deptCode, accentColor, subpageUrl }) => {
   return (
     <div className="faculty-section">
       <h2 className="faculty-section-title" style={{ borderColor: accentColor }}>

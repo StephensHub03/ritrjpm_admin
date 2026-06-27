@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { resolveLocalScrapedImage } from '../utils/localScrapedImages';
 
 interface OrbitImagesProps {
@@ -186,7 +186,7 @@ export default function OrbitImages({
         return (
           <div
             key={index}
-            ref={(el) => (itemRefs.current[index] = el)}
+            ref={(el) => { itemRefs.current[index] = el; }}
             style={{
               position: 'absolute',
               left: '50%',
@@ -223,7 +223,7 @@ export default function OrbitImages({
               }}
             >
               <img
-                src={resolvedSrc}
+                src={resolvedSrc || undefined}
                 alt={`Orbiting student ${index + 1}`}
                 style={{
                   width: '100%',
