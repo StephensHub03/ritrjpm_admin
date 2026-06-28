@@ -133,7 +133,41 @@ export default function DetailOverlay({ pageKey, onClose }: DetailOverlayProps) 
             </div>
           )
         case 'document':
-          return null
+          if (!item.href) return null
+          return (
+            <div key={index} className="detail-document-link-wrapper" style={{ margin: '2rem 0', display: 'flex', justifyContent: 'center' }}>
+              <a 
+                href={item.href} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  padding: '12px 24px',
+                  backgroundColor: '#0f172a',
+                  color: '#fff',
+                  borderRadius: '8px',
+                  textDecoration: 'none',
+                  fontWeight: '600',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)'
+                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)'
+                  e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                }}
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ width: '20px', height: '20px', marginRight: '8px', flexShrink: 0 }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                {item.text || 'View Document'}
+              </a>
+            </div>
+          )
         case 'image':
           return null
         default:

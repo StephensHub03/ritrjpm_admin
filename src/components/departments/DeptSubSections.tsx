@@ -69,8 +69,8 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
                 const validRows = nextItem.rows?.filter(row => row.every(cell => isValidDepartmentText(typeof cell === 'string' ? cell : cell.text))) || []
                 if (validRows.length === 0) isValid = false
               } else if (nextItem.type === 'document') {
-                 isValid = false
-              } else if (nextItem.type === 'paragraph') {
+               // document is valid
+            } else if (nextItem.type === 'paragraph') {
                  // Paragraph is valid if text is valid (which is already checked above)
               } else {
                  isValid = false // Unknown type
@@ -176,8 +176,58 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
           </React.Fragment>
         )
       }
-      case 'document':
-        return null
+      case 'document': {
+        const removeDocumentSubpages = [
+          'about', 'vision', 'facilities', 'mou', 'faculty awards', 'students awards', 
+          'value added', 'expert lecture', 'guest lecture', 'workshop', 'fdp', 'sttp', 'fttp', 
+          'online courses', 'certification', 'iv', 'ipt', 'internship', 'program participation', 
+          'resource person', 'advisory committee', 'dac', 'innovative practices', 
+          'paqic', 'alumni interaction', 'sponsored project', 'consultancy', 'industry institute', 
+          'projects', 'structra', 'faculty data', 'honorary', 'placement data', 
+          'extramural', 'civil nba', 'supporting staff', 'faculty profile', 'funded programme', 'faculty participation', 'industrial visit', 'other state', 'industry project'
+        ];
+        const lowerSectionName = (sectionName || '').toLowerCase();
+        if (removeDocumentSubpages.some(k => lowerSectionName.includes(k))) return null;
+
+        if (!item.href) return null
+        return (
+          <React.Fragment key={index}>
+            <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- SOURCE: scraped | DEPT: ${deptCode.toUpperCase()} | SECTION: ${sectionName} -->` }} />
+            <div className="detail-document-link-wrapper" style={{ margin: '2rem 0', display: 'flex', justifyContent: 'center' }}>
+              <a 
+                href={item.href} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  padding: '12px 24px',
+                  backgroundColor: '#0f172a',
+                  color: '#fff',
+                  borderRadius: '8px',
+                  textDecoration: 'none',
+                  fontWeight: '600',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)'
+                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)'
+                  e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                }}
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ width: '20px', height: '20px', marginRight: '8px', flexShrink: 0 }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                {item.text || 'View Document'}
+              </a>
+            </div>
+          </React.Fragment>
+        )
+      }
       case 'image': {
         if (isPdfIconImage(item.src)) return null
         if (!item.src) return null

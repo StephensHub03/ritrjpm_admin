@@ -34,6 +34,7 @@ export const CivilDept: React.FC<DeptProps> = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { deptSubpages, isAuthenticated } = useCMS()
   const deptData = deptSubpages[deptCode]
+  console.log('Reloading civil dept tables...')
   const [showEditModal, setShowEditModal] = useState(false)
   const subpageKeys = deptData ? Object.keys(deptData) : []
 
@@ -105,7 +106,7 @@ export const CivilDept: React.FC<DeptProps> = () => {
   const isReadMoreOrGallery = activeSubpage.toLowerCase().includes('read more') || activeSubpage.toLowerCase().includes('gallery')
   const showGalleryEmptyState = isReadMoreOrGallery && galleryImages.length === 0
 
-  const isNewsletterTab = /news letter|newsletter|magazine/i.test(activeSubpage)
+  const isPdfTab = /news letter|newsletter|magazine|admission/i.test(activeSubpage)
 
   const textItems = isFacultyProfilePage
     ? filteredContentItems.filter((item) => {
@@ -117,13 +118,13 @@ export const CivilDept: React.FC<DeptProps> = () => {
       })
     : filteredContentItems.filter((item) => {
         if (item.type === 'image') return false
-        if (isNewsletterTab && item.type === 'document') return false
+        if (isPdfTab && item.type === 'document') return false
         return true
       })
 
   const pdfAttachmentCards = (() => {
-    const isNewsletterTab = /news letter|newsletter|magazine/i.test(activeSubpage)
-    if (!isNewsletterTab) return []
+    const isPdfTab = /news letter|newsletter|magazine|admission/i.test(activeSubpage)
+    if (!isPdfTab) return []
 
     // Look for document type items in rawContentItems
     const docItems = rawContentItems.filter((item) => item.type === 'document')
@@ -135,7 +136,7 @@ export const CivilDept: React.FC<DeptProps> = () => {
           year: yearMatch ? yearMatch[1] : 'PDF',
           title: item.text || 'Official Document',
           href: item.href || pageUrl,
-          kind: isMagazine ? 'Magazine' : 'Newsletter',
+          kind: activeSubpage.toLowerCase().includes('admission') ? 'Brochure' : isMagazine ? 'Magazine' : 'Newsletter',
         }
       })
     }
@@ -156,7 +157,7 @@ export const CivilDept: React.FC<DeptProps> = () => {
           year,
           title,
           href: pageUrl,
-          kind: index % 2 === 0 ? 'Magazine' : 'Newsletter',
+          kind: activeSubpage.toLowerCase().includes('admission') ? 'Brochure' : index % 2 === 0 ? 'Magazine' : 'Newsletter',
         }
       })
   })()
