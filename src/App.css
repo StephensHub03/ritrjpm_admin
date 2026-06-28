@@ -1264,14 +1264,19 @@ h3 {
   padding: 96px max(22px, calc((100vw - 1120px) / 2));
 }
 
+.graduation-section {
+  padding: 44px max(22px, calc((100vw - 1120px) / 2)) 36px;
+}
+
 .immersive {
-  padding: 56px max(22px, calc((100vw - 1120px) / 2)) 48px;
+  padding: 24px max(22px, calc((100vw - 1120px) / 2)) 20px;
 }
 
 .immersive,
 .events-section,
 .placements,
-.gallery {
+.gallery,
+.graduation-section {
   color: #0f172a;
 }
 
@@ -1611,7 +1616,8 @@ h3 {
 
 .spotlight-card p,
 .immersive p,
-.placement-copy p {
+.placement-copy p,
+.graduation-copy p {
   margin-top: 14px;
   color: #475569;
   line-height: 1.65;
@@ -1626,12 +1632,13 @@ h3 {
 }
 
 .immersive h2 {
-  font-size: clamp(2.1rem, 5vw, 2.8rem);
-  margin-top: 8px;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 6px;
 }
 
 .globe-stage {
-  height: 380px; /* Increased height back to original compact baseline */
+  height: 330px;
   border: 1px solid rgba(15, 23, 42, 0.1);
   border-radius: 8px;
   background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
@@ -1645,8 +1652,8 @@ h3 {
 
 .orbit-map {
   position: relative;
-  width: min(280px, 70vw);
-  height: min(280px, 70vw);
+  width: min(250px, 70vw);
+  height: min(250px, 70vw);
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
@@ -3659,6 +3666,179 @@ h6.detail-content-heading::before {
   gap: 0;
 }
 
+.dept-vision-mission-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.dept-vision-card,
+.dept-mission-card {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.45) 100%);
+  border: 1.5px solid rgba(6, 24, 70, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -10px rgba(6, 24, 70, 0.04);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dept-vision-card:hover,
+.dept-mission-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(36, 107, 254, 0.22);
+  box-shadow: 0 20px 40px -15px rgba(6, 24, 70, 0.09);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.65) 100%);
+}
+
+.dept-vision-icon-container,
+.dept-mission-icon-container {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  border-radius: 16px;
+  padding: 10px;
+}
+
+.dept-vision-icon-container {
+  background: linear-gradient(135deg, rgba(36, 107, 254, 0.09) 0%, rgba(99, 102, 241, 0.05) 100%);
+  border: 1px solid rgba(36, 107, 254, 0.15);
+}
+
+.dept-mission-icon-container {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.09) 0%, rgba(5, 150, 105, 0.05) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+.dept-vision-svg,
+.dept-mission-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.dept-vision-text-block,
+.dept-mission-text-block {
+  flex: 1;
+  position: relative;
+  padding-right: 0;
+  text-align: left;
+}
+
+.dept-vision-title,
+.dept-mission-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 750;
+  color: #061846;
+  margin: 0 0 6px 0;
+}
+
+.dept-vision-body,
+.dept-mission-body {
+  color: #334155;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.dept-vision-body p,
+.dept-mission-body p {
+  margin: 0 0 8px 0 !important;
+}
+
+.dept-vision-body p:last-child,
+.dept-mission-body p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Override lists in vision/mission columns to look clean and standard */
+.dept-vision-body .detail-content-list,
+.dept-mission-body .detail-content-list {
+  display: block;
+  margin: 6px 0 0 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.dept-vision-body .detail-content-list li,
+.dept-mission-body .detail-content-list li {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 4px 0 4px 18px;
+  margin-bottom: 6px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #334155;
+  display: list-item;
+  list-style-type: disc;
+  font-weight: normal;
+}
+
+.dept-vision-body .detail-content-list li::before,
+.dept-mission-body .detail-content-list li::before {
+  display: none !important;
+}
+
+.dept-vision-body .detail-content-list li:hover,
+.dept-mission-body .detail-content-list li:hover {
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+  border: none;
+}
+
+.dept-card-gold-line {
+  display: none;
+}
+
+.dept-vision-mission-divider {
+  display: none !important;
+}
+
+/* Specifically stack vertically in Research section to avoid squishing beside the globe */
+.about-details .dept-vision-mission-grid {
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-details .dept-vision-card,
+.about-details .dept-mission-card {
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .dept-vision-mission-grid {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .dept-vision-card,
+  .dept-mission-card {
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .dept-vision-icon-container,
+  .dept-mission-icon-container {
+    width: 48px;
+    height: 48px;
+  }
+}
+
 .dept-section-vision-mission .detail-content-paragraph--lead {
   font-size: 1.08rem;
 }
@@ -5556,5 +5736,40 @@ h6.detail-content-heading::before {
   }
   .profile-tab-body {
     padding: 24px;
+  }
+}
+
+/* ===== PEO / PO / PSO Section Styles ===== */
+.peo-item-card {
+  cursor: default;
+}
+
+.peo-item-card:hover {
+  box-shadow: 0 4px 18px rgba(6, 24, 70, 0.10);
+  transform: translateY(-1px);
+}
+
+.peo-section-block {
+  animation: fadeSlideUp 0.4s ease both;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .peo-section-root {
+    padding-top: 4px;
+  }
+  .peo-item-card {
+    padding: 12px 14px;
+    gap: 10px;
   }
 }

@@ -11,6 +11,7 @@ import DepartmentsInterest from './components/DepartmentsInterest'
 import Events from './components/Events'
 import Placements from './components/Placements'
 import CampusLife from './components/CampusLife'
+import GraduationPhotos from './components/GraduationPhotos'
 import Footer from './components/Footer'
 import DetailOverlay from './components/DetailOverlay'
 import LoadingScreen from './components/LoadingScreen'
@@ -135,6 +136,7 @@ function AppContent() {
             <Events />
             <Placements />
             <CampusLife />
+            <GraduationPhotos />
             <Footer onOpenAdmin={() => {
               if (isAuthenticated) {
                 alert("You are already logged in as Admin.")

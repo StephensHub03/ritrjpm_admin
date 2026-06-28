@@ -24,6 +24,7 @@ import {
   FacultySection
 } from './DeptSubSections'
 import type { ContentItem } from './DeptSubSections'
+import { PEOSection } from './PEOSection'
 
 interface DeptProps {
   onClose: () => void
@@ -161,6 +162,8 @@ export const AidsDept: React.FC<DeptProps> = () => {
       })
   })()
 
+  const isPEOTab = /peo|pos|pso|program educational|program outcome|program specific/i.test(activeSubpage)
+
   const renderSubSection = () => {
     const props = {
       deptCode,
@@ -169,6 +172,9 @@ export const AidsDept: React.FC<DeptProps> = () => {
       pageUrl
     }
 
+    if (isPEOTab) {
+      return <PEOSection content={rawContentItems} />
+    }
     if (activeSubpage.toLowerCase().includes('vision') || activeSubpage.toLowerCase().includes('mission')) {
       return <VisionMissionSection {...props} />
     }

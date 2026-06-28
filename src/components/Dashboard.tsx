@@ -192,14 +192,15 @@ export default function Dashboard() {
             "/girls1.jpg",
             "/libgirl.jpg",
             "/sir.jpg",
-            "/sportboy.jpg"
+            "/sportboy.jpg",
+            "/ROBO.png"
           ]}
           shape="ellipse"
           radiusX={580}
           radiusY={200}
           rotation={-8}
           duration={30}
-          itemSize={200}
+          itemSize={280}
           responsive={true}
           radius={320}
           direction="normal"

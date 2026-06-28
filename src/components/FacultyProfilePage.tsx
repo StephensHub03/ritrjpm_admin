@@ -362,6 +362,115 @@ export default function FacultyProfilePage({ facultyName, departmentName, facult
                 <div className="tab-pane-content fade-in">
                   <h2>Research, Publications & IP Portfolio</h2>
 
+                  {/* IRINS Metrics Panel */}
+                  {data.metrics && (data.metrics.citationsScopus > 0 || data.metrics.journals > 0) && (
+                    <div className="profile-section-box">
+                      <h3>Research Impact & Statistics</h3>
+                      <div className="metrics-dashboard-grid" style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                        gap: '20px',
+                        marginTop: '15px',
+                        marginBottom: '25px'
+                      }}>
+                        {data.metrics.hIndex > 0 && (
+                          <div className="metric-dashboard-card color-hindex" style={{
+                            background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(79, 70, 229, 0.08) 100%)',
+                            border: '1px solid rgba(99, 102, 241, 0.25)',
+                            borderRadius: '12px',
+                            padding: '20px 16px',
+                            textAlign: 'center',
+                            transition: 'all 0.3s ease',
+                            cursor: 'default',
+                            boxShadow: '0 4px 6px -1px rgba(99, 102, 241, 0.05), 0 2px 4px -1px rgba(99, 102, 241, 0.03)'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = 'translateY(-3px)';
+                            e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(99, 102, 241, 0.15), 0 4px 6px -2px rgba(99, 102, 241, 0.05)';
+                            e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.5)';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = 'none';
+                            e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(99, 102, 241, 0.05), 0 2px 4px -1px rgba(99, 102, 241, 0.03)';
+                            e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.25)';
+                          }}>
+                            <h4 style={{ margin: '0 0 8px 0', fontSize: '12px', color: '#4f46e5', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: '700' }}>h-index</h4>
+                            <span style={{ fontSize: '32px', fontWeight: '800', color: '#4f46e5' }}>{data.metrics.hIndex}</span>
+                          </div>
+                        )}
+                        <div className="metric-dashboard-card color-journals" style={{
+                          background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(5, 150, 105, 0.08) 100%)',
+                          border: '1px solid rgba(16, 185, 129, 0.25)',
+                          borderRadius: '12px',
+                          padding: '20px 16px',
+                          textAlign: 'center',
+                          transition: 'all 0.3s ease',
+                          cursor: 'default',
+                          boxShadow: '0 4px 6px -1px rgba(16, 185, 129, 0.05), 0 2px 4px -1px rgba(16, 185, 129, 0.03)'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = 'translateY(-3px)';
+                          e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(16, 185, 129, 0.15), 0 4px 6px -2px rgba(16, 185, 129, 0.05)';
+                          e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.5)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = 'none';
+                          e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(16, 185, 129, 0.05), 0 2px 4px -1px rgba(16, 185, 129, 0.03)';
+                          e.currentTarget.style.borderColor = 'rgba(16, 185, 129, 0.25)';
+                        }}>
+                          <h4 style={{ margin: '0 0 8px 0', fontSize: '12px', color: '#059669', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: '700' }}>Journal Publications</h4>
+                          <span style={{ fontSize: '32px', fontWeight: '800', color: '#059669' }}>{data.metrics.journals}</span>
+                        </div>
+                        <div className="metric-dashboard-card color-conferences" style={{
+                          background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(217, 119, 6, 0.08) 100%)',
+                          border: '1px solid rgba(245, 158, 11, 0.25)',
+                          borderRadius: '12px',
+                          padding: '20px 16px',
+                          textAlign: 'center',
+                          transition: 'all 0.3s ease',
+                          cursor: 'default',
+                          boxShadow: '0 4px 6px -1px rgba(245, 158, 11, 0.05), 0 2px 4px -1px rgba(245, 158, 11, 0.03)'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = 'translateY(-3px)';
+                          e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(245, 158, 11, 0.15), 0 4px 6px -2px rgba(245, 158, 11, 0.05)';
+                          e.currentTarget.style.borderColor = 'rgba(245, 158, 11, 0.5)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = 'none';
+                          e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(245, 158, 11, 0.05), 0 2px 4px -1px rgba(245, 158, 11, 0.03)';
+                          e.currentTarget.style.borderColor = 'rgba(245, 158, 11, 0.25)';
+                        }}>
+                          <h4 style={{ margin: '0 0 8px 0', fontSize: '12px', color: '#d97706', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: '700' }}>Conference Proceedings</h4>
+                          <span style={{ fontSize: '32px', fontWeight: '800', color: '#d97706' }}>{data.metrics.conferences}</span>
+                        </div>
+                        <div className="metric-dashboard-card color-total" style={{
+                          background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(192, 38, 211, 0.08) 100%)',
+                          border: '1px solid rgba(236, 72, 153, 0.25)',
+                          borderRadius: '12px',
+                          padding: '20px 16px',
+                          textAlign: 'center',
+                          transition: 'all 0.3s ease',
+                          cursor: 'default',
+                          boxShadow: '0 4px 6px -1px rgba(236, 72, 153, 0.05), 0 2px 4px -1px rgba(236, 72, 153, 0.03)'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = 'translateY(-3px)';
+                          e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(236, 72, 153, 0.15), 0 4px 6px -2px rgba(236, 72, 153, 0.05)';
+                          e.currentTarget.style.borderColor = 'rgba(236, 72, 153, 0.5)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = 'none';
+                          e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(236, 72, 153, 0.05), 0 2px 4px -1px rgba(236, 72, 153, 0.03)';
+                          e.currentTarget.style.borderColor = 'rgba(236, 72, 153, 0.25)';
+                        }}>
+                          <h4 style={{ margin: '0 0 8px 0', fontSize: '12px', color: '#db2777', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: '700' }}>Total Research Outputs</h4>
+                          <span style={{ fontSize: '32px', fontWeight: '800', color: '#db2777' }}>{data.metrics.journals + data.metrics.conferences + data.metrics.bookChapters}</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Research Projects */}
                   {data.projects && data.projects.length > 0 && (
                     <div className="profile-section-box">
