@@ -24,6 +24,7 @@ import {
   FacultySection
 } from './DeptSubSections'
 import type { ContentItem } from './DeptSubSections'
+import { PEOSection } from './PEOSection'
 
 interface DeptProps {
   onClose: () => void
@@ -169,6 +170,9 @@ export const CsbsDept: React.FC<DeptProps> = () => {
       pageUrl
     }
 
+    if (/peo|pos|pso|program educational|program outcome|program specific/i.test(activeSubpage)) {
+      return <PEOSection content={rawContentItems} />
+    }
     if (activeSubpage.toLowerCase().includes('vision') || activeSubpage.toLowerCase().includes('mission')) {
       return <VisionMissionSection {...props} />
     }
