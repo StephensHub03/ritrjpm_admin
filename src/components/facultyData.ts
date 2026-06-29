@@ -41,7 +41,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: 'kaliappan@ritrjpm.ac.in',
     secondaryEmail: 'kalsrajan@yahoo.co.in',
     mobile: '9003613335',
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/images/ai-and-ds/drmk_photo.jpg"),
+    image: '/media/faculty/drmk_photo.jpg',
     office: 'RIT Campus, HOD Cabin, Department of AI & DS',
     bioSummary: 'With over two decades of academic and research experience, his research focuses on Artificial Intelligence, Big Data Analytics, Neural Networks, and Robotic Process Automation.',
     researchAreas: ['Artificial Intelligence', 'Big Data Analytics', 'Ad hoc Networks', 'Neural Networks and Deep Learning', 'Robotic Process Automation'],
@@ -52,7 +52,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
       { label: 'ORCID ID', url: 'https://orcid.org/0000-0001-6177-7428' },
       { label: 'Scopus ID: 55315684100', url: 'http://www.scopus.com/authid/detail.url?authorId=55315684100' }
     ],
-    pdfUrl: 'https://www.ritrjpm.ac.in/profile/_Dr.M.Kaliappan-Biodata-31.10.2023.pdf',
+    pdfUrl: '/media/faculty/_Dr.M.Kaliappan-Biodata-31.10.2023.pdf',
     education: [
       { degree: 'Ph.D', field: 'Information and Communication Engineering', university: 'Anna University, Chennai', year: '2015' },
       { degree: 'M.E', field: 'Computer Science and Engineering', university: 'Manonmaniam Sundaranar University, Tirunelveli', year: '2011' },
@@ -186,12 +186,12 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: 'anandhi@ritrjpm.ac.in',
     secondaryEmail: 'svanandhi2020@gmail.com',
     mobile: '9486856060',
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/305_Dr.Anandhi_Picture.jpg"),
+    image: '/media/faculty/305_Dr.Anandhi_Picture.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: 'With over 19 years of teaching experience, her research focuses on Image Processing, Deep Learning, and Multivariate Analysis.',
     researchAreas: ['Image Processing', 'Deep Learning', 'Multivariate Analysis'],
     socials: [],
-    pdfUrl: 'https://www.ritrjpm.ac.in/profile/305_AD_Dr.Anadhi_Profile.pdf',
+    pdfUrl: '/media/faculty/305_AD_Dr.Anadhi_Profile.pdf',
     education: [
       { degree: 'Ph.D', field: 'Information and Communication Engineering', university: 'Anna University, Chennai', year: '2024' },
       { degree: 'M.E', field: 'Computer Science and Engineering', university: 'Anna University, Tirunelveli', year: '2010' },
@@ -239,7 +239,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: 'sbirunda@gmail.com',
     secondaryEmail: 'selvabirunda@ritrjpm.ac.in',
     mobile: '8220082523',
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/225_Dr.S.Selva_Birundha_1.jpeg"),
+    image: '/media/faculty/225_Dr.S.Selva_Birundha_1.jpeg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: 'Pursuing her Ph.D. and having over 10 years of academic experience, her research interests include Artificial Intelligence, Machine Learning, Deep Learning, and Wireless Sensor Networks.',
     researchAreas: ['Artificial Intelligence', 'Machine Learning', 'Deep Learning', 'Wireless Sensor Networks'],
@@ -248,7 +248,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
       { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Selva-Birunda' },
       { label: 'ORCID ID', url: 'https://orcid.org/0000-0002-9122-5250' }
     ],
-    pdfUrl: 'https://www.ritrjpm.ac.in/profile/225_Ms.SSelvaBirunda-Profile.pdf',
+    pdfUrl: '/media/faculty/225_Ms.SSelvaBirunda-Profile.pdf',
     education: [
       { degree: 'Ph.D (Pursuing)', field: 'Computer Science and Engineering (AI & DS)', university: 'Kalasalingam Academy of Research and Education (Part Time)', year: 'Pursuing' },
       { degree: 'M.Tech', field: 'Computer Science and Engineering', university: 'Kalasalingam University', year: '2012' },
@@ -288,7 +288,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: 'ramnath@ritrjpm.ac.in',
     secondaryEmail: 'ramnath25@gmail.com',
     mobile: '9944693617',
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/240_ad_ram.jpg"),
+    image: '/media/faculty/240_ad_ram.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: 'Pursuing his Ph.D. and having over 12 years of teaching experience, his research areas include Networking, Artificial Intelligence, Machine Learning, Deep Learning, Sentiment Analysis, and Natural Language Processing.',
     researchAreas: ['Networking', 'Artificial Intelligence', 'Machine Learning', 'Deep Learning', 'Sentiment Analysis', 'Natural Language Processing'],
@@ -297,7 +297,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
       { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Ramnath-Muthusamy-2' },
       { label: 'ORCID ID', url: 'https://orcid.org/0000-0002-9397-9320' }
     ],
-    pdfUrl: 'https://www.ritrjpm.ac.in/profile/240_Mr.Ramnath_AD.pdf',
+    pdfUrl: '/media/faculty/240_Mr.Ramnath_AD.pdf',
     education: [
       { degree: 'Ph.D (Pursuing)', field: 'Information and Communication Engineering', university: 'Anna University', year: 'Pursuing' },
       { degree: 'M.E', field: 'Network Engineering', university: 'VelTech MultiTech Dr. Rangarajan Dr. Shakuntala Engineering College / Anna University', year: '2011' },
@@ -340,7 +340,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: "karpagavalli@ritrjpm.ac.in",
     secondaryEmail: "ckvalli08@gmail.com",
     mobile: "9047918934",
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/232_Karpagavalli.jpg"),
+    image: '/media/faculty/232_Karpagavalli.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: "Pursuing her Ph.D. with active research interests in the Internet of Things, Artificial Intelligence, and Machine Learning, she contributes to engineering education and advanced research projects.",
     researchAreas: ["Internet of Things", "Artificial Intelligence", "Machine Learning"],
@@ -349,7 +349,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
       { label: 'ResearchGate', url: "https://www.researchgate.net/profile/C-Karpagavalli" },
       { label: 'ORCID ID', url: "https://orcid.org/0000-0001-8073-4941" }
     ],
-    pdfUrl: "https://www.ritrjpm.ac.in/profile/232_C.Karpagavalli-Bio-Data.pdf",
+    pdfUrl: '/media/faculty/232_C.Karpagavalli-Bio-Data.pdf',
     education: [
       { degree: "Ph.D (Pursuing)", field: "Information and Communication Engineering", university: "Thiagarajar College of Engineering / Anna University, Chennai", year: "Pursuing" },
       { degree: "M.E", field: "Computer Science and Engineering", university: "PSR Engineering College / Anna University, Chennai", year: "2013" },
@@ -414,12 +414,12 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: "sankaralakshmi@ritrjpm.ac.in",
     secondaryEmail: "",
     mobile: "8939743254",
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/272_Sankari-Photo-jpg.JPG"),
+    image: '/media/faculty/272_Sankari-Photo-jpg.JPG',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: "With active research interests in Computer Science & Engineering, Nomadic Computing, Mobile Computing, and Digital Image Processing, she contributes to engineering education and advanced research projects.",
     researchAreas: ["Nomadic Computing", "Mobile Computing", "Digital Image Processing", "Computer Science"],
     socials: [],
-    pdfUrl: "https://www.ritrjpm.ac.in/profile/272_BIODATA-SankariRIT.pdf",
+    pdfUrl: '/media/faculty/272_BIODATA-SankariRIT.pdf',
     education: [
       { degree: "B.Ed", field: "Computer Science", university: "Angel College of Education, Rajapalayam / TNTEU, Chennai", year: "2021" },
       { degree: "M.Tech", field: "Information Technology", university: "PSN College of Engineering and Technology / Anna University, Tirunelveli", year: "2009" },
@@ -462,12 +462,12 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: "anitha@ritrjpm.ac.in",
     secondaryEmail: "anithabalan.official@gmail.com",
     mobile: "9443388165",
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/332_Anitha_Photo.jpg"),
+    image: '/media/faculty/332_Anitha_Photo.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: "With active research interests in Deep Learning, Leukemia Blood Cancer Detection, Natural Language Processing, and Quantum Computing, she contributes to engineering education and advanced research projects.",
     researchAreas: ["Deep Learning", "Medical Image Processing", "Natural Language Processing", "Quantum Computing"],
     socials: [],
-    pdfUrl: "https://www.ritrjpm.ac.in/profile/332_ANITHA_PROFILE.pdf",
+    pdfUrl: '/media/faculty/332_ANITHA_PROFILE.pdf',
     education: [
       { degree: "M.E", field: "Computer Science and Engineering", university: "VV College of Engineering / Anna University", year: "2025" },
       { degree: "B.Tech", field: "Information Technology", university: "Dr. Sivanthi Aditanar College of Engineering / Anna University", year: "2023" }
@@ -511,12 +511,12 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: "dhanalakshmi@ritrjpm.ac.in",
     secondaryEmail: "ishwaryaranju1999@gmail.com",
     mobile: "9789288508",
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/333_Dhanalakshmi_Photo.jpg"),
+    image: '/media/faculty/333_Dhanalakshmi_Photo.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: "With active research interests in Edge Computing, Cloud Storage Security, and Android Mobile Application Development, she contributes to engineering education and advanced research projects.",
     researchAreas: ["Edge Computing", "Cloud Storage Security", "Android App Development"],
     socials: [],
-    pdfUrl: "https://www.ritrjpm.ac.in/profile/333_Dhanalakshmi_Profile.pdf",
+    pdfUrl: '/media/faculty/333_Dhanalakshmi_Profile.pdf',
     education: [
       { degree: "M.E", field: "Computer Science and Engineering", university: "P.S.R. Engineering College / Anna University, Chennai", year: "2025" },
       { degree: "B.E", field: "Computer Science and Engineering", university: "P.S.R.Rengasamy College of Engineering for women / Anna University, Chennai", year: "2021" }
@@ -556,7 +556,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: "revathib@ritrjpm.ac.in",
     secondaryEmail: "revas85@gmail.com",
     mobile: "9751855561",
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/224_revathi-1.jpg"),
+    image: '/media/faculty/224_revathi-1.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: "Pursuing her Ph.D. with active research interests in Machine Learning and Deep Learning, she contributes to engineering education and advanced research projects.",
     researchAreas: ["Machine Learning", "Deep Learning"],
@@ -566,7 +566,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
       { label: 'ResearchGate', url: "https://www.researchgate.net/profile/B-Revathi-3" },
       { label: 'ORCID ID', url: "https://orcid.org/0000-0001-6444-7395" }
     ],
-    pdfUrl: "https://www.ritrjpm.ac.in/profile/_B.Revathi-Biodata-21.10.2024.pdf",
+    pdfUrl: '/media/faculty/_B.Revathi-Biodata-21.10.2024.pdf',
     education: [
       { degree: "Ph.D (Pursuing)", field: "Electronics and Communication Engineering", university: "Anna University, Chennai", year: "Pursuing" },
       { degree: "M.E", field: "Computer & Communication", university: "National Engineering College, Kovilpatti", year: "2014" },
@@ -637,7 +637,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: "usharanic@ritrjpm.ac.in",
     secondaryEmail: "",
     mobile: "7845840338 / 9751653478",
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/239_usharani_AD.jpg"),
+    image: '/media/faculty/239_usharani_AD.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: "Pursuing her Ph.D. with active research interests in Deep Learning and Federated Learning, she contributes to engineering education and advanced research projects.",
     researchAreas: ["Deep Learning", "Federated Learning"],
@@ -646,7 +646,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
       { label: 'ResearchGate', url: "https://www.researchgate.net/profile/Usharani-c" },
       { label: 'ORCID ID', url: "https://orcid.org/0009-0009-1075-7019" }
     ],
-    pdfUrl: "https://www.ritrjpm.ac.in/profile/_C.USHARANI_BIODATA-1.pdf",
+    pdfUrl: '/media/faculty/_C.USHARANI_BIODATA-1.pdf',
     education: [
       { degree: "Ph.D (Pursuing)", field: "Information and Communication Engineering", university: "Anna University, Chennai", year: "Pursuing" },
       { degree: "M.E", field: "Computer Science and Engineering", university: "K.L.N College of Information Technology, Sivagangai / Anna University, Chennai", year: "2015" },
@@ -698,7 +698,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: "muthueshwaran@ritrjpm.ac.in",
     secondaryEmail: "mailtorme@gmail.com",
     mobile: "+91-7092884289",
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/299_AD_MuthuEshwaran.jpg"),
+    image: '/media/faculty/299_AD_MuthuEshwaran.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: "With active research interests in Artificial Intelligence, Machine Learning, and Deep Learning, he contributes to engineering education and advanced research projects.",
     researchAreas: ["Artificial Intelligence", "Machine Learning", "Deep Learning"],
@@ -706,7 +706,7 @@ export const facultyDataMap: Record<string, FacultyData> = {
       { label: 'Google Scholar', url: "https://scholar.google.com/citations?user=N0DVC7YAAAAJ&hl=en" },
       { label: 'ORCID ID', url: "https://orcid.org/0000-0002-4303-5428" }
     ],
-    pdfUrl: "https://www.ritrjpm.ac.in/profile/_MUTHUESHWARANR_faculty_profile.pdf",
+    pdfUrl: '/media/faculty/_MUTHUESHWARANR_faculty_profile.pdf',
     education: [
       { degree: "Ph.D (pursuing)", field: "Information and Communication Engineering", university: "Anna University", year: "Pursuing" },
       { degree: "M.E", field: "Computer Science and Engineering", university: "Kamaraj College of Engineering and Technology, Virudhunagar", year: "2023" },
@@ -753,14 +753,14 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: "angel@ritrjpm.ac.in",
     secondaryEmail: "rangelhepzibah@gmail.com",
     mobile: "9025464900",
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/297_AD_ANGEL.jpg"),
+    image: '/media/faculty/297_AD_ANGEL.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: "Pursuing her Ph.D. with over 18 years of academic experience, her research interests include the Internet of Things, Wireless Sensor Networks, and Computer Networking.",
     researchAreas: ["Internet of Things", "Wireless Sensor Networks", "Networking"],
     socials: [
       { label: "Vidwan ID: 489957", url: "https://ritrjpm.irins.org/profile/489957" }
     ],
-    pdfUrl: "https://www.ritrjpm.ac.in/profile/_Mrs.R.AngelHepzibah_faculty_profile.pdf",
+    pdfUrl: '/media/faculty/_Mrs.R.AngelHepzibah_faculty_profile.pdf',
     education: [
       { degree: "Ph.D (Pursuing)", field: "Information and Communication Engineering", university: "Anna University, Chennai", year: "Pursuing" },
       { degree: "M.E", field: "Computer Science and Engineering", university: "Anna University, Trichy", year: "2010" },
@@ -825,14 +825,14 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: "logapriya@ritrjpm.ac.in",
     secondaryEmail: "logapriyaragavan@gmail.com",
     mobile: "9445968059",
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/298_AD_LOGAPRIYA.jpg"),
+    image: '/media/faculty/298_AD_LOGAPRIYA.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: "With active research interests in Machine Learning, Internet of Things, and Medical Image Processing, she contributes to engineering education and advanced research projects.",
     researchAreas: ["Machine Learning", "Internet of Things", "Medical Image Processing"],
     socials: [
       { label: 'ORCID ID', url: "https://orcid.org/0009-0004-8581-3197" }
     ],
-    pdfUrl: "https://www.ritrjpm.ac.in/profile/_Ms.V.Logapriya_Faculty_profile.pdf",
+    pdfUrl: '/media/faculty/_Ms.V.Logapriya_Faculty_profile.pdf',
     education: [
       { degree: "M.E", field: "Computer Science and Engineering", university: "P.S.R. Engineering College / Anna University, Chennai", year: "2022" },
       { degree: "B.E", field: "Computer Science and Engineering", university: "P.S.R.Rengasamy College of Engineering for Women / Anna University, Tirunelveli", year: "2019" }
@@ -871,14 +871,14 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: "ramana@ritrjpm.ac.in",
     secondaryEmail: "",
     mobile: "7558131141",
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/284_Ramana.jpg"),
+    image: '/media/faculty/284_Ramana.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: "With active research interests in Computer Vision, Deep Learning, and 3D Object Recognition, she contributes to engineering education and advanced research projects.",
     researchAreas: ["Computer Vision", "Deep Learning", "3D Object Recognition"],
     socials: [
       { label: 'ORCID ID', url: "https://orcid.org/0000-0003-4970-2938" }
     ],
-    pdfUrl: "https://www.ritrjpm.ac.in/profile/_Ramana_faculty_profile.pdf",
+    pdfUrl: '/media/faculty/_Ramana_faculty_profile.pdf',
     education: [
       { degree: "Ph.D (pursuing)", field: "Computer Science and Engineering", university: "Kalasalingam Academy of Research and Education", year: "Pursuing" },
       { degree: "M.Tech", field: "Computer Science and Engineering", university: "Kalasalingam Academy of Research and Education", year: "2018" },
@@ -937,12 +937,12 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: "vetrivel@ritrjpm.ac.in",
     secondaryEmail: "vetrilev17@gmail.com",
     mobile: "9600211610",
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/289_Vetrivel.jpg"),
+    image: '/media/faculty/289_Vetrivel.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: "With active research interests in Network Security, Cryptography, Internet of Things, and Deep Learning, he contributes to engineering education and advanced research projects.",
     researchAreas: ["Network Security", "Cryptography", "Internet of Things", "Deep Learning"],
     socials: [],
-    pdfUrl: "https://www.ritrjpm.ac.in/profile/_Vetrivel_Profile.pdf",
+    pdfUrl: '/media/faculty/_Vetrivel_Profile.pdf',
     education: [
       { degree: "M.E", field: "Computer Science and Engineering", university: "Mepco Schlenk Engineering College, Sivakasi", year: "2019" },
       { degree: "B.E", field: "Computer Science and Engineering", university: "AAA College of Engineering and Technology, Sivakasi", year: "2017" }
@@ -991,12 +991,12 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: "pradeepha@ritrjpm.ac.in",
     secondaryEmail: "pradeepha@hotmail.com",
     mobile: "9488487499",
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/285_Pradeepha.jpg"),
+    image: '/media/faculty/285_Pradeepha.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: "With active research interests in Web Services, Semantic Web Services Discovery, Data Mining, and Mobile Application Development, she contributes to engineering education and advanced research projects.",
     researchAreas: ["Web Services", "Semantic Web Services", "Data Mining", "Mobile Application Development"],
     socials: [],
-    pdfUrl: "https://www.ritrjpm.ac.in/profile/_pradeepha.pdf",
+    pdfUrl: '/media/faculty/_pradeepha.pdf',
     education: [
       { degree: "M.E", field: "Computer Science and Engineering", university: "Anna University Regional Centre, Coimbatore", year: "2014" },
       { degree: "B.Tech", field: "Information Technology", university: "Kalasalingam University", year: "2012" }
@@ -1038,14 +1038,14 @@ export const facultyDataMap: Record<string, FacultyData> = {
     email: "santhikala@ritrjpm.ac.in",
     secondaryEmail: "santhisss1983@gmail.com",
     mobile: "9042223616",
-    image: resolveLocalScrapedImage("https://www.ritrjpm.ac.in/gallery1/468/286_Santhikala.jpg"),
+    image: '/media/faculty/286_Santhikala.jpg',
     office: 'RIT Campus, Department of AI & DS',
     bioSummary: "With active research interests in Machine Learning, Big Data Analytics, Blockchain, and Cyber Security, she contributes to engineering education and advanced research projects.",
     researchAreas: ["Machine Learning", "Big Data Analytics", "Blockchain", "Cyber Security"],
     socials: [
       { label: 'Vidwan ID', url: "https://vidwan.inflibnet.ac.in/profile/545058" }
     ],
-    pdfUrl: "https://www.ritrjpm.ac.in/profile/_santhikala_faculty_profile.pdf",
+    pdfUrl: '/media/faculty/_santhikala_faculty_profile.pdf',
     education: [
       { degree: "M.E", field: "Computer Science and Engineering", university: "Thiruvalluvar College of Engineering and Technology, Vandavasi / Anna University", year: "2011" },
       { degree: "B.E", field: "Computer Science and Engineering", university: "Anand Institute of Higher Technology, Chennai / Anna University", year: "2009" }

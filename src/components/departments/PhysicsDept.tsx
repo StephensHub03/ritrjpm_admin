@@ -76,10 +76,10 @@ export const PhysicsDept: React.FC<DeptProps> = () => {
         const rows = item.rows || []
         if (rows.length >= 4) {
           list.push({
-            name: cleanStr(rows[0]?.[0]),
-            designation: cleanStr(rows[1]?.[0]),
-            qualification: cleanStr(rows[2]?.[0]),
-            email: cleanStr(rows[3]?.[0]),
+            name: cleanStr(rows[0]?.[1]),
+            designation: cleanStr(rows[1]?.[1]),
+            qualification: cleanStr(rows[2]?.[1]),
+            email: cleanStr(rows[3]?.[1]),
             image: img,
           })
         }

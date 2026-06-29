@@ -184,7 +184,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/team/team-details.jpg",
+        "src": "/media/generic/about-founder-chairman-message/team-details.jpg",
         "alt": "Image"
       },
       {
@@ -219,7 +219,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/team/team-details1.jpg",
+        "src": "/media/generic/about-chairman-message/team-details1.jpg",
         "alt": "Image"
       },
       {
@@ -435,7 +435,7 @@
       {
         "type": "document",
         "text": "Document",
-        "href": "https://www.ritrjpm.ac.in/images/NAAC/Information-Brochure.pdf"
+        "href": "/media/generic/about-information-brochure/Information-Brochure.pdf"
       },
       {
         "type": "paragraph",
@@ -444,7 +444,7 @@
       {
         "type": "document",
         "text": "Document",
-        "href": "https://www.ritrjpm.ac.in/images/admission/Admission-Brochure-15.05.2018.pdf"
+        "href": "/media/generic/about-information-brochure/Admission-Brochure-15.05.2018.pdf"
       },
       {
         "type": "paragraph",
@@ -848,12 +848,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/admission/2026-2027/Adm_Poster_26-27_1.jpg",
+        "src": "/media/generic/admission-brochure/Adm_Poster_26-27_1.jpg",
         "alt": "Admission Poster 1"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/admission/2026-2027/Adm_Poster_26-27_2.jpg",
+        "src": "/media/generic/admission-brochure/Adm_Poster_26-27_2.jpg",
         "alt": "Admission Poster 2"
       }
     ]
@@ -1045,17 +1045,17 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/wel-admission.jpg",
+        "src": "/media/generic/departments-civil/wel-admission.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager2.jpg",
+        "src": "/media/generic/departments-civil/manager2.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager1.jpg",
+        "src": "/media/generic/departments-civil/manager1.jpg",
         "alt": "Image"
       },
       {
@@ -1070,7 +1070,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/Accountant & System Admin.png",
+        "src": "/media/generic/departments-civil/Accountant___System_Admin.png",
         "alt": "Image"
       },
       {
@@ -1080,12 +1080,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/76_Ms.Pavithra_Civil.jpg",
+        "src": "/media/generic/departments-civil/76_Ms.Pavithra_Civil.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/71_smarutharaj-ci.jpg",
+        "src": "/media/generic/departments-civil/71_smarutharaj-ci.jpg",
         "alt": "Image"
       },
       {
@@ -1095,22 +1095,22 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/69_Mishal.jpg",
+        "src": "/media/generic/departments-civil/69_Mishal.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/68_IMG-20210716-WA0001.jpg",
+        "src": "/media/generic/departments-civil/68_IMG-20210716-WA0001.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/66_RAMYA.jpg",
+        "src": "/media/generic/departments-civil/66_RAMYA.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/65_DSC_1286.JPG",
+        "src": "/media/generic/departments-civil/65_DSC_1286.JPG",
         "alt": "Image"
       },
       {
@@ -1120,7 +1120,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/63_ThanuPhoto.jpg",
+        "src": "/media/generic/departments-civil/63_ThanuPhoto.jpg",
         "alt": "Image"
       },
       {
@@ -1130,27 +1130,27 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/61_Ganesh.jpg",
+        "src": "/media/generic/departments-civil/61_Ganesh.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/60_1624436790640_64.jpg",
+        "src": "/media/generic/departments-civil/60_1624436790640_64.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/59_SHIVASURYA-PHOTO.jpg",
+        "src": "/media/generic/departments-civil/59_SHIVASURYA-PHOTO.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/58_Aravindhan.jpg",
+        "src": "/media/generic/departments-civil/58_Aravindhan.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/57_VaishnaviPerumal.JPG",
+        "src": "/media/generic/departments-civil/57_VaishnaviPerumal.JPG",
         "alt": "Image"
       },
       {
@@ -1170,7 +1170,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/41_LogaGaneshS.jpg",
+        "src": "/media/generic/departments-civil/41_LogaGaneshS.jpg",
         "alt": "Image"
       },
       {
@@ -1185,17 +1185,17 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/logo-white-footer.png",
+        "src": "/media/generic/departments-civil/logo-white-footer.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/about/06.jpg",
+        "src": "/media/generic/departments-civil/06.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sddefault.jpg",
+        "src": "/media/generic/departments-civil/sddefault.jpg",
         "alt": "Image"
       },
       {
@@ -1384,22 +1384,22 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/wel-admission.jpg",
+        "src": "/media/generic/departments-cse/wel-admission.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager2.jpg",
+        "src": "/media/generic/departments-cse/manager2.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager1.jpg",
+        "src": "/media/generic/departments-cse/manager1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/rit-logo-wide-1.png",
+        "src": "/media/generic/departments-cse/rit-logo-wide-1.png",
         "alt": "Image"
       },
       {
@@ -1409,22 +1409,22 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/Accountant & System Admin.png",
+        "src": "/media/generic/departments-cse/Accountant___System_Admin.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/cse1.jpg",
+        "src": "/media/generic/departments-cse/cse1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/75_953614104004.JPG",
+        "src": "/media/generic/departments-cse/75_953614104004.JPG",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/74_SIVA.jpg",
+        "src": "/media/generic/departments-cse/74_SIVA.jpg",
         "alt": "Image"
       },
       {
@@ -1434,12 +1434,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/72_953613104040.JPG",
+        "src": "/media/generic/departments-cse/72_953613104040.JPG",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/67_Photo.jpg",
+        "src": "/media/generic/departments-cse/67_Photo.jpg",
         "alt": "Image"
       },
       {
@@ -1449,12 +1449,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/53_953615104047.JPG",
+        "src": "/media/generic/departments-cse/53_953615104047.JPG",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/52_953613104058.JPG",
+        "src": "/media/generic/departments-cse/52_953613104058.JPG",
         "alt": "Image"
       },
       {
@@ -1464,12 +1464,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/50_953613104006.JPG",
+        "src": "/media/generic/departments-cse/50_953613104006.JPG",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/49_LPRIYA.jpg",
+        "src": "/media/generic/departments-cse/49_LPRIYA.jpg",
         "alt": "Image"
       },
       {
@@ -1479,12 +1479,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/40_DSC_1591.JPG",
+        "src": "/media/generic/departments-cse/40_DSC_1591.JPG",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/30_SELVANANTHINIM.jpg",
+        "src": "/media/generic/departments-cse/30_SELVANANTHINIM.jpg",
         "alt": "Image"
       },
       {
@@ -1494,17 +1494,17 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/23_ANANTHICM.jpg",
+        "src": "/media/generic/departments-cse/23_ANANTHICM.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/logo-white-footer.png",
+        "src": "/media/generic/departments-cse/logo-white-footer.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/about/06.jpg",
+        "src": "/media/generic/departments-cse/06.jpg",
         "alt": "Image"
       },
       {
@@ -1650,22 +1650,22 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/wel-admission.jpg",
+        "src": "/media/generic/departments-eee/wel-admission.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager2.jpg",
+        "src": "/media/generic/departments-eee/manager2.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager1.jpg",
+        "src": "/media/generic/departments-eee/manager1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/rit-logo-wide-1.png",
+        "src": "/media/generic/departments-eee/rit-logo-wide-1.png",
         "alt": "Image"
       },
       {
@@ -1675,12 +1675,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/Accountant & System Admin.png",
+        "src": "/media/generic/departments-eee/Accountant___System_Admin.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/electrical-department/department-EEE.jpg",
+        "src": "/media/generic/departments-eee/department-EEE.jpg",
         "alt": "Image"
       },
       {
@@ -1710,7 +1710,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sddefault.jpg",
+        "src": "/media/generic/departments-eee/sddefault.jpg",
         "alt": "Image"
       },
       {
@@ -1864,7 +1864,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager2.jpg",
+        "src": "/media/generic/departments-ece/manager2.jpg",
         "alt": "Image"
       },
       {
@@ -1874,7 +1874,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/rit-logo-wide-1.png",
+        "src": "/media/generic/departments-ece/rit-logo-wide-1.png",
         "alt": "Image"
       },
       {
@@ -1884,12 +1884,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/Accountant & System Admin.png",
+        "src": "/media/generic/departments-ece/Accountant___System_Admin.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/electrical-communication/2022-2023/ece_head_28.03.23.jpg",
+        "src": "/media/generic/departments-ece/ece_head_28.03.23.jpg",
         "alt": "Image"
       },
       {
@@ -1899,7 +1899,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/default.png",
+        "src": "/media/generic/departments-ece/default.png",
         "alt": "Image"
       },
       {
@@ -1914,7 +1914,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/43_anuselvamathiphoto.jpg",
+        "src": "/media/generic/departments-ece/43_anuselvamathiphoto.jpg",
         "alt": "Image"
       },
       {
@@ -1924,22 +1924,22 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/32_sivachidambaram.jpg",
+        "src": "/media/generic/departments-ece/32_sivachidambaram.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/31_padmajeyarekha.jpg",
+        "src": "/media/generic/departments-ece/31_padmajeyarekha.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/logo-white-footer.png",
+        "src": "/media/generic/departments-ece/logo-white-footer.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/about/06.jpg",
+        "src": "/media/generic/departments-ece/06.jpg",
         "alt": "Image"
       },
       {
@@ -2089,7 +2089,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/wel-admission.jpg",
+        "src": "/media/generic/departments-mech/wel-admission.jpg",
         "alt": "Image"
       },
       {
@@ -2104,7 +2104,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/rit-logo-wide-1.png",
+        "src": "/media/generic/departments-mech/rit-logo-wide-1.png",
         "alt": "Image"
       },
       {
@@ -2114,22 +2114,22 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/Accountant & System Admin.png",
+        "src": "/media/generic/departments-mech/Accountant___System_Admin.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/mechanical/suresh kumar MECH.jpg",
+        "src": "/media/generic/departments-mech/suresh_kumar_MECH.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/82_R.KowsigaGopal.jpg",
+        "src": "/media/generic/departments-mech/82_R.KowsigaGopal.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/81_R.AjithKumar.jpg",
+        "src": "/media/generic/departments-mech/81_R.AjithKumar.jpg",
         "alt": "Image"
       },
       {
@@ -2144,22 +2144,22 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/default.png",
+        "src": "/media/generic/departments-mech/default.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/logo-white-footer.png",
+        "src": "/media/generic/departments-mech/logo-white-footer.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/about/06.jpg",
+        "src": "/media/generic/departments-mech/06.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sddefault.jpg",
+        "src": "/media/generic/departments-mech/sddefault.jpg",
         "alt": "Image"
       },
       {
@@ -2272,7 +2272,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/wel-admission.jpg",
+        "src": "/media/generic/departments-aiml/wel-admission.jpg",
         "alt": "Image"
       },
       {
@@ -2282,12 +2282,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager1.jpg",
+        "src": "/media/generic/departments-aiml/manager1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/rit-logo-wide-1.png",
+        "src": "/media/generic/departments-aiml/rit-logo-wide-1.png",
         "alt": "Image"
       },
       {
@@ -2302,7 +2302,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/logo-white-footer.png",
+        "src": "/media/generic/departments-aiml/logo-white-footer.png",
         "alt": "Image"
       },
       {
@@ -2441,32 +2441,32 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/wel-admission.jpg",
+        "src": "/media/generic/departments-aids/wel-admission.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager2.jpg",
+        "src": "/media/generic/departments-aids/manager2.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager1.jpg",
+        "src": "/media/generic/departments-aids/manager1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/rit-logo-wide-1.png",
+        "src": "/media/generic/departments-aids/rit-logo-wide-1.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/admission/counselling.png",
+        "src": "/media/generic/departments-aids/counselling.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/Accountant & System Admin.png",
+        "src": "/media/generic/departments-aids/Accountant___System_Admin.png",
         "alt": "Image"
       },
       {
@@ -2491,17 +2491,17 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/logo-white-footer.png",
+        "src": "/media/generic/departments-aids/logo-white-footer.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/about/06.jpg",
+        "src": "/media/generic/departments-aids/06.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sddefault.jpg",
+        "src": "/media/generic/departments-aids/sddefault.jpg",
         "alt": "Image"
       },
       {
@@ -2618,12 +2618,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/wel-admission.jpg",
+        "src": "/media/generic/departments-csbs/wel-admission.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager2.jpg",
+        "src": "/media/generic/departments-csbs/manager2.jpg",
         "alt": "Image"
       },
       {
@@ -2633,7 +2633,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/rit-logo-wide-1.png",
+        "src": "/media/generic/departments-csbs/rit-logo-wide-1.png",
         "alt": "Image"
       },
       {
@@ -2643,22 +2643,22 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/Accountant & System Admin.png",
+        "src": "/media/generic/departments-csbs/Accountant___System_Admin.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/CSBS/csbshod.jpg",
+        "src": "/media/generic/departments-csbs/csbshod.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/Under_Cons-1.jpg",
+        "src": "/media/generic/departments-csbs/Under_Cons-1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/logo-white-footer.png",
+        "src": "/media/generic/departments-csbs/logo-white-footer.png",
         "alt": "Image"
       },
       {
@@ -2793,7 +2793,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/wel-admission.jpg",
+        "src": "/media/generic/departments-it/wel-admission.jpg",
         "alt": "Image"
       },
       {
@@ -2803,52 +2803,52 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager1.jpg",
+        "src": "/media/generic/departments-it/manager1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/rit-logo-wide-1.png",
+        "src": "/media/generic/departments-it/rit-logo-wide-1.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/admission/counselling.png",
+        "src": "/media/generic/departments-it/counselling.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/Accountant & System Admin.png",
+        "src": "/media/generic/departments-it/Accountant___System_Admin.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/85_SibiahR.jpg",
+        "src": "/media/generic/departments-it/85_SibiahR.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/84_ValliM.jpg",
+        "src": "/media/generic/departments-it/84_ValliM.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/83_DivyaSri.jpg",
+        "src": "/media/generic/departments-it/83_DivyaSri.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/logo-white-footer.png",
+        "src": "/media/generic/departments-it/logo-white-footer.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/about/06.jpg",
+        "src": "/media/generic/departments-it/06.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sddefault.jpg",
+        "src": "/media/generic/departments-it/sddefault.jpg",
         "alt": "Image"
       },
       {
@@ -2961,12 +2961,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/wel-admission.jpg",
+        "src": "/media/generic/departments-physics/wel-admission.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager2.jpg",
+        "src": "/media/generic/departments-physics/manager2.jpg",
         "alt": "Image"
       },
       {
@@ -2981,27 +2981,27 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/admission/counselling.png",
+        "src": "/media/generic/departments-physics/counselling.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/Accountant & System Admin.png",
+        "src": "/media/generic/departments-physics/Accountant___System_Admin.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/logo-white-footer.png",
+        "src": "/media/generic/departments-physics/logo-white-footer.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/about/06.jpg",
+        "src": "/media/generic/departments-physics/06.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sddefault.jpg",
+        "src": "/media/generic/departments-physics/sddefault.jpg",
         "alt": "Image"
       },
       {
@@ -3118,17 +3118,17 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/wel-admission.jpg",
+        "src": "/media/generic/departments-chemistry/wel-admission.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager2.jpg",
+        "src": "/media/generic/departments-chemistry/manager2.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager1.jpg",
+        "src": "/media/generic/departments-chemistry/manager1.jpg",
         "alt": "Image"
       },
       {
@@ -3138,32 +3138,32 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/admission/counselling.png",
+        "src": "/media/generic/departments-chemistry/counselling.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/Accountant & System Admin.png",
+        "src": "/media/generic/departments-chemistry/Accountant___System_Admin.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/testimonials/default.png",
+        "src": "/media/generic/departments-chemistry/default.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/logo-white-footer.png",
+        "src": "/media/generic/departments-chemistry/logo-white-footer.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/about/06.jpg",
+        "src": "/media/generic/departments-chemistry/06.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sddefault.jpg",
+        "src": "/media/generic/departments-chemistry/sddefault.jpg",
         "alt": "Image"
       },
       {
@@ -3289,32 +3289,32 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager2.jpg",
+        "src": "/media/generic/departments-maths/manager2.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager1.jpg",
+        "src": "/media/generic/departments-maths/manager1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/rit-logo-wide-1.png",
+        "src": "/media/generic/departments-maths/rit-logo-wide-1.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/admission/counselling.png",
+        "src": "/media/generic/departments-maths/counselling.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/Accountant & System Admin.png",
+        "src": "/media/generic/departments-maths/Accountant___System_Admin.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/logo-white-footer.png",
+        "src": "/media/generic/departments-maths/logo-white-footer.png",
         "alt": "Image"
       },
       {
@@ -3324,7 +3324,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sddefault.jpg",
+        "src": "/media/generic/departments-maths/sddefault.jpg",
         "alt": "Image"
       },
       {
@@ -3445,17 +3445,17 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/wel-admission.jpg",
+        "src": "/media/generic/departments-english/wel-admission.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager2.jpg",
+        "src": "/media/generic/departments-english/manager2.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/chairman/manager1.jpg",
+        "src": "/media/generic/departments-english/manager1.jpg",
         "alt": "Image"
       },
       {
@@ -3475,17 +3475,17 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/logo-white-footer.png",
+        "src": "/media/generic/departments-english/logo-white-footer.png",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/about/06.jpg",
+        "src": "/media/generic/departments-english/06.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sddefault.jpg",
+        "src": "/media/generic/departments-english/sddefault.jpg",
         "alt": "Image"
       },
       {
@@ -3956,7 +3956,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/Hiring_Process_Flow_Chart.jpg",
+        "src": "/media/generic/placements-hiring-process/Hiring_Process_Flow_Chart.jpg",
         "alt": "Image"
       }
     ]
@@ -4156,7 +4156,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/pdf/TPO/tpc_percentage_1.jpg",
+        "src": "/media/generic/placements-statistics/tpc_percentage_1.jpg",
         "alt": "Image"
       },
       {
@@ -4166,7 +4166,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/pdf/TPO/tpc_ctc_1.jpg",
+        "src": "/media/generic/placements-statistics/tpc_ctc_1.jpg",
         "alt": "Image"
       }
     ]
@@ -4199,7 +4199,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/placement/2022-2023/Placement_PB_Page_01.jpg",
+        "src": "/media/generic/placements-prospectus/Placement_PB_Page_01.jpg",
         "alt": "Image"
       },
       {
@@ -4209,12 +4209,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/placement/2022-2023/Placement_PB_Page_03.jpg",
+        "src": "/media/generic/placements-prospectus/Placement_PB_Page_03.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/placement/2022-2023/Placement_PB_Page_04.jpg",
+        "src": "/media/generic/placements-prospectus/Placement_PB_Page_04.jpg",
         "alt": "Image"
       },
       {
@@ -4224,37 +4224,37 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/placement/2022-2023/Placement_PB_Page_06.jpg",
+        "src": "/media/generic/placements-prospectus/Placement_PB_Page_06.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/placement/2022-2023/Placement_PB_Page_07.jpg",
+        "src": "/media/generic/placements-prospectus/Placement_PB_Page_07.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/placement/2022-2023/Placement_PB_Page_08.jpg",
+        "src": "/media/generic/placements-prospectus/Placement_PB_Page_08.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/placement/2022-2023/Placement_PB_Page_09.jpg",
+        "src": "/media/generic/placements-prospectus/Placement_PB_Page_09.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/placement/2022-2023/Placement_PB_Page_10.jpg",
+        "src": "/media/generic/placements-prospectus/Placement_PB_Page_10.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/placement/2022-2023/Placement_PB_Page_11.jpg",
+        "src": "/media/generic/placements-prospectus/Placement_PB_Page_11.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/placement/2022-2023/Placement_PB_Page_12.jpg",
+        "src": "/media/generic/placements-prospectus/Placement_PB_Page_12.jpg",
         "alt": "Image"
       },
       {
@@ -4264,17 +4264,17 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/placement/2022-2023/Placement_PB_Page_14.jpg",
+        "src": "/media/generic/placements-prospectus/Placement_PB_Page_14.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/placement/2022-2023/Placement_PB_Page_15.jpg",
+        "src": "/media/generic/placements-prospectus/Placement_PB_Page_15.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/placement/2022-2023/Placement_PB_Page_16.jpg",
+        "src": "/media/generic/placements-prospectus/Placement_PB_Page_16.jpg",
         "alt": "Image"
       }
     ]
@@ -4337,7 +4337,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/library/air-conditioned.jpg",
+        "src": "/media/generic/infrastructure-library/air-conditioned.jpg",
         "alt": "Image"
       },
       {
@@ -4347,7 +4347,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/library/stack.jpg",
+        "src": "/media/generic/infrastructure-library/stack.jpg",
         "alt": "Image"
       },
       {
@@ -4366,7 +4366,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/library/circular.jpg",
+        "src": "/media/generic/infrastructure-library/circular.jpg",
         "alt": "Image"
       },
       {
@@ -4388,7 +4388,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/library/digital.jpg",
+        "src": "/media/generic/infrastructure-library/digital.jpg",
         "alt": "Image"
       },
       {
@@ -4708,7 +4708,7 @@
       {
         "type": "document",
         "text": "Document",
-        "href": "https://www.ritrjpm.ac.in/images/pdf/LIBRARY%20COMMITTEE%20%202019-20.pdf"
+        "href": "/media/generic/infrastructure-library/LIBRARY_COMMITTEE__2019-20.pdf"
       },
       {
         "type": "paragraph",
@@ -4767,27 +4767,27 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/boys-hostel.jpg",
+        "src": "/media/generic/infrastructure-hostel/boys-hostel.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/girls-hostel.jpg",
+        "src": "/media/generic/infrastructure-hostel/girls-hostel.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/hostel-img1.jpg",
+        "src": "/media/generic/infrastructure-hostel/hostel-img1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/hostel-img2.jpg",
+        "src": "/media/generic/infrastructure-hostel/hostel-img2.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/hostel-img3.jpg",
+        "src": "/media/generic/infrastructure-hostel/hostel-img3.jpg",
         "alt": "Image"
       }
     ]
@@ -5103,7 +5103,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/bus-img.jpg",
+        "src": "/media/generic/infrastructure-transport/bus-img.jpg",
         "alt": "Image"
       }
     ]
@@ -5124,7 +5124,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/seminar-hall.jpg",
+        "src": "/media/generic/infrastructure-seminar-hall/seminar-hall.jpg",
         "alt": "Image"
       },
       {
@@ -5134,7 +5134,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/seminar-hall1.jpg",
+        "src": "/media/generic/infrastructure-seminar-hall/seminar-hall1.jpg",
         "alt": "Image"
       },
       {
@@ -5144,7 +5144,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/seminar-hall3.jpg",
+        "src": "/media/generic/infrastructure-seminar-hall/seminar-hall3.jpg",
         "alt": "Image"
       },
       {
@@ -5154,7 +5154,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/seminar-hall2.jpg",
+        "src": "/media/generic/infrastructure-seminar-hall/seminar-hall2.jpg",
         "alt": "Image"
       },
       {
@@ -5164,7 +5164,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/seminar-hall4.jpg",
+        "src": "/media/generic/infrastructure-seminar-hall/seminar-hall4.jpg",
         "alt": "Image"
       },
       {
@@ -5174,7 +5174,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/seminar-hall5.jpg",
+        "src": "/media/generic/infrastructure-seminar-hall/seminar-hall5.jpg",
         "alt": "Image"
       }
     ]
@@ -5195,12 +5195,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/canteen.jpg",
+        "src": "/media/generic/infrastructure-cafeteria/canteen.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/store1.jpg",
+        "src": "/media/generic/infrastructure-cafeteria/store1.jpg",
         "alt": "Image"
       }
     ]
@@ -5257,7 +5257,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sports/2023-2024/Basketball_Men_Team_V2.jpg",
+        "src": "/media/generic/infrastructure-sports/Basketball_Men_Team_V2.jpg",
         "alt": "Image"
       },
       {
@@ -5272,7 +5272,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sports/2023-2024/Football%20Men%20Team.jpg",
+        "src": "/media/generic/infrastructure-sports/Football_Men_Team.jpg",
         "alt": "Image"
       },
       {
@@ -5282,7 +5282,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/2021/volleyball-1.jpg",
+        "src": "/media/generic/infrastructure-sports/volleyball-1.jpg",
         "alt": "Image"
       },
       {
@@ -5302,7 +5302,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sports/2023-2024/Table%20Tennis%20Men%20Team.jpg",
+        "src": "/media/generic/infrastructure-sports/Table_Tennis_Men_Team.jpg",
         "alt": "Image"
       },
       {
@@ -5312,7 +5312,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sports/2023-2024/Badminton_V2.jpg",
+        "src": "/media/generic/infrastructure-sports/Badminton_V2.jpg",
         "alt": "Image"
       },
       {
@@ -5322,7 +5322,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/sports4.jpg",
+        "src": "/media/generic/infrastructure-sports/sports4.jpg",
         "alt": "Image"
       },
       {
@@ -5332,7 +5332,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sports/2023-2024/Cricket_V2.jpg",
+        "src": "/media/generic/infrastructure-sports/Cricket_V2.jpg",
         "alt": "Image"
       },
       {
@@ -5342,17 +5342,17 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sports/2023-2024/Teakwondo.jpg",
+        "src": "/media/generic/infrastructure-sports/Teakwondo.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sports/2023-2024/Taekwonda_V2.jpg",
+        "src": "/media/generic/infrastructure-sports/Taekwonda_V2.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sports/2023-2024/Taekwondo_AUS_V2.jpg",
+        "src": "/media/generic/infrastructure-sports/Taekwondo_AUS_V2.jpg",
         "alt": "Image"
       },
       {
@@ -5367,7 +5367,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sports/2023-2024/Chess_V2.jpg",
+        "src": "/media/generic/infrastructure-sports/Chess_V2.jpg",
         "alt": "Image"
       },
       {
@@ -5377,7 +5377,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/sports/2023-2024/Kabaddi_V2.jpg",
+        "src": "/media/generic/infrastructure-sports/Kabaddi_V2.jpg",
         "alt": "Image"
       },
       {
@@ -5387,7 +5387,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/2023/rit-judo-1.jpg",
+        "src": "/media/generic/infrastructure-sports/rit-judo-1.jpg",
         "alt": "Image"
       },
       {
@@ -5402,7 +5402,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/sports6.jpg",
+        "src": "/media/generic/infrastructure-sports/sports6.jpg",
         "alt": "Image"
       },
       {
@@ -5412,7 +5412,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/sports7.jpg",
+        "src": "/media/generic/infrastructure-sports/sports7.jpg",
         "alt": "Image"
       },
       {
@@ -5448,7 +5448,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/boys-gym1.jpg",
+        "src": "/media/generic/infrastructure-gym/boys-gym1.jpg",
         "alt": "Image"
       },
       {
@@ -5458,7 +5458,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/boys-gym2.jpg",
+        "src": "/media/generic/infrastructure-gym/boys-gym2.jpg",
         "alt": "Image"
       },
       {
@@ -5468,12 +5468,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/girls-gym.jpg",
+        "src": "/media/generic/infrastructure-gym/girls-gym.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/girls-gym2.jpg",
+        "src": "/media/generic/infrastructure-gym/girls-gym2.jpg",
         "alt": "Image"
       }
     ]
@@ -5519,7 +5519,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/store-photo.jpg",
+        "src": "/media/generic/infrastructure-stationery/store-photo.jpg",
         "alt": "Image"
       }
     ]
@@ -5699,17 +5699,17 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/auditorium.jpg",
+        "src": "/media/generic/infrastructure-auditorium/auditorium.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/auditorium1.jpg",
+        "src": "/media/generic/infrastructure-auditorium/auditorium1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/auditorium3.jpg",
+        "src": "/media/generic/infrastructure-auditorium/auditorium3.jpg",
         "alt": "Image"
       }
     ]
@@ -5730,7 +5730,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/infrastructure/fed_bank_1.jpg",
+        "src": "/media/generic/infrastructure-atm/fed_bank_1.jpg",
         "alt": "Image"
       }
     ]
@@ -5769,7 +5769,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2024-2025/ISTE-NIT_SM_1.jpg",
+        "src": "/media/generic/activities-awards/ISTE-NIT_SM_1.jpg",
         "alt": "Image"
       },
       {
@@ -5783,7 +5783,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2024-2025/CSE_Taekwondo_24-25-1.jpg",
+        "src": "/media/generic/activities-awards/CSE_Taekwondo_24-25-1.jpg",
         "alt": "Image"
       },
       {
@@ -5792,12 +5792,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2024-2025/RYLA_38_1.jpg",
+        "src": "/media/generic/activities-awards/RYLA_38_1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2024-2025/RYLA_38_2.jpg",
+        "src": "/media/generic/activities-awards/RYLA_38_2.jpg",
         "alt": "Image"
       },
       {
@@ -5806,7 +5806,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2024-2025/CSE_Judo_1.jpg",
+        "src": "/media/generic/activities-awards/CSE_Judo_1.jpg",
         "alt": "Image"
       },
       {
@@ -5815,7 +5815,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2023-2024/CSE_Universit_Rank_2.jpg",
+        "src": "/media/generic/activities-awards/CSE_Universit_Rank_2.jpg",
         "alt": "Image"
       },
       {
@@ -5824,7 +5824,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2023-2024/CSE_mohan_bug_bounty.jpg",
+        "src": "/media/generic/activities-awards/CSE_mohan_bug_bounty.jpg",
         "alt": "Image"
       },
       {
@@ -5847,12 +5847,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2023-2024/er_1.jpg",
+        "src": "/media/generic/activities-awards/er_1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2023-2024/er_2.jpg",
+        "src": "/media/generic/activities-awards/er_2.jpg",
         "alt": "Image"
       },
       {
@@ -5861,12 +5861,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2022-2023/wipro_poster_1.jpg",
+        "src": "/media/generic/activities-awards/wipro_poster_1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2022-2023/12.PNG",
+        "src": "/media/generic/activities-awards/12.PNG",
         "alt": "Image"
       },
       {
@@ -5880,12 +5880,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2022-2023/1_yog.jpg",
+        "src": "/media/generic/activities-awards/1_yog.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2022-2023/1_vig.jpg",
+        "src": "/media/generic/activities-awards/1_vig.jpg",
         "alt": "Image"
       },
       {
@@ -5894,12 +5894,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2022-2023/2_viji.jpg",
+        "src": "/media/generic/activities-awards/2_viji.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2022-2023/2_vignesh.jpg",
+        "src": "/media/generic/activities-awards/2_vignesh.jpg",
         "alt": "Image"
       },
       {
@@ -5908,7 +5908,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2022-2023/rv_red-cert-1.jpg",
+        "src": "/media/generic/activities-awards/rv_red-cert-1.jpg",
         "alt": "Image"
       },
       {
@@ -5922,7 +5922,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/mechanical/2024-2025/IEI_YEA_2024.jpg",
+        "src": "/media/generic/activities-awards/IEI_YEA_2024.jpg",
         "alt": "Image"
       },
       {
@@ -5931,7 +5931,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/mechanical/2024-2025/National_Level_Robothon-2K24.jpg",
+        "src": "/media/generic/activities-awards/National_Level_Robothon-2K24.jpg",
         "alt": "Image"
       },
       {
@@ -5940,7 +5940,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/mechanical/2024-2025/ISTE_best_private_engineering_college_national_award.jpg",
+        "src": "/media/generic/activities-awards/ISTE_best_private_engineering_college_national_award.jpg",
         "alt": "Image"
       },
       {
@@ -5949,7 +5949,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/mechanical/2024-2025/Faculty_Executive_Member_Appreciation_Certificate.jpg",
+        "src": "/media/generic/activities-awards/Faculty_Executive_Member_Appreciation_Certificate.jpg",
         "alt": "Image"
       },
       {
@@ -5971,7 +5971,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/mechanical/2024-2025/NPTEL_Motivated_Learner-RAK.jpg",
+        "src": "/media/generic/activities-awards/NPTEL_Motivated_Learner-RAK.jpg",
         "alt": "Image"
       },
       {
@@ -5980,7 +5980,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/mechanical/2024-2025/Robot_%20System_Integration_National%20Finals_India_Skills_2024.jpg",
+        "src": "/media/generic/activities-awards/Robot__System_Integration_National_Finals_India_Skills_2024.jpg",
         "alt": "Image"
       },
       {
@@ -5989,7 +5989,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/mechanical/2024-2025/UG2024006.jpg",
+        "src": "/media/generic/activities-awards/UG2024006.jpg",
         "alt": "Image"
       },
       {
@@ -5998,7 +5998,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/mechanical/2024-2025/Tamilnadu_Skill_Competition_in_Additive_Manufacturing.jpg",
+        "src": "/media/generic/activities-awards/Tamilnadu_Skill_Competition_in_Additive_Manufacturing.jpg",
         "alt": "Image"
       },
       {
@@ -6007,12 +6007,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/bharat_abhi_11.jpg",
+        "src": "/media/generic/activities-awards/bharat_abhi_11.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/bharat_abhi_12.jpg",
+        "src": "/media/generic/activities-awards/bharat_abhi_12.jpg",
         "alt": "Image"
       },
       {
@@ -6026,7 +6026,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/mech-srk-award22.jpg",
+        "src": "/media/generic/activities-awards/mech-srk-award22.jpg",
         "alt": "Image"
       },
       {
@@ -6064,17 +6064,17 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/11.jpg",
+        "src": "/media/generic/activities-awards/11.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/22.jpg",
+        "src": "/media/generic/activities-awards/22.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/33.jpg",
+        "src": "/media/generic/activities-awards/33.jpg",
         "alt": "Image"
       },
       {
@@ -6083,7 +6083,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/Prmod1.jpg",
+        "src": "/media/generic/activities-awards/Prmod1.jpg",
         "alt": "Image"
       },
       {
@@ -6093,7 +6093,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/AU%20Rank1.jpg",
+        "src": "/media/generic/activities-awards/AU_Rank1.jpg",
         "alt": "Image"
       },
       {
@@ -6112,7 +6112,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/awards22.jpg",
+        "src": "/media/generic/activities-awards/awards22.jpg",
         "alt": "Image"
       },
       {
@@ -6121,7 +6121,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/awards3.jpg",
+        "src": "/media/generic/activities-awards/awards3.jpg",
         "alt": "Image"
       },
       {
@@ -6149,12 +6149,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/awards19.jpg",
+        "src": "/media/generic/activities-awards/awards19.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/awards20.jpg",
+        "src": "/media/generic/activities-awards/awards20.jpg",
         "alt": "Image"
       },
       {
@@ -6163,7 +6163,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/awards13.jpg",
+        "src": "/media/generic/activities-awards/awards13.jpg",
         "alt": "Image"
       },
       {
@@ -6177,7 +6177,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/m3.jpg",
+        "src": "/media/generic/activities-awards/m3.jpg",
         "alt": "Image"
       },
       {
@@ -6195,7 +6195,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/awards18.jpg",
+        "src": "/media/generic/activities-awards/awards18.jpg",
         "alt": "Image"
       },
       {
@@ -6204,7 +6204,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/awards.jpg",
+        "src": "/media/generic/activities-awards/awards.jpg",
         "alt": "Image"
       },
       {
@@ -6237,12 +6237,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/awards1.jpg",
+        "src": "/media/generic/activities-awards/awards1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/awards2.jpg",
+        "src": "/media/generic/activities-awards/awards2.jpg",
         "alt": "Image"
       },
       {
@@ -6251,7 +6251,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/awards4.jpg",
+        "src": "/media/generic/activities-awards/awards4.jpg",
         "alt": "Image"
       },
       {
@@ -6261,7 +6261,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/awards/csc-award.jpg",
+        "src": "/media/generic/activities-awards/csc-award.jpg",
         "alt": "Image"
       },
       {
@@ -6283,7 +6283,7 @@
     "content": [
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/iste-professonal-sociaties.png",
+        "src": "/media/generic/activities-societies/iste-professonal-sociaties.png",
         "alt": "Image"
       },
       {
@@ -7159,12 +7159,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/Facuty_PP1.jpg",
+        "src": "/media/generic/activities-societies/Facuty_PP1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/Facuty_PP2.jpg",
+        "src": "/media/generic/activities-societies/Facuty_PP2.jpg",
         "alt": "Image"
       },
       {
@@ -7173,7 +7173,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/mechanical/Latex-2.jpg",
+        "src": "/media/generic/activities-societies/Latex-2.jpg",
         "alt": "Image"
       },
       {
@@ -7187,7 +7187,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/electrical-communication/elecreakz1.jpg",
+        "src": "/media/generic/activities-societies/elecreakz1.jpg",
         "alt": "Image"
       },
       {
@@ -7201,7 +7201,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/mechanical/Thematic-Presentation1.jpg",
+        "src": "/media/generic/activities-societies/Thematic-Presentation1.jpg",
         "alt": "Image"
       },
       {
@@ -7215,12 +7215,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/mechanical/funon1.jpg",
+        "src": "/media/generic/activities-societies/funon1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/mechanical/funon2.jpg",
+        "src": "/media/generic/activities-societies/funon2.jpg",
         "alt": "Image"
       },
       {
@@ -7235,7 +7235,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/iste-professonal.jpg",
+        "src": "/media/generic/activities-societies/iste-professonal.jpg",
         "alt": "Image"
       }
     ]
@@ -7252,7 +7252,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/Math-logo-1.jpg",
+        "src": "/media/generic/activities-clubs-nss/Math-logo-1.jpg",
         "alt": "Image"
       },
       {
@@ -7370,7 +7370,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/calendar%20tricks_1.jpg",
+        "src": "/media/generic/activities-clubs-nss/calendar_tricks_1.jpg",
         "alt": "Image"
       },
       {
@@ -7384,12 +7384,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/Freshers%20Warmup%20Quiz_1.jpg",
+        "src": "/media/generic/activities-clubs-nss/Freshers_Warmup_Quiz_1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/Freshers%20Warmup%20Quiz_2.jpg",
+        "src": "/media/generic/activities-clubs-nss/Freshers_Warmup_Quiz_2.jpg",
         "alt": "Image"
       },
       {
@@ -7403,7 +7403,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/linear%20algebra_1.jpg",
+        "src": "/media/generic/activities-clubs-nss/linear_algebra_1.jpg",
         "alt": "Image"
       },
       {
@@ -7489,12 +7489,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/maths/maths-clubs/Maths_PP_event_1.jpg",
+        "src": "/media/generic/activities-clubs-nss/Maths_PP_event_1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/maths/maths-clubs/Maths_PP_event_2.jpg",
+        "src": "/media/generic/activities-clubs-nss/Maths_PP_event_2.jpg",
         "alt": "Image"
       },
       {
@@ -7528,7 +7528,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/maths/maths-clubs/Sudoku%20contest%201.jpg",
+        "src": "/media/generic/activities-clubs-nss/Sudoku_contest_1.jpg",
         "alt": "Image"
       },
       {
@@ -7559,17 +7559,17 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/Funritz2.0-1.jpg",
+        "src": "/media/generic/activities-clubs-nss/Funritz2.0-1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/Funritz2.0-2.jpg",
+        "src": "/media/generic/activities-clubs-nss/Funritz2.0-2.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/Funritz2.0-3.jpg",
+        "src": "/media/generic/activities-clubs-nss/Funritz2.0-3.jpg",
         "alt": "Image"
       },
       {
@@ -7614,7 +7614,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/Math-Techyuga18-1.jpg",
+        "src": "/media/generic/activities-clubs-nss/Math-Techyuga18-1.jpg",
         "alt": "Image"
       },
       {
@@ -7624,12 +7624,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/Math-Techyuga18-3.jpg",
+        "src": "/media/generic/activities-clubs-nss/Math-Techyuga18-3.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/Math-Techyuga18-4.jpg",
+        "src": "/media/generic/activities-clubs-nss/Math-Techyuga18-4.jpg",
         "alt": "Image"
       },
       {
@@ -7648,7 +7648,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/Math-inagural-2.jpg",
+        "src": "/media/generic/activities-clubs-nss/Math-inagural-2.jpg",
         "alt": "Image"
       },
       {
@@ -7693,7 +7693,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/maths/maths-clubs/Dumb%20Charade%201.jpg",
+        "src": "/media/generic/activities-clubs-nss/Dumb_Charade_1.jpg",
         "alt": "Image"
       },
       {
@@ -7708,12 +7708,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/EnggdayDC-2.jpg",
+        "src": "/media/generic/activities-clubs-nss/EnggdayDC-2.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/EnggdayDC-3.jpg",
+        "src": "/media/generic/activities-clubs-nss/EnggdayDC-3.jpg",
         "alt": "Image"
       },
       {
@@ -7753,12 +7753,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/NMDpp-1.jpg",
+        "src": "/media/generic/activities-clubs-nss/NMDpp-1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/NMDpp-2.jpg",
+        "src": "/media/generic/activities-clubs-nss/NMDpp-2.jpg",
         "alt": "Image"
       },
       {
@@ -7768,7 +7768,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/NMDpp-4.jpg",
+        "src": "/media/generic/activities-clubs-nss/NMDpp-4.jpg",
         "alt": "Image"
       },
       {
@@ -7808,7 +7808,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/Math-Funritz-2.jpg",
+        "src": "/media/generic/activities-clubs-nss/Math-Funritz-2.jpg",
         "alt": "Image"
       },
       {
@@ -7818,7 +7818,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/Math-Funritz-4.jpg",
+        "src": "/media/generic/activities-clubs-nss/Math-Funritz-4.jpg",
         "alt": "Image"
       },
       {
@@ -7868,7 +7868,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/club/NSDdc-4.jpg",
+        "src": "/media/generic/activities-clubs-nss/NSDdc-4.jpg",
         "alt": "Image"
       },
       {
@@ -7910,12 +7910,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/maths/maths-clubs/maths-clubs1.jpg",
+        "src": "/media/generic/activities-clubs-nss/maths-clubs1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/maths/maths-clubs/maths-clubs2.jpg",
+        "src": "/media/generic/activities-clubs-nss/maths-clubs2.jpg",
         "alt": "Image"
       },
       {
@@ -7929,7 +7929,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/maths/maths-clubs/maths-clubs3.jpg",
+        "src": "/media/generic/activities-clubs-nss/maths-clubs3.jpg",
         "alt": "Image"
       },
       {
@@ -7939,7 +7939,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/maths/maths-clubs/maths-clubs5.jpg",
+        "src": "/media/generic/activities-clubs-nss/maths-clubs5.jpg",
         "alt": "Image"
       }
     ]
@@ -8135,7 +8135,7 @@
       {
         "type": "document",
         "text": "Document",
-        "href": "https://www.ritrjpm.ac.in/images/pdf/Final-Annual-Magazine.pdf"
+        "href": "/media/generic/activities-magazine/Final-Annual-Magazine.pdf"
       },
       {
         "type": "paragraph",
@@ -8144,7 +8144,7 @@
       {
         "type": "document",
         "text": "Document",
-        "href": "https://www.ritrjpm.ac.in/images/pdf/Magazine%2015-16.pdf"
+        "href": "/media/generic/activities-magazine/Magazine_15-16.pdf"
       },
       {
         "type": "paragraph",
@@ -8153,7 +8153,7 @@
       {
         "type": "document",
         "text": "Document",
-        "href": "https://www.ritrjpm.ac.in/images/pdf/Magazine%2016-17.pdf"
+        "href": "/media/generic/activities-magazine/Magazine_16-17.pdf"
       },
       {
         "type": "paragraph",
@@ -8162,7 +8162,7 @@
       {
         "type": "document",
         "text": "Document",
-        "href": "https://www.ritrjpm.ac.in/images/pdf/Magazine%2017-18.pdf"
+        "href": "/media/generic/activities-magazine/Magazine_17-18.pdf"
       },
       {
         "type": "paragraph",
@@ -8171,7 +8171,7 @@
       {
         "type": "document",
         "text": "Document",
-        "href": "https://www.ritrjpm.ac.in/images/pdf/Magazine%2018-19.pdf"
+        "href": "/media/generic/activities-magazine/Magazine_18-19.pdf"
       },
       {
         "type": "paragraph",
@@ -8180,7 +8180,7 @@
       {
         "type": "document",
         "text": "Document",
-        "href": "https://www.ritrjpm.ac.in/images/pdf/2022-2023/Annual%20Magazine-Campus-Talk-2021-2022.pdf"
+        "href": "/media/generic/activities-magazine/Annual_Magazine-Campus-Talk-2021-2022.pdf"
       },
       {
         "type": "paragraph",
@@ -9105,7 +9105,7 @@
     "content": [
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/IITM-PALS.jpg",
+        "src": "/media/generic/activities-iitm-pals/IITM-PALS.jpg",
         "alt": "Image"
       },
       {
@@ -9337,7 +9337,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/NCC_new_logo.jpg",
+        "src": "/media/generic/activities-ncc/NCC_new_logo.jpg",
         "alt": "Image"
       },
       {
@@ -9388,7 +9388,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/NCC_Team.jpg",
+        "src": "/media/generic/activities-ncc/NCC_Team.jpg",
         "alt": "Image"
       }
     ]
@@ -9622,7 +9622,7 @@
     "content": [
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/redhat-academy/redhat-logo.png",
+        "src": "/media/generic/activities-redhat/redhat-logo.png",
         "alt": "Image"
       },
       {
@@ -9651,7 +9651,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/redhat-academy/redhat_academy-img.jpg",
+        "src": "/media/generic/activities-redhat/redhat_academy-img.jpg",
         "alt": "Image"
       },
       {
@@ -9678,12 +9678,12 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2022-2023/rv_red-cert-1.jpg",
+        "src": "/media/generic/activities-redhat/rv_red-cert-1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/computer-science/2022-2023/mgm_red-cert-1.jpg",
+        "src": "/media/generic/activities-redhat/mgm_red-cert-1.jpg",
         "alt": "Image"
       },
       {
@@ -10135,7 +10135,7 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/research/2023-2024/overview_rc_1.jpg",
+        "src": "/media/generic/research-overview/overview_rc_1.jpg",
         "alt": "Image"
       },
       {
@@ -10155,22 +10155,22 @@
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/research/2023-2024/RC_Overview_1.jpg",
+        "src": "/media/generic/research-overview/RC_Overview_1.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/research/2023-2024/RC_Overview_2.jpg",
+        "src": "/media/generic/research-overview/RC_Overview_2.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/research/2023-2024/RC_Overview_5.jpg",
+        "src": "/media/generic/research-overview/RC_Overview_5.jpg",
         "alt": "Image"
       },
       {
         "type": "image",
-        "src": "https://www.ritrjpm.ac.in/images/research/2023-2024/RC_Overview_6.jpg",
+        "src": "/media/generic/research-overview/RC_Overview_6.jpg",
         "alt": "Image"
       }
     ]
@@ -12270,12 +12270,12 @@
       {
         "type": "document",
         "text": "Tender Notice Download",
-        "href": "https://www.ritrjpm.ac.in/images/Idea%20Lab/2025-2026/Idea_Lab_Tender_Notice.pdf"
+        "href": "/media/generic/idealab-tenders/Idea_Lab_Tender_Notice.pdf"
       },
       {
         "type": "document",
         "text": "Equipment Details Download",
-        "href": "https://www.ritrjpm.ac.in/images/Idea%20Lab/2025-2026/RIT_AICTE-Idea_Lab_Tender_Equipment.pdf"
+        "href": "/media/generic/idealab-tenders/RIT_AICTE-Idea_Lab_Tender_Equipment.pdf"
       }
     ]
   }

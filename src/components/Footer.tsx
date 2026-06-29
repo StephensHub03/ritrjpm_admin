@@ -156,7 +156,7 @@ export default function Footer({ onOpenAdmin }: FooterProps) {
           <p>© 2026 Ramco Institute of Technology. All Rights Reserved.</p>
           <div className="bottom-bar-credits">
             <p>Designed By <a href="https://www.ritrjpm.ac.in/" target="_blank" rel="noreferrer">Dept., of AI&DS, Ramco Institute of Technology</a></p>
-            <button onClick={onOpenAdmin} className="footer-admin-btn">CMS Portal</button>
+            {/* <button onClick={onOpenAdmin} className="footer-admin-btn">CMS Portal</button> */}
           </div>
         </div>
       </div>
