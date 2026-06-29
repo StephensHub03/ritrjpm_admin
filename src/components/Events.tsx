@@ -1,85 +1,18 @@
-import { useEffect, useRef } from 'react'
-import { Calendar, ArrowUpRight, BookOpen, GraduationCap, Award, Code, Cpu, Scale, Leaf } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { Calendar, ArrowUpRight, BookOpen, GraduationCap, Award, Code, Cpu, Scale, Leaf, Edit } from 'lucide-react'
 import { resolveLocalScrapedImage } from '../utils/localScrapedImages'
+import { useCMS } from './CMSContext'
+import { EditEventsModal } from './CMSModals'
 
-const latestEvents = [
-  {
-    title: 'Technical Information Presentation Training',
-    date: '2025-2026',
-    category: 'Training',
-    icon: BookOpen,
-    description: 'Specialized training programme on standard operating procedures and best practices for displaying technical information.',
-    image: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/Display_TI.jpg',
-    link: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/Event_Display_TI.pdf',
-  },
-  {
-    title: 'Enterprise Application Development Lecture',
-    date: '2025-2026',
-    category: 'Guest Lecture',
-    icon: GraduationCap,
-    description: 'ACM guest lecture detailing modern patterns, frameworks, and deployment strategies for enterprise-grade applications.',
-    image: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/ACM_GuestLecture_Poster.jpg',
-    link: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/ACM_GuestLecture_Report.pdf',
-  },
-  {
-    title: 'NLP for Modern AI Systems FDP',
-    date: '2025-2026',
-    category: 'FDP',
-    icon: Award,
-    description: 'Faculty Development Programme centered on Natural Language Processing architectures, transformer models, and semantic search.',
-    image: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/FDP_Poster.jpg',
-    link: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/FDP_Report.pdf',
-  },
-  {
-    title: 'Workshop on Exploring Generative AI',
-    date: '2025-2026',
-    category: 'Workshop',
-    icon: Code,
-    description: 'ISTE sponsored national workshop exploring generative algorithms, prompt design, and practical applications of LLMs.',
-    image: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/ISTE_ExploringGenAi_Poster.jpg',
-    link: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/ISTE_GenAI_workshop_Report.pdf',
-  },
-  {
-    title: 'Robotics and Internet of Things Seminar',
-    date: '2025-2026',
-    category: 'Seminar',
-    icon: Cpu,
-    description: 'Two-day national online seminar focusing on autonomous robotic system controls, sensor networks, and IoT cloud platforms.',
-    image: 'https://www.ritrjpm.ac.in/images/mechanical/2025-2026/Latest_Event_IORT.png',
-    link: 'https://www.ritrjpm.ac.in/images/mechanical/2025-2026/IoRT_Post_Event_report.pdf',
-  },
-  {
-    title: 'Rule of Law and Criminal Justice System',
-    date: '2025-2026',
-    category: 'Seminar',
-    icon: Scale,
-    description: 'An educational seminar exploring legal foundations, constitutional rights, and modern reforms in the criminal justice system.',
-    image: 'https://www.ritrjpm.ac.in/images/course/event_rule_of_law.jpg',
-    link: 'https://www.ritrjpm.ac.in/images/course/law_report.pdf',
-  },
-  {
-    title: 'Recent Trends in Green Chemistry',
-    date: '2025-2026',
-    category: 'Workshop',
-    icon: Award,
-    description: 'One-day workshop discussing clean chemical processes, sustainable designs, and environmental safety guidelines.',
-    image: 'https://www.ritrjpm.ac.in/images/course/GC1.jpg',
-    link: 'https://www.ritrjpm.ac.in/departments/chemistry/chemistry-program-organized-chemistry-program-participation.php',
-  },
-  {
-    title: 'Tree Plantation by Eco Club',
-    date: '2025-2026',
-    category: 'Eco Activity',
-    icon: Leaf,
-    description: 'Sustainable campus drive promoting green coverage, conservation awareness, and active community environmental care.',
-    image: 'https://www.ritrjpm.ac.in/images/course/tree2.jpg',
-    link: 'https://www.ritrjpm.ac.in/images/EcoClub%20word.pdf',
-  }
-]
+const iconMap: Record<string, any> = {
+  BookOpen, GraduationCap, Award, Code, Cpu, Scale, Leaf, Calendar
+}
 
 export default function Events() {
   const trackRef = useRef<HTMLDivElement>(null)
   const isHovered = useRef(false)
+  const { eventsList, isAuthenticated } = useCMS()
+  const [isEditOpen, setIsEditOpen] = useState(false)
 
   useEffect(() => {
     const track = trackRef.current
@@ -127,10 +60,20 @@ export default function Events() {
       track.removeEventListener('mouseenter', handleMouseEnter)
       track.removeEventListener('mouseleave', handleMouseLeave)
     }
-  }, [])
+  }, [eventsList])
 
   return (
-    <section className="events-section reveal-section" id="events">
+    <section className="events-section reveal-section" id="events" style={{ position: 'relative' }}>
+      {isAuthenticated && (
+        <button 
+          className="admin-edit-btn" 
+          style={{ position: 'absolute', top: '20px', right: '20px', zIndex: 100 }}
+          onClick={() => setIsEditOpen(true)}
+        >
+          <Edit size={16} /> Edit Events
+        </button>
+      )}
+
       <div className="events-header">
         <div>
           <h2>Milestones, Hackathons & Campus Highlights</h2>
@@ -138,8 +81,8 @@ export default function Events() {
       </div>
       
       <div className="events-track" ref={trackRef}>
-        {latestEvents.map((event, index) => {
-          const IconComponent = event.icon
+        {eventsList.map((event, index) => {
+          const IconComponent = iconMap[event.icon] || Calendar
           return (
             <a 
               href={event.link} 
@@ -186,6 +129,8 @@ export default function Events() {
           )
         })}
       </div>
+
+      {isEditOpen && <EditEventsModal onClose={() => setIsEditOpen(false)} />}
     </section>
   )
 }

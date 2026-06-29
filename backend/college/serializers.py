@@ -87,6 +87,16 @@ class AnnouncementSerializer(serializers.ModelSerializer):
         model = Announcement
         fields = '__all__'
 
+    def to_representation(self, instance):
+        rep = super().to_representation(instance)
+        if instance.file:
+            request = self.context.get('request')
+            if request is not None:
+                rep['file_url'] = request.build_absolute_uri(instance.file.url)
+            else:
+                rep['file_url'] = instance.file.url
+        return rep
+
 
 class TestimonialSerializer(serializers.ModelSerializer):
     class Meta:

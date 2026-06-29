@@ -9,6 +9,17 @@ export interface StatItem {
   tone: string
 }
 
+export interface EventItem {
+  id: number
+  title: string
+  date: string
+  category: string
+  icon: string
+  description: string
+  image: string
+  link: string
+}
+
 export interface CtaButton {
   text: string
   link: string
@@ -43,6 +54,14 @@ export interface NewsItem {
   thumbnail_url: string
 }
 
+export interface AnnouncementItem {
+  id: number
+  title: string
+  message: string
+  active: boolean
+  file_url?: string
+}
+
 export interface PlacementItem {
   id?: number
   year: number
@@ -56,7 +75,9 @@ interface CMSContextType {
   token: string | null
   homepageConfig: HomepageConfig
   newsList: NewsItem[]
+  announcementsList: AnnouncementItem[]
   placementsList: PlacementItem[]
+  eventsList: EventItem[]
   flatPages: Record<string, any>
   deptSubpages: Record<string, any>
   galleryVideos: any[]
@@ -70,10 +91,16 @@ interface CMSContextType {
   deleteNewsItem: (id: number) => Promise<boolean>
   toggleFeaturedNews: (id: number, featured: boolean) => Promise<boolean>
   fetchAnalytics: () => Promise<any>
-  updatePlacementsList: (data: PlacementItem[]) => Promise<boolean>
+  updatePlacementsList: (list: PlacementItem[]) => Promise<boolean>
+  updateEventsList: (list: EventItem[]) => Promise<boolean>
   updateFlatPage: (pageKey: string, title: string, content: any[]) => Promise<boolean>
   updateDeptSubpage: (deptCode: string, subpageKey: string, content: any[]) => Promise<boolean>
+  uploadDeptFile: (file: File, deptCode: string, subpageKey: string) => Promise<string | null>
+  uploadGlobalFile: (file: File) => Promise<string | null>
   updateGalleryVideos: (videos: any[]) => Promise<boolean>
+  createAnnouncement: (data: Omit<AnnouncementItem, 'id'>, file: File | null) => Promise<boolean>
+  updateAnnouncement: (id: number, data: Partial<AnnouncementItem>, file: File | null) => Promise<boolean>
+  deleteAnnouncement: (id: number) => Promise<boolean>
 }
 
 const CMSContext = createContext<CMSContextType | undefined>(undefined)
@@ -132,13 +159,47 @@ const DEFAULT_NEWS_LIST: NewsItem[] = [
   }
 ]
 
-const API_BASE = "http://localhost:8000/api"
+const DEFAULT_EVENTS: EventItem[] = [
+  {
+    id: 1,
+    title: 'Technical Information Presentation Training',
+    date: '2025-2026',
+    category: 'Training',
+    icon: 'BookOpen',
+    description: 'Specialized training programme on standard operating procedures and best practices for displaying technical information.',
+    image: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/Display_TI.jpg',
+    link: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/Event_Display_TI.pdf',
+  },
+  {
+    id: 2,
+    title: 'Enterprise Application Development Lecture',
+    date: '2025-2026',
+    category: 'Guest Lecture',
+    icon: 'GraduationCap',
+    description: 'ACM guest lecture detailing modern patterns, frameworks, and deployment strategies for enterprise-grade applications.',
+    image: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/ACM_GuestLecture_Poster.jpg',
+    link: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/ACM_GuestLecture_Report.pdf',
+  },
+  {
+    id: 3,
+    title: 'NLP for Modern AI Systems FDP',
+    date: '2025-2026',
+    category: 'FDP',
+    icon: 'Award',
+    description: 'Faculty Development Programme centered on Natural Language Processing architectures, transformer models, and semantic search.',
+    image: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/FDP_Poster.jpg',
+    link: 'https://www.ritrjpm.ac.in/images/pdf/2025-2026/LE/FDP_Report.pdf',
+  },
+]
+
+const API_BASE = "http://localhost:9000/api"
 
 export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [token, setToken] = useState<string | null>(localStorage.getItem('rit_admin_token'))
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(Boolean(token))
   const [homepageConfig, setHomepageConfig] = useState<HomepageConfig>(DEFAULT_HOMEPAGE_CONFIG)
   const [newsList, setNewsList] = useState<NewsItem[]>(DEFAULT_NEWS_LIST)
+  const [announcementsList, setAnnouncementsList] = useState<AnnouncementItem[]>([])
   const [placementsList, setPlacementsList] = useState<PlacementItem[]>(() => {
     const local = localStorage.getItem('rit_local_placements')
     return local ? JSON.parse(local) : [
@@ -148,6 +209,10 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       { year: 2024, placement_percentage: 90.0, highest_package_lpa: 20.0, average_package_lpa: 4.8 },
       { year: 2025, placement_percentage: 86.0, highest_package_lpa: 48.0, average_package_lpa: 5.2 }
     ]
+  })
+  const [eventsList, setEventsList] = useState<EventItem[]>(() => {
+    const local = localStorage.getItem('rit_local_events')
+    return local ? JSON.parse(local) : DEFAULT_EVENTS
   })
   const [flatPages, setFlatPages] = useState<Record<string, any>>(() => {
     const local = localStorage.getItem('rit_local_scraped_pages')
@@ -202,7 +267,31 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       // 1. Fetch Homepage Config
       const configRes = await fetch(`${API_BASE}/homepage-config/`)
       if (configRes.ok) {
-        const configData = await configRes.json()
+        let configData = await configRes.json()
+        
+        // Restore customized images from localStorage if backend still has defaults
+        const localDataStr = localStorage.getItem('rit_local_homepage_config')
+        if (localDataStr) {
+          try {
+            const localData = JSON.parse(localDataStr)
+            if (localData.hero_image_url && localData.hero_image_url !== "/rit1.PNG" && configData.hero_image_url === "/rit1.PNG") {
+              configData = localData
+              
+              // Attempt to sync the restored local data back to the server in the background
+              if (token && !token.startsWith('mock')) {
+                fetch(`${API_BASE}/homepage-config/1/`, {
+                  method: 'PUT',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Token ${token}`
+                  },
+                  body: JSON.stringify(localData)
+                }).catch(console.error)
+              }
+            }
+          } catch(e) {}
+        }
+        
         setHomepageConfig(configData)
         setIsApiConnected(true)
       } else {
@@ -228,6 +317,13 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           average_package_lpa: parseFloat(p.average_package_lpa)
         })).sort((a: any, b: any) => a.year - b.year)
         setPlacementsList(formatted)
+      }
+
+      // 4. Fetch Announcements
+      const announcementsRes = await fetch(`${API_BASE}/announcements/`)
+      if (announcementsRes.ok) {
+        const announcementsData = await announcementsRes.json()
+        setAnnouncementsList(announcementsData)
       }
     } catch (e) {
       console.warn("Backend API not reachable or failed. Using LocalStorage fallback.", e)
@@ -583,9 +679,9 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }
   }
 
-  const updatePlacementsList = async (data: PlacementItem[]): Promise<boolean> => {
-    localStorage.setItem('rit_local_placements', JSON.stringify(data))
-    setPlacementsList(data)
+  const updatePlacementsList = async (list: PlacementItem[]): Promise<boolean> => {
+    localStorage.setItem('rit_local_placements', JSON.stringify(list))
+    setPlacementsList(list)
 
     if (isApiConnected && token) {
       try {
@@ -596,7 +692,7 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           headers['Authorization'] = `Token ${token}`
         }
 
-        for (const item of data) {
+        for (const item of list) {
           const payload = {
             year: item.year,
             placement_percentage: item.placement_percentage,
@@ -621,6 +717,12 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         console.error("Failed to sync placements with backend API", e)
       }
     }
+    return true
+  }
+
+  const updateEventsList = async (list: EventItem[]): Promise<boolean> => {
+    localStorage.setItem('rit_local_events', JSON.stringify(list))
+    setEventsList(list)
     return true
   }
 
@@ -653,13 +755,168 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }
     localStorage.setItem('rit_local_dept_subpages', JSON.stringify(updated))
     setDeptSubpages(updated)
+
+    // Save to backend API for persistence
+    if (isApiConnected && token) {
+      try {
+        const headers: Record<string, string> = { 'Content-Type': 'application/json' }
+        if (!token.startsWith('mock')) headers['Authorization'] = `Token ${token}`
+        fetch(`${API_BASE}/save-dept-subpages/`, {
+          method: 'PUT',
+          headers,
+          body: JSON.stringify(updated)
+        }).catch(console.error)
+      } catch (e) {
+        console.error("Failed to sync dept subpages to API", e)
+      }
+    }
+    
     return true
+  }
+
+  const uploadDeptFile = async (file: File, deptCode: string, subpageKey: string): Promise<string | null> => {
+    if (isApiConnected && token) {
+      try {
+        const formData = new FormData()
+        formData.append('file', file)
+        formData.append('deptCode', deptCode)
+        formData.append('subpageKey', subpageKey)
+
+        const headers: Record<string, string> = {}
+        if (!token.startsWith('mock')) {
+          headers['Authorization'] = `Token ${token}`
+        }
+
+        const res = await fetch(`${API_BASE}/upload-dept-file/`, {
+          method: 'POST',
+          headers,
+          body: formData,
+        })
+        if (res.ok) {
+          const data = await res.json()
+          return data.url
+        }
+      } catch (e) {
+        console.error("Failed to upload dept file", e)
+      }
+    }
+    return null
+  }
+
+  const uploadGlobalFile = async (file: File): Promise<string | null> => {
+    return uploadDeptFile(file, 'homepage', 'assets')
   }
 
   const updateGalleryVideos = async (videos: any[]): Promise<boolean> => {
     localStorage.setItem('rit_local_gallery_videos', JSON.stringify(videos))
     setGalleryVideos(videos)
     return true
+  }
+
+  const createAnnouncement = async (data: Omit<AnnouncementItem, 'id'>, file: File | null): Promise<boolean> => {
+    if (isApiConnected && token) {
+      try {
+        const formData = new FormData()
+        formData.append('title', data.title)
+        formData.append('message', data.message)
+        formData.append('active', String(data.active))
+        if (file) {
+          formData.append('file', file)
+        }
+
+        const headers: Record<string, string> = {}
+        if (!token.startsWith('mock')) {
+          headers['Authorization'] = `Token ${token}`
+        }
+
+        const res = await fetch(`${API_BASE}/announcements/`, {
+          method: 'POST',
+          headers,
+          body: formData,
+        })
+        if (res.ok) {
+          await loadData()
+          return true
+        }
+      } catch (e) {
+        console.error("Failed to create announcement", e)
+      }
+    } else {
+      const newAnn: AnnouncementItem = {
+        ...data,
+        id: Date.now(),
+        file_url: file ? URL.createObjectURL(file) : undefined
+      }
+      const updated = [newAnn, ...announcementsList]
+      localStorage.setItem('rit_local_announcements', JSON.stringify(updated))
+      setAnnouncementsList(updated)
+      return true
+    }
+    return false
+  }
+
+  const updateAnnouncement = async (id: number, data: Partial<AnnouncementItem>, file: File | null): Promise<boolean> => {
+    if (isApiConnected && token) {
+      try {
+        const formData = new FormData()
+        if (data.title) formData.append('title', data.title)
+        if (data.message) formData.append('message', data.message)
+        if (data.active !== undefined) formData.append('active', String(data.active))
+        if (file) {
+          formData.append('file', file)
+        }
+
+        const headers: Record<string, string> = {}
+        if (!token.startsWith('mock')) {
+          headers['Authorization'] = `Token ${token}`
+        }
+
+        const res = await fetch(`${API_BASE}/announcements/${id}/`, {
+          method: 'PATCH',
+          headers,
+          body: formData,
+        })
+        if (res.ok) {
+          await loadData()
+          return true
+        }
+      } catch (e) {
+        console.error("Failed to update announcement", e)
+      }
+    } else {
+      const updated = announcementsList.map(item => 
+        item.id === id ? { ...item, ...data, file_url: file ? URL.createObjectURL(file) : item.file_url } : item
+      )
+      localStorage.setItem('rit_local_announcements', JSON.stringify(updated))
+      setAnnouncementsList(updated)
+      return true
+    }
+    return false
+  }
+
+  const deleteAnnouncement = async (id: number): Promise<boolean> => {
+    if (isApiConnected && token) {
+      try {
+        const headers: Record<string, string> = {}
+        if (!token.startsWith('mock')) {
+          headers['Authorization'] = `Token ${token}`
+        }
+        const res = await fetch(`${API_BASE}/announcements/${id}/`, {
+          method: 'DELETE',
+          headers,
+        })
+        if (res.ok) {
+          await loadData()
+          return true
+        }
+      } catch (e) {
+        console.error("Failed to delete announcement", e)
+      }
+    } else {
+      setAnnouncementsList(announcementsList.filter(a => a.id !== id))
+      return true
+    }
+    return false
   }
 
   return (
@@ -669,7 +926,9 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         token,
         homepageConfig,
         newsList,
+        announcementsList,
         placementsList,
+        eventsList,
         flatPages,
         deptSubpages,
         galleryVideos,
@@ -686,7 +945,12 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         updatePlacementsList,
         updateFlatPage,
         updateDeptSubpage,
-        updateGalleryVideos
+        uploadDeptFile,
+        uploadGlobalFile,
+        updateGalleryVideos,
+        createAnnouncement,
+        updateAnnouncement,
+        deleteAnnouncement
       }}
     >
       {children}

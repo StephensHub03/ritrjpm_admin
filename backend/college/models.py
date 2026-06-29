@@ -101,6 +101,7 @@ class Announcement(TimeStampedModel):
     title = models.CharField(max_length=160)
     message = models.TextField()
     active = models.BooleanField(default=True)
+    file = models.FileField(upload_to='announcements/', blank=True, null=True)
 
     def __str__(self) -> str:
         return self.title

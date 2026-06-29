@@ -96,8 +96,8 @@ CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^http://127\.0\.0\.1:\d+$",
 ]
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/uploads/'
+MEDIA_ROOT = BASE_DIR.parent / 'public' / 'uploads'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticatedOrReadOnly'],

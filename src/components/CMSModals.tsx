@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { motion } from 'framer-motion'
 import { X, Save, Plus, Trash } from 'lucide-react'
 import { useCMS } from './CMSContext'
 import type { NewsItem, PlacementItem, StatItem } from './CMSContext'
 import { Line, Bar, Doughnut } from 'react-chartjs-2'
 import './AdminPanel.css'
+import ContentBlockEditor from './ContentBlockEditor'
 
 interface ModalWrapperProps {
   title: string
@@ -14,7 +16,7 @@ interface ModalWrapperProps {
 }
 
 export const ModalWrapper: React.FC<ModalWrapperProps> = ({ title, onClose, children, maxWidth = '650px' }) => {
-  return (
+  const modalContent = (
     <div className="admin-overlay-backdrop" onClick={onClose}>
       <motion.div
         className="admin-login-card"
@@ -36,6 +38,7 @@ export const ModalWrapper: React.FC<ModalWrapperProps> = ({ title, onClose, chil
       </motion.div>
     </div>
   )
+  return createPortal(modalContent, document.body)
 }
 
 // 1. LOGIN MODAL
@@ -97,30 +100,44 @@ export const LoginModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
 // 2. EDIT HERO MODAL
 export const EditHeroModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
-  const { homepageConfig, updateHomepageConfig } = useCMS()
+  const { homepageConfig, updateHomepageConfig, uploadGlobalFile } = useCMS()
   const [title, setTitle] = useState(homepageConfig.hero_title)
   const [subtitle, setSubtitle] = useState(homepageConfig.hero_subtitle)
   const [imageUrl, setImageUrl] = useState(homepageConfig.hero_image_url)
-  const [ctaButtonsText, setCtaButtonsText] = useState(JSON.stringify(homepageConfig.cta_buttons, null, 2))
+  const [imageFile, setImageFile] = useState<File | null>(null)
+  const [ctaButtons, setCtaButtons] = useState<any[]>(homepageConfig.cta_buttons || [])
   const [isSaving, setIsSaving] = useState(false)
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSaving(true)
     try {
-      const parsedCta = JSON.parse(ctaButtonsText)
+      let finalImageUrl = imageUrl
+      if (imageFile) {
+        const uploadedUrl = await uploadGlobalFile(imageFile)
+        if (uploadedUrl) finalImageUrl = uploadedUrl
+      }
+
       await updateHomepageConfig({
         hero_title: title,
         hero_subtitle: subtitle,
-        hero_image_url: imageUrl,
-        cta_buttons: parsedCta,
+        hero_image_url: finalImageUrl,
+        cta_buttons: ctaButtons,
       })
       onClose()
     } catch (err) {
-      alert('Invalid JSON for CTA buttons. Check structure: [{"text": "...", "link": "..."}]')
+      alert('Failed to save hero section')
     } finally {
       setIsSaving(false)
     }
+  }
+
+  const handleAddCta = () => setCtaButtons([...ctaButtons, { text: 'New Button', link: '#' }])
+  const handleRemoveCta = (idx: number) => setCtaButtons(ctaButtons.filter((_, i) => i !== idx))
+  const handleCtaChange = (idx: number, key: string, val: string) => {
+    const updated = [...ctaButtons]
+    updated[idx] = { ...updated[idx], [key]: val }
+    setCtaButtons(updated)
   }
 
   return (
@@ -147,33 +164,51 @@ export const EditHeroModal: React.FC<{ onClose: () => void }> = ({ onClose }) =>
           />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-          <label style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>Hero Banner Image Path / URL</label>
-          <input
-            type="text"
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
-            required
-            style={{ width: '100%', padding: '10px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff' }}
-          />
+          <label style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>Hero Banner Image</label>
+          {imageUrl && !imageFile && <span style={{ fontSize: '11px', color: '#94a3b8', marginBottom: '4px' }}>Current: {imageUrl.split('/').pop()}</span>}
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setImageFile(e.target.files ? e.target.files[0] : null)}
+              style={{ flex: 1, padding: '10px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff' }}
+            />
+          </div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-          <label style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>CTA Buttons (JSON Array)</label>
-          <textarea
-            value={ctaButtonsText}
-            onChange={(e) => setCtaButtonsText(e.target.value)}
-            rows={4}
-            required
-            style={{ width: '100%', padding: '10px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff', fontFamily: 'monospace', fontSize: '12px' }}
-          />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <label style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>Call to Action (CTA) Buttons</label>
+            <button type="button" onClick={handleAddCta} style={{ padding: '4px 8px', background: 'rgba(255,255,255,0.1)', border: 'none', borderRadius: '4px', color: '#fff', fontSize: '11px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}><Plus size={12}/> Add Button</button>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            {ctaButtons.map((btn, idx) => (
+              <div key={idx} style={{ display: 'flex', gap: '8px', alignItems: 'center', background: 'rgba(255,255,255,0.02)', padding: '8px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <input type="text" value={btn.text} onChange={(e) => handleCtaChange(idx, 'text', e.target.value)} placeholder="Button Text" required style={{ flex: 1, padding: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', color: '#fff', fontSize: '12px' }} />
+                <input type="text" value={btn.link} onChange={(e) => handleCtaChange(idx, 'link', e.target.value)} placeholder="Link / URL" required style={{ flex: 1, padding: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', color: '#fff', fontSize: '12px' }} />
+                <button type="button" onClick={() => handleRemoveCta(idx)} style={{ background: 'none', border: 'none', color: '#f43f5e', cursor: 'pointer', padding: '4px' }} title="Remove Button"><Trash size={14} /></button>
+              </div>
+            ))}
+            {ctaButtons.length === 0 && <span style={{ fontSize: '11px', color: '#94a3b8', fontStyle: 'italic' }}>No CTA buttons configured.</span>}
+          </div>
         </div>
-        <button
-          type="submit"
-          disabled={isSaving}
-          style={{ padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
-        >
-          <Save size={16} />
-          {isSaving ? 'Saving Changes...' : 'Save Configuration'}
-        </button>
+        <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: 'rgba(255,255,255,0.1)', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            Cancel (Undo)
+          </button>
+          <button
+            type="submit"
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+          >
+            <Save size={16} />
+            {isSaving ? 'Saving Changes...' : 'Save Configuration'}
+          </button>
+        </div>
       </form>
     </ModalWrapper>
   )
@@ -187,18 +222,25 @@ export const EditAboutModal: React.FC<{ onClose: () => void }> = ({ onClose }) =
   const [lead, setLead] = useState(homepageConfig.about_lead)
   const [description, setDescription] = useState(homepageConfig.about_description)
   const [imageUrl, setImageUrl] = useState(homepageConfig.about_image_url)
+  const [imageFile, setImageFile] = useState<File | null>(null)
   const [estd, setEstd] = useState(homepageConfig.about_estd)
   const [isSaving, setIsSaving] = useState(false)
+  const { uploadGlobalFile } = useCMS()
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSaving(true)
+    let finalImageUrl = imageUrl
+    if (imageFile) {
+      const uploadedUrl = await uploadGlobalFile(imageFile)
+      if (uploadedUrl) finalImageUrl = uploadedUrl
+    }
     await updateHomepageConfig({
       about_badge: badge,
       about_title: title,
       about_lead: lead,
       about_description: description,
-      about_image_url: imageUrl,
+      about_image_url: finalImageUrl,
       about_estd: estd,
     })
     setIsSaving(false)
@@ -261,23 +303,35 @@ export const EditAboutModal: React.FC<{ onClose: () => void }> = ({ onClose }) =
           />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-          <label style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>Overview Image Path / URL</label>
-          <input
-            type="text"
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
-            required
-            style={{ width: '100%', padding: '10px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff' }}
-          />
+          <label style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>Overview Image</label>
+          {imageUrl && !imageFile && <span style={{ fontSize: '11px', color: '#94a3b8', marginBottom: '4px' }}>Current: {imageUrl.split('/').pop()}</span>}
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setImageFile(e.target.files ? e.target.files[0] : null)}
+              style={{ flex: 1, padding: '10px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff' }}
+            />
+          </div>
         </div>
-        <button
-          type="submit"
-          disabled={isSaving}
-          style={{ padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
-        >
-          <Save size={16} />
-          {isSaving ? 'Saving Changes...' : 'Save Overview'}
-        </button>
+        <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: 'rgba(255,255,255,0.1)', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            Cancel (Undo)
+          </button>
+          <button
+            type="submit"
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+          >
+            <Save size={16} />
+            {isSaving ? 'Saving Changes...' : 'Save Overview'}
+          </button>
+        </div>
       </form>
     </ModalWrapper>
   )
@@ -337,14 +391,24 @@ export const EditVisionMissionModal: React.FC<{ onClose: () => void }> = ({ onCl
             style={{ width: '100%', padding: '10px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff', lineHeight: 1.4 }}
           />
         </div>
-        <button
-          type="submit"
-          disabled={isSaving}
-          style={{ padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
-        >
-          <Save size={16} />
-          {isSaving ? 'Saving Changes...' : 'Save Vision & Mission'}
-        </button>
+        <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: 'rgba(255,255,255,0.1)', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            Cancel (Undo)
+          </button>
+          <button
+            type="submit"
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+          >
+            <Save size={16} />
+            {isSaving ? 'Saving Changes...' : 'Save Vision & Mission'}
+          </button>
+        </div>
       </form>
     </ModalWrapper>
   )
@@ -426,14 +490,24 @@ export const EditStatsModal: React.FC<{ onClose: () => void }> = ({ onClose }) =
             </div>
           ))}
         </div>
-        <button
-          type="submit"
-          disabled={isSaving}
-          style={{ padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginTop: '10px' }}
-        >
-          <Save size={16} />
-          {isSaving ? 'Saving Changes...' : 'Save Statistics'}
-        </button>
+        <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: 'rgba(255,255,255,0.1)', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            Cancel (Undo)
+          </button>
+          <button
+            type="submit"
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+          >
+            <Save size={16} />
+            {isSaving ? 'Saving Changes...' : 'Save Statistics'}
+          </button>
+        </div>
       </form>
     </ModalWrapper>
   )
@@ -564,20 +638,17 @@ export const EditFlatPageModal: React.FC<{ pageKey: string; onClose: () => void 
   const { flatPages, updateFlatPage } = useCMS()
   const pageData = flatPages[pageKey]
   const [title, setTitle] = useState(pageData?.title || '')
-  const [contentJsonText, setContentJsonText] = useState(() => {
-    return pageData?.content ? JSON.stringify(pageData.content, null, 2) : '[]'
-  })
+  const [contentBlocks, setContentBlocks] = useState<any[]>(pageData?.content || [])
   const [isSaving, setIsSaving] = useState(false)
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSaving(true)
     try {
-      const parsed = JSON.parse(contentJsonText)
-      await updateFlatPage(pageKey, title, parsed)
+      await updateFlatPage(pageKey, title, contentBlocks)
       onClose()
     } catch (err) {
-      alert('Invalid JSON structure. Please verify formatting for your page content blocks.')
+      alert('Failed to save flat page.')
     } finally {
       setIsSaving(false)
     }
@@ -596,27 +667,25 @@ export const EditFlatPageModal: React.FC<{ pageKey: string; onClose: () => void 
             style={{ width: '100%', padding: '10px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff' }}
           />
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <label style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>Content Blocks (JSON Array)</label>
-            <span style={{ fontSize: '10px', color: '#94a3b8' }}>Supports paragraph, heading, list, table, document types</span>
-          </div>
-          <textarea
-            value={contentJsonText}
-            onChange={(e) => setContentJsonText(e.target.value)}
-            rows={15}
-            required
-            style={{ width: '100%', padding: '10px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff', fontFamily: 'monospace', fontSize: '12px', lineHeight: 1.4 }}
-          />
+          <ContentBlockEditor blocks={contentBlocks} onChange={setContentBlocks} />
+        <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: 'rgba(255,255,255,0.1)', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            Cancel (Undo)
+          </button>
+          <button
+            type="submit"
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+          >
+            <Save size={16} />
+            {isSaving ? 'Saving Changes...' : 'Save Page Content'}
+          </button>
         </div>
-        <button
-          type="submit"
-          disabled={isSaving}
-          style={{ padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
-        >
-          <Save size={16} />
-          {isSaving ? 'Saving Changes...' : 'Save Page Content'}
-        </button>
       </form>
     </ModalWrapper>
   )
@@ -667,7 +736,7 @@ export const AddEditNewsModal: React.FC<{
   }
 
   return (
-    <ModalWrapper title={newsItem ? 'Edit Announcement' : 'Add Announcement'} onClose={onClose}>
+    <ModalWrapper title={newsItem ? 'Edit News Item' : 'Add News Item'} onClose={onClose}>
       <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
           <label style={{ fontSize: '12px', fontWeight: 700, color: 'rgba(255,255,255,0.7)' }}>Title</label>
@@ -928,9 +997,22 @@ export const AnalyticsModal: React.FC<{ onClose: () => void }> = ({ onClose }) =
 
 // 10. EDIT CAMPUS VIDEO GALLERY
 export const EditCampusGalleryModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
-  const { galleryVideos, updateGalleryVideos } = useCMS()
+  const { galleryVideos, updateGalleryVideos, uploadGlobalFile } = useCMS()
   const [videos, setVideos] = useState<any[]>([...galleryVideos])
+  const [videoFiles, setVideoFiles] = useState<Record<number, File>>({})
   const [isSaving, setIsSaving] = useState(false)
+
+  const handleFileChange = (idx: number, file: File | null) => {
+    setVideoFiles(prev => {
+      const updated = { ...prev }
+      if (file) {
+        updated[idx] = file
+      } else {
+        delete updated[idx]
+      }
+      return updated
+    })
+  }
 
   const handleFieldChange = (idx: number, key: string, val: string) => {
     const updated = [...videos]
@@ -941,7 +1023,17 @@ export const EditCampusGalleryModal: React.FC<{ onClose: () => void }> = ({ onCl
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSaving(true)
-    await updateGalleryVideos(videos)
+    const finalVideos = [...videos]
+    for (let i = 0; i < finalVideos.length; i++) {
+      const file = videoFiles[i]
+      if (file) {
+        const url = await uploadGlobalFile(file)
+        if (url) {
+            finalVideos[i].id = url
+        }
+      }
+    }
+    await updateGalleryVideos(finalVideos)
     setIsSaving(false)
     onClose()
   }
@@ -957,13 +1049,13 @@ export const EditCampusGalleryModal: React.FC<{ onClose: () => void }> = ({ onCl
             <div key={idx} style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '12px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '8px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '12px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                  <label style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(255,255,255,0.5)' }}>YouTube Video ID</label>
+                  <label style={{ fontSize: '10px', fontWeight: 700, color: 'rgba(255,255,255,0.5)' }}>Media Upload (or YouTube ID)</label>
+                  {vid.id && !videoFiles[idx] && <span style={{ fontSize: '10px', color: '#94a3b8' }}>Current: {vid.id.split('/').pop()}</span>}
                   <input
-                    type="text"
-                    value={vid.id}
-                    onChange={(e) => handleFieldChange(idx, 'id', e.target.value)}
-                    required
-                    style={{ padding: '6px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', color: '#fff', fontSize: '13px', fontFamily: 'monospace' }}
+                    type="file"
+                    accept="image/*,video/*"
+                    onChange={(e) => handleFileChange(idx, e.target.files ? e.target.files[0] : null)}
+                    style={{ padding: '6px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', color: '#fff', fontSize: '11px' }}
                   />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -990,14 +1082,24 @@ export const EditCampusGalleryModal: React.FC<{ onClose: () => void }> = ({ onCl
             </div>
           ))}
         </div>
-        <button
-          type="submit"
-          disabled={isSaving}
-          style={{ padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginTop: '10px' }}
-        >
-          <Save size={16} />
-          {isSaving ? 'Saving Changes...' : 'Save Gallery Configuration'}
-        </button>
+        <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: 'rgba(255,255,255,0.1)', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            Cancel (Undo)
+          </button>
+          <button
+            type="submit"
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+          >
+            <Save size={16} />
+            {isSaving ? 'Saving Changes...' : 'Save Gallery Configuration'}
+          </button>
+        </div>
       </form>
     </ModalWrapper>
   )
@@ -1008,20 +1110,17 @@ export const EditDeptSubpageModal: React.FC<{ deptCode: string; subpageKey: stri
   const { deptSubpages, updateDeptSubpage } = useCMS()
   const deptData = deptSubpages[deptCode] || {}
   const subpageData = deptData[subpageKey]
-  const [contentJsonText, setContentJsonText] = useState(() => {
-    return subpageData?.content ? JSON.stringify(subpageData.content, null, 2) : '[]'
-  })
+  const [contentBlocks, setContentBlocks] = useState<any[]>(subpageData?.content || [])
   const [isSaving, setIsSaving] = useState(false)
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSaving(true)
     try {
-      const parsed = JSON.parse(contentJsonText)
-      await updateDeptSubpage(deptCode, subpageKey, parsed)
+      await updateDeptSubpage(deptCode, subpageKey, contentBlocks)
       onClose()
     } catch (err) {
-      alert('Invalid JSON structure. Verify brackets and commas.')
+      alert('Failed to save department content.')
     } finally {
       setIsSaving(false)
     }
@@ -1030,26 +1129,140 @@ export const EditDeptSubpageModal: React.FC<{ deptCode: string; subpageKey: stri
   return (
     <ModalWrapper title={`Edit Dept Page: ${deptCode.toUpperCase()} - ${subpageKey}`} onClose={onClose} maxWidth="820px">
       <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', margin: '0' }}>
-          Edit content blocks for this subpage. Content blocks should be formatted as a JSON list.
-        </p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-          <textarea
-            value={contentJsonText}
-            onChange={(e) => setContentJsonText(e.target.value)}
-            rows={18}
-            required
-            style={{ width: '100%', padding: '10px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff', fontFamily: 'monospace', fontSize: '12px', lineHeight: 1.4 }}
-          />
+        <ContentBlockEditor blocks={contentBlocks} onChange={setContentBlocks} />
+        <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: 'rgba(255,255,255,0.1)', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            Cancel (Undo)
+          </button>
+          <button
+            type="submit"
+            disabled={isSaving}
+            style={{ flex: 1, padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+          >
+            <Save size={16} />
+            {isSaving ? 'Saving Changes...' : 'Save Department Content'}
+          </button>
         </div>
+      </form>
+    </ModalWrapper>
+  )
+}
+
+// 10. EDIT EVENTS MODAL
+export const EditEventsModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+  const { eventsList, updateEventsList, uploadGlobalFile } = useCMS()
+  const [events, setEvents] = useState<any[]>([...eventsList])
+  const [eventFiles, setEventFiles] = useState<Record<number, { image?: File, link?: File }>>({})
+  const [isSaving, setIsSaving] = useState(false)
+
+  const handleFileChange = (idx: number, type: 'image' | 'link', file: File | null) => {
+    setEventFiles(prev => {
+      const current = prev[idx] || {}
+      if (file) {
+        return { ...prev, [idx]: { ...current, [type]: file } }
+      } else {
+        const updated = { ...current }
+        delete updated[type]
+        return { ...prev, [idx]: updated }
+      }
+    })
+  }
+
+  const handleFieldChange = (idx: number, key: string, val: string | number) => {
+    const updated = [...events]
+    updated[idx] = { ...updated[idx], [key]: val }
+    setEvents(updated)
+  }
+
+  const handleAddEvent = () => {
+    setEvents([
+      { id: Date.now(), title: 'New Event', date: '2025-2026', category: 'General', icon: 'Calendar', description: '', image: '', link: '' },
+      ...events
+    ])
+  }
+
+  const handleRemoveEvent = (idx: number) => {
+    if (window.confirm('Are you sure you want to remove this event?')) {
+      setEvents(events.filter((_, i) => i !== idx))
+    }
+  }
+
+  const handleSave = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSaving(true)
+    const finalEvents = [...events]
+    for (let i = 0; i < finalEvents.length; i++) {
+      const files = eventFiles[i]
+      if (files?.image) {
+        const url = await uploadGlobalFile(files.image)
+        if (url) finalEvents[i].image = url
+      }
+      if (files?.link) {
+        const url = await uploadGlobalFile(files.link)
+        if (url) finalEvents[i].link = url
+      }
+    }
+    await updateEventsList(finalEvents)
+    setIsSaving(false)
+    onClose()
+  }
+
+  return (
+    <ModalWrapper title="Manage Latest Events" onClose={onClose} maxWidth="800px">
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '16px' }}>
         <button
-          type="submit"
-          disabled={isSaving}
-          style={{ padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+          onClick={handleAddEvent}
+          style={{ padding: '8px 16px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '6px', color: '#fff', fontSize: '12px', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
         >
-          <Save size={16} />
-          {isSaving ? 'Saving Changes...' : 'Save Department Content'}
+          <Plus size={14} /> Add Event
         </button>
+      </div>
+      <form onSubmit={handleSave} style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxHeight: '60vh', overflowY: 'auto', paddingRight: '8px' }}>
+        {events.map((evt, idx) => (
+          <div key={evt.id || idx} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', padding: '16px', position: 'relative' }}>
+            <button
+              type="button"
+              onClick={() => handleRemoveEvent(idx)}
+              style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#f43f5e', cursor: 'pointer' }}
+              title="Remove Event"
+            >
+              <Trash size={16} />
+            </button>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <label style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(255,255,255,0.6)' }}>Title</label>
+                <input type="text" value={evt.title} onChange={(e) => handleFieldChange(idx, 'title', e.target.value)} required style={{ padding: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff', fontSize: '13px' }} />
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <label style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(255,255,255,0.6)' }}>Academic Year / Date</label>
+                <input type="text" value={evt.date} onChange={(e) => handleFieldChange(idx, 'date', e.target.value)} required style={{ padding: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff', fontSize: '13px' }} />
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', gridColumn: 'span 2' }}>
+                <label style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(255,255,255,0.6)' }}>Description</label>
+                <textarea value={evt.description} onChange={(e) => handleFieldChange(idx, 'description', e.target.value)} rows={2} required style={{ padding: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff', fontSize: '13px', lineHeight: 1.4 }} />
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <label style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(255,255,255,0.6)' }}>Event Image</label>
+                {evt.image && !eventFiles[idx]?.image && <span style={{ fontSize: '10px', color: '#94a3b8' }}>Current: {evt.image.split('/').pop()}</span>}
+                <input type="file" accept="image/*" onChange={(e) => handleFileChange(idx, 'image', e.target.files ? e.target.files[0] : null)} style={{ padding: '6px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff', fontSize: '11px' }} />
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <label style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(255,255,255,0.6)' }}>Event PDF Document</label>
+                {evt.link && !eventFiles[idx]?.link && <span style={{ fontSize: '10px', color: '#94a3b8' }}>Current: {evt.link.split('/').pop()}</span>}
+                <input type="file" accept=".pdf" onChange={(e) => handleFileChange(idx, 'link', e.target.files ? e.target.files[0] : null)} style={{ padding: '6px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '6px', color: '#fff', fontSize: '11px' }} />
+              </div>
+            </div>
+          </div>
+        ))}
+        <div style={{ display: 'flex', gap: '12px', marginTop: '16px' }}>
+          <button type="button" onClick={onClose} disabled={isSaving} style={{ flex: 1, padding: '12px', background: 'rgba(255,255,255,0.1)', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer' }}>Cancel (Undo)</button>
+          <button type="submit" disabled={isSaving} style={{ flex: 1, padding: '12px', background: '#ec0a78', border: 0, borderRadius: '6px', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}><Save size={16} /> {isSaving ? 'Saving...' : 'Save Events'}</button>
+        </div>
       </form>
     </ModalWrapper>
   )

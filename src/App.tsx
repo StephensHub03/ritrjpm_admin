@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion'
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import QuickLinksBar from './components/QuickLinksBar'
 import Dashboard from './components/Dashboard'
+import AdminPanel from './components/AdminPanel'
 import Marquee from './components/Marquee'
 import About from './components/About'
 import Research from './components/Research'
@@ -21,6 +23,7 @@ import { LoginModal, AnalyticsModal } from './components/CMSModals'
 import './App.css'
 
 function AppContent() {
+  const navigate = useNavigate()
   const { scrollYProgress } = useScroll()
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 24 })
   const [activePageKey, setActivePageKey] = useState<string | null>(null)
@@ -28,6 +31,7 @@ function AppContent() {
   const { isAuthenticated, logout } = useCMS()
   const [isLoginOpen, setIsLoginOpen] = useState(false)
   const [isAnalyticsOpen, setIsAnalyticsOpen] = useState(false)
+  const [isAdminPanelOpen, setIsAdminPanelOpen] = useState(false)
   const [activeFacultyProfile, setActiveFacultyProfile] = useState<{ name: string; departmentName: string; image?: string | null } | null>(null)
 
   useEffect(() => {
@@ -102,6 +106,24 @@ function AppContent() {
                   View Analytics
                 </button>
                 <button
+                  onClick={() => setIsAdminPanelOpen(true)}
+                  style={{
+                    background: 'rgba(45, 212, 191, 0.15)',
+                    border: '1px solid rgba(45, 212, 191, 0.3)',
+                    borderRadius: '4px',
+                    padding: '4px 10px',
+                    color: '#2dd4bf',
+                    fontWeight: 700,
+                    fontSize: '11px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s'
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(45, 212, 191, 0.25)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(45, 212, 191, 0.15)')}
+                >
+                  CMS Dashboard
+                </button>
+                <button
                   onClick={logout}
                   style={{
                     background: 'rgba(244, 63, 94, 0.15)',
@@ -138,11 +160,7 @@ function AppContent() {
             <CampusLife />
             <GraduationPhotos />
             <Footer onOpenAdmin={() => {
-              if (isAuthenticated) {
-                alert("You are already logged in as Admin.")
-              } else {
-                setIsLoginOpen(true)
-              }
+              navigate('/admin')
             }} />
 
             {/* Render the full-screen Detail Overlay when a page key is active */}
@@ -165,6 +183,9 @@ function AppContent() {
               {isAnalyticsOpen && (
                 <AnalyticsModal onClose={() => setIsAnalyticsOpen(false)} />
               )}
+              {isAdminPanelOpen && (
+                <AdminPanel onClose={() => setIsAdminPanelOpen(false)} />
+              )}
             </AnimatePresence>
           </main>
         </motion.div>
@@ -173,10 +194,31 @@ function AppContent() {
   )
 }
 
+const AdminRoute = () => {
+  const { isAuthenticated } = useCMS()
+  const navigate = useNavigate()
+  
+  if (isAuthenticated) {
+    return <Navigate to="/" />
+  }
+  
+  return (
+    <div style={{ background: '#090e1b', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <LoginModal onClose={() => navigate('/')} />
+    </div>
+  )
+}
+
 export default function App() {
   return (
     <CMSProvider>
-      <AppContent />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<AppContent />} />
+          <Route path="/admin" element={<AdminRoute />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </BrowserRouter>
     </CMSProvider>
   )
 }

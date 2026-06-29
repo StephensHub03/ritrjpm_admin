@@ -7,6 +7,8 @@ from rest_framework.routers import DefaultRouter
 
 from college.views import (
     AnnouncementViewSet,
+    UploadDeptFileView,
+    SaveDeptSubpagesView,
     ContactMessageViewSet,
     DepartmentViewSet,
     EventViewSet,
@@ -37,10 +39,11 @@ router.register('analytics', AnalyticsViewSet, basename='analytics')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/upload-dept-file/', UploadDeptFileView.as_view(), name='upload_dept_file'),
+    path('api/save-dept-subpages/', SaveDeptSubpagesView.as_view(), name='save_dept_subpages'),
     path('api/auth/', include('rest_framework.urls')),
     path('api/auth/token/', obtain_auth_token),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
