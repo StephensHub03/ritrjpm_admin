@@ -1,4 +1,4 @@
-/* CSS Page Turning Animation compiled from SCSS */
+/* CSS Page Turning Animation compiled from SCSS for 6 images */
 .imgLoader {
     position: fixed;
     animation: preLoad 1s steps(1);
@@ -6,11 +6,12 @@
     height: 1px;
 }
 @keyframes preLoad {
-    0% { background-image: url('/gra1.jpg'); }
-    10% { background-image: url('/gra2.jpg'); }
-    20% { background-image: url('/gra3.jpeg'); }
-    30% { background-image: url('/gra4.jpeg'); }
-    40% { background-image: url('/gra5.jpg'); }
+    0.000% { background-image: url('/gra1.jpg'); }
+    16.667% { background-image: url('/gra2.jpg'); }
+    33.333% { background-image: url('/gra3.jpeg'); }
+    50.000% { background-image: url('/gra4.jpeg'); }
+    66.667% { background-image: url('/gra5.jpg'); }
+    83.333% { background-image: url('/gra6.jpeg'); }
     100% { display: none; }
 }
 
@@ -30,7 +31,7 @@
     height: 300px;
     perspective: 630px;
     perspective-origin: center 50px; 
-    transform: scale(1.75);
+    transform: scale(2.1);
     filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.2));
 }
 
@@ -51,7 +52,7 @@
 .page:nth-child(2) { transform: rotateX(60deg) rotateY(4.5deg); }
 .page:nth-child(3) {
     transform: rotateX(60deg) rotateY(6deg);
-    animation: nextPage 25s infinite -24s steps(1);
+    animation: nextPage 30s infinite -29s steps(1);
     background-size: 420px 300px;
     background-position: -2px -2px;
 }
@@ -71,17 +72,18 @@
     top: 0px; right: 0%;
     transform-origin: center;
     transform: rotateY(180deg);
-    animation: nextPage 25s -20s infinite steps(1);
+    animation: nextPage 30s -25s infinite steps(1);
     background-size: 420px 300px;
     background-position: 100% -2px;
 }
 
 @keyframes nextPage {
-    0% { background-image: url('/gra1.jpg'); }
-    20% { background-image: url('/gra2.jpg'); }
-    40% { background-image: url('/gra3.jpeg'); }
-    60% { background-image: url('/gra4.jpeg'); }
-    80% { background-image: url('/gra5.jpg'); }
+    0.000% { background-image: url('/gra1.jpg'); }
+    16.667% { background-image: url('/gra2.jpg'); }
+    33.333% { background-image: url('/gra3.jpeg'); }
+    50.000% { background-image: url('/gra4.jpeg'); }
+    66.667% { background-image: url('/gra5.jpg'); }
+    83.333% { background-image: url('/gra6.jpeg'); }
 }
 
 
@@ -140,11 +142,11 @@
 .flip.flip1 {
     right: 50%;
     animation: flip1 5s infinite ease-in-out;
-    border-width: 2px 0px;
+    border-width: 1.5px 0px;
 }
 
 .flip.flip1::after {
-    animation: nextFlip1 25s -20s infinite steps(1);
+    animation: nextFlip1 30s -25s infinite steps(1);
 }
 
 .flip:not(.flip1) {
@@ -156,122 +158,136 @@
 
 .flip.flip7 {
     width: 30px;
-    border-width: 2px 0px;
+    border-width: 1.5px 0px;
 }
 
 @keyframes nextFlip1 {
-    0% { background-image: url('/gra1.jpg'); background-position: -178px -2px; transform: rotateY(0deg); }
-    10% { background-image: url('/gra2.jpg'); background-position: -210px -2px; transform: rotateY(180deg); }
-    20% { background-image: url('/gra2.jpg'); background-position: -178px -2px; transform: rotateY(0deg); }
-    30% { background-image: url('/gra3.jpeg'); background-position: -210px -2px; transform: rotateY(180deg); }
-    40% { background-image: url('/gra3.jpeg'); background-position: -178px -2px; transform: rotateY(0deg); }
-    50% { background-image: url('/gra4.jpeg'); background-position: -210px -2px; transform: rotateY(180deg); }
-    60% { background-image: url('/gra4.jpeg'); background-position: -178px -2px; transform: rotateY(0deg); }
-    70% { background-image: url('/gra5.jpg'); background-position: -210px -2px; transform: rotateY(180deg); }
-    80% { background-image: url('/gra5.jpg'); background-position: -178px -2px; transform: rotateY(0deg); }
-    90% { background-image: url('/gra6.jpeg'); background-position: -210px -2px; transform: rotateY(180deg); }
+    0.000% { background-image: url('/gra1.jpg'); background-position: -178px -2px; transform: rotateY(0deg); }
+    8.333% { background-image: url('/gra2.jpg'); background-position: -210px -2px; transform: rotateY(180deg); }
+    16.667% { background-image: url('/gra2.jpg'); background-position: -178px -2px; transform: rotateY(0deg); }
+    25.000% { background-image: url('/gra3.jpeg'); background-position: -210px -2px; transform: rotateY(180deg); }
+    33.333% { background-image: url('/gra3.jpeg'); background-position: -178px -2px; transform: rotateY(0deg); }
+    41.667% { background-image: url('/gra4.jpeg'); background-position: -210px -2px; transform: rotateY(180deg); }
+    50.000% { background-image: url('/gra4.jpeg'); background-position: -178px -2px; transform: rotateY(0deg); }
+    58.333% { background-image: url('/gra5.jpg'); background-position: -210px -2px; transform: rotateY(180deg); }
+    66.667% { background-image: url('/gra5.jpg'); background-position: -178px -2px; transform: rotateY(0deg); }
+    75.000% { background-image: url('/gra6.jpeg'); background-position: -210px -2px; transform: rotateY(180deg); }
+    83.333% { background-image: url('/gra6.jpeg'); background-position: -178px -2px; transform: rotateY(0deg); }
+    91.667% { background-image: url('/gra1.jpg'); background-position: -210px -2px; transform: rotateY(180deg); }
 }
 
 @keyframes nextFlip2 {
-    0% { background-image: url('/gra1.jpg'); background-position: -148px -2px; transform: rotateY(0deg); }
-    10.5% { background-image: url('/gra2.jpg'); background-position: -238px -2px; transform: rotateY(180deg); }
-    20% { background-image: url('/gra2.jpg'); background-position: -148px -2px; transform: rotateY(0deg); }
-    30.5% { background-image: url('/gra3.jpeg'); background-position: -238px -2px; transform: rotateY(180deg); }
-    40% { background-image: url('/gra3.jpeg'); background-position: -148px -2px; transform: rotateY(0deg); }
-    50.5% { background-image: url('/gra4.jpeg'); background-position: -238px -2px; transform: rotateY(180deg); }
-    60% { background-image: url('/gra4.jpeg'); background-position: -148px -2px; transform: rotateY(0deg); }
-    70.5% { background-image: url('/gra5.jpg'); background-position: -238px -2px; transform: rotateY(180deg); }
-    80% { background-image: url('/gra5.jpg'); background-position: -148px -2px; transform: rotateY(0deg); }
-    90.5% { background-image: url('/gra6.jpeg'); background-position: -238px -2px; transform: rotateY(180deg); }
+    0.000% { background-image: url('/gra1.jpg'); background-position: -148px -2px; transform: rotateY(0deg); }
+    8.833% { background-image: url('/gra2.jpg'); background-position: -238px -2px; transform: rotateY(180deg); }
+    16.667% { background-image: url('/gra2.jpg'); background-position: -148px -2px; transform: rotateY(0deg); }
+    25.500% { background-image: url('/gra3.jpeg'); background-position: -238px -2px; transform: rotateY(180deg); }
+    33.333% { background-image: url('/gra3.jpeg'); background-position: -148px -2px; transform: rotateY(0deg); }
+    42.167% { background-image: url('/gra4.jpeg'); background-position: -238px -2px; transform: rotateY(180deg); }
+    50.000% { background-image: url('/gra4.jpeg'); background-position: -148px -2px; transform: rotateY(0deg); }
+    58.833% { background-image: url('/gra5.jpg'); background-position: -238px -2px; transform: rotateY(180deg); }
+    66.667% { background-image: url('/gra5.jpg'); background-position: -148px -2px; transform: rotateY(0deg); }
+    75.500% { background-image: url('/gra6.jpeg'); background-position: -238px -2px; transform: rotateY(180deg); }
+    83.333% { background-image: url('/gra6.jpeg'); background-position: -148px -2px; transform: rotateY(0deg); }
+    92.167% { background-image: url('/gra1.jpg'); background-position: -238px -2px; transform: rotateY(180deg); }
 }
 
 @keyframes nextFlip3 {
-    0% { background-image: url('/gra1.jpg'); background-position: -118px -2px; transform: rotateY(0deg); }
-    11.0% { background-image: url('/gra2.jpg'); background-position: -268px -2px; transform: rotateY(180deg); }
-    20% { background-image: url('/gra2.jpg'); background-position: -118px -2px; transform: rotateY(0deg); }
-    31.0% { background-image: url('/gra3.jpeg'); background-position: -268px -2px; transform: rotateY(180deg); }
-    40% { background-image: url('/gra3.jpeg'); background-position: -118px -2px; transform: rotateY(0deg); }
-    51.0% { background-image: url('/gra4.jpeg'); background-position: -268px -2px; transform: rotateY(180deg); }
-    60% { background-image: url('/gra4.jpeg'); background-position: -118px -2px; transform: rotateY(0deg); }
-    71.0% { background-image: url('/gra5.jpg'); background-position: -268px -2px; transform: rotateY(180deg); }
-    80% { background-image: url('/gra5.jpg'); background-position: -118px -2px; transform: rotateY(0deg); }
-    91.0% { background-image: url('/gra6.jpeg'); background-position: -268px -2px; transform: rotateY(180deg); }
+    0.000% { background-image: url('/gra1.jpg'); background-position: -118px -2px; transform: rotateY(0deg); }
+    9.333% { background-image: url('/gra2.jpg'); background-position: -268px -2px; transform: rotateY(180deg); }
+    16.667% { background-image: url('/gra2.jpg'); background-position: -118px -2px; transform: rotateY(0deg); }
+    26.000% { background-image: url('/gra3.jpeg'); background-position: -268px -2px; transform: rotateY(180deg); }
+    33.333% { background-image: url('/gra3.jpeg'); background-position: -118px -2px; transform: rotateY(0deg); }
+    42.667% { background-image: url('/gra4.jpeg'); background-position: -268px -2px; transform: rotateY(180deg); }
+    50.000% { background-image: url('/gra4.jpeg'); background-position: -118px -2px; transform: rotateY(0deg); }
+    59.333% { background-image: url('/gra5.jpg'); background-position: -268px -2px; transform: rotateY(180deg); }
+    66.667% { background-image: url('/gra5.jpg'); background-position: -118px -2px; transform: rotateY(0deg); }
+    76.000% { background-image: url('/gra6.jpeg'); background-position: -268px -2px; transform: rotateY(180deg); }
+    83.333% { background-image: url('/gra6.jpeg'); background-position: -118px -2px; transform: rotateY(0deg); }
+    92.667% { background-image: url('/gra1.jpg'); background-position: -268px -2px; transform: rotateY(180deg); }
 }
 
 @keyframes nextFlip4 {
-    0% { background-image: url('/gra1.jpg'); background-position: -88px -2px; transform: rotateY(0deg); }
-    11.5% { background-image: url('/gra2.jpg'); background-position: -298px -2px; transform: rotateY(180deg); }
-    20% { background-image: url('/gra2.jpg'); background-position: -88px -2px; transform: rotateY(0deg); }
-    31.5% { background-image: url('/gra3.jpeg'); background-position: -298px -2px; transform: rotateY(180deg); }
-    40% { background-image: url('/gra3.jpeg'); background-position: -88px -2px; transform: rotateY(0deg); }
-    51.5% { background-image: url('/gra4.jpeg'); background-position: -298px -2px; transform: rotateY(180deg); }
-    60% { background-image: url('/gra4.jpeg'); background-position: -88px -2px; transform: rotateY(0deg); }
-    71.5% { background-image: url('/gra5.jpg'); background-position: -298px -2px; transform: rotateY(180deg); }
-    80% { background-image: url('/gra5.jpg'); background-position: -88px -2px; transform: rotateY(0deg); }
-    91.5% { background-image: url('/gra6.jpeg'); background-position: -298px -2px; transform: rotateY(180deg); }
+    0.000% { background-image: url('/gra1.jpg'); background-position: -88px -2px; transform: rotateY(0deg); }
+    9.833% { background-image: url('/gra2.jpg'); background-position: -298px -2px; transform: rotateY(180deg); }
+    16.667% { background-image: url('/gra2.jpg'); background-position: -88px -2px; transform: rotateY(0deg); }
+    26.500% { background-image: url('/gra3.jpeg'); background-position: -298px -2px; transform: rotateY(180deg); }
+    33.333% { background-image: url('/gra3.jpeg'); background-position: -88px -2px; transform: rotateY(0deg); }
+    43.167% { background-image: url('/gra4.jpeg'); background-position: -298px -2px; transform: rotateY(180deg); }
+    50.000% { background-image: url('/gra4.jpeg'); background-position: -88px -2px; transform: rotateY(0deg); }
+    59.833% { background-image: url('/gra5.jpg'); background-position: -298px -2px; transform: rotateY(180deg); }
+    66.667% { background-image: url('/gra5.jpg'); background-position: -88px -2px; transform: rotateY(0deg); }
+    76.500% { background-image: url('/gra6.jpeg'); background-position: -298px -2px; transform: rotateY(180deg); }
+    83.333% { background-image: url('/gra6.jpeg'); background-position: -88px -2px; transform: rotateY(0deg); }
+    93.167% { background-image: url('/gra1.jpg'); background-position: -298px -2px; transform: rotateY(180deg); }
 }
 
 @keyframes nextFlip5 {
-    0% { background-image: url('/gra1.jpg'); background-position: -58px -2px; transform: rotateY(0deg); }
-    12.0% { background-image: url('/gra2.jpg'); background-position: -328px -2px; transform: rotateY(180deg); }
-    20% { background-image: url('/gra2.jpg'); background-position: -58px -2px; transform: rotateY(0deg); }
-    32.0% { background-image: url('/gra3.jpeg'); background-position: -328px -2px; transform: rotateY(180deg); }
-    40% { background-image: url('/gra3.jpeg'); background-position: -58px -2px; transform: rotateY(0deg); }
-    52.0% { background-image: url('/gra4.jpeg'); background-position: -328px -2px; transform: rotateY(180deg); }
-    60% { background-image: url('/gra4.jpeg'); background-position: -58px -2px; transform: rotateY(0deg); }
-    72.0% { background-image: url('/gra5.jpg'); background-position: -328px -2px; transform: rotateY(180deg); }
-    80% { background-image: url('/gra5.jpg'); background-position: -58px -2px; transform: rotateY(0deg); }
-    92.0% { background-image: url('/gra6.jpeg'); background-position: -328px -2px; transform: rotateY(180deg); }
+    0.000% { background-image: url('/gra1.jpg'); background-position: -58px -2px; transform: rotateY(0deg); }
+    10.333% { background-image: url('/gra2.jpg'); background-position: -328px -2px; transform: rotateY(180deg); }
+    16.667% { background-image: url('/gra2.jpg'); background-position: -58px -2px; transform: rotateY(0deg); }
+    27.000% { background-image: url('/gra3.jpeg'); background-position: -328px -2px; transform: rotateY(180deg); }
+    33.333% { background-image: url('/gra3.jpeg'); background-position: -58px -2px; transform: rotateY(0deg); }
+    43.667% { background-image: url('/gra4.jpeg'); background-position: -328px -2px; transform: rotateY(180deg); }
+    50.000% { background-image: url('/gra4.jpeg'); background-position: -58px -2px; transform: rotateY(0deg); }
+    60.333% { background-image: url('/gra5.jpg'); background-position: -328px -2px; transform: rotateY(180deg); }
+    66.667% { background-image: url('/gra5.jpg'); background-position: -58px -2px; transform: rotateY(0deg); }
+    77.000% { background-image: url('/gra6.jpeg'); background-position: -328px -2px; transform: rotateY(180deg); }
+    83.333% { background-image: url('/gra6.jpeg'); background-position: -58px -2px; transform: rotateY(0deg); }
+    93.667% { background-image: url('/gra1.jpg'); background-position: -328px -2px; transform: rotateY(180deg); }
 }
 
 @keyframes nextFlip6 {
-    0% { background-image: url('/gra1.jpg'); background-position: -28px -2px; transform: rotateY(0deg); }
-    12.5% { background-image: url('/gra2.jpg'); background-position: -358px -2px; transform: rotateY(180deg); }
-    20% { background-image: url('/gra2.jpg'); background-position: -28px -2px; transform: rotateY(0deg); }
-    32.5% { background-image: url('/gra3.jpeg'); background-position: -358px -2px; transform: rotateY(180deg); }
-    40% { background-image: url('/gra3.jpeg'); background-position: -28px -2px; transform: rotateY(0deg); }
-    52.5% { background-image: url('/gra4.jpeg'); background-position: -358px -2px; transform: rotateY(180deg); }
-    60% { background-image: url('/gra4.jpeg'); background-position: -28px -2px; transform: rotateY(0deg); }
-    72.5% { background-image: url('/gra5.jpg'); background-position: -358px -2px; transform: rotateY(180deg); }
-    80% { background-image: url('/gra5.jpg'); background-position: -28px -2px; transform: rotateY(0deg); }
-    92.5% { background-image: url('/gra6.jpeg'); background-position: -358px -2px; transform: rotateY(180deg); }
+    0.000% { background-image: url('/gra1.jpg'); background-position: -28px -2px; transform: rotateY(0deg); }
+    10.833% { background-image: url('/gra2.jpg'); background-position: -358px -2px; transform: rotateY(180deg); }
+    16.667% { background-image: url('/gra2.jpg'); background-position: -28px -2px; transform: rotateY(0deg); }
+    27.500% { background-image: url('/gra3.jpeg'); background-position: -358px -2px; transform: rotateY(180deg); }
+    33.333% { background-image: url('/gra3.jpeg'); background-position: -28px -2px; transform: rotateY(0deg); }
+    44.167% { background-image: url('/gra4.jpeg'); background-position: -358px -2px; transform: rotateY(180deg); }
+    50.000% { background-image: url('/gra4.jpeg'); background-position: -28px -2px; transform: rotateY(0deg); }
+    60.833% { background-image: url('/gra5.jpg'); background-position: -358px -2px; transform: rotateY(180deg); }
+    66.667% { background-image: url('/gra5.jpg'); background-position: -28px -2px; transform: rotateY(0deg); }
+    77.500% { background-image: url('/gra6.jpeg'); background-position: -358px -2px; transform: rotateY(180deg); }
+    83.333% { background-image: url('/gra6.jpeg'); background-position: -28px -2px; transform: rotateY(0deg); }
+    94.167% { background-image: url('/gra1.jpg'); background-position: -358px -2px; transform: rotateY(180deg); }
 }
 
 .flip.flip2::after {
-    animation: nextFlip2 25s -20s infinite steps(1);
+    animation: nextFlip2 30s -25s infinite steps(1);
 }
 
 .flip.flip3::after {
-    animation: nextFlip3 25s -20s infinite steps(1);
+    animation: nextFlip3 30s -25s infinite steps(1);
 }
 
 .flip.flip4::after {
-    animation: nextFlip4 25s -20s infinite steps(1);
+    animation: nextFlip4 30s -25s infinite steps(1);
 }
 
 .flip.flip5::after {
-    animation: nextFlip5 25s -20s infinite steps(1);
+    animation: nextFlip5 30s -25s infinite steps(1);
 }
 
 .flip.flip6::after {
-    animation: nextFlip6 25s -20s infinite steps(1);
+    animation: nextFlip6 30s -25s infinite steps(1);
 }
 
 .flip.flip7::after {
-    animation: nextFlip7 25s -20s infinite steps(1);
+    animation: nextFlip7 30s -25s infinite steps(1);
 }
 
 @keyframes nextFlip7 {
-    0% { background-image: url('/gra1.jpg'); background-position: -2px -2px; transform: rotateY(0deg); }
-    13% { background-image: url('/gra2.jpg'); background-position: -388px -2px; transform: rotateY(180deg); }
-    20% { background-image: url('/gra2.jpg'); background-position: -2px -2px; transform: rotateY(0deg); }
-    33% { background-image: url('/gra3.jpeg'); background-position: -388px -2px; transform: rotateY(180deg); }
-    40% { background-image: url('/gra3.jpeg'); background-position: -2px -2px; transform: rotateY(0deg); }
-    53% { background-image: url('/gra4.jpeg'); background-position: -388px -2px; transform: rotateY(180deg); }
-    60% { background-image: url('/gra4.jpeg'); background-position: -2px -2px; transform: rotateY(0deg); }
-    73% { background-image: url('/gra5.jpg'); background-position: -388px -2px; transform: rotateY(180deg); }
-    80% { background-image: url('/gra5.jpg'); background-position: -2px -2px; transform: rotateY(0deg); }
-    93% { background-image: url('/gra6.jpeg'); background-position: -388px -2px; transform: rotateY(180deg); }
+    0.000% { background-image: url('/gra1.jpg'); background-position: -2px -2px; transform: rotateY(0deg); }
+    10.833% { background-image: url('/gra2.jpg'); background-position: -388px -2px; transform: rotateY(180deg); }
+    16.667% { background-image: url('/gra2.jpg'); background-position: -2px -2px; transform: rotateY(0deg); }
+    27.500% { background-image: url('/gra3.jpeg'); background-position: -388px -2px; transform: rotateY(180deg); }
+    33.333% { background-image: url('/gra3.jpeg'); background-position: -2px -2px; transform: rotateY(0deg); }
+    44.167% { background-image: url('/gra4.jpeg'); background-position: -388px -2px; transform: rotateY(180deg); }
+    50.000% { background-image: url('/gra4.jpeg'); background-position: -2px -2px; transform: rotateY(0deg); }
+    60.833% { background-image: url('/gra5.jpg'); background-position: -388px -2px; transform: rotateY(180deg); }
+    66.667% { background-image: url('/gra5.jpg'); background-position: -2px -2px; transform: rotateY(0deg); }
+    77.500% { background-image: url('/gra6.jpeg'); background-position: -388px -2px; transform: rotateY(180deg); }
+    83.333% { background-image: url('/gra6.jpeg'); background-position: -2px -2px; transform: rotateY(0deg); }
+    94.167% { background-image: url('/gra1.jpg'); background-position: -388px -2px; transform: rotateY(180deg); }
 }
 
 @keyframes flip1 {

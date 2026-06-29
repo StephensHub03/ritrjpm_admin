@@ -11,12 +11,12 @@ export default function GraduationPhotos() {
       </div>
       
       <div style={{ 
-        height: '360px', 
+        height: '420px', 
         position: 'relative', 
         overflow: 'visible', 
         width: '100%',
         marginTop: '20px', 
-        marginBottom: '110px',
+        marginBottom: '140px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'flex-start'

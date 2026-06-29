@@ -1266,6 +1266,7 @@ h3 {
 
 .graduation-section {
   padding: 44px max(22px, calc((100vw - 1120px) / 2)) 36px;
+  background-color: #FAF0E2;
 }
 
 .immersive {
