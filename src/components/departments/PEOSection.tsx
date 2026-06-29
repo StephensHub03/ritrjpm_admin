@@ -295,10 +295,6 @@ export const PEOSection: React.FC<PEOSectionProps> = ({ content }) => {
     )
   }
 
-  // Calculate totals across blocks
-  const peoCount = blocks.filter(b => b.type === 'peo').reduce((acc, b) => acc + b.items.length, 0)
-  const poCount = blocks.filter(b => b.type === 'po').reduce((acc, b) => acc + b.items.length, 0)
-  const psoCount = blocks.filter(b => b.type === 'pso').reduce((acc, b) => acc + b.items.length, 0)
 
   return (
     <section

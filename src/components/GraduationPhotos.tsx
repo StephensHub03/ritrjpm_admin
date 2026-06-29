@@ -11,7 +11,7 @@ export default function GraduationPhotos() {
       </div>
       
       <div style={{ 
-        height: '420px', 
+        height: '450px', 
         position: 'relative', 
         overflow: 'visible', 
         width: '100%',

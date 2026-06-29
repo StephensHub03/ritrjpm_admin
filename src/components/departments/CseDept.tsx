@@ -170,7 +170,7 @@ export const CseDept: React.FC<DeptProps> = () => {
       pageUrl
     }
 
-    if (isPEOTab) {
+    if (activeSubpage.toLowerCase().includes('peo')) {
       return <PEOSection content={rawContentItems} />
     }
     if (activeSubpage.toLowerCase().includes('vision') || activeSubpage.toLowerCase().includes('mission')) {
