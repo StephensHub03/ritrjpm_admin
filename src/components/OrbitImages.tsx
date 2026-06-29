@@ -229,6 +229,7 @@ export default function OrbitImages({
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
+                  objectPosition: (resolvedSrc && resolvedSrc.toLowerCase().includes('robo')) ? 'left center' : 'center',
                   userSelect: 'none',
                 }}
               />

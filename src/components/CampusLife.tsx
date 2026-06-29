@@ -6,10 +6,10 @@ import { Edit, Save, X } from 'lucide-react'
 
 const DEFAULT_MOSAIC_IMAGES = [
   { key: 'Campus Life', url: '/clg3.png' },
-  { key: 'Academic Blocks', url: '/clg4.png' },
+  { key: 'Sports Ground', url: '/g1.png' },
   { key: 'Yoga Center', url: '/clg8.png' },
   { key: 'Ladies Amenity ', url: '/clg77.png' },
-  { key: 'Sports Ground ', url: '/g1.png' },
+  { key: ' Auditorium ', url: '/auditorium.png' },
   { key: 'Wash Area', url: '/wa.png' },
   { key: 'Stationary Shop', url: '/shop1.png' },
   { key: 'Gym', url: '/gym1.png' },
