@@ -33,7 +33,13 @@ const isPdfIconImage = (src?: string) => /pdf-icon|new-pdf-icon|pdf-icon4/i.test
 export function renderContentBlocks(items: ContentItem[], deptCode: string, sectionName: string, pageUrl: string) {
   if (!items || items.length === 0) return null
 
+  const isFacultyPage = sectionName.toLowerCase().includes('faculty profile') || sectionName.toLowerCase().includes('faculty data')
+
   return items.map((item, index) => {
+    if (isFacultyPage && item.type !== 'document') {
+      return null
+    }
+
     // 1. Text checks
     if (item.text && !isValidDepartmentText(item.text)) {
       return null

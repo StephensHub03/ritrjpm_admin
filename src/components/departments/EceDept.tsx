@@ -112,12 +112,12 @@ export const EceDept: React.FC<DeptProps> = () => {
     ? filteredContentItems.filter((item) => {
         if (item.type === 'document') return true
         if (item.type === 'table') return false
-        if (item.type === 'image') return false
+
         if (item.type === 'heading') return false
         return true
       })
     : filteredContentItems.filter((item) => {
-        if (item.type === 'image') return false
+
         if (isPdfTab && item.type === 'document') return false
         return true
       })
