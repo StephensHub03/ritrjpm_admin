@@ -86,6 +86,7 @@ function splitLabel(text: string): { label: string; body: string } {
 
 const SECTION_CONFIG = {
   peo: {
+<<<<<<< HEAD
     accent: '#246bfe',
     bg: 'rgba(36,107,254,0.06)',
     border: 'rgba(36,107,254,0.2)',
@@ -111,6 +112,30 @@ const SECTION_CONFIG = {
     badgeBg: 'rgba(236,10,120,0.12)',
     badgeColor: '#c1076a',
     icon: '🔬',
+=======
+    accent: '#061846',
+    bg: 'rgba(6, 24, 70, 0.02)',
+    border: 'rgba(6, 24, 70, 0.07)',
+    badge: 'PEO',
+    badgeBg: 'rgba(6, 24, 70, 0.05)',
+    badgeColor: '#061846',
+  },
+  po: {
+    accent: '#061846',
+    bg: 'rgba(6, 24, 70, 0.02)',
+    border: 'rgba(6, 24, 70, 0.07)',
+    badge: 'PO',
+    badgeBg: 'rgba(6, 24, 70, 0.05)',
+    badgeColor: '#061846',
+  },
+  pso: {
+    accent: '#061846',
+    bg: 'rgba(6, 24, 70, 0.02)',
+    border: 'rgba(6, 24, 70, 0.07)',
+    badge: 'PSO',
+    badgeBg: 'rgba(6, 24, 70, 0.05)',
+    badgeColor: '#061846',
+>>>>>>> b959d4d (civil)
   },
 }
 
@@ -143,6 +168,7 @@ const PEOCard: React.FC<PEOCardProps> = ({ index, text, type }) => {
       {/* Number badge */}
       <div
         style={{
+<<<<<<< HEAD
           minWidth: '36px',
           height: '36px',
           borderRadius: '50%',
@@ -156,6 +182,21 @@ const PEOCard: React.FC<PEOCardProps> = ({ index, text, type }) => {
           flexShrink: 0,
           marginTop: '1px',
           boxShadow: `0 2px 8px ${cfg.accent}44`,
+=======
+          minWidth: '28px',
+          height: '28px',
+          borderRadius: '50%',
+          background: 'rgba(6, 24, 70, 0.05)',
+          border: '1px solid rgba(6, 24, 70, 0.12)',
+          color: '#061846',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontWeight: 750,
+          fontSize: '12px',
+          flexShrink: 0,
+          marginTop: '2px',
+>>>>>>> b959d4d (civil)
         }}
       >
         {num}
@@ -237,7 +278,11 @@ const PEOSectionBlock: React.FC<PEOSectionBlockProps> = ({ block }) => {
                 borderRadius: '20px',
               }}
             >
+<<<<<<< HEAD
               {cfg.icon} {cfg.badge}
+=======
+              {cfg.badge}
+>>>>>>> b959d4d (civil)
             </span>
           </div>
           <h3

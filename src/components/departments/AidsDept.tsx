@@ -4,7 +4,8 @@ import {
   BookOpen,
   ExternalLink,
   FileText,
-  Edit } from 'lucide-react'
+  Edit
+} from 'lucide-react'
 import { useCMS } from '../CMSContext'
 import { EditDeptSubpageModal } from '../CMSModals'
 import { resolveLocalScrapedImage } from '../../utils/localScrapedImages'
@@ -91,17 +92,17 @@ export const AidsDept: React.FC<DeptProps> = () => {
   })() : []
 
   const isPdfIconImage = (src?: string) => /pdf-icon|new-pdf-icon|pdf-icon4/i.test(src || '')
-  
+
   const galleryImages = activeSubpage.toLowerCase().includes('about')
     ? []
     : filteredContentItems
-    .filter((item): item is ContentItem & { type: 'image'; src: string } => item.type === 'image' && Boolean(item.src) && !isPdfIconImage(item.src))
-    .map((item) => ({
-      ...item,
-      localSrc: resolveLocalScrapedImage(item.src),
-    }))
-    .filter((item) => Boolean(item.localSrc))
-    .slice(0, 6)
+      .filter((item): item is ContentItem & { type: 'image'; src: string } => item.type === 'image' && Boolean(item.src) && !isPdfIconImage(item.src))
+      .map((item) => ({
+        ...item,
+        localSrc: resolveLocalScrapedImage(item.src),
+      }))
+      .filter((item) => Boolean(item.localSrc))
+      .slice(0, 6)
 
   const isReadMoreOrGallery = activeSubpage.toLowerCase().includes('read more') || activeSubpage.toLowerCase().includes('gallery')
   const showGalleryEmptyState = isReadMoreOrGallery && galleryImages.length === 0
@@ -110,17 +111,17 @@ export const AidsDept: React.FC<DeptProps> = () => {
 
   const textItems = isFacultyProfilePage
     ? filteredContentItems.filter((item) => {
-        if (item.type === 'document') return true
-        if (item.type === 'table') return false
-
-        if (item.type === 'heading') return false
-        return true
-      })
+      if (item.type === 'document') return true
+      if (item.type === 'table') return false
+      if (item.type === 'image') return false
+      if (item.type === 'heading') return false
+      return true
+    })
     : filteredContentItems.filter((item) => {
-
-        if (isPdfTab && item.type === 'document') return false
-        return true
-      })
+      if (item.type === 'image' && !activeSubpage.toLowerCase().includes('about')) return false
+      if (isPdfTab && item.type === 'document') return false
+      return true
+    })
 
   const pdfAttachmentCards = (() => {
     const isPdfTab = /news letter|newsletter|magazine|admission/i.test(activeSubpage)
@@ -277,16 +278,16 @@ export const AidsDept: React.FC<DeptProps> = () => {
           )}
 
           {showGalleryEmptyState && (
-            <div 
-              className="detail-image-placeholder-container" 
-              style={{ 
-                margin: '20px 0', 
-                padding: '30px', 
-                border: '2px dashed #e2e8f0', 
-                borderRadius: '12px', 
-                background: '#f8fafc', 
-                color: '#64748b', 
-                textAlign: 'center' 
+            <div
+              className="detail-image-placeholder-container"
+              style={{
+                margin: '20px 0',
+                padding: '30px',
+                border: '2px dashed #e2e8f0',
+                borderRadius: '12px',
+                background: '#f8fafc',
+                color: '#64748b',
+                textAlign: 'center'
               }}
             >
               <span style={{ fontWeight: '600', display: 'block', fontSize: '15px' }}>
@@ -348,14 +349,14 @@ export const AidsDept: React.FC<DeptProps> = () => {
           )}
         </div>
       </main>
-    {showEditModal && (
+      {showEditModal && (
         <EditDeptSubpageModal
           deptCode={deptCode}
           subpageKey={activeSubpage}
           onClose={() => setShowEditModal(false)}
         />
       )}
-      </div>
+    </div>
   )
 }
 

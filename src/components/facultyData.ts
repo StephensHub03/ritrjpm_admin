@@ -1083,4 +1083,129 @@ export const facultyDataMap: Record<string, FacultyData> = {
       "Providing authentication for Data Integrity in Wireless Sensor Network, National Conference on Frontiers of Communication and Computing (AGNICON 2013), Agni College of Technology, Chennai, 2013."
     ]
   },
+<<<<<<< HEAD
+=======
+  dharmar: {
+    name: 'Dr. S. DHARMAR',
+    designation: 'Professor & Head',
+    department: 'Civil Engineering',
+    email: 'dharmar@ritrjpm.ac.in',
+    secondaryEmail: '',
+    mobile: '9843341662',
+    image: '/media/civil/Faculty_Profile/181_Dharmar.jpg',
+    office: 'RIT Campus, HOD Cabin, Department of Civil Engineering',
+    bioSummary: 'Dr. S. Dharmar is a Professor & Head in the Department of Civil Engineering at Ramco Institute of Technology. He has extensive teaching and industrial experience (including abroad in Dubai, UAE). He is an ISTE National Award Winner 2024 for Best Teacher in Civil Engineering, an IGBC Accredited Faculty, and an Anna University Recognized Supervisor for Ph.D.',
+    researchAreas: ['Structural Engineering', 'Geopolymer Concrete', 'Ferrocement', 'Concrete Technology'],
+    socials: [
+      { label: 'Vidwan / IRINS ID', url: 'https://ritrjpm.irins.org' },
+      { label: 'Google Scholar ID', url: 'https://scholar.google.co.in/citations?user=U6zU5zYAAAAJ' },
+      { label: 'ORCID ID', url: 'https://orcid.org/0000-0001-7485-439X' },
+      { label: 'Scopus ID: 57355938000', url: 'http://www.scopus.com/authid/detail.url?authorId=57355938000' }
+    ],
+    pdfUrl: 'https://www.ritrjpm.ac.in/profile/_Biodata_S.Dharmar.pdf',
+    education: [
+      { degree: 'Ph.D', field: 'Structural Engineering', university: 'Centre for Research / Anna University, Chennai', year: '2022' },
+      { degree: 'M.E', field: 'Computer Aided Structural Engineering', university: 'Mepco Schlenk Engineering College, Sivakasi / Madurai Kamaraj University', year: '2002' },
+      { degree: 'B.E', field: 'Civil Engineering', university: 'Thiagarajar College of Engineering, Madurai / Madurai Kamaraj University', year: '1999' }
+    ],
+    experience: [
+      { role: 'Professor', org: 'Ramco Institute of Technology', duration: '01.01.2025 - Present' },
+      { role: 'Associate Professor', org: 'Ramco Institute of Technology', duration: '01.01.2023 - 31.12.2024' },
+      { role: 'Assistant Professor (Sr. Gr.)', org: 'Ramco Institute of Technology', duration: '09.07.2018 - 31.12.2022' },
+      { role: 'Associate Professor', org: 'P. S. R. Engineering College, Sivakasi', duration: '02.08.2012 - 05.07.2018' },
+      { role: 'Structural Design Engineer', org: 'BTA Architectural Engineering Consultancy, Dubai, UAE', duration: '23.08.2010 - 30.06.2012' },
+      { role: 'Project Manager', org: 'Dubai National Construction LLC, Dubai, UAE', duration: '19.04.2006 - 31.07.2010' },
+      { role: 'Structural Design Engineer', org: 'C. R. Narayana Rao & Co., Chennai', duration: '18.07.2005 - 15.04.2006' },
+      { role: 'Asst. Executive Engineer', org: 'Mepco Schlenk Engineering College, Sivakasi', duration: '01.01.2004 - 23.06.2005' },
+      { role: 'Assistant Engineer', org: 'Mepco Schlenk Engineering College, Sivakasi', duration: '01.07.1999 - 31.12.2003' },
+      { role: 'Site Engineer', org: 'Mepco Schlenk Engineering College, Sivakasi', duration: '01.10.1987 - 30.06.1999' }
+    ],
+    metrics: {
+      citationsScopus: 45,
+      citationsCrossRef: 20,
+      hIndex: 4,
+      journals: 7,
+      bookChapters: 0,
+      conferences: 34,
+      coauthors: 12,
+      altmetrics: []
+    },
+    projects: [
+      {
+        title: 'Sustainable Light-weight Building Block (SLBB) and its Manufacturing Method',
+        agency: 'MSME',
+        status: 'Under progress',
+        role: 'Mentor',
+        budget: 'INR 9 Lakh',
+        duration: '1 year'
+      }
+    ],
+    patents: [
+      {
+        title: 'Banana Peel Activated Carbon Adsorbent Removing Zine in Textile Effluent',
+        inventors: 'Dr. S. Dharmar',
+        number: 'Patent No. 404129',
+        status: 'Granted',
+        date: '22.08.2022',
+        org: 'Indian Patent'
+      }
+    ],
+    honours: [
+      {
+        title: 'ISTE National Award Winner 2024 for Best Teacher in Civil Engineering',
+        body: 'Received during 54th ISTE National Annual Convention held at Lamrin Tech Skills University, Ropar, Punjab.',
+        year: '2024'
+      }
+    ],
+    memberships: [
+      { body: 'IGBC Accredited Faculty', details: 'Indian Green Building Council', year: 'Accredited' },
+      { body: 'DTCP Registered Structural Engineer', details: 'Directorate of Town and Country Planning', year: 'Registered' }
+    ],
+    journalPubs: [
+      'Dharmar Sakkarai, Nagan Soundarapandian, "Assessment of the characteristics of ferro-geopolymer composite box beams under flexure", Advances in Concrete Construction, Vol. 15, No. 4, pp. 251-267, 2023.',
+      'Dharmar Sakkarai, Nagan Soundarapandian, "Strength Behavior of Flat and Folded Fly Ash-Based Geopolymer Ferrocement Panels under Flexure and Impact", Hindawi - Advances in Civil Engineering, Vol. 2021, Article ID 2311518, 2021.',
+      'Karthikeyan G, Dharmar S, Ragavan V, Harshani R, "Study on Performance of Paver Block using Prosopis Juliflora Ash", Global Nest Journal.',
+      'Subha Chandrasekarabarathi, Kalaimani Ramakrishnan, Justus Reymond David, Dharmar Sakkarai, "Surface water analysis and purification system for Korampallam lake in Tuticorin", AIP Conf. Proc. 2831, 060002, 2023.',
+      'Lenindhal, R. Gopalakrishnan, S. Dharmar, M. Praveenaa, "Hybrid Fibre Reinforced Concrete with Replacement of Fine Aggregate", Journal of the Balkan Tribological Association, Vol. 28, No. 1, pp. 75–88, 2022.',
+      'R. Gopalakrishnan, Lenindhal, S. Dharmar, D. Purushothaman, "Production of Construction Material Using Construction and Demolision Waste by Geo-Polymerisation of Industrial Waste", Journal of the Balkan Tribological Association, Vol. 27, No. 6, pp. 997–1009, 2021.',
+      'S. Dharmar, R. Gopalakrishnan, A. Mohan, "Environmental Effect of Denitrification of Structural Glass by Coating TiO2", Elsevier - Materials Today: Proceedings, 2020.'
+    ],
+    conferencePubs: [
+      'Mr. S. Dharmar, et al., "Surface Water Analysis and Water Purification System for Korampallam Lake in Tuticorin", International Conference on Smart Technologies and Applications-2022 (ICSTA 2022).',
+      'Mr. S. Dharmar, et al., "Denitrification of Structural Glass by Coating TiO2 – An Eco-Friendly Approach", International Web Conference on Smart Engineering Technologies 2020 (IWCSET – 2020).',
+      'Mr. S. Dharmar, et al., "Effect of Hydrophobic Coating on Structural Glass to Reduce the NOx Concentration in Indoor and Outdoor Environment", National Web Conference on Advances in Civil Engineering for Sustainable Environment, 2020.',
+      'Dharmar S, et al., "Experimental study on Self-Compacting Concrete using Fly Ash and M-Sand", National Conference on Advanced Construction & Sustainable Energy Sources, 2019.',
+      'Dharmar S, "Study on Bubble Deck Slab - A Review", ICIBCMS’18, 2018.',
+      'Dharmar S, "Strength and Micro -Structural Study on Geopolymer Mortar by varying Activator Solution Ratio", ICIBCMS’18, 2018.',
+      'Dharmar S, "Study on Flexural Behavior of Doubly Reinforced Geopolymer Concrete beam by Eliminating Compression Steel using High Strength Concrete", ICRDE’18, 2018.',
+      'Dharmar S, "Experimental Study on Flexural Behavior of Geopolymer Ferrocement Box Beam", ICRDE’18, 2018.',
+      'Dharmar S, "Experimental Study on Impact Resistance of Geopolymer Ferrocement Flat Panels", ICRTCETM-2017, 2017.',
+      'Dharmar S, "Toughness of Geopolymer Ferrocement Trough Panels - An Experimental Study", ICRTCETM-2017, 2017.',
+      'Dharmar S, "Experimental Study on Flexural behavior of Fiber Reinforced Geopolymer Ferrocement Flat Panels", International Conference on Emerging Trends in Science, Engineering, Technology & Management 2016, 2016.',
+      'Dharmar S, "Experimental study on influence of zinc oxide nanoparticle on strength of cement mortar", International Conference on Emerging Trends in Science, Engineering, Technology & Management 2016, 2016.',
+      'Dharmar S, "Mechanical properties of high performance mortar blended with silica fume", International Conference on Emerging Trends in Science, Engineering, Technology & Management 2016, 2016.',
+      'Dharmar S, "Study on strength properties of fly ash based no-fine geopolymer concrete", International Conference on Emerging Trends in Science, Engineering, Technology & Management 2016, 2016.',
+      'Dharmar S, "Strength Study of M-Sand and Fly Ash based Geopolymer Concrete", Recent Advancements in Civil Engineering (RACE 15), 2015.',
+      'Dharmar S, "Experimental Study on Fly Ash based Self-Compacting Geopolymer Mortar", Recent Advancements in Civil Engineering (RACE 15), 2015.',
+      'Dharmar S, "Experimental Study on Flexural behavior of Fiber Reinforced Geopolymer Ferrocement Folded Panel", Recent Advancements in Civil Engineering (RACE 15), 2015.',
+      'Dharmar S, "Experimental Study on Flexural behavior of Reinforced Concrete Hollow Core Sandwich Beams", Recent Advancements in Civil Engineering (RACE 15), 2015.',
+      'Dharmar S, "Experimental Study on Strength of Geopolymer Concrete under Daylight Curing", Recent Advancements in Civil Engineering (RACE 15), 2015.',
+      'Dharmar S, "Experimental Study on Effect of Curing Period on Strength of Geopolymer Concrete", Recent Advancements in Civil Engineering (RACE 15), 2015.',
+      'Dharmar S, "Experimental Study on Effect of Curing Temperature on Strength of Geopolymer Concrete", Recent Advancements in Civil Engineering (RACE 15), 2015.',
+      'Dharmar S, "Influence of Municipal Waste Combustion Ash on Strength of Concrete", Recent Advancements in Civil Engineering (RACE 15), 2015.',
+      'Dharmar S, "Experimental Study on Flexural behavior of Reinforced Concrete Hollow Core Sandwich Beams", ICRTESM-15, 2015.',
+      'Dharmar S, "Experimental Study on Flexural behavior of Fiber Reinforced Geopolymer Ferrocement Folded Panel", ICRTESM-15, 2015.',
+      'Dharmar S, "Experimental Study on Fiber Reinforced Self-Compacting Geopolymer Mortar", ICRTESM-15, 2015.',
+      'Dharmar S, "Study on Flexural behavior of Flat Ferrocement Panels", ICIRET-2014, 2014.',
+      'Dharmar S, "Experimental Investigation on Flexural behavior of Folded Ferrocement Panels", ICIRET-2014, 2014.',
+      'Dharmar S, "Flexural behavior of Trough Shaped Ferrocement Panels - An Experimental Study", ICIRET-2014, 2014.',
+      'Dharmar S, "Experimental Investigation on flexural behavior of Flat Ferrocement Panels", P.S.R. Engineering College, 2014.',
+      'Dharmar S, "Experimental Investigation on flexural behavior of Folded Ferrocement Panels", P.S.R. Engineering College, 2014.',
+      'Dharmar S, "Experimental Investigation on flexural behavior of Trough Shaped Ferrocement Panels", P.S.R. Engineering College, 2014.',
+      'Dharmar S, "Strength and Durability study on Fly ash based Geopolymer Bricks and Blocks", P.S.R. Engineering College, 2014.',
+      'Dharmar S, "Study on Strength of Concrete with Quarry Dust as Fine Aggregate and Partially Replacing Cement with Rice Husk Ash", P.S.R. Engineering College, 2013.',
+      'Dharmar S, Dr. M. S. Palanichamy, "Response of Multibay-Multistorey RC Frame with Reinforced Brick Masonry Infill under Cyclic Lateral Loading - An Experimental study", ICFiDCe-13, 2013.'
+    ]
+  }
+>>>>>>> b959d4d (civil)
 }

@@ -33,6 +33,7 @@ const isPdfIconImage = (src?: string) => /pdf-icon|new-pdf-icon|pdf-icon4/i.test
 export function renderContentBlocks(items: ContentItem[], deptCode: string, sectionName: string, pageUrl: string) {
   if (!items || items.length === 0) return null
 
+<<<<<<< HEAD
   const isFacultyPage = sectionName.toLowerCase().includes('faculty profile') || sectionName.toLowerCase().includes('faculty data')
 
   return items.map((item, index) => {
@@ -40,6 +41,9 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
       return null
     }
 
+=======
+  return items.map((item, index) => {
+>>>>>>> b959d4d (civil)
     // 1. Text checks
     if (item.text && !isValidDepartmentText(item.text)) {
       return null
@@ -240,7 +244,11 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
         
         const filename = getFileName(item.src)
         const isValid = isValidDepartmentImage(item.src, deptCode, item.alt, pageUrl)
+<<<<<<< HEAD
         const localSrc = isValid ? resolveLocalScrapedImage(item.src) : null
+=======
+        const localSrc = isValid ? (item.src.startsWith('/media/') ? item.src : resolveLocalScrapedImage(item.src)) : null
+>>>>>>> b959d4d (civil)
 
         if (isValid && localSrc) {
           const isProfileImage = filename.includes('photo') || filename.includes('head') || filename.includes('kaliappan') || (item.alt || '').toLowerCase().includes('hod') || (item.alt || '').toLowerCase().includes('head') || (item.alt || '').toLowerCase().includes('principal')
@@ -281,7 +289,27 @@ export function renderContentBlocks(items: ContentItem[], deptCode: string, sect
             )
           }
 
+<<<<<<< HEAD
           return null
+=======
+          return (
+            <React.Fragment key={index}>
+              <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: `<!-- IMG SOURCE: ${filename} | TYPE: general | DEPT: ${deptCode.toUpperCase()} | VERIFIED: yes -->` }} />
+              <figure className="detail-content-image-wrapper" style={{ margin: '2rem auto', maxWidth: '500px', display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+                <img 
+                  src={localSrc} 
+                  alt={item.alt || 'Department Image'} 
+                  style={{ width: '100%', height: 'auto', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }} 
+                />
+                {item.alt && item.alt.toLowerCase() !== 'image' && (
+                  <figcaption style={{ marginTop: '12px', fontSize: '14px', color: '#64748b', fontStyle: 'italic', textAlign: 'center' }}>
+                    {item.alt}
+                  </figcaption>
+                )}
+              </figure>
+            </React.Fragment>
+          )
+>>>>>>> b959d4d (civil)
         } else {
           return null
         }
@@ -422,7 +450,11 @@ export const FacultySection: React.FC<FacultySectionProps> = ({ facultyMembers, 
       </h2>
       <div className="faculty-grid-premium">
         {facultyMembers.map((fac, idx) => {
+<<<<<<< HEAD
           const localSrc = resolveLocalScrapedImage(fac.image)
+=======
+          const localSrc = fac.image && fac.image.startsWith('/media/') ? fac.image : resolveLocalScrapedImage(fac.image)
+>>>>>>> b959d4d (civil)
 
           // Extract qualification prefix (e.g. "Ph.D" or "M.E" or "M.Tech" etc.)
           const qual = fac.qualification || ''

@@ -113,12 +113,20 @@ export const CivilDept: React.FC<DeptProps> = () => {
     ? filteredContentItems.filter((item) => {
         if (item.type === 'document') return true
         if (item.type === 'table') return false
+<<<<<<< HEAD
 
+=======
+        if (item.type === 'image') return false
+>>>>>>> b959d4d (civil)
         if (item.type === 'heading') return false
         return true
       })
     : filteredContentItems.filter((item) => {
+<<<<<<< HEAD
 
+=======
+        if (item.type === 'image' && !activeSubpage.toLowerCase().includes('about') && !activeSubpage.toLowerCase().includes('facilit') && !activeSubpage.toLowerCase().includes('lab')) return false
+>>>>>>> b959d4d (civil)
         if (isPdfTab && item.type === 'document') return false
         return true
       })

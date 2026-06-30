@@ -124,6 +124,23 @@ export function isValidDepartmentImage(src: string, deptCode: string, alt?: stri
   const normalizedPageUrl = (pageUrl || '').toLowerCase()
   const dept = deptCode.toLowerCase()
 
+<<<<<<< HEAD
+=======
+  // Allow known HOD / Head / Principal / Faculty images to bypass standard filters
+  if (
+    normalizedAlt.includes('hod') || 
+    normalizedAlt.includes('head') || 
+    normalizedAlt.includes('principal') || 
+    normalizedAlt.includes('faculty') || 
+    normalizedAlt.includes('prof') || 
+    normalizedFilename.includes('dharmar') || 
+    normalizedFilename.includes('kaliappan') ||
+    normalizedFilename.includes('civil-hod')
+  ) {
+    return true
+  }
+
+>>>>>>> b959d4d (civil)
   // 1. Universal Block List (student portraits, testimonials, logo, generic elements)
   if (
     normalizedSrc.includes('testimonials/') ||
